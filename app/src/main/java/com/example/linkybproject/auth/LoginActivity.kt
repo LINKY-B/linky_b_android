@@ -1,12 +1,12 @@
-package com.example.linkybproject.home
+package com.example.linkybproject.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.linkybproject.R
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
     }
 }
