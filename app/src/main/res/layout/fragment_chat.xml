@@ -12,7 +12,7 @@
         tools:context=".chat.ChatActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constLayout_chat_header"
+            android:id="@+id/frameLayout_myProfile_header"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView_chat_search"
+                android:id="@+id/imageView_myProfile_edit"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_marginEnd="17dp"
@@ -42,12 +42,12 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constLayout_chat_title_header"
+            android:id="@+id/constLayout_myProfile_color_header"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/constLayout_chat_header">
+            app:layout_constraintTop_toBottomOf="@id/frameLayout_myProfile_header">
 
             <TextView
                 android:id="@+id/textView_chat_title"
@@ -81,7 +81,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/constLayout_chat_title_header"
+            app:layout_constraintTop_toBottomOf="@id/constLayout_myProfile_color_header"
             tools:listitem="@layout/item_chat_list" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
