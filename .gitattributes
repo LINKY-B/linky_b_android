@@ -1,2 +1,2 @@
-* linguist-vendored
-*.kotlin linguist-vendored=false
+*.shell linguist-vendored=false
+*.perl linguist-vendored=false
