@@ -1,2 +1,2 @@
-*.shell linguist-vendored=false
-*.perl linguist-vendored=false
+*.Shell linguist-vendored=false
+*.Perl linguist-vendored=false
