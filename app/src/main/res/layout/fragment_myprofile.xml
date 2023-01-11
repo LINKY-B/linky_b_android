@@ -96,7 +96,7 @@ android:layout_height="match_parent">
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView_myProfile_beanCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="227dp"
@@ -117,20 +117,91 @@ android:layout_height="match_parent">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView_myProfile_intro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tv_border"
-        android:paddingLeft="19dp"
-        android:paddingTop="26dp"
-        android:paddingRight="22dp"
-        android:paddingBottom="25dp"
-        android:text="안녕하세요, 서로 정보 공유해요!\n3학년 재학 중이고 UXUI 디자인 분야 취준 중입니다."
-        android:textColor="@color/black"
-        android:textSize="12dp"
-        android:layout_marginTop="201dp"
-        android:layout_marginBottom="445dp"
-        android:layout_gravity="center_horizontal" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout_myProfile_intro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView_myProfile_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="201dp"
+            android:background="@drawable/tv_border"
+            android:paddingLeft="19dp"
+            android:paddingTop="26dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="25dp"
+            android:text="안녕하세요, 서로 정보 공유해요!\n3학년 재학 중이고 UXUI 디자인 분야 취준 중입니다."
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_myProfile_greenclock1"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginBottom="402dp"
+            android:src="@drawable/greenclock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
+
+        <TextView
+            android:id="@+id/textView_myProfile_green1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="399dp"
+            android:text="6명과 링크 중입니다."
+            android:textSize="10dp"
+            android:textColor="@color/green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView_myProfile_greenclock1"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
+
+        <ImageView
+            android:id="@+id/imageView_myProfile_greenclock2"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginBottom="384dp"
+            android:src="@drawable/greenclock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
+
+        <TextView
+            android:id="@+id/textView_myProfile_green2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="381dp"
+            android:text="총 28명과 링크했습니다."
+            android:textSize="10dp"
+            android:textColor="@color/green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView_myProfile_greenclock2"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
+
+        <View
+            android:id="@+id/grey_line1"
+            android:layout_width="376dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/grey_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_green2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
