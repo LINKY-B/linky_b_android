@@ -272,11 +272,22 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <ImageButton
+            android:id="@+id/imageButton_plus_personal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="243dp"
+            android:background="transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/plus" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_myProfile2_personal"
             android:layout_width="match_parent"
             android:layout_height="29dp"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="55dp"
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="243dp"
             android:orientation="horizontal"
@@ -286,6 +297,51 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:listitem="@layout/item_myprofile_personal_two" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="229dp"
+            android:background="@color/grey_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="199dp"
+            android:text="관심사"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton_plus_interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="160dp"
+            android:background="transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/plus" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="160dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/item_myprofile_interest_two" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
