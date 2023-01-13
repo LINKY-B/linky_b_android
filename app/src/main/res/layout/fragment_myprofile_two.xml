@@ -331,6 +331,7 @@
             app:srcCompat="@drawable/plus" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_myProfile2_interest"
             android:layout_width="match_parent"
             android:layout_height="29dp"
             android:layout_marginStart="55dp"
