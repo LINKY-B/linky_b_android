@@ -295,7 +295,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/item_myprofile_personal_two" />
+            tools:listitem="@layout/item_myprofile_personal_2" />
 
         <View
             android:layout_width="match_parent"
@@ -342,7 +342,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/item_myprofile_interest_two" />
+            tools:listitem="@layout/item_myprofile_interest_2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
