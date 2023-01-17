@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="137dp"
-        android:layout_marginBottom="74dp"
+        android:layout_marginBottom="101dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -72,28 +72,13 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/tv_border"
                 android:gravity="center_vertical"
-                android:paddingLeft="11dp"
                 android:hint="특수기호 없이 숫자만 입력해 주세요."
                 android:inputType="number"
+                android:paddingLeft="11dp"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView13"
                 tools:ignore="TouchTargetSizeCheck" />
-
-            <TextView
-                android:id="@+id/tv_btn_get_auth"
-                android:layout_width="97dp"
-                android:layout_height="36dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/tv_btn_signup_green"
-                android:gravity="center"
-                android:text="인증번호 받기"
-                android:textColor="@color/white"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/textView13"
-                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
                 android:id="@+id/tv_error_1"
@@ -102,8 +87,8 @@
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="4dp"
                 android:text="오류 메세지"
-                android:textSize="8dp"
                 android:textColor="@color/black"
+                android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_signup_phone" />
 
@@ -120,21 +105,36 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_error_1"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-            
+
+            <TextView
+                android:id="@+id/tv_btn_get_auth"
+                android:layout_width="97dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/tv_btn_signup_green"
+                android:gravity="center"
+                android:text="인증번호 받기"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView13" />
+
             <TextView
                 android:id="@+id/tv_btn_check_auth"
                 android:layout_width="97dp"
                 android:layout_height="36dp"
-                android:layout_marginEnd="24dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
                 android:background="@drawable/tv_btn_signup_green"
                 android:gravity="center"
                 android:text="인증번호 확인"
                 android:textColor="@color/white"
                 android:textSize="12dp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/tv_error_1"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_error_1" />
 
             <TextView
                 android:id="@+id/tv_error_2"
@@ -143,8 +143,8 @@
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="4dp"
                 android:text="오류 메세지"
-                android:textSize="8dp"
                 android:textColor="@color/black"
+                android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_signup_auth" />
 
@@ -154,8 +154,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:text="1:00"
-                android:textSize="12dp"
                 android:textColor="@color/grey"
+                android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@+id/et_signup_auth"
                 app:layout_constraintEnd_toEndOf="@+id/et_signup_auth"
                 app:layout_constraintTop_toTopOf="@+id/et_signup_auth" />
@@ -209,8 +209,8 @@
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="4dp"
                 android:text="올바르지 않은 이름 형식입니다."
-                android:textSize="8dp"
                 android:textColor="@color/black"
+                android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_signup_name" />
 
@@ -246,16 +246,16 @@
                 android:id="@+id/tv_btn_nick"
                 android:layout_width="70dp"
                 android:layout_height="36dp"
-                android:layout_marginEnd="24dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
                 android:background="@drawable/tv_btn_signup_green"
                 android:gravity="center"
                 android:text="중복 확인"
                 android:textColor="@color/white"
                 android:textSize="12dp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/textView19"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView19" />
 
             <TextView
                 android:id="@+id/textView21"
@@ -269,8 +269,141 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_signup_nick" />
 
+            <EditText
+                android:id="@+id/et_signup_birth"
+                android:layout_width="229dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/tv_border"
+                android:gravity="center_vertical"
+                android:hint="생년월일"
+                android:inputType="textPersonName"
+                android:paddingLeft="11dp"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView21"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <!--            <DatePicker-->
+            <!--                android:id="@+id/dpSpinner"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="51dp"-->
+            <!--                android:calendarViewShown="false"-->
+            <!--                android:datePickerMode="spinner"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/textView21" />-->
+
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="29dp"
+                android:text="비밀번호"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_signup_birth" />
+
+            <EditText
+                android:id="@+id/et_signup_pw"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/tv_border"
+                android:gravity="center_vertical"
+                android:hint="영문, 숫자, 특수문자를 포함하여 7자 이상 입력해 주세요."
+                android:inputType="textPassword"
+                android:paddingLeft="11dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView14"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="4dp"
+                android:text="오류 메세지"
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_signup_pw" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="29dp"
+                android:text="비밀번호 확인"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <EditText
+                android:id="@+id/et_signup_pw_check"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/tv_border"
+                android:gravity="center_vertical"
+                android:hint="비밀번호를 다시 한번 입력해 주세요."
+                android:inputType="textPassword"
+                android:paddingLeft="11dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView16"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="4dp"
+                android:text="오류 메세지"
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_signup_pw_check" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView_btn_next_3"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/tv_btn_signup_green"
+        android:text="다음"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:shadowColor="@color/white"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="2dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

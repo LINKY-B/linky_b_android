@@ -292,7 +292,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton_uncheck_all" />
 
     <TextView
-        android:id="@+id/textView_button_next_1"
+        android:id="@+id/textView_btn_next_1"
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:layout_marginStart="25dp"
@@ -314,7 +314,7 @@
         android:elevation="2dp"/>
 
 <!--    <TextView-->
-<!--        android:id="@+id/textView_button_next_2"-->
+<!--        android:id="@+id/textView_btn_next_2"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="51dp"-->
 <!--        android:layout_marginStart="25dp"-->
