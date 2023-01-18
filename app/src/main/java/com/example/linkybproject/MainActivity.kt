@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.linkybproject.R
 import com.example.linkybproject.chat.ChatFragment
+import com.example.linkybproject.connect.ConnectionFragment
 import com.example.linkybproject.databinding.ActivityMainBinding
+import com.example.linkybproject.homes.HomeFragment
+import com.example.linkybproject.myprofile.MyProfileOneFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,21 +18,43 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initTransactionEvent()
-    }
+        supportFragmentManager
+            .beginTransaction()
+            .replace(binding.fragmentContainerViewMain.id, HomeFragment())
+            .commitAllowingStateLoss()
 
-    private fun initTransactionEvent() {
-//        val homeFragment = HomeFragment()
-        val chatFragment = ChatFragment()
-//        val connectionFragment = ConnectionFragment()
-//        val profileFragment = ProfileFragment()
-
-        supportFragmentManager.beginTransaction().add(R.id.fragment_container_view_main, chatFragment).commit()
-
-        // Transaction 작업
-        binding.constLayoutHomeMenu.setOnClickListener {
-            
+        binding.bottomNavigationViewMainMenu.run {
+            setOnItemSelectedListener {
+                when (it.itemId) {
+                    R.id.menu_home -> {
+                        supportFragmentManager
+                            .beginTransaction()
+                            .replace(binding.fragmentContainerViewMain.id, HomeFragment())
+                            .commitAllowingStateLoss()
+                    }
+                    R.id.menu_connection -> {
+                        supportFragmentManager
+                            .beginTransaction()
+                            .replace(binding.fragmentContainerViewMain.id, ConnectionFragment())
+                            .commitAllowingStateLoss()
+                    }
+                    R.id.menu_chat -> {
+                        supportFragmentManager
+                            .beginTransaction()
+                            .replace(binding.fragmentContainerViewMain.id, ChatFragment())
+                            .commitAllowingStateLoss()
+                    }
+                    R.id.menu_profile -> {
+                        supportFragmentManager
+                            .beginTransaction()
+                            .replace(binding.fragmentContainerViewMain.id, MyProfileOneFragment())
+                            .commitAllowingStateLoss()
+                    }
+                }
+                true
+            }
         }
-
     }
+
+
 }
