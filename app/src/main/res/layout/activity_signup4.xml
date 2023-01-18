@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.SignupActivity4">
+
+    <ImageView
+        android:id="@+id/imageView_back_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="16dp"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/rounded_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_signup4_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="92dp"
+        android:text="프로필 정보"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="137dp"
+        android:layout_marginBottom="106dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="-1dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:id="@+id/textView_signup4_profile_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="프로필"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_signup4_profile_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:text="프로필로 사용할 이미지를 선택해 주세요."
+                android:textColor="@color/grey"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_title" />
+
+            <ImageView
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/profileimage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+
+            <ImageView
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="106dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/profileimage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+
+            <ImageView
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="187dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/profileimage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+
+            <ImageView
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="268dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/profileimage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+
+            <TextView
+                android:id="@+id/textView_signup4_gender_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="113dp"
+                android:text="성별"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+
+            <TextView
+                android:id="@+id/textView_btn_male_grey"
+                android:layout_width="37dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/tv_border"
+                android:gravity="center"
+                android:text="남"
+                android:textColor="@color/grey"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_gender_title" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_btn_male_green"-->
+            <!--                android:layout_width="37dp"-->
+            <!--                android:layout_height="28dp"-->
+            <!--                android:layout_marginStart="25dp"-->
+            <!--                android:layout_marginTop="17dp"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="남"-->
+            <!--                android:textColor="@color/green"-->
+            <!--                android:textSize="12dp"-->
+            <!--                android:background="@drawable/tv_border_green"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/textView30"-->
+            <!--                app:layout_constraintStart_toStartOf="parent" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_btn_female_grey"-->
+            <!--                android:layout_width="37dp"-->
+            <!--                android:layout_height="28dp"-->
+            <!--                android:layout_marginStart="70dp"-->
+            <!--                android:layout_marginTop="17dp"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="여"-->
+            <!--                android:textColor="@color/grey"-->
+            <!--                android:textSize="12dp"-->
+            <!--                android:background="@drawable/tv_border"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/textView30"-->
+            <!--                app:layout_constraintStart_toStartOf="parent" />-->
+
+            <TextView
+                android:id="@+id/textView_btn_female_green"
+                android:layout_width="37dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/tv_border_green"
+                android:gravity="center"
+                android:text="여"
+                android:textColor="@color/green"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_gender_title" />
+
+            <TextView
+                android:id="@+id/textView_signup4_mbti_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="69dp"
+                android:text="MBTI"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_gender_title" />
+
+            <Spinner
+                android:id="@+id/spinner_mbti"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_margin="10dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/spinner_background"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_mbti_title" />
+
+            <TextView
+                android:id="@+id/textView_signup4_personal_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="69dp"
+                android:text="성격"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_mbti_title" />
+
+            <ImageButton
+                android:id="@+id/imageButton_signup_personal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="8dp"
+                android:background="transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_personal_title"
+                app:srcCompat="@drawable/plus"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_signup_personal"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="18dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup4_personal_title"
+                tools:listitem="@layout/item_myprofile_personal_2" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="17dp"
+                android:background="@color/grey_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup4_personal_title" />
+
+            <TextView
+                android:id="@+id/textView_signup4_interest_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="70dp"
+                android:text="관심사"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_personal_title" />
+
+            <ImageButton
+                android:id="@+id/imageButton_signup_interest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="8dp"
+                android:background="transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_interest_title"
+                app:srcCompat="@drawable/plus"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_signup_interest"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="18dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup4_interest_title"
+                tools:listitem="@layout/item_myprofile_interest_2" />
+
+            <TextView
+                android:id="@+id/textView_signup4_intro_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="70dp"
+                android:text="소개"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_interest_title" />
+
+            <EditText
+                android:id="@+id/editText_signup_intro"
+                android:layout_width="match_parent"
+                android:layout_height="149dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/tv_border"
+                android:gravity="start"
+                android:hint="본인 소개 글을 작성해 주세요.(300자 이하)"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="9dp"
+                android:textColor="@color/grey"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup4_intro_title"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView_btn_next_5"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/tv_btn_signup_green"
+        android:text="Linky - B 시작하기 "
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:shadowColor="@color/white"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="2dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

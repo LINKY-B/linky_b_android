@@ -10,6 +10,8 @@
 
     <!-- 링키비 색-->
     <color name="grey">#878787</color>
+    <color name="grey_line">#C4C4C4</color>
+    <color name="light_grey">#E9E9E9</color>
     <color name="green">#9FC743</color>
     <color name="light_green">#F8FAED</color>
 </resources>
