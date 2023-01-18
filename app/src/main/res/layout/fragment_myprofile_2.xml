@@ -281,7 +281,7 @@
             android:background="transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/plus" />
+            app:srcCompat="@drawable/plus2" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_myProfile2_personal"
@@ -328,7 +328,7 @@
             android:background="transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/plus" />
+            app:srcCompat="@drawable/plus2" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_myProfile2_interest"

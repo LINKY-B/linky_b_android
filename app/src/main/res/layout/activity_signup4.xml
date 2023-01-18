@@ -237,7 +237,7 @@
                 android:background="transparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup4_personal_title"
-                app:srcCompat="@drawable/plus"
+                app:srcCompat="@drawable/plus2"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -286,7 +286,7 @@
                 android:background="transparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup4_interest_title"
-                app:srcCompat="@drawable/plus"
+                app:srcCompat="@drawable/plus2"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <androidx.recyclerview.widget.RecyclerView
