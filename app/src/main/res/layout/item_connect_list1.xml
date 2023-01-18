@@ -8,7 +8,7 @@
     android:paddingBottom="8dp">
 
     <ImageView
-        android:id="@+id/profile"
+        android:id="@+id/profile_img"
         android:layout_width="49dp"
         android:layout_height="49dp"
         android:layout_marginStart="16dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/profile"
+        android:id="@+id/profile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="83dp"
@@ -27,19 +27,19 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="79dp"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/rectangle"
-        android:text="  abcde  "
-        android:textSize="8sp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/item_connect_interest" />
+
 
     <ImageView
         android:layout_width="wrap_content"
