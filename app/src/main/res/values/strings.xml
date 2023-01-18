@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LinkyBProject</string>
+    <string name="user_name">배고픈청설모</string>
+    <string name="major">시각디자인학과/20학번</string>
+    <string name="univNum">20학번</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

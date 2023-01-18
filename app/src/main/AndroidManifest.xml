@@ -13,6 +13,24 @@
         android:theme="@style/Theme.LinkyBProject"
         tools:targetApi="31">
         <activity
+            android:name=".home.onboarding.NoLoginFragment"
+            android:exported="false" />
+        <activity
+            android:name=".home.onboarding.OnBoardingFragment"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".home.connection.ConnectToFragment"
+            android:exported="false" />
+        <activity
+            android:name=".home.connection.ConnectionFragment"
+            android:exported="false" />
+        <activity
             android:name=".home.MainActivity"
             android:exported="true">
             <intent-filter>
