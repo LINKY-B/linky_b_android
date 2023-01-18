@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/textView_signup3_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -64,7 +64,7 @@
 
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/textView_signup3_uni_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/et_signup_uni"
+                android:id="@+id/editText_signup_uni"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -89,11 +89,11 @@
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView23"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_uni_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/textView24"
+                android:id="@+id/textView_signup3_major_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -102,10 +102,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_signup_uni" />
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_uni" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/spinner_signup3"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_margin="10dp"
@@ -115,10 +115,10 @@
                 android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView24" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_major_title" />
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/textView_signup3_num_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -127,10 +127,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner" />
+                app:layout_constraintTop_toBottomOf="@id/spinner_signup3" />
 
             <EditText
-                android:id="@+id/et_signup_uni_num"
+                android:id="@+id/editText_signup_uni_num"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -144,11 +144,11 @@
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView25"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_num_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/textView_signup3_grad_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -157,10 +157,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_signup_uni_num" />
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_uni_num" />
 
             <EditText
-                android:id="@+id/et_signup_grad"
+                android:id="@+id/editText_signup_grad"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -174,7 +174,7 @@
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView26"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_grad_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <View
@@ -186,7 +186,7 @@
                 android:background="@color/grey_line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_signup_grad" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_signup_grad" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/textView_signup4_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -64,7 +64,7 @@
             tools:layout_editor_absoluteY="0dp">
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/textView_signup4_profile_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView29"
+                android:id="@+id/textView_signup4_profile_explain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -84,7 +84,7 @@
                 android:textColor="@color/grey"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView28" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_title" />
 
             <ImageView
                 android:layout_width="74dp"
@@ -93,7 +93,7 @@
                 android:layout_marginTop="13dp"
                 android:src="@drawable/profileimage"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView29" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
 
             <ImageView
                 android:layout_width="74dp"
@@ -102,7 +102,7 @@
                 android:layout_marginTop="13dp"
                 android:src="@drawable/profileimage"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView29" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
 
             <ImageView
                 android:layout_width="74dp"
@@ -111,7 +111,7 @@
                 android:layout_marginTop="13dp"
                 android:src="@drawable/profileimage"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView29" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
 
             <ImageView
                 android:layout_width="74dp"
@@ -120,10 +120,10 @@
                 android:layout_marginTop="13dp"
                 android:src="@drawable/profileimage"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView29" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
 
             <TextView
-                android:id="@+id/textView30"
+                android:id="@+id/textView_signup4_gender_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -132,10 +132,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView29" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
 
             <TextView
-                android:id="@+id/tv_btn_male_grey"
+                android:id="@+id/textView_btn_male_grey"
                 android:layout_width="37dp"
                 android:layout_height="28dp"
                 android:layout_marginStart="25dp"
@@ -146,7 +146,7 @@
                 android:textColor="@color/grey"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView30" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_gender_title" />
 
             <!--            <TextView-->
             <!--                android:id="@+id/tv_btn_male_green"-->
@@ -177,7 +177,7 @@
             <!--                app:layout_constraintStart_toStartOf="parent" />-->
 
             <TextView
-                android:id="@+id/tv_btn_female_green"
+                android:id="@+id/textView_btn_female_green"
                 android:layout_width="37dp"
                 android:layout_height="28dp"
                 android:layout_marginStart="70dp"
@@ -188,10 +188,10 @@
                 android:textColor="@color/green"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView30" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_gender_title" />
 
             <TextView
-                android:id="@+id/textView31"
+                android:id="@+id/textView_signup4_mbti_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -200,7 +200,7 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView30" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_gender_title" />
 
             <Spinner
                 android:id="@+id/spinner_mbti"
@@ -214,10 +214,10 @@
                 android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView31" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_mbti_title" />
 
             <TextView
-                android:id="@+id/textView32"
+                android:id="@+id/textView_signup4_personal_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -226,7 +226,7 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView31" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_mbti_title" />
 
             <ImageButton
                 android:id="@+id/imageButton_signup_personal"
@@ -236,7 +236,7 @@
                 android:layout_marginTop="8dp"
                 android:background="transparent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView32"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_personal_title"
                 app:srcCompat="@drawable/plus"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -251,7 +251,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView32"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup4_personal_title"
                 tools:listitem="@layout/item_myprofile_personal_2" />
 
             <View
@@ -263,10 +263,10 @@
                 android:background="@color/grey_line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView32" />
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup4_personal_title" />
 
             <TextView
-                android:id="@+id/textView33"
+                android:id="@+id/textView_signup4_interest_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -275,7 +275,7 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView32" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_personal_title" />
 
             <ImageButton
                 android:id="@+id/imageButton_signup_interest"
@@ -285,7 +285,7 @@
                 android:layout_marginTop="8dp"
                 android:background="transparent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView33"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_interest_title"
                 app:srcCompat="@drawable/plus"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -300,11 +300,11 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView33"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup4_interest_title"
                 tools:listitem="@layout/item_myprofile_interest_2" />
 
             <TextView
-                android:id="@+id/textView34"
+                android:id="@+id/textView_signup4_intro_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -313,10 +313,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView33" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_interest_title" />
 
             <EditText
-                android:id="@+id/et_signup_intro"
+                android:id="@+id/editText_signup_intro"
                 android:layout_width="match_parent"
                 android:layout_height="149dp"
                 android:layout_marginStart="25dp"
@@ -331,7 +331,7 @@
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView34"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup4_intro_title"
                 tools:ignore="SpeakableTextPresentCheck" />
 
 

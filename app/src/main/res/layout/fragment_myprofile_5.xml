@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view4"
+        android:id="@+id/view4_myprofile4_2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="17dp"

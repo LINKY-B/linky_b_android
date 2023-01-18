@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView_signup2_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -53,7 +53,7 @@
             tools:layout_editor_absoluteY="0dp">
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/textView_signup2_phone_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -65,7 +65,7 @@
 
 
             <EditText
-                android:id="@+id/et_signup_phone"
+                android:id="@+id/editText_signup_phone"
                 android:layout_width="202dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -77,11 +77,11 @@
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView13"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_phone_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/tv_error_1"
+                android:id="@+id/textView_error_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -90,10 +90,10 @@
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_signup_phone" />
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_phone" />
 
             <EditText
-                android:id="@+id/et_signup_auth"
+                android:id="@+id/editText_signup_auth"
                 android:layout_width="202dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -103,11 +103,11 @@
                 android:inputType="number"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_error_1"
+                app:layout_constraintTop_toBottomOf="@id/textView_error_1"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
-                android:id="@+id/tv_btn_get_auth"
+                android:id="@+id/textView_btn_get_auth"
                 android:layout_width="97dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="8dp"
@@ -119,10 +119,10 @@
                 android:textSize="12dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView13" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_phone_title" />
 
             <TextView
-                android:id="@+id/tv_btn_check_auth"
+                android:id="@+id/textView_btn_check_auth"
                 android:layout_width="97dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="8dp"
@@ -134,10 +134,10 @@
                 android:textSize="12dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_error_1" />
+                app:layout_constraintTop_toBottomOf="@id/textView_error_1" />
 
             <TextView
-                android:id="@+id/tv_error_2"
+                android:id="@+id/textView_error_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -146,22 +146,22 @@
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_signup_auth" />
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_auth" />
 
             <TextView
-                android:id="@+id/tv_timer"
+                android:id="@+id/textView_timer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:text="1:00"
                 android:textColor="@color/grey"
                 android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@+id/et_signup_auth"
-                app:layout_constraintEnd_toEndOf="@+id/et_signup_auth"
-                app:layout_constraintTop_toTopOf="@+id/et_signup_auth" />
+                app:layout_constraintBottom_toBottomOf="@+id/editText_signup_auth"
+                app:layout_constraintEnd_toEndOf="@+id/editText_signup_auth"
+                app:layout_constraintTop_toTopOf="@+id/editText_signup_auth" />
 
             <View
-                android:id="@+id/view5"
+                android:id="@+id/view_signup2_1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginStart="25dp"
@@ -170,10 +170,10 @@
                 android:background="@color/grey_line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_error_2" />
+                app:layout_constraintTop_toBottomOf="@+id/textView_error_2" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/textView_signup2_name_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -182,10 +182,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view5" />
+                app:layout_constraintTop_toBottomOf="@+id/view_signup2_1" />
 
             <EditText
-                android:id="@+id/et_signup_name"
+                android:id="@+id/editText_signup_name"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -199,11 +199,11 @@
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView17"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_name_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/textView_signup2_name_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -212,10 +212,10 @@
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_signup_name" />
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_name" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/textView_signup2_nick_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -224,10 +224,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup2_name_error" />
 
             <EditText
-                android:id="@+id/et_signup_nick"
+                android:id="@+id/editText_signup_nick"
                 android:layout_width="229dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -239,11 +239,11 @@
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView19"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_nick_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/tv_btn_nick"
+                android:id="@+id/textView_btn_nick"
                 android:layout_width="70dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="8dp"
@@ -255,10 +255,10 @@
                 android:textSize="12dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView19" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_nick_title" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/textView_signup2_birth_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -267,10 +267,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_signup_nick" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_signup_nick" />
 
             <EditText
-                android:id="@+id/et_signup_birth"
+                android:id="@+id/editText_signup_birth"
                 android:layout_width="229dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -282,7 +282,7 @@
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView21"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_birth_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <!--            <DatePicker-->
@@ -297,7 +297,7 @@
 
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/textView_signup2_pw_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -306,10 +306,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_signup_birth" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_signup_birth" />
 
             <EditText
-                android:id="@+id/et_signup_pw"
+                android:id="@+id/editText_signup_pw"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -323,11 +323,11 @@
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView14"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_pw_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/textView_signup2_pw_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -336,10 +336,10 @@
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_signup_pw" />
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_pw" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/textView_signup2_pw_check_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -348,10 +348,10 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup2_pw_error" />
 
             <EditText
-                android:id="@+id/et_signup_pw_check"
+                android:id="@+id/editText_signup_pw_check"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
@@ -365,11 +365,11 @@
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView16"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_pw_check_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/textView_signup2_pw_check_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -378,7 +378,7 @@
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_signup_pw_check" />
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_pw_check" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
