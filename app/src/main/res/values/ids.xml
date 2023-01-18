@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="no" type="id" />
+    <item name="yes" type="id" />
+    <item name="profile" type="id" />
+</resources>
