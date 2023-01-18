@@ -1,10 +1,9 @@
-package com.example.linkybproject.Homes
+package com.example.linkybproject.homes
 
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.databinding.FragmentHomeBinding
 import com.example.linkybproject.databinding.RecyclerHomeItemBinding
 
 

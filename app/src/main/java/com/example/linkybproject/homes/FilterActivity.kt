@@ -1,8 +1,7 @@
-package com.example.linkybproject.Homes
+package com.example.linkybproject.homes
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.R
