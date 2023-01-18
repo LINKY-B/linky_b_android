@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/home_black" />
+    <item
+        android:id="@+id/menu_make"
+        android:title="@string/menu_connection"
+        android:icon="@drawable/connection_black" />
+    <item
+        android:id="@+id/menu_friend"
+        android:title="@string/menu_chat"
+        android:icon="@drawable/chat_black"/>
+    <item
+        android:id="@+id/menu_mypage"
+        android:title="@string/menu_profile"
+        android:icon="@drawable/profile_black"/>
+</menu>

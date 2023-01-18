@@ -2,4 +2,9 @@
     <string name="app_name">LinkyBProject</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- custom here -->
+    <string name="menu_home">홈</string>
+    <string name="menu_connection">연결</string>
+    <string name="menu_chat">채팅</string>
+    <string name="menu_profile">프로필</string>
 </resources>
