@@ -7,7 +7,7 @@ import com.example.linkybproject.chat.ChatFragment
 import com.example.linkybproject.connect.ConnectionFragment
 import com.example.linkybproject.databinding.ActivityMainBinding
 import com.example.linkybproject.homes.HomeFragment
-import com.example.linkybproject.myprofile.MyProfileOneFragment
+import com.example.linkybproject.myprofile.MyProfile1Fragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.menu_profile -> {
                         supportFragmentManager
                             .beginTransaction()
-                            .replace(binding.fragmentContainerViewMain.id, MyProfileOneFragment())
+                            .replace(binding.fragmentContainerViewMain.id, MyProfile1Fragment())
                             .commitAllowingStateLoss()
                     }
                 }
