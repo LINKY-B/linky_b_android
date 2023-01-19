@@ -16,19 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
 
-    <!--    <ProgressBar-->
-    <!--        android:id="@+id/pb"-->
-    <!--        style="?android:attr/progressBarStyleHorizontal"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_alignParentStart="true"-->
-    <!--        android:layout_alignParentLeft="true"-->
-    <!--        android:layout_alignParentTop="true"-->
-    <!--        android:max="100"-->
-    <!--        android:progress="0"-->
-    <!--        tools:layout_editor_absoluteX="0dp"-->
-    <!--        tools:layout_editor_absoluteY="128dp" />-->
-
     <ProgressBar
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
@@ -44,28 +31,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="69dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:srcCompat="@drawable/bar" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="31dp"-->
-<!--        android:layout_marginTop="69dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:srcCompat="@drawable/bar25" />-->
 
     <TextView
         android:id="@+id/textView_signup_title"
@@ -113,6 +78,18 @@
             tools:layout_editor_absoluteY="0dp">
 
             <ImageButton
+                android:id="@+id/imageButton_check_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="3dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/check_green"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <ImageButton
                 android:id="@+id/imageButton_uncheck_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -123,6 +100,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/check_grey"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
 
             <TextView
                 android:id="@+id/textView_signup_check_1"
@@ -148,6 +126,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_signup_check_1" />
+
+            <ImageButton
+                android:id="@+id/imageButton_check_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="26dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup_check_1_detail"
+                app:srcCompat="@drawable/check_green"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/imageButton_uncheck_2"
@@ -188,6 +178,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView_signup_check_2" />
 
             <ImageButton
+                android:id="@+id/imageButton_check_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="26dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup_check_2_detail"
+                app:srcCompat="@drawable/check_green"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <ImageButton
                 android:id="@+id/imageButton_uncheck_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -224,6 +226,19 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_signup_check_3" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton_check_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="26dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup_check_3_detail"
+                app:srcCompat="@drawable/check_green"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/imageButton_uncheck_4"
@@ -267,6 +282,19 @@
     </ScrollView>
 
     <ImageButton
+        android:id="@+id/imageButton_check_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="73dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/check_grey"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+
+    <ImageButton
         android:id="@+id/imageButton_uncheck_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -292,6 +320,28 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton_uncheck_all" />
 
     <TextView
+        android:id="@+id/textView_btn_next_1_green"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/tv_btn_signup_green"
+        android:text="회원 가입 계속하기"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:shadowColor="@color/white"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="2dp"/>
+
+    <TextView
         android:id="@+id/textView_btn_next_1"
         android:layout_width="match_parent"
         android:layout_height="51dp"
@@ -312,28 +362,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:elevation="2dp"/>
-
-<!--    <TextView-->
-<!--        android:id="@+id/textView_btn_next_2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="51dp"-->
-<!--        android:layout_marginStart="25dp"-->
-<!--        android:layout_marginEnd="25dp"-->
-<!--        android:layout_marginBottom="12dp"-->
-<!--        android:background="@drawable/tv_btn_signup_green"-->
-<!--        android:text="회원 가입 계속하기"-->
-<!--        android:gravity="center"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="16dp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:shadowColor="@color/white"-->
-<!--        android:shadowDx="1"-->
-<!--        android:shadowDy="1"-->
-<!--        android:shadowRadius="1"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        android:elevation="2dp"/>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
