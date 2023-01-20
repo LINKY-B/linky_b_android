@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.databinding.RecyclerHomeItemBinding
 
 
-class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
+class HomeRecyclerViewAdapter: RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {
 
     var datalist = mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity등에서 datalist에 실제 데이터 추가
 
@@ -15,9 +15,9 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
 
         fun bind(userData: UserData){
             //binding.dogPhotoImg.=dogData.dog_img
-            binding.tvItemUsername.text=userData.username
-            binding.tvItemLikecount.text= userData.likecount.toString()
-            binding.tvItemInformation.text=userData.information
+            binding.profileName.text=userData.username
+            binding.tvHomeLikenumber.text= userData.likecount.toString()
+            binding.tvHomeDepartment.text=userData.information
         }
     }
 
