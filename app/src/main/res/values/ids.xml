@@ -3,4 +3,7 @@
     <item name="no" type="id" />
     <item name="yes" type="id" />
     <item name="profile" type="id" />
+    <item name="btn_connection_accept" type="id" />
+    <item name="btn_connection_refuse" type="id" />
+    <item name="connection_profile_back" type="id" />
 </resources>
