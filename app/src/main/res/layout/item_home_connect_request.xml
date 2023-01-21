@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home_request"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/imageview_home_item_profileimg"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/profileimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/textview_home_item_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="배고픈 청설모"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageview_home_item_profileimg"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="7dp">
+
+    </TextView>
+
+
+    <ImageView
+        android:id="@+id/imageview_home_item_bean"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginLeft="147dp"
+        android:src="@drawable/bean"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"       />
+
+    <TextView
+        android:id="@+id/textview_home_item_count"
+        android:layout_width="14dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="19dp"
+        android:gravity="center"
+        android:text="12"
+        android:textColor="#9FC743"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_home_item_department"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:text="시각디자인학과"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+      />
+
+    <TextView
+        android:id="@+id/textview_home_item_center"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:text="/"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+
+    <TextView
+        android:id="@+id/textview_home_item_class_number"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:text="20학번"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerview_home_item"
+    android:layout_width="120dp"
+    android:layout_height="18dp"
+    tools:listitem="@layout/item_connect_interest"
+    android:orientation="horizontal"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="68dp"
+    android:layout_marginStart="56dp">
+
+</androidx.recyclerview.widget.RecyclerView>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/black_delete"
+        android:background="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="265dp">
+
+    </ImageButton>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/gcircle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </ImageButton>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:text="수락하기"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="70dp">
+
+    </TextView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/check"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="72dp"
+        android:layout_marginStart="270dp">
+
+    </ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

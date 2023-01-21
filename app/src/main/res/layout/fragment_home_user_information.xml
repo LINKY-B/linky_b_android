@@ -41,7 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/back"
-                    android:background=""
+                    android:background="@null"
                     tools:layout_editor_absoluteX="6dp"
                     tools:layout_editor_absoluteY="30dp"
                     app:layout_constraintTop_toTopOf="parent"
