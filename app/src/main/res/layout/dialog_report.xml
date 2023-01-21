@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="269dp"
     android:layout_height="384dp"
-    android:background="#ffffff">
+    android:background="@drawable/dialog_round">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -16,14 +16,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_alert_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="43dp"
         android:gravity="center"
-        android:text="배고픈청설모 님을\n신고하시겠습니까?"
-        android:textColor="#000000"
+        android:text="배고픈청설모 님을"
+        android:textColor="@color/black"
         android:textSize="14sp"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:text="신고하시겠습니까?"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,28 +46,30 @@
         android:layout_width="91dp"
         android:layout_height="21dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="102dp"
         android:background="@drawable/ic_rectangle_1466"
         android:gravity="center"
         android:text="상업적 광고/판매"
-        android:textColor="#878787"
+        android:textColor="@color/grey"
         android:textSize="10sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_alert_msg" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/report2"
         android:layout_width="91dp"
         android:layout_height="21dp"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="102dp"
         android:background="@drawable/ic_rectangle_1466"
         android:gravity="center"
         android:text="낚시/놀람/도배"
-        android:textColor="#878787"
+        android:textColor="@color/grey"
         android:textSize="10sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@+id/report1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_alert_msg" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/report3"
@@ -65,8 +80,9 @@
         android:background="@drawable/ic_rectangle_1467"
         android:gravity="center"
         android:text="욕설/비하"
-        android:textColor="#878787"
+        android:textColor="@color/grey"
         android:textSize="10sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/report1" />
 
@@ -79,8 +95,9 @@
         android:background="@drawable/ic_rectangle_1472"
         android:gravity="center"
         android:text="정당 또는 정치인 비하/선거운동"
-        android:textColor="#878787"
+        android:textColor="@color/grey"
         android:textSize="10sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@id/report3"
         app:layout_constraintTop_toBottomOf="@+id/report2" />
 
@@ -93,8 +110,9 @@
         android:background="@drawable/ic_rectangle_1466"
         android:gravity="center"
         android:text="유출/사칭/사기"
-        android:textColor="#878787"
+        android:textColor="@color/grey"
         android:textSize="10sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/report3" />
 
@@ -107,18 +125,18 @@
         android:background="@drawable/ic_rectangle_1466"
         android:gravity="center"
         android:text="음란물/불건전 대화"
-        android:textColor="#878787"
+        android:textColor="@color/grey"
         android:textSize="10sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@id/report5"
         app:layout_constraintTop_toBottomOf="@+id/report4" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/report_reason"
         android:layout_width="219dp"
         android:layout_height="110dp"
-        android:layout_marginTop="107dp"
+        android:layout_marginBottom="81dp"
         android:background="@drawable/ic_rectangle_1469"
-        android:ems="10"
         android:gravity="top"
         android:hint="신고 사유를 적어주세요.(200자 이내)"
         android:inputType="textMultiLine"
@@ -126,22 +144,27 @@
         android:paddingTop="7dp"
         android:paddingEnd="10dp"
         android:paddingBottom="7dp"
-        android:textColorHint="#878787"
+        android:textColorHint="@color/grey"
         android:textSize="10sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_alert_msg" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-    <ImageView
-        android:layout_width="219dp"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btn_report"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginHorizontal="25dp"
         android:layout_marginTop="19dp"
         android:background="@drawable/button_background"
-        android:paddingHorizontal="80dp"
-        android:paddingVertical="11dp"
-        android:src="@drawable/ic_report"
+        android:text="신고하기"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintTop_toBottomOf="@+id/report_reason" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

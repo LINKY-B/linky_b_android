@@ -29,6 +29,7 @@
         android:text="설정"
         android:textSize="16sp"
         android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -44,6 +45,7 @@
       android:layout_marginEnd="18dp"
       android:text="비활성화\n다른 사람의 피드에 내 정보가 보이지 않습니다."
       android:textSize="16dp"
+      android:fontFamily="@font/roboto_regular"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"/>
@@ -57,6 +59,7 @@
       android:layout_marginEnd="18dp"
       android:text="알림\n연결 시도, 수락, 채팅 등의 알림을 받을 수 있습니다."
       android:textSize="16dp"
+      android:fontFamily="@font/roboto_regular"
       app:layout_constraintTop_toBottomOf="@+id/set_up_switch1"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"/>
@@ -88,6 +91,7 @@
         android:text="차단관리"
         android:textColor="@color/black"
         android:textSize="16dp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -121,6 +125,7 @@
       android:text="이용 안내"
       android:textSize="16dp"
       android:textColor="@color/black"
+      android:fontFamily="@font/roboto_regular"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/report_management"/>
 
@@ -141,7 +146,8 @@
         android:layout_marginBottom="4dp"
         android:text="앱 버전"
         android:textColor="@color/black"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular" />
 
     <TextView
         android:id="@+id/btn_set_up_notice"
@@ -150,7 +156,8 @@
         android:layout_marginBottom="4dp"
         android:text="공지사항"
         android:textColor="@color/black"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular" />
 
     <TextView
         android:id="@+id/btn_set_up_service"
@@ -159,7 +166,8 @@
         android:layout_marginBottom="4dp"
         android:text="서비스 이용 약관"
         android:textColor="@color/black"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular" />
 
     <TextView
         android:id="@+id/btn_set_up_personal"
@@ -168,7 +176,8 @@
         android:layout_marginBottom="4dp"
         android:text="개인 정보 처리 방침"
         android:textColor="@color/black"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular" />
 
     <TextView
         android:id="@+id/btn_set_up_community"
@@ -176,7 +185,8 @@
         android:layout_height="wrap_content"
         android:text="커뮤니티 이용 규칙"
         android:textColor="@color/black"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular" />
 
   </LinearLayout>
 
@@ -199,6 +209,7 @@
       android:text="계정관리"
       android:textSize="16dp"
       android:textColor="@color/black"
+      android:fontFamily="@font/roboto_regular"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/set_up_list1"/>
 
@@ -218,7 +229,8 @@
         android:layout_marginBottom="4dp"
         android:text="비밀번호 변경"
         android:textColor="@color/black"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular" />
 
     <TextView
         android:id="@+id/btn_set_up_logout"
@@ -227,7 +239,8 @@
         android:layout_marginBottom="4dp"
         android:text="로그아웃"
         android:textColor="@color/black"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular" />
 
     <TextView
         android:id="@+id/btn_set_up_member_leave"
@@ -236,7 +249,8 @@
         android:layout_marginBottom="4dp"
         android:text="회원탈퇴"
         android:textColor="@color/black"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular" />
 
   </LinearLayout>
 

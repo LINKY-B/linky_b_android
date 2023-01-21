@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="269dp"
     android:layout_height="169dp"
-    android:background="#ffffff">
+    android:background="@drawable/dialog_round">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -16,28 +16,45 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_alert_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="43dp"
         android:gravity="center"
-        android:text="배고픈청설모 님의\n연결 요청을 거절하시겠습니까?"
-        android:textColor="#000000"
+        android:text="배고픈청설모 님의"
+        android:textColor="@color/black"
         android:textSize="14sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:layout_width="219dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/button_background"
-        android:paddingVertical="11dp"
-        android:paddingHorizontal="80dp"
-        android:src="@drawable/ic_refuse"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:text="연결 요청을 거절하시겠습니까?"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_alert_msg" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_refuse"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="111dp"
+        android:background="@drawable/button_background"
+        android:text="거절하기"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

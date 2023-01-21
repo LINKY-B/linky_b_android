@@ -23,16 +23,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/connection_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="17dp"
-            android:src="@drawable/search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -62,12 +52,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
+                <TextView
                     android:id="@+id/title_connect_from"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="17dp"
-                    android:src="@drawable/ic_connect_from"
+                    android:text="나에게 연결을 시도한 회원"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_regular"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -76,7 +69,7 @@
                     android:layout_width="68dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/bar25"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="17dp"
                     android:layout_marginTop="2dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/title_connect_from"/>
@@ -133,12 +126,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
+                <TextView
                     android:id="@+id/title_connect_to"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="17dp"
-                    android:src="@drawable/ic_connect_to"
+                    android:text="내가 연결을 시도한 회원"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_regular"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -146,7 +142,7 @@
                 <ImageView
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="17dp"
                     android:layout_marginTop="2dp"
                     android:src="@drawable/bar25"
                     app:layout_constraintStart_toStartOf="parent"
