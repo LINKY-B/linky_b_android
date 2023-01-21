@@ -4,14 +4,13 @@ package com.example.linkybproject.homes
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.databinding.RecyclerHomeItemBinding
-
+import com.example.linkybproject.databinding.ItemHomeRecyclerBinding
 
 class HomeRecyclerViewAdapter: RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {
 
     var datalist = mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity등에서 datalist에 실제 데이터 추가
 
-    inner class MyViewHolder(private val binding: RecyclerHomeItemBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class MyViewHolder(private val binding: ItemHomeRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(userData: UserData){
             //binding.dogPhotoImg.=dogData.dog_img
@@ -24,7 +23,7 @@ class HomeRecyclerViewAdapter: RecyclerView.Adapter<HomeRecyclerViewAdapter.MyVi
 
     //만들어진 뷰홀더 없을때 뷰홀더(레이아웃) 생성하는 함수
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding=RecyclerHomeItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding=ItemHomeRecyclerBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return MyViewHolder(binding)
     }
 
