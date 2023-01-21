@@ -24,29 +24,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <TextView
             android:id="@+id/title_connect_to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="37dp"
-            android:src="@drawable/ic_connect_to"
-            android:textColor="#000000"
+            android:text="내가 연결을 시도한 회원"
+            android:textColor="@color/black"
             android:textSize="16sp"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/btn_all_delete"
+            android:id="@+id/btn_connection_all_delete"
             android:layout_width="48dp"
             android:layout_height="16dp"
             android:layout_marginEnd="15dp"
-            android:background="#00FFFFFF"
-            android:elegantTextHeight="false"
-            android:gravity="center"
             android:text="모두 삭제"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="12sp"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

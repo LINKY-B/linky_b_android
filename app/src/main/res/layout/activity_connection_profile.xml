@@ -37,6 +37,7 @@
                 android:text="배고픈청설모"
                 android:textSize="16dp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -67,6 +68,7 @@
                 android:text="6명과 링크 중입니다."
                 android:textColor="@color/grey"
                 android:textSize="10dp"
+                android:fontFamily="@font/roboto_regular"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -108,6 +110,7 @@
         android:text="안녕하세요, 서로 정보 공유해요!\n3학년 재학 중이고 UXUI 디자인 분야 취준 중입니다."
         android:textColor="@color/black"
         android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -120,6 +123,7 @@
         android:text="회원정보"
         android:textColor="@color/grey"
         android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,7 +143,8 @@
             android:layout_marginBottom="7dp"
             android:text="학과"
             android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
 
         <TextView
             android:layout_width="match_parent"
@@ -147,7 +152,8 @@
             android:layout_marginBottom="7dp"
             android:text="학번"
             android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
 
         <TextView
             android:layout_width="match_parent"
@@ -155,7 +161,8 @@
             android:layout_marginBottom="7dp"
             android:text="나이"
             android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
 
         <TextView
             android:layout_width="match_parent"
@@ -163,7 +170,8 @@
             android:layout_marginBottom="7dp"
             android:text="성별"
             android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
 
         <TextView
             android:layout_width="match_parent"
@@ -171,7 +179,8 @@
             android:layout_marginBottom="7dp"
             android:text="MBTI"
             android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
     </LinearLayout>
 
     <LinearLayout
@@ -189,7 +198,8 @@
             android:layout_marginBottom="11dp"
             android:text="시각디자인학과"
             android:textColor="@color/black"
-            android:textSize="12dp" />
+            android:textSize="12dp"
+            android:fontFamily="@font/roboto_regular" />
 
         <TextView
             android:layout_width="match_parent"
@@ -197,7 +207,8 @@
             android:layout_marginBottom="11dp"
             android:text="19"
             android:textColor="@color/black"
-            android:textSize="12dp" />
+            android:textSize="12dp"
+            android:fontFamily="@font/roboto_regular" />
 
         <TextView
             android:layout_width="match_parent"
@@ -205,7 +216,8 @@
             android:layout_marginBottom="11dp"
             android:text="24"
             android:textColor="@color/black"
-            android:textSize="12dp" />
+            android:textSize="12dp"
+            android:fontFamily="@font/roboto_regular" />
 
         <TextView
             android:layout_width="match_parent"
@@ -213,7 +225,8 @@
             android:layout_marginBottom="12dp"
             android:text="여"
             android:textColor="@color/black"
-            android:textSize="12dp" />
+            android:textSize="12dp"
+            android:fontFamily="@font/roboto_regular" />
 
         <TextView
             android:layout_width="match_parent"
@@ -221,7 +234,8 @@
             android:layout_marginBottom="9dp"
             android:text="ENFP"
             android:textColor="@color/black"
-            android:textSize="12dp" />
+            android:textSize="12dp"
+            android:fontFamily="@font/roboto_regular" />
     </LinearLayout>
 
     <View
@@ -243,6 +257,7 @@
         android:text="성격"
         android:textColor="@color/grey"
         android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -278,6 +293,7 @@
         android:text="관심사"
         android:textColor="@color/grey"
         android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -294,7 +310,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_myprofile_interest" />
 
-    <ImageButton
+    <TextView
         android:id="@+id/btn_connection_refuse"
         android:layout_width="156dp"
         android:layout_height="50dp"
@@ -302,21 +318,28 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="13dp"
         android:background="@drawable/ic_btn_refuse"
-        android:src="@drawable/ic_refuse1"
+        android:text="거절하기"
+        android:textSize="16dp"
+        android:textColor="@color/grey"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_connection_accept"/>
 
-    <ImageButton
+    <TextView
         android:id="@+id/btn_connection_accept"
         android:layout_width="156dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="13dp"
-        android:background="@drawable/ic_btn_accept"
-        android:paddingHorizontal="32dp"
-        android:src="@drawable/ic_connection_accept"
+        android:background="@drawable/button_background"
+        android:text="연결 수락하기"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_connection_refuse"
         app:layout_constraintEnd_toEndOf="parent" />

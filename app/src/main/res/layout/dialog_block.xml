@@ -1,61 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="269dp"
+    android:layout_height="192dp"
+    android:background="@drawable/dialog_round">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
-        android:src="@drawable/logo"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+        android:padding="7dp"
+        android:src="@drawable/ic_union_black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="323dp"
-        android:text="마음 맞는 선후배 매칭 서비스"
+        android:layout_marginTop="43dp"
+        android:gravity="center"
+        android:text="배고픈청설모 님을 차단하시겠습니까?"
         android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textSize="14sp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/btn_sign_up"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/ic_rectangle_1448"
-        android:text="회원 가입하기"
-        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="*삭제한 회원은 설정의 차단 관리에서\n관리할 수 있습니다."
+        android:textSize="12dp"
         android:textColor="@color/grey"
-        android:fontFamily="@font/roboto_bold"
+        android:fontFamily="@font/roboto_regular"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/btn_login"
+    <Button
+        android:id="@+id/btn_block"
         android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="95dp"
+        android:layout_height="38dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="131dp"
         android:background="@drawable/button_background"
-        android:text="로그인하기"
+        android:text="차단하기"
         android:textSize="16dp"
         android:textColor="@color/white"
         android:fontFamily="@font/roboto_bold"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
