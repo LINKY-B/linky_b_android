@@ -13,13 +13,13 @@
         android:theme="@style/Theme.LinkyBProject"
         tools:targetApi="31">
         <activity
-            android:name=".MemberLeaveActivity"
+            android:name=".myprofile.MemberLeaveActivity"
             android:exported="false" />
         <activity
-            android:name=".ChangePasswordActivity"
+            android:name=".myprofile.ChangePasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ManageBlockingActivity"
+            android:name=".myprofile.ManageBlockingActivity"
             android:exported="false" />
         <activity
             android:name=".myprofile.SetUpActivity"

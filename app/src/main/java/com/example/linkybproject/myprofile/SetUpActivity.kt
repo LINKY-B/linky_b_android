@@ -1,5 +1,6 @@
 package com.example.linkybproject.myprofile
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
@@ -28,5 +29,10 @@ class SetUpActivity : AppCompatActivity() {
             setSpan(RelativeSizeSpan(0.6f), 3, 34, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
         viewBinding.setUpSwitch2.text = text2
+
+        viewBinding.reportManagement.setOnClickListener {
+            val intent = Intent(this, ManageBlockingActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
