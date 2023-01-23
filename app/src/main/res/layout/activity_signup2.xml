@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="4dp"
-                android:text="오류 메세지"
+                android:text="올바르지 않은 휴대폰 번호 형식입니다."
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -234,7 +234,7 @@
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/textView_signup2_name_error"
+                android:id="@+id/textView_signup2_name_error_kr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
@@ -244,6 +244,18 @@
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/editText_signup_name" />
+            <TextView
+                android:id="@+id/textView_signup2_name_error_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="4dp"
+                android:text="이름은 최대 7자까지 입력할 수 있습니다."
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_name" />
+
 
             <TextView
                 android:id="@+id/textView_signup2_nick_title"
@@ -255,7 +267,7 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_signup2_name_error" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_signup_name" />
 
             <EditText
                 android:id="@+id/editText_signup_nick"
@@ -272,6 +284,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_nick_title"
                 tools:ignore="TouchTargetSizeCheck" />
+            <TextView
+                android:id="@+id/textView_signup2_nick_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="4dp"
+                android:text="닉네임은 최대 15자까지 입력할 수 있습니다."
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_nick" />
 
             <TextView
                 android:id="@+id/textView_btn_nick_green"
@@ -409,7 +432,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="4dp"
-                android:text="오류 메세지"
+                android:text="비밀번호 형식이 올바르지 않습니다."
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -425,7 +448,7 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_signup2_pw_error" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_signup_pw" />
 
             <EditText
                 android:id="@+id/editText_signup_pw_check"
@@ -451,7 +474,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="4dp"
-                android:text="오류 메세지"
+                android:text="입력한 비밀번호와 일치하지 않습니다."
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
