@@ -1,11 +1,12 @@
 package com.example.linkybproject.homes
 
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.linkybproject.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayout
@@ -19,6 +20,7 @@ class HomeFragment:Fragment() {
 
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
+
 
     private val tabTextList = listOf<String>("재학생", "졸업생")
 
@@ -35,8 +37,19 @@ class HomeFragment:Fragment() {
         TabLayoutMediator(binding.tabLayout, binding.viewpager2Home) { tab, position ->
             tab.text = tabTextList[position]
         }.attach()
+
+        val btn :ImageButton = binding.ibtnHomeFilter
+        btn.setOnClickListener {
+            val intent = Intent(activity, FilterActivity::class.java)
+            startActivity(intent)
+        }
+
     }
-}
+
+    }
+
+
+
 
 //        initRecyclerView()
 //        initializelist()
