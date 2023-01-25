@@ -1,6 +1,7 @@
 package com.example.linkybproject.chat
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ChatRoomListResponse(
     @SerializedName("isSuccess") val isSuccess: Boolean,
@@ -18,4 +19,4 @@ data class ChatRoom (
     @SerializedName("userProfilePicture") val userProfilePicture: String,
     @SerializedName("lastConversationContents") val lastConversationContents: String,
     @SerializedName("lastConversationTime") val lastConversationTime: String
-)
+) : Serializable

@@ -1,9 +1,11 @@
 package com.example.linkybproject.chat
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.R
 
@@ -12,7 +14,13 @@ class ChatRoomListRAdapter(var chatRoomList: List<ChatRoom>): RecyclerView.Adapt
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_list, parent, false)
 
-        return MyViewHolder(view)
+        return MyViewHolder(view).apply {
+            itemView.setOnClickListener {
+                val intent = Intent(itemView?.context, ChatRoomActivity::class.java)
+                intent.putExtra("chatRoom", chatRoomList[adapterPosition])
+                startActivity(itemView.context, intent, null)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
