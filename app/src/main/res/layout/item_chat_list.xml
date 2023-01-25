@@ -9,7 +9,7 @@
         android:id="@+id/imageView_item_chat_profile"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:src="@drawable/pea"
+        android:src="@drawable/profile_sample"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
         app:layout_constraintStart_toEndOf="@id/textView_item_chat_major" />
 
     <TextView
-        android:id="@+id/textView_item_chat_content_preview"
+        android:id="@+id/textView_item_chat_last_conversation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
