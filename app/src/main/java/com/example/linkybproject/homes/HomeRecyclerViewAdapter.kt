@@ -1,6 +1,7 @@
 package com.example.linkybproject.homes
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -27,11 +28,12 @@ class HomeRecyclerViewAdapter: RecyclerView.Adapter<HomeRecyclerViewAdapter.MyVi
         return MyViewHolder(binding)
     }
 
-    override fun getItemCount(): Int =datalist.size
+    override fun getItemCount(): Int = datalist.size
 
     //recyclerview가 viewholder를 가져와 데이터 연결할때 호출
     //적절한 데이터를 가져와서 그 데이터를 사용하여 뷰홀더의 레이아웃 채움
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(datalist[position])
+//        holder.bind(            UserData("", "배고픈 청설모", 20, "정보시스템공학과", "", ""))
     }
 }

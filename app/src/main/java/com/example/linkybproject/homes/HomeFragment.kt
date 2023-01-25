@@ -2,7 +2,9 @@ package com.example.linkybproject.homes
 
 import android.content.Intent
 import android.content.IntentFilter
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.ImageButton
@@ -30,7 +32,6 @@ class HomeFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
-        return binding.root
 
         binding.viewpager2Home.adapter = FragmentAdapter(this)
 
@@ -38,16 +39,27 @@ class HomeFragment:Fragment() {
             tab.text = tabTextList[position]
         }.attach()
 
-        val btn :ImageButton = binding.ibtnHomeFilter
+        val btn: ImageButton = binding.ibtnHomeFilter
         btn.setOnClickListener {
             val intent = Intent(activity, FilterActivity::class.java)
             startActivity(intent)
         }
+        binding.scrollviewHome.run {
+            header = binding.tabLayout
+            stickListener = { _ ->
+                Log.d("LOGGER_TAG", "stickListener")
+            }
+            freeListener = { _ ->
+                Log.d("LOGGER_TAG", "freeListener")
+            }
 
+
+            return binding.root
+
+
+        }
     }
-
-    }
-
+}
 
 
 
