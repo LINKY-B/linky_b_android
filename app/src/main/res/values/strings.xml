@@ -93,4 +93,22 @@
         <item>31</item>
     </string-array>
 
+    <!--  소속 학교 드롭다운  -->
+    <string-array name="signup_univ">
+        <item>소속 학교를 선택해 주세요.</item>
+        <item>카톨릭대</item>
+        <item>동덕여대</item>
+        <item>상명대</item>
+        <item>서울여대</item>
+        <item>성신여대</item>
+        <item>숭실대</item>
+    </string-array>
+
+    <!--  졸업 여부 드롭다운  -->
+    <string-array name="signup_grad">
+        <item>졸업 여부를 선택해 주세요.</item>
+        <item>미졸업</item>
+        <item>졸업</item>
+    </string-array>
+
 </resources>

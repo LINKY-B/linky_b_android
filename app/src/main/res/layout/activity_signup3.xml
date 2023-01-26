@@ -74,23 +74,25 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/editText_signup_uni"
+            <Spinner
+                android:id="@+id/spinner_univ"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="25dp"
-                android:background="@drawable/tv_border"
                 android:gravity="center_vertical"
-                android:hint="소속 학교를 입력해 주세요."
-                android:inputType="number"
-                android:paddingLeft="11dp"
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup3_uni_title"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:background="@drawable/spinner_signup" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/spinner_dropdown"
+                app:layout_constraintBottom_toBottomOf="@+id/spinner_univ"
+                app:layout_constraintEnd_toEndOf="@id/spinner_univ"
+                app:layout_constraintTop_toTopOf="@+id/spinner_univ" />
 
             <TextView
                 android:id="@+id/textView_signup3_major_title"
@@ -102,20 +104,25 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editText_signup_uni" />
-
-            <Spinner
-                android:id="@+id/spinner_signup3"
+                app:layout_constraintTop_toBottomOf="@id/spinner_univ" />
+            <EditText
+                android:id="@+id/editText_signup3_major"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
-                android:layout_margin="10dp"
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="25dp"
-                android:spinnerMode="dropdown"
-                android:background="@drawable/spinner_background"
+                android:background="@drawable/tv_border"
+                android:gravity="center_vertical"
+                android:hint="소속 학과를 입력해 주세요."
+                android:inputType="textPersonName"
+                android:paddingLeft="11dp"
+                android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup3_major_title" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_major_title"
+                tools:ignore="TouchTargetSizeCheck" />
+
 
             <TextView
                 android:id="@+id/textView_signup3_num_title"
@@ -127,7 +134,7 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner_signup3" />
+                app:layout_constraintTop_toBottomOf="@id/editText_signup3_major" />
 
             <EditText
                 android:id="@+id/editText_signup_uni_num"
@@ -153,31 +160,34 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="32dp"
-                android:text="졸업 예정일/ 졸업일"
+                android:text="졸업 여부"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/editText_signup_uni_num" />
 
-            <EditText
-                android:id="@+id/editText_signup_grad"
+            <Spinner
+                android:id="@+id/spinner_grad"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="25dp"
-                android:background="@drawable/tv_border"
                 android:gravity="center_vertical"
-                android:hint="졸업 예정"
-                android:inputType="number"
-                android:paddingLeft="11dp"
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup3_grad_title"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:background="@drawable/spinner_signup" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/spinner_dropdown"
+                app:layout_constraintBottom_toBottomOf="@+id/spinner_grad"
+                app:layout_constraintEnd_toEndOf="@id/spinner_grad"
+                app:layout_constraintTop_toTopOf="@+id/spinner_grad" />
 
             <View
+                android:id="@+id/view_signup3"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginStart="17dp"
@@ -186,26 +196,238 @@
                 android:background="@color/grey_line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText_signup_grad" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner_grad" />
+
+            <TextView
+                android:id="@+id/textView_signup3_auth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="32dp"
+                android:text="학교 인증"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_signup3" />
+            <TextView
+                android:id="@+id/textView_signup3_auth_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="2dp"
+                android:text="졸업 여부를 선택해 주세요."
+                android:textColor="@color/red"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth" />
+
+            <TextView
+                android:id="@+id/textView_signup3_auth_stu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:text="재학생"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_signup3" />
+            <TextView
+                android:id="@+id/textView_signup3_auth_grad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:text="졸업생"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_signup3" />
+
+            <!-- 재학생 -->
+            <EditText
+                android:id="@+id/editText_signup3_email"
+                android:layout_width="202dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/tv_border"
+                android:gravity="center_vertical"
+                android:hint="학교 이메일을 입력해 주세요."
+                android:inputType="number"
+                android:paddingLeft="11dp"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth"
+                tools:ignore="TouchTargetSizeCheck" />
+            <TextView
+                android:id="@+id/textView_signup3_btn_get_auth_green"
+                android:layout_width="97dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/tv_btn_signup_green"
+                android:gravity="center"
+                android:text="인증번호 받기"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth" />
+            <TextView
+                android:id="@+id/textView_signup3_btn_get_auth_grey"
+                android:layout_width="97dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/tv_btn_signup_grey"
+                android:gravity="center"
+                android:text="인증번호 받기"
+                android:textColor="@color/grey"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth" />
+            <TextView
+                android:id="@+id/textView_signup3_auth_email_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="4dp"
+                android:text="올바르지 않은 이메일 형식입니다."
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editText_signup3_email" />
+
+            <EditText
+                android:id="@+id/editText_signup3_email_auth"
+                android:layout_width="202dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/tv_border"
+                android:gravity="center"
+                android:inputType="number"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            <TextView
+                android:id="@+id/textView_signup_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="1:00"
+                android:textColor="@color/grey"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_signup3_email_auth"
+                app:layout_constraintEnd_toEndOf="@+id/editText_signup3_email_auth"
+                app:layout_constraintTop_toTopOf="@+id/editText_signup3_email_auth" />
+            <TextView
+                android:id="@+id/textView_signup3_btn_check_auth_green"
+                android:layout_width="97dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/tv_btn_signup_green"
+                android:gravity="center"
+                android:text="인증번호 확인"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error" />
+            <TextView
+                android:id="@+id/textView_signup3_btn_check_auth_grey"
+                android:layout_width="97dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/tv_btn_signup_grey"
+                android:gravity="center"
+                android:text="인증번호 확인"
+                android:textColor="@color/grey"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error" />
+            <TextView
+                android:id="@+id/textView_signup3_auth_check_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="4dp"
+                android:text="오류 메시지"
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editText_signup3_email_auth" />
+
+            <!-- 졸업생 -->
+            <TextView
+                android:id="@+id/textView_signup3_auth_grad_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="5dp"
+                android:text="합격 통지서, 재학 중인 학교의 학생증 등의 사진을 캡처 후,\n업로드 해주세요. 도용 또는 위조로 의심 시 가입이 반려됩니다."
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth" />
+
+<!--            <ImageButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/univplus"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <TextView
-        android:id="@+id/textView_btn_next_4"
+        android:id="@+id/textView_btn_next_4_green"
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/tv_btn_signup_green"
-        android:text="다음"
+        android:text="학교 정보 입력 완료"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:textStyle="bold"
         android:shadowColor="@color/white"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="2dp"/>
+
+    <TextView
+        android:id="@+id/textView_btn_next_4_grey"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/tv_btn_signup_grey"
+        android:text="학교 정보 입력 완료"
+        android:gravity="center"
+        android:textColor="@color/grey"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:shadowColor="@color/grey"
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="1"
