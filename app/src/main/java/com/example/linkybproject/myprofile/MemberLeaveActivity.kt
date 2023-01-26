@@ -13,6 +13,10 @@ class MemberLeaveActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
 
+        viewBinding.btnBackToSetUp.setOnClickListener {
+            finish()
+        }
+
         viewBinding.btnMemverLeave.setOnClickListener {
             val dlg = MemberLeaveDialog(this)
             dlg.Mydlg()

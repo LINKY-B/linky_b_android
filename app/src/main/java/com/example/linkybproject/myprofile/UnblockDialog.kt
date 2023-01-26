@@ -17,6 +17,10 @@ class UnblockDialog(private val context: AppCompatActivity) {
         dlg.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
         dlg.setCancelable(false)
 
+        binding.btnClose.setOnClickListener {
+            dlg.dismiss()
+        }
+
         dlg.show()
     }
 

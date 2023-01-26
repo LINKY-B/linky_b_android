@@ -27,8 +27,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="63dp"
-            android:layout_height="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:src="@drawable/ic_manage_blocking"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -37,9 +37,10 @@
 
         <ImageButton
             android:id="@+id/btn_all_acceptance"
-            android:layout_width="48dp"
-            android:layout_height="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
+            android:paddingVertical="10dp"
             android:src="@drawable/ic_unblocking"
             android:background="@null"
             app:layout_constraintBottom_toBottomOf="parent"

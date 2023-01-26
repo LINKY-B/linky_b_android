@@ -1,17 +1,17 @@
-package com.example.linkybproject
+package com.example.linkybproject.myprofile
 
 import android.app.Dialog
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.example.linkybproject.databinding.DialogReportBinding
+import com.example.linkybproject.databinding.DialogLogoutBinding
 
-class ReportDialog(private val context: AppCompatActivity) {
-    private lateinit var binding: DialogReportBinding
+class LogoutDialog(private val context: AppCompatActivity) {
+    private lateinit var binding: DialogLogoutBinding
     private val dlg = Dialog(context)
 
     fun Mydlg() {
-        binding = DialogReportBinding.inflate(context.layoutInflater)
+        binding = DialogLogoutBinding.inflate(context.layoutInflater)
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dlg.setContentView(binding.root)
         dlg.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
@@ -21,6 +21,13 @@ class ReportDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
+/*
+        binding.btnLogout.setOnClickListener{
+            val intent = Intent(this, PrevLoginActivity::class.java)
+        }
+*/
+
         dlg.show()
     }
+
 }

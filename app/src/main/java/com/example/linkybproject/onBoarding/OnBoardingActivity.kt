@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.example.linkybproject.MainActivity
+import com.example.linkybproject.connect.ConnectionProfileActivity
 import com.example.linkybproject.databinding.ActivityOnBoardingBinding
+import com.example.linkybproject.myprofile.SetUpActivity
 
 class OnBoardingActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityOnBoardingBinding

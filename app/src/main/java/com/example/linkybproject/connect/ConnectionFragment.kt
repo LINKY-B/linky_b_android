@@ -20,7 +20,7 @@ class ConnectionFragment : Fragment() {
 
         val btnFullConnectFrom: ImageButton = binding.btnFullConnectFrom
         btnFullConnectFrom.setOnClickListener {
-            val intent = Intent(activity, ConnectFromMeFragment::class.java)
+            val intent = Intent(context, ConnectFromMeFragment::class.java)
             startActivity(intent)
         }
 
@@ -36,13 +36,16 @@ class ConnectionFragment : Fragment() {
         }
 */
 
-
+/*
         val btnFullConnectTo: ImageButton = binding.btnFullConnectTo
         btnFullConnectTo.setOnClickListener {
             val intent = Intent(activity, ConnectToMeFragment::class.java)
             startActivity(intent)
         }
+*/
 
         return binding.root
+
     }
+
 }
