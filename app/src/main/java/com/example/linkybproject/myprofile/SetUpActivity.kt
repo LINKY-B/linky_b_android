@@ -13,11 +13,17 @@ import com.example.linkybproject.databinding.ActivitySetUpBinding
 
 class SetUpActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivitySetUpBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = ActivitySetUpBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
+        viewBinding.btnBack.setOnClickListener {
+            finish()
+        }
+
+/*
         val text1 = SpannableStringBuilder("비활성화\n다른 사람의 피드에 내 정보가 보이지 않습니다.")
         text1.apply {
             setSpan(RelativeSizeSpan(0.6f),5, 31, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
@@ -29,10 +35,28 @@ class SetUpActivity : AppCompatActivity() {
             setSpan(RelativeSizeSpan(0.6f), 3, 34, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
         viewBinding.setUpSwitch2.text = text2
+*/
 
         viewBinding.reportManagement.setOnClickListener {
             val intent = Intent(this, ManageBlockingActivity::class.java)
             startActivity(intent)
         }
+
+        viewBinding.btnSetUpPasswordChange.setOnClickListener {
+            val intent = Intent(this, ChangePasswordActivity::class.java)
+            startActivity(intent)
+        }
+
+        viewBinding.btnSetUpLogout.setOnClickListener {
+            val dlg = LogoutDialog(this)
+            dlg.Mydlg()
+        }
+
+        viewBinding.btnSetUpMemberLeave.setOnClickListener {
+            val intent = Intent(this, MemberLeaveActivity::class.java)
+            startActivity(intent)
+        }
+
     }
+
 }

@@ -1,5 +1,6 @@
 package com.example.linkybproject.connect
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.linkybproject.AcceptDialog
@@ -13,6 +14,10 @@ class ConnectionProfileActivity : AppCompatActivity() {
         viewBinding = ActivityConnectionProfileBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
+
+        viewBinding.btnConnectionProfileBack.setOnClickListener {
+            finish()
+        }
 
         viewBinding.btnReportDelete.setOnClickListener {
             val dlg = ReportBlockDialog(this)

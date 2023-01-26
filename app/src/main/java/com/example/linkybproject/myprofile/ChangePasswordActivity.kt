@@ -13,9 +13,15 @@ class ChangePasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
 
-        viewBinding.btnChangePassword.setOnClickListener {
-            val intent = Intent(this, MemberLeaveActivity::class.java)
-            startActivity(intent)
+        viewBinding.btnBackToConnection.setOnClickListener {
+            finish()
         }
+
+        viewBinding.btnChangePassword.setOnClickListener {
+            val dlg = ChangePasswordDialog(this)
+            dlg.Mydlg()
+        }
+
     }
+
 }

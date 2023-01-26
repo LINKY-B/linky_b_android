@@ -22,20 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="43dp"
         android:gravity="center"
-        android:text="배고픈청설모 님을"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:fontFamily="@font/roboto_regular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:gravity="center"
-        android:text="차단 해제하시겠습니까?"
+        android:text="로그아웃 하시겠습니까?"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:fontFamily="@font/roboto_regular"
@@ -44,13 +31,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_accept"
+        android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="111dp"
+        android:layout_marginTop="84dp"
         android:background="@drawable/button_background"
-        android:text="차단 해제하기"
+        android:text="로그아웃"
         android:textSize="16dp"
         android:textColor="@color/white"
         android:fontFamily="@font/roboto_bold"
