@@ -1,8 +1,11 @@
 package com.example.linkybproject.homes
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -15,6 +18,15 @@ class FilterActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityFilterBinding.inflate(layoutInflater)
+
+
+
+//        //필터 넘어가는 버튼
+//        val btn: Button = binding.btnFliterApplication
+//        btn.setOnClickListener {
+//            val intent = Intent(this,HomeFragment::class.java)
+//            startActivity(intent)
+//        }
 
         setContentView(binding.root)
         setupSpinnerDepartment()

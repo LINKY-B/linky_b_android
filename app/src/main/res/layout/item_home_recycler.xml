@@ -43,8 +43,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:layout_marginStart="173dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="4dp"
         android:src="@drawable/bean"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,8 +53,8 @@
         android:id="@+id/tv_home_likenumber"
         android:layout_width="14dp"
         android:layout_height="16dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="12"
         android:textColor="#9FC743"
@@ -66,17 +66,17 @@
         android:id="@+id/tv_home_department"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
-        android:layout_marginStart="210dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="시각디자인학과/20학번"
         android:textColor="#878787"
-        android:textSize="8dp"
+        android:textSize="9dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/ib_item_contactimg"
+        android:id="@+id/ib_item_connect"
         android:layout_width="53dp"
         android:layout_height="53dp"
         android:layout_gravity="center"

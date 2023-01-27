@@ -10,7 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/home_request"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
     </ImageView>
 
@@ -46,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginTop="19dp"
-        android:layout_marginLeft="147dp"
+        android:layout_marginLeft="150dp"
         android:src="@drawable/bean"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"       />
@@ -55,12 +57,12 @@
         android:id="@+id/textview_home_item_count"
         android:layout_width="14dp"
         android:layout_height="16dp"
-        android:layout_marginStart="167dp"
+        android:layout_marginStart="170dp"
         android:layout_marginTop="19dp"
         android:gravity="center"
         android:text="12"
         android:textColor="#9FC743"
-        android:textSize="12sp"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,7 +75,7 @@
         android:gravity="center"
         android:text="시각디자인학과"
         android:textColor="@color/black"
-        android:textSize="10dp"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
       />
@@ -82,12 +84,12 @@
         android:id="@+id/textview_home_item_center"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
-        android:layout_marginStart="124dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="45dp"
         android:gravity="center"
         android:text="/"
         android:textColor="@color/black"
-        android:textSize="10dp"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
@@ -98,12 +100,12 @@
         android:id="@+id/textview_home_item_class_number"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
-        android:layout_marginStart="131dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="45dp"
         android:gravity="center"
         android:text="20학번"
         android:textColor="@color/black"
-        android:textSize="10dp"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
@@ -145,13 +147,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
+        android:textSize="12dp"
         android:text="수락하기"
         android:textStyle="bold"
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="230dp"
+        android:layout_marginStart="220dp"
         android:layout_marginTop="70dp">
 
     </TextView>
@@ -161,8 +163,8 @@
         android:src="@drawable/check"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="72dp"
-        android:layout_marginStart="270dp">
+        android:layout_marginTop="74dp"
+        android:layout_marginStart="267dp">
 
     </ImageView>
 

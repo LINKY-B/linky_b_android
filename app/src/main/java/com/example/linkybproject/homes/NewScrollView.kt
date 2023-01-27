@@ -57,7 +57,7 @@ class NewScrollView : ScrollView, ViewTreeObserver.OnGlobalLayoutListener {
         callStickListener()
     }
 
-    private fun callStickListener() { 
+    private fun callStickListener() {
         if (!mIsHeaderSticky) {
             stickListener(header ?: return)
             mIsHeaderSticky = true
