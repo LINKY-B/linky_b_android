@@ -37,13 +37,13 @@
             android:layout_height="wrap_content"
             android:text="필터"
             android:textColor="@color/black"
-            android:textSize="20dp"></TextView>
+            android:textSize="16dp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="*원하지 않는 조건의 사용자를 제외한 결과를 확인할 수 있습니다."
-            android:textSize="13dp" />
+            android:textSize="10dp" />
 
     </LinearLayout>
 
@@ -64,12 +64,12 @@
             android:layout_height="wrap_content"
             android:text="학과"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
         <Spinner
             android:id="@+id/department_spinner"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_width="250dp"
+            android:layout_height="36dp"
             android:layout_margin="4dp"
             android:background="@drawable/spinner_background"></Spinner>
 
@@ -78,31 +78,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginStart="4dp"
-                android:background="@drawable/filter_delete"
-                android:padding="7dp"
-                android:paddingEnd="30dp"
-                android:text="정보시스템공학과"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.8"></TextView>
+                tools:listitem="@layout/item_filter_department_exception"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+            </androidx.recyclerview.widget.RecyclerView>
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="4dp"
-                android:background="@color/white"
-                android:src="@drawable/delete"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintTop_toTopOf="@+id/textView"></ImageButton>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
@@ -121,12 +105,13 @@
             android:layout_height="wrap_content"
             android:text="학번"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
+            android:textSize="12dp"
             android:text="검색 조건에 포함할 학번의 범위를 선택해주세요"></TextView>
     </LinearLayout>
 
@@ -143,12 +128,13 @@
             android:layout_height="wrap_content"
             android:text="성별"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
+            android:textSize="12dp"
             android:text="검색 조건에 포함할 성별을 정해주세요"></TextView>
 
         <LinearLayout
@@ -202,12 +188,12 @@
             android:layout_height="wrap_content"
             android:text="MBTI"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
         <Spinner
             android:id="@+id/mbti_spinner"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_width="250dp"
+            android:layout_height="36dp"
             android:layout_margin="4dp"
             android:background="@drawable/spinner_background"></Spinner>
 
@@ -216,38 +202,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_filter_mbti"
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginStart="4dp"
-                android:background="@drawable/filter_delete"
-                android:padding="7dp"
-                android:paddingEnd="35dp"
-                android:text="ESTP"
-                android:textColor="@color/green"
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_filter_mbti"
+                android:orientation="horizontal"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.8"></TextView>
-
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginEnd="4dp"
-                android:background="@color/white"
-                android:src="@drawable/delete"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></ImageButton>
+                app:layout_constraintStart_toStartOf="parent">
+            </androidx.recyclerview.widget.RecyclerView>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_fliter_application"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="20dp"
@@ -255,6 +226,7 @@
         android:layout_weight="0.5"
         android:backgroundTint="@color/green"
         android:text="적용하기"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">

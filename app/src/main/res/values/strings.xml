@@ -10,7 +10,6 @@
 
     <string-array name="department_list_item">
         <item>제외할 학과를 선택해주세요</item>
-
         <item>컴퓨터공학과</item>
         <item>시각디자인학과</item>
         <item>정보시스템공학과</item>
@@ -21,7 +20,6 @@
 
     <string-array name="mbti_list_item">
         <item>제외할 MBTI를 선택해주세요</item>
-
         <item>ENFP</item>
         <item>ESFP</item>
         <item>ESTP</item>
