@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.linkybproject.databinding.FragmentConnectToMeBinding
 
 class ConnectToMeFragment : Fragment() {
@@ -16,21 +17,36 @@ class ConnectToMeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentConnectToMeBinding.inflate(layoutInflater)
 
+/*
         val back_btn: ImageButton = binding.btnBackToConnection
         back_btn.setOnClickListener {
             val intent = Intent(activity, ConnectionFragment::class.java)
             startActivity(intent)
         }
+*/
 
-        val datalist = mutableListOf<ConnectUserData>()
+        adapter.datalist = mutableListOf(
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+        )
+
         binding.recyclerConnectTo.adapter = adapter
-        datalist.apply {
-            add(ConnectUserData("", "배고픈 청설모", 20, "정보시스템공학과"))
-            add(ConnectUserData("", "배고픈 청설모", 20, "정보시스템공학과"))
-            add(ConnectUserData("", "배고픈 청설모", 20, "정보시스템공학과"))
-            add(ConnectUserData("", "배고픈 청설모", 20, "정보시스템공학과"))
-            add(ConnectUserData("", "배고픈 청설모", 20, "정보시스템공학과"))
-        }
+        binding.recyclerConnectTo.layoutManager = LinearLayoutManager(context);
 
         return binding.root
     }

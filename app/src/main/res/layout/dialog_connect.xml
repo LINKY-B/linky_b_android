@@ -32,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
+        android:layout_marginHorizontal="58dp"
         android:gravity="center"
         android:text="연결을 시도하시겠습니까?"
         android:textColor="@color/black"
@@ -41,13 +42,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_accept"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="111dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginBottom="22dp"
         android:background="@drawable/button_background"
+        android:paddingHorizontal="79dp"
         android:text="연결하기"
         android:textSize="16dp"
         android:textColor="@color/white"
@@ -55,6 +58,7 @@
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

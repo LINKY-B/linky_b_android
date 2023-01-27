@@ -29,7 +29,7 @@ class ConnectToRecyclerViewAdapter: RecyclerView.Adapter<ConnectToRecyclerViewAd
 
     //recyclerview가 viewholder를 가져와 데이터 연결할때 호출
     //적절한 데이터를 가져와서 그 데이터를 사용하여 뷰홀더의 레이아웃 채움
-    override fun onBindViewHolder(holder: ConnectToRecyclerViewAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(datalist[position])
     }
 
