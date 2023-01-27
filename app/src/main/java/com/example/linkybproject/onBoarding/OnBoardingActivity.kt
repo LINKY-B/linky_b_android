@@ -17,7 +17,7 @@ class OnBoardingActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
 
         Handler().postDelayed({
-            val intent = Intent(this, SetUpActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         },3000)
