@@ -85,7 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_memver_leave"
         android:layout_width="match_parent"
         android:layout_height="50dp"

@@ -19,7 +19,7 @@ class ManageBlockingActivity : AppCompatActivity() {
             finish()
         }
 
-        viewBinding.btnAllAcceptance.setOnClickListener {
+        viewBinding.btnAllUnblocking.setOnClickListener {
             val dlg = UnblockDialog(this)
             dlg.Mydlg()
         }
