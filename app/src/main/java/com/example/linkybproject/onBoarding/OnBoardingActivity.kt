@@ -7,6 +7,7 @@ import android.os.Handler
 import com.example.linkybproject.MainActivity
 import com.example.linkybproject.connect.ConnectionProfileActivity
 import com.example.linkybproject.databinding.ActivityOnBoardingBinding
+import com.example.linkybproject.myprofile.ManageBlockingActivity
 import com.example.linkybproject.myprofile.SetUpActivity
 
 class OnBoardingActivity : AppCompatActivity() {

@@ -1,33 +1,24 @@
 package com.example.linkybproject.connect
 
-import android.content.Intent
-import android.media.Image
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.linkybproject.databinding.FragmentConnectFromMeBinding
-import com.example.linkybproject.homes.HomeRecyclerViewAdapter
-import com.example.linkybproject.homes.UserData
+import com.example.linkybproject.databinding.ActivityConnectToMeBinding
 
-class ConnectFromMeFragment : Fragment() {
-    private lateinit var binding: FragmentConnectFromMeBinding
-    private lateinit var adapter: ConnectFromRecyclerViewAdapter
+class ConnectToMeActivity : AppCompatActivity() {
+    private lateinit var viewBinding: ActivityConnectToMeBinding
+    private lateinit var adapter: ConnectToRecyclerViewAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentConnectFromMeBinding.inflate(inflater,container,false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        viewBinding = ActivityConnectToMeBinding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
+        setContentView(viewBinding.root)
+
+        viewBinding.btnBackToConnection.setOnClickListener {
+            finish()
+        }
 
 /*
-        val back_btn: ImageButton = binding.btnBackToConnection
-        back_btn.setOnClickListener {
-            val intent = Intent(activity, ConnectionFragment::class.java)
-            startActivity(intent)
-        }
-*/
-
         adapter.datalist = mutableListOf(
             ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
             ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
@@ -46,11 +37,13 @@ class ConnectFromMeFragment : Fragment() {
             ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
             ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
             ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            )
+        )
 
-        binding.recyclerConnectFrom.adapter = adapter
-        binding.recyclerConnectFrom.layoutManager = LinearLayoutManager(context);
+        viewBinding.recyclerConnectTo.adapter = adapter
+*/
+/*
+        viewBinding.recyclerConnectTo.layoutManager = LinearLayoutManager(context);
+*/
 
-        return binding.root
     }
 }

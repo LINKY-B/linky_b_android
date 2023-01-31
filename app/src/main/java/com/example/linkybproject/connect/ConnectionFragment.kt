@@ -6,11 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.linkybproject.MainActivity
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.FragmentConnectionBinding
-import com.example.linkybproject.homes.UserData
 
 class ConnectionFragment : Fragment() {
     private lateinit var binding: FragmentConnectionBinding
@@ -20,16 +18,17 @@ class ConnectionFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentConnectionBinding.inflate(inflater, container, false)
 
-/*
-        val btnFullConnectFrom: ImageButton = binding.btnFullConnectFrom
-        btnFullConnectFrom.setOnClickListener {
-            val intent = Intent(context, ConnectFromMeFragment::class.java)
+        binding.btnFullConnectFrom.setOnClickListener {
+            val intent = Intent(activity, ConnectFromMeActivity::class.java)
             startActivity(intent)
         }
-*/
+
+        binding.btnFullConnectTo.setOnClickListener {
+            val intent = Intent(context, ConnectToMeActivity::class.java)
+            startActivity(intent)
+        }
 
         return binding.root
-
     }
 
 }

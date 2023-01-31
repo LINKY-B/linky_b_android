@@ -1,31 +1,25 @@
 package com.example.linkybproject.connect
 
-import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.linkybproject.databinding.FragmentConnectToMeBinding
+import com.example.linkybproject.databinding.ActivityConnectFromMeBinding
 
-class ConnectToMeFragment : Fragment() {
-    private lateinit var binding: FragmentConnectToMeBinding
-    private lateinit var adapter: ConnectToRecyclerViewAdapter
+class ConnectFromMeActivity : AppCompatActivity() {
+    private lateinit var viewBinding: ActivityConnectFromMeBinding
+    private lateinit var adapter: ConnectFromRecyclerViewAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentConnectToMeBinding.inflate(layoutInflater)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        viewBinding = ActivityConnectFromMeBinding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
+        setContentView(viewBinding.root)
+
+        viewBinding.btnBackToConnection.setOnClickListener {
+            finish()
+        }
 
 /*
-        val back_btn: ImageButton = binding.btnBackToConnection
-        back_btn.setOnClickListener {
-            val intent = Intent(activity, ConnectionFragment::class.java)
-            startActivity(intent)
-        }
-*/
-
-        adapter.datalist = mutableListOf(
+        adapter.datas = mutableListOf(
             ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
             ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
             ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
@@ -45,9 +39,11 @@ class ConnectToMeFragment : Fragment() {
             ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
         )
 
-        binding.recyclerConnectTo.adapter = adapter
-        binding.recyclerConnectTo.layoutManager = LinearLayoutManager(context);
+        viewBinding.recyclerConnectFrom.adapter = adapter
+*/
+/*
+        viewBinding.recyclerConnectFrom.layoutManager = LinearLayoutManager(context)
+*/
 
-        return binding.root
     }
 }
