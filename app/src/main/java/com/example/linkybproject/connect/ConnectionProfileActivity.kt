@@ -1,6 +1,5 @@
 package com.example.linkybproject.connect
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.linkybproject.AcceptDialog
@@ -25,13 +24,13 @@ class ConnectionProfileActivity : AppCompatActivity() {
         }
 
         viewBinding.btnConnectionRefuse.setOnClickListener {
-            val refusedlg = RefuseDialog(this)
-            refusedlg.Mydlg()
+            val dlg = RefuseDialog(this)
+            dlg.Mydlg()
         }
 
         viewBinding.btnConnectionAccept.setOnClickListener {
-            val accpetdlg = AcceptDialog(this)
-            accpetdlg.Mydlg()
+            val dlg = AcceptDialog(this)
+            dlg.Mydlg()
         }
     }
 }
