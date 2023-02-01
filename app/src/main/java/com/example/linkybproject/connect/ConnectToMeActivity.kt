@@ -7,7 +7,6 @@ import com.example.linkybproject.databinding.ActivityConnectToMeBinding
 
 class ConnectToMeActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityConnectToMeBinding
-    private lateinit var adapter: ConnectToRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         viewBinding = ActivityConnectToMeBinding.inflate(layoutInflater)
@@ -18,7 +17,8 @@ class ConnectToMeActivity : AppCompatActivity() {
             finish()
         }
 
-/*
+        val adapter = ConnectToRecyclerViewAdapter()
+
         adapter.datalist = mutableListOf(
             ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
             ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
@@ -40,10 +40,7 @@ class ConnectToMeActivity : AppCompatActivity() {
         )
 
         viewBinding.recyclerConnectTo.adapter = adapter
-*/
-/*
-        viewBinding.recyclerConnectTo.layoutManager = LinearLayoutManager(context);
-*/
+        viewBinding.recyclerConnectTo.layoutManager = LinearLayoutManager(this);
 
     }
 }
