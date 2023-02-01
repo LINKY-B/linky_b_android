@@ -7,17 +7,17 @@ import com.example.linkybproject.databinding.ItemBlockingBinding
 import com.example.linkybproject.homes.UserData
 
 class ManageBlockingAdapter: RecyclerView.Adapter<ManageBlockingAdapter.ViewHolder>() {
-    var datas = mutableListOf<UserData>()
+    var datalist = mutableListOf<UserData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemBlockingBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = datas.size
+    override fun getItemCount(): Int = datalist.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(datas[position])
+        holder.bind(datalist[position])
     }
 
     inner class ViewHolder(private val binding: ItemBlockingBinding): RecyclerView.ViewHolder(binding.root) {
