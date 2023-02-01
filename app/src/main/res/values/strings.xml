@@ -94,7 +94,7 @@
     <!--  소속 학교 드롭다운  -->
     <string-array name="signup_univ">
         <item>소속 학교를 선택해 주세요.</item>
-        <item>카톨릭대</item>
+        <item>가톨릭대</item>
         <item>동덕여대</item>
         <item>상명대</item>
         <item>서울여대</item>
