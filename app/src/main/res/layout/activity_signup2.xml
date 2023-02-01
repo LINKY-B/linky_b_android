@@ -78,6 +78,7 @@
                 android:inputType="number"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_phone_title"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -104,6 +105,7 @@
                 android:gravity="center"
                 android:inputType="number"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_error_1"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -229,6 +231,7 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_name_title"
@@ -282,6 +285,7 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_nick_title"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -422,6 +426,7 @@
                 android:inputType="textPassword"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_pw_title"
@@ -464,6 +469,7 @@
                 android:inputType="textPassword"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_pw_check_title"
