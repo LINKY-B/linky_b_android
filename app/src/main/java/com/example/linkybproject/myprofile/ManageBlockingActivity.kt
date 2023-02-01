@@ -8,7 +8,6 @@ import com.example.linkybproject.homes.UserData
 
 class ManageBlockingActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityManageBlockingBinding
-    lateinit var adapter: ManageBlockingAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         viewBinding = ActivityManageBlockingBinding.inflate(layoutInflater)
@@ -24,8 +23,8 @@ class ManageBlockingActivity : AppCompatActivity() {
             dlg.Mydlg()
         }
 
-        adapter = ManageBlockingAdapter()
-        adapter.datas = mutableListOf(
+        val adapter = ManageBlockingAdapter()
+        adapter.datalist = mutableListOf(
             UserData("", "배고픈 청설모1", 29, "정보시스템공학과/20학번", "", ""),
             UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
             UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
@@ -45,7 +44,7 @@ class ManageBlockingActivity : AppCompatActivity() {
             UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
             )
         viewBinding.listBlocking.adapter = adapter
-        adapter.notifyDataSetChanged()
+        viewBinding.listBlocking.layoutManager = LinearLayoutManager(this)
 
     }
 
