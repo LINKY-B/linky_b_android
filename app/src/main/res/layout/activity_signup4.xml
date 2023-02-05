@@ -8,7 +8,7 @@
     tools:context=".auth.SignupActivity4">
 
     <ImageView
-        android:id="@+id/imageView_back_3"
+        android:id="@+id/imageView_signup4_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -32,25 +32,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_signup4_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="92dp"
-        android:text="프로필 정보"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="137dp"
-        android:layout_marginBottom="106dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="74dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -65,10 +52,24 @@
             tools:layout_editor_absoluteY="0dp">
 
             <TextView
+                android:id="@+id/textView_signup4_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="23dp"
+                android:text="프로필 정보"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/textView_signup4_profile_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="68dp"
                 android:text="프로필"
                 android:textColor="@color/black"
                 android:textSize="16dp"
@@ -284,12 +285,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="25dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/spinner_signup"
                 android:gravity="center_vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup4_mbti_title"
-                android:background="@drawable/spinner_signup" />
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -311,16 +313,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup4_mbti_title" />
 
-            <ImageButton
-                android:id="@+id/imageButton_signup_personal"
+            <ImageView
+                android:id="@+id/imageView_signup4_plus_personal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="8dp"
-                android:background="@android:color/transparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup4_personal_title"
-                app:srcCompat="@drawable/signupplus"
+                app:srcCompat="@drawable/plus2"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -340,9 +341,9 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginStart="17dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="52dp"
-                android:layout_marginEnd="17dp"
+                android:layout_marginEnd="25dp"
                 android:background="@color/grey_line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -360,16 +361,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup4_personal_title" />
 
-            <ImageButton
-                android:id="@+id/imageButton_signup_interest"
+            <ImageView
+                android:id="@+id/imageView_signup4_plus_interest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="8dp"
-                android:background="@android:color/transparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup4_interest_title"
-                app:srcCompat="@drawable/signupplus"
+                app:srcCompat="@drawable/plus"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <androidx.recyclerview.widget.RecyclerView
