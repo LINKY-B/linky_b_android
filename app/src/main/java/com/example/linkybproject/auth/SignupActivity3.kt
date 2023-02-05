@@ -28,6 +28,11 @@ class SignupActivity3 : AppCompatActivity() {
         binding = ActivitySignup3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // back 버튼
+        binding.imageViewSignup3Back.setOnClickListener {
+            finish()
+        }
+
         // 버튼 비활성화 및 뷰 안 보이게 설정
         binding.textViewBtnNext4Grey.isEnabled = false
         // 재학생
