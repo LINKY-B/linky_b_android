@@ -39,7 +39,7 @@
 
     <!-- 선택지 -->
     <TextView
-        android:id="@+id/personal_item_1_green"
+        android:id="@+id/personal_1_green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -53,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog" />
     <TextView
-        android:id="@+id/personal_item_1_grey"
+        android:id="@+id/personal_1_grey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog" />
 
     <TextView
-        android:id="@+id/personal_item_2_green"
+        android:id="@+id/personal_2_green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
@@ -79,10 +79,10 @@
         android:text="대범한"
         android:textColor="@color/green"
         android:textSize="12dp"
-        app:layout_constraintStart_toEndOf="@+id/personal_item_1_grey"
+        app:layout_constraintStart_toEndOf="@+id/personal_1_grey"
         app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog" />
     <TextView
-        android:id="@+id/personal_item_2_grey"
+        android:id="@+id/personal_2_grey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
@@ -93,7 +93,7 @@
         android:text="대범한"
         android:textColor="@color/grey"
         android:textSize="12dp"
-        app:layout_constraintStart_toEndOf="@+id/personal_item_1_grey"
+        app:layout_constraintStart_toEndOf="@+id/personal_1_grey"
         app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog" />
 
 <!--    <androidx.recyclerview.widget.RecyclerView-->
@@ -123,7 +123,7 @@
         android:textColor="@color/white"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/personal_item_1_grey"
+        app:layout_constraintTop_toBottomOf="@id/personal_1_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

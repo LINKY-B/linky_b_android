@@ -5,21 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.MainActivity
 import com.example.linkybproject.R
-import com.example.linkybproject.databinding.ActivityPersonalDialogBinding
 
 class PersonalDialog (context: Context) {
     private lateinit var onClickListener: OnDialogClickListener
@@ -40,8 +30,8 @@ class PersonalDialog (context: Context) {
 
 
         // 선택지
-        val p1grey : TextView = dialog.findViewById(R.id.personal_item_1_grey)
-        val p1green : TextView = dialog.findViewById(R.id.personal_item_1_green)
+        val p1grey : TextView = dialog.findViewById(R.id.personal_1_grey)
+        val p1green : TextView = dialog.findViewById(R.id.personal_1_green)
         p1grey.setOnClickListener {
             onClickListener.onClicked(true)
             p1grey.visibility = View.INVISIBLE
@@ -52,8 +42,8 @@ class PersonalDialog (context: Context) {
             p1grey.visibility = View.VISIBLE
             p1green.visibility = View.INVISIBLE
         }
-        val p2grey : TextView = dialog.findViewById(R.id.personal_item_2_grey)
-        val p2green : TextView = dialog.findViewById(R.id.personal_item_2_green)
+        val p2grey : TextView = dialog.findViewById(R.id.personal_2_grey)
+        val p2green : TextView = dialog.findViewById(R.id.personal_2_green)
         p2grey.setOnClickListener {
             onClickListener.onClicked(true)
             p2grey.visibility = View.INVISIBLE

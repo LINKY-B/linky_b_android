@@ -206,80 +206,9 @@ class SignupActivity4 : AppCompatActivity() {
         }
 
         // 4. 성격
-        // 버튼 view가 왜 화면 상에서 안 보이는지 모르겠음. 우선 성격 textView 눌렀을 때 선택지 다이얼로그 띄워보기
-        val personalList = ArrayList<Personal>()
-
-        binding.textViewSignup4PersonalTitle.setOnClickListener {
-
-            val dialog = PersonalDialog(this)
-            dialog.quitInitViews()
-            dialog.setOnClickListener(object: PersonalDialog.OnDialogClickListener {
-                override fun onClicked(flag: Boolean) {
-                    if (flag) {
-                        // 원하는 동작 (버튼 누르고 다시 돌아왔을 때인가? -> 아님. dialog에서 뭘 눌러도 여기로 들어오는 것임.)
-//                        val extras = intent.extras
-//                        val data = extras?.get("p1") as String
-//                        personalList.add(Personal(0, data))
-                    }
-                }
-
-            })
-        }
-        if (intent.hasExtra("p1")) {
-            val data = intent.extras?.get("p1") as String
-            personalList.add(Personal(0, data))
-            Toast.makeText(this@SignupActivity4, "if", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(this@SignupActivity4, "else", Toast.LENGTH_SHORT).show()
-        }
-
-        // activity와 연결하기
-        // 이 list 값들이 선택한 값들이 되어야 함 (list 값 수정하기)
-//        personalList.add(Personal(0, "외향적"))
-//        personalList.add(Personal(1, "내향적"))
-//        personalList.add(Personal(2, "이성적"))
-//        personalList.add(Personal(3, "감성적"))
-//        personalList.add(Personal(4, "사교적"))
-//        personalList.add(Personal(5, "계획적"))
-//        personalList.add(Personal(6, "자유분방"))
-//        personalList.add(Personal(7, "독립적"))
-//        personalList.add(Personal(8, "주도적"))
-
-        val personalAdapter = SignupPersonalRVAdapter(personalList)
-        binding.recyclerViewSignupPersonal.layoutManager = LinearLayoutManager(this,  LinearLayoutManager.HORIZONTAL, false)
-        personalAdapter.setPersonalItemClickListener(object : SignupPersonalRVAdapter.PersonalItemClickListener{
-            override fun onItemClick(personal: Personal) {
-                // 클릭했을 때 무엇을 할 지 내용 작성
-                Toast.makeText(this@SignupActivity4, "클릭", Toast.LENGTH_SHORT).show()
-            }
-        })
-        binding.recyclerViewSignupPersonal.adapter = personalAdapter
+        // 일단 dialog 안 띄우고 이 activity에서 동작하도록 하고 후에 디벨롭시키기
 
 
-
-        // activity와 연결하기
-//        val personalList = ArrayList<Personal>()
-//        // 이 list 값들이 선택한 값들이 되어야 함 (list 값 수정하기)
-//        personalList.add(Personal(0, "외향적"))
-//        personalList.add(Personal(1, "내향적"))
-//        personalList.add(Personal(2, "이성적"))
-//        personalList.add(Personal(3, "감성적"))
-//        personalList.add(Personal(4, "사교적"))
-//        personalList.add(Personal(5, "계획적"))
-//        personalList.add(Personal(6, "자유분방"))
-//        personalList.add(Personal(7, "독립적"))
-//        personalList.add(Personal(8, "주도적"))
-//
-//        val personalAdapter = SignupPersonalRVAdapter(personalList)
-//        binding.recyclerViewSignupPersonal.layoutManager = LinearLayoutManager(this, GridLayoutManager.HORIZONTAL, false)
-//        personalAdapter.setPersonalItemClickListener(object : SignupPersonalRVAdapter.PersonalItemClickListener{
-//            override fun onItemClick(personal: Personal) {
-//                // 클릭했을 때 무엇을 할 지 내용 작성
-//            }
-//        })
-//        binding.recyclerViewSignupPersonal.adapter = personalAdapter
-//
-//
         //
         binding.textViewBtnNext5Green.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
