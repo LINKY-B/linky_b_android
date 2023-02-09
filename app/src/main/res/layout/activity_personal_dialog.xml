@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:paddingHorizontal="10dp"
-    android:paddingVertical="10dp"
+    android:paddingHorizontal="5dp"
+    android:paddingVertical="5dp"
     android:background="@drawable/dialog_background"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
@@ -28,8 +28,8 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="2dp"
         android:background="@color/grey_line"
         app:layout_constraintTop_toBottomOf="@id/textView_personalDialog"
@@ -37,24 +37,85 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_personalDialog"
-        android:layout_width="match_parent"
+    <!-- 선택지 -->
+    <TextView
+        android:id="@+id/personal_item_1_green"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="18dp"
-        android:layout_marginEnd="18dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/tv_item_list_border_update"
+        android:paddingHorizontal="11dp"
+        android:paddingVertical="7dp"
+        android:text="다정한"
+        android:textColor="@color/green"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog"
-        tools:listitem="@layout/item_personal_grey" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog" />
+    <TextView
+        android:id="@+id/personal_item_1_grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/tv_item_list_border"
+        android:paddingHorizontal="11dp"
+        android:paddingVertical="7dp"
+        android:text="다정한"
+        android:textColor="@color/grey"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog" />
+
+    <TextView
+        android:id="@+id/personal_item_2_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/tv_item_list_border_update"
+        android:paddingHorizontal="11dp"
+        android:paddingVertical="7dp"
+        android:text="대범한"
+        android:textColor="@color/green"
+        android:textSize="12dp"
+        app:layout_constraintStart_toEndOf="@+id/personal_item_1_grey"
+        app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog" />
+    <TextView
+        android:id="@+id/personal_item_2_grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/tv_item_list_border"
+        android:paddingHorizontal="11dp"
+        android:paddingVertical="7dp"
+        android:text="대범한"
+        android:textColor="@color/grey"
+        android:textSize="12dp"
+        app:layout_constraintStart_toEndOf="@+id/personal_item_1_grey"
+        app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog" />
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerView_personalDialog"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="18dp"-->
+<!--        android:layout_marginTop="18dp"-->
+<!--        android:layout_marginEnd="18dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView_personalDialog"-->
+<!--        tools:listitem="@layout/item_personal_grey" />-->
 
     <Button
         android:id="@+id/btn_personal_apply"
         android:layout_width="240dp"
         android:layout_height="40dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginTop="27dp"
         android:background="@drawable/button_background"
         android:gravity="center"
         android:text="적용하기"
@@ -62,8 +123,8 @@
         android:textColor="@color/white"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recyclerView_personalDialog"
-        android:layout_marginTop="27dp"
+        app:layout_constraintTop_toBottomOf="@id/personal_item_1_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
