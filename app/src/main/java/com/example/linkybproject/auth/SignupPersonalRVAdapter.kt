@@ -3,18 +3,18 @@ package com.example.linkybproject.auth
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.databinding.ItemMyprofilePersonal2Binding
+import com.example.linkybproject.databinding.ItemPersonalGreyBinding
 
 class SignupPersonalRVAdapter(private val personalList: ArrayList<Personal>) : RecyclerView.Adapter<SignupPersonalRVAdapter.ViewHolder>() {
-    inner class ViewHolder(val binding: ItemMyprofilePersonal2Binding): RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemPersonalGreyBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(personal: Personal) {
-            binding.textViewItemMyProfile2Personal.text = personal.keyWord
+            binding.textViewPersonalGrey.text = personal.keyWord
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding: ItemMyprofilePersonal2Binding = ItemMyprofilePersonal2Binding.inflate(
+        val binding: ItemPersonalGreyBinding = ItemPersonalGreyBinding.inflate(
             LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
