@@ -8,7 +8,7 @@
     tools:context=".auth.SignupActivity4">
 
     <ImageView
-        android:id="@+id/imageView_signup4_back"
+        android:id="@+id/imageView_signup4_back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
