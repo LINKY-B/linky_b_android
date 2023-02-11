@@ -17,7 +17,8 @@ import com.example.linkybproject.MainActivity
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup4Binding
 
-class SignupActivity4 : AppCompatActivity() {
+// 1단계: View Interface를 상속받는다.
+class SignupActivity4 : AppCompatActivity(), SignupView {
 
     private lateinit var binding: ActivitySignup4Binding
 
@@ -724,6 +725,9 @@ class SignupActivity4 : AppCompatActivity() {
 
         // 7. 시작하기 버튼
         binding.textViewBtnNext5Green.setOnClickListener {
+
+            signup()
+
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -768,5 +772,27 @@ class SignupActivity4 : AppCompatActivity() {
             binding.textViewBtnNext5Green.visibility = View.INVISIBLE
             binding.textViewBtnNext5Grey.visibility = View.VISIBLE
         }
+    }
+
+    private fun getSignupRequest(): SignupRequest {
+        val userName: String = binding.editTextSignupIntro.text.toString() // 임시로 해놓음
+
+        return SignupRequest(userName)
+    }
+
+    private fun signup() {
+        // 2단계
+        val signupService = SignupService()
+        signupService.setSignUpView(this)
+        signupService.signup(getSignupRequest())
+    }
+
+    // 1단계: 상속받은거 정의
+    override fun onSignupSuccess() {
+        Toast.makeText(this, "회원가입에 성공했습니다", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onSignupFailure() {
+        TODO("Not yet implemented")
     }
 }
