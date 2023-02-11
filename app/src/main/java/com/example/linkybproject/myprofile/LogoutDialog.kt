@@ -22,26 +22,21 @@ class LogoutDialog(private val context: AppCompatActivity) {
         }
 
         binding.btnLogout.setOnClickListener{
-/*
-            val intent = Intent(this, PrevLoginActivity::class.java)
-*/
+            onClickedListener.onClicked("logout")
+            dlg.dismiss()
         }
 
         dlg.show()
     }
 
-/*
-    fun setOnOKClickedListener(listener: (String) -> Unit) {
-        this.listener = object: LogoutDialogOnClickListener {
-            override fun onClicked(content: String) {
-                listener(content)
-            }
-        }
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
     }
 
-    interface LogoutDialogOnClickListener {
-        fun onClicked(content: String)
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
     }
-*/
 
 }

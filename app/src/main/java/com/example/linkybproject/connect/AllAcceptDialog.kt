@@ -21,6 +21,10 @@ class AllAcceptDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
+        binding.btnAllAcceptance.setOnClickListener {
+            dlg.dismiss()
+        }
+
         dlg.show()
     }
 
