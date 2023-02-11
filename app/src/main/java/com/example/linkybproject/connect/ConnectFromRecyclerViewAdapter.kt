@@ -5,16 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.AcceptDialog
-import com.example.linkybproject.RefuseDialog
-import com.example.linkybproject.databinding.ItemConnectFromBinding
+import com.example.linkybproject.databinding.ItemConnectFromMeBinding
 
 class ConnectFromRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity):RecyclerView.Adapter<ConnectFromRecyclerViewAdapter.ViewHolder>() {
 
     var datalist = mutableListOf<ConnectUserData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConnectFromRecyclerViewAdapter.ViewHolder {
-        val binding = ItemConnectFromBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ItemConnectFromMeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
@@ -24,20 +22,15 @@ class ConnectFromRecyclerViewAdapter(private val appCompatActivity: AppCompatAct
         holder.bind(datalist[position])
     }
 
-    inner class ViewHolder(private val binding: ItemConnectFromBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemConnectFromMeBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(userData: ConnectUserData){
             binding.profileName.text = userData.username
             binding.profileLike.text = userData.likecount.toString()
             binding.profileMajor.text = userData.major + "/"
             binding.profileClassOf.text = userData.classOf.toString() + "학번"
 
-            binding.btnYes.setOnClickListener {
-                val dlg = AcceptDialog(appCompatActivity)
-                dlg.Mydlg()
-            }
-
-            binding.btnNo.setOnClickListener {
-                val dlg = RefuseDialog(appCompatActivity)
+            binding.btnConnectDelete.setOnClickListener {
+                val dlg = DeleteDialog(appCompatActivity)
                 dlg.Mydlg()
             }
 

@@ -80,11 +80,27 @@ class ConnectionProfileActivity : AppCompatActivity() {
         viewBinding.btnConnectionRefuse.setOnClickListener {
             val dlg = RefuseDialog(this)
             dlg.Mydlg()
+
+            dlg.setOnClickedListener(object : RefuseDialog.ButtonClickListener {
+                override fun onClicked(myName: String) {
+                    if (myName == "refuse") {
+                        Toast.makeText(this@ConnectionProfileActivity, "거절되었습니다.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            })
         }
 
         viewBinding.btnConnectionAccept.setOnClickListener {
             val dlg = AcceptDialog(this)
             dlg.Mydlg()
+
+            dlg.setOnClickedListener(object : AcceptDialog.ButtonClickListener {
+                override fun onClicked(myName: String) {
+                    if (myName == "accept") {
+                        Toast.makeText(this@ConnectionProfileActivity, "연결되었습니다.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            })
         }
     }
 }

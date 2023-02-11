@@ -9,7 +9,7 @@
         android:id="@+id/connection_toolbar"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="#FFFFFF"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -104,7 +104,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:listitem="@layout/item_connect_from" />
+                    tools:listitem="@layout/item_connect_to_me" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -179,7 +179,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:listitem="@layout/item_connect_to" />
+                    tools:listitem="@layout/item_connect_from_me" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

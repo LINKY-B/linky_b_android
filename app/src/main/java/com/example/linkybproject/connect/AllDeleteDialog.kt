@@ -4,14 +4,14 @@ import android.app.Dialog
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.example.linkybproject.databinding.DialogAllAcceptBinding
+import com.example.linkybproject.databinding.DialogAllDeleteBinding
 
-class AllAcceptDialog(private val context: AppCompatActivity) {
-    private lateinit var binding: DialogAllAcceptBinding
+class AllDeleteDialog(private val context: AppCompatActivity) {
+    private lateinit var binding: DialogAllDeleteBinding
     private val dlg = Dialog(context)
 
     fun Mydlg() {
-        binding = DialogAllAcceptBinding.inflate(context.layoutInflater)
+        binding = DialogAllDeleteBinding.inflate(context.layoutInflater)
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dlg.setContentView(binding.root)
         dlg.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
@@ -21,8 +21,8 @@ class AllAcceptDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
-        binding.btnAllAcceptance.setOnClickListener {
-            onClickedListener.onClicked("all accept")
+        binding.btnAllDelete.setOnClickListener {
+            onClickedListener.onClicked("all delete")
             dlg.dismiss()
         }
 
