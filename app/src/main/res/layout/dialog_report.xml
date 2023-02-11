@@ -17,31 +17,58 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="43dp"
-        android:gravity="center"
-        android:text="배고픈청설모 님을"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:fontFamily="@font/roboto_regular"
+        android:layout_marginBottom="325dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="배고픈청설모"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=" 님을"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toEndOf="@id/user_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
+        android:layout_marginBottom="298dp"
         android:gravity="center"
         android:text="신고하시겠습니까?"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="14dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
         android:id="@+id/report1"
@@ -53,7 +80,7 @@
         android:gravity="center"
         android:text="상업적 광고/판매"
         android:textColor="@color/grey"
-        android:textSize="10sp"
+        android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -68,7 +95,7 @@
         android:gravity="center"
         android:text="낚시/놀람/도배"
         android:textColor="@color/grey"
-        android:textSize="10sp"
+        android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@+id/report1"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -83,7 +110,7 @@
         android:gravity="center"
         android:text="욕설/비하"
         android:textColor="@color/grey"
-        android:textSize="10sp"
+        android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/report1" />
@@ -98,7 +125,7 @@
         android:gravity="center"
         android:text="정당 또는 정치인 비하/선거운동"
         android:textColor="@color/grey"
-        android:textSize="10sp"
+        android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@id/report3"
         app:layout_constraintTop_toBottomOf="@+id/report2" />
@@ -113,7 +140,7 @@
         android:gravity="center"
         android:text="유출/사칭/사기"
         android:textColor="@color/grey"
-        android:textSize="10sp"
+        android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/report3" />
@@ -128,7 +155,7 @@
         android:gravity="center"
         android:text="음란물/불건전 대화"
         android:textColor="@color/grey"
-        android:textSize="10sp"
+        android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@id/report5"
         app:layout_constraintTop_toBottomOf="@+id/report4" />
@@ -137,6 +164,7 @@
         android:id="@+id/report_reason"
         android:layout_width="219dp"
         android:layout_height="110dp"
+        android:layout_marginTop="193dp"
         android:layout_marginBottom="81dp"
         android:background="@drawable/ic_rectangle_1469"
         android:gravity="top"
@@ -147,10 +175,12 @@
         android:paddingEnd="10dp"
         android:paddingBottom="7dp"
         android:textColorHint="@color/grey"
-        android:textSize="10sp"
+        android:textSize="10dp"
+        android:textColor="@color/black"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton

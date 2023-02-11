@@ -21,7 +21,22 @@ class BlockDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
+        binding.btnBlock.setOnClickListener {
+            onClickedListener.onClicked("blocked")
+            dlg.dismiss()
+        }
+
         dlg.show()
+    }
+
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
+    }
+
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
     }
 
 }
