@@ -3,16 +3,19 @@ package com.example.linkybproject.connect
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.databinding.ItemConnectToBinding
+import com.example.linkybproject.AcceptDialog
+import com.example.linkybproject.RefuseDialog
+import com.example.linkybproject.databinding.ItemConnectToMeBinding
 
 class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<ConnectToRecyclerViewAdapter.MyViewHolder>() {
 
     var datalist = mutableListOf<ConnectUserData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConnectToRecyclerViewAdapter.MyViewHolder {
-        val binding = ItemConnectToBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ItemConnectToMeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return MyViewHolder(binding)
     }
 
@@ -22,7 +25,7 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
         holder.bind(datalist[position])
     }
 
-    inner class MyViewHolder(private val binding: ItemConnectToBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class MyViewHolder(private val binding: ItemConnectToMeBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(userData: ConnectUserData){
             binding.profileName.text = userData.username
@@ -30,8 +33,22 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
             binding.profileMajor.text = userData.major + "/"
             binding.profileClassOf.text = userData.classOf.toString() + "학번"
 
-            binding.btnConnectDelete.setOnClickListener {
-                val dlg = DeleteDialog(appCompatActivity)
+            binding.btnYes.setOnClickListener {
+                val dlg = AcceptDialog(appCompatActivity)
+                dlg.Mydlg()
+/*
+                dlg.setOnClickedListener(object : AcceptDialog.ButtonClickListener {
+                    override fun onClicked(myName: String) {
+                        if (myName == "all delete") {
+                            Toast.makeText(this@ConnectToRecyclerViewAdapter, "모든 내역을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                })
+*/
+            }
+
+            binding.btnNo.setOnClickListener {
+                val dlg = RefuseDialog(appCompatActivity)
                 dlg.Mydlg()
             }
 

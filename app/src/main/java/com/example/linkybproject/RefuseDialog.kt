@@ -24,7 +24,24 @@ class RefuseDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
+/*
+        binding.btnRefuse.setOnClickListener {
+            onClickedListener.onClicked("refuse")
+            dlg.dismiss()
+        }
+*/
+
         dlg.show()
+    }
+
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
+    }
+
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
     }
 
 }
