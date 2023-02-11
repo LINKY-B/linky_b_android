@@ -1,9 +1,8 @@
 package com.example.linkybproject.myprofile
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.linkybproject.R
+import android.view.View
 import com.example.linkybproject.databinding.ActivityChangePasswordBinding
 
 class ChangePasswordActivity : AppCompatActivity() {
@@ -13,9 +12,28 @@ class ChangePasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
 
-        viewBinding.btnChangePassword.setOnClickListener {
-            val intent = Intent(this, MemberLeaveActivity::class.java)
-            startActivity(intent)
+        viewBinding.btnChangePasswordGrey.isEnabled = false
+        viewBinding.btnChangePasswordGreen.visibility = View.INVISIBLE
+
+        viewBinding.btnBackToConnection.setOnClickListener {
+            finish()
         }
+
+        val password = "aaaa1111" //조건 수정
+        if (viewBinding.etNowPassword.text.toString() == password &&
+                viewBinding.etNewPassword.text.length >= 7 &&
+                viewBinding.etNewPasswordChk.text == viewBinding.etNewPassword.text) {
+            viewBinding.btnChangePasswordGrey.visibility = View.INVISIBLE
+            viewBinding.btnChangePasswordGreen.visibility = View.VISIBLE
+            viewBinding.btnChangePasswordGreen.isEnabled = true
+        }
+
+
+        viewBinding.btnChangePasswordGreen.setOnClickListener {
+            val dlg = ChangePasswordDialog(this)
+            dlg.Mydlg()
+        }
+
     }
+
 }

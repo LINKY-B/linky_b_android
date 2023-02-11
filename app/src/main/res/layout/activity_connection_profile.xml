@@ -21,10 +21,12 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageButton
-                android:id="@+id/connection_profile_back"
-                android:layout_width="7dp"
-                android:layout_height="11dp"
-                android:layout_marginStart="18dp"
+                android:id="@+id/btn_connection_profile_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="10dp"
                 android:src="@drawable/back"
                 android:background="@null"
                 app:layout_constraintTop_toTopOf="parent"
@@ -197,7 +199,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="11dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="9dp"
             android:text="시각디자인학과"
             android:textColor="@color/black"
             android:textSize="12dp"
@@ -215,7 +218,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="11dp"
+            android:layout_marginBottom="10dp"
             android:text="24"
             android:textColor="@color/black"
             android:textSize="12dp"
@@ -224,7 +227,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="11dp"
             android:text="여"
             android:textColor="@color/black"
             android:textSize="12dp"
@@ -312,14 +315,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_myprofile_interest" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_connection_refuse"
         android:layout_width="156dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="13dp"
-        android:background="@drawable/ic_btn_refuse"
+        android:background="@drawable/grey_btn_background"
         android:text="거절하기"
         android:textSize="16dp"
         android:textColor="@color/grey"
@@ -329,7 +332,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_connection_accept"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_connection_accept"
         android:layout_width="156dp"
         android:layout_height="50dp"

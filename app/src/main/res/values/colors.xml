@@ -16,4 +16,5 @@
     <color name="light_green">#F8FAED</color>
     <color name="transparent"></color>
     <color name="light_yellow">#F8FAED</color>
+    <color name="red">#FF0000</color>
 </resources>

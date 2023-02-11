@@ -14,19 +14,23 @@ class ConnectionProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
 
+        viewBinding.btnConnectionProfileBack.setOnClickListener {
+            finish()
+        }
+
         viewBinding.btnReportDelete.setOnClickListener {
             val dlg = ReportBlockDialog(this)
             dlg.Mydlg()
         }
 
         viewBinding.btnConnectionRefuse.setOnClickListener {
-            val refusedlg = RefuseDialog(this)
-            refusedlg.Mydlg()
+            val dlg = RefuseDialog(this)
+            dlg.Mydlg()
         }
 
         viewBinding.btnConnectionAccept.setOnClickListener {
-            val accpetdlg = AcceptDialog(this)
-            accpetdlg.Mydlg()
+            val dlg = AcceptDialog(this)
+            dlg.Mydlg()
         }
     }
 }

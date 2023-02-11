@@ -10,7 +10,6 @@
 
     <string-array name="department_list_item">
         <item>제외할 학과를 선택해주세요</item>
-
         <item>컴퓨터공학과</item>
         <item>시각디자인학과</item>
         <item>정보시스템공학과</item>
@@ -21,7 +20,6 @@
 
     <string-array name="mbti_list_item">
         <item>제외할 MBTI를 선택해주세요</item>
-
         <item>ENFP</item>
         <item>ESFP</item>
         <item>ESTP</item>
@@ -92,5 +90,46 @@
         <item>30</item>
         <item>31</item>
     </string-array>
+
+    <!--  소속 학교 드롭다운  -->
+    <string-array name="signup_univ">
+        <item>소속 학교를 선택해 주세요.</item>
+        <item>가톨릭대</item>
+        <item>동덕여대</item>
+        <item>상명대</item>
+        <item>서울여대</item>
+        <item>성신여대</item>
+        <item>숭실대</item>
+    </string-array>
+
+    <!--  졸업 여부 드롭다운  -->
+    <string-array name="signup_grad">
+        <item>졸업 여부를 선택해 주세요.</item>
+        <item>미졸업</item>
+        <item>졸업</item>
+    </string-array>
+
+
+    <!--  mbti 드롭다운  -->
+    <string-array name="signup_mbti">
+        <item>본인의 MBTI를 선택해 주세요.</item>
+        <item>ISTJ</item>
+        <item>ISTP</item>
+        <item>ISFJ</item>
+        <item>ISFP</item>
+        <item>INFJ</item>
+        <item>INFP</item>
+        <item>INTJ</item>
+        <item>INTP</item>
+        <item>ESTP</item>
+        <item>ESTJ</item>
+        <item>ESFP</item>
+        <item>ESFJ</item>
+        <item>ENFP</item>
+        <item>ENFJ</item>
+        <item>ENTP</item>
+        <item>ENTJ</item>
+    </string-array>
+
 
 </resources>

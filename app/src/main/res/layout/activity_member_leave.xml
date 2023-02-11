@@ -15,22 +15,23 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/btn_back_to_connection"
+            android:id="@+id/btn_back_to_set_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="8dp"
             android:background="@null"
-            android:padding="8dp"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="10dp"
             android:src="@drawable/back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:layout_width="93dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
-            android:text="비밀번호 변경"
+            android:text="회원 탈퇴"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:fontFamily="@font/roboto_regular"
@@ -84,8 +85,8 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
 
-    <TextView
-        android:id="@+id/btn_memver_leave"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_member_leave_green"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="16dp"
@@ -93,6 +94,22 @@
         android:background="@drawable/button_background"
         android:text="회원 탈퇴하기"
         android:textColor="@color/white"
+        android:textSize="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_member_leave_grey"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/grey_btn_background"
+        android:text="회원 탈퇴하기"
+        android:textColor="@color/grey"
         android:textSize="16dp"
         android:fontFamily="@font/roboto_bold"
         android:gravity="center"

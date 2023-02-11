@@ -6,43 +6,76 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.linkybproject.MainActivity
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.FragmentConnectionBinding
-import com.example.linkybproject.homes.UserData
 
 class ConnectionFragment : Fragment() {
-    private lateinit var adapter1: ConnectFromRecyclerViewAdapter
-    private lateinit var adapter2: ConnectToRecyclerViewAdapter
+    private lateinit var binding: FragmentConnectionBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val binding = FragmentConnectionBinding.inflate(layoutInflater)
+        binding = FragmentConnectionBinding.inflate(inflater, container, false)
 
-        val btnFullConnectFrom: ImageButton = binding.btnFullConnectFrom
-        btnFullConnectFrom.setOnClickListener {
-            val intent = Intent(activity, ConnectFromMeFragment::class.java)
+        binding.btnFullConnectFrom.setOnClickListener {
+            val intent = Intent(activity, ConnectFromMeActivity::class.java)
             startActivity(intent)
         }
 
-/*
-        val datalist = mutableListOf<UserData>()
-        binding.connectionFrom.adapter = adapter1
-        datalist.apply {
-            add(UserData("", "배고픈 청설모", 20, "정보시스템공학과", "", ""))
-            add(UserData("", "배고픈 청설모", 20, "정보시스템공학과", "", ""))
-            add(UserData("", "배고픈 청설모", 20, "정보시스템공학과", "", ""))
-            add(UserData("", "배고픈 청설모", 20, "정보시스템공학과", "", ""))
-            add(UserData("", "배고픈 청설모", 20, "정보시스템공학과", "", ""))
-        }
-*/
+        val adapter1 = ConnectFromRecyclerViewAdapter()
+        adapter1.datalist = mutableListOf(
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+        )
+        binding.connectionList1.adapter = adapter1
+        binding.connectionList1.layoutManager = LinearLayoutManager(context)
+
+        val adapter2 = ConnectToRecyclerViewAdapter()
+        adapter2.datalist = mutableListOf(
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
+            ConnectUserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+        )
+        binding.connectionList2.adapter = adapter2
+        binding.connectionList2.layoutManager = LinearLayoutManager(context)
 
 
-        val btnFullConnectTo: ImageButton = binding.btnFullConnectTo
-        btnFullConnectTo.setOnClickListener {
-            val intent = Intent(activity, ConnectToMeFragment::class.java)
+
+        binding.btnFullConnectTo.setOnClickListener {
+            val intent = Intent(context, ConnectToMeActivity::class.java)
             startActivity(intent)
         }
 
         return binding.root
     }
+
 }

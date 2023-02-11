@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".auth.SignupActivity2">
 
     <ProgressBar
@@ -21,24 +22,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_signup2_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="92dp"
-        android:text="기본 정보"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="137dp"
-        android:layout_marginBottom="101dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="74dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -54,10 +42,24 @@
             tools:layout_editor_absoluteY="0dp">
 
             <TextView
+                android:id="@+id/textView_signup2_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="23dp"
+                android:text="기본 정보"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/textView_signup2_phone_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
+                android:layout_marginTop="68dp"
                 android:text="휴대폰 번호"
                 android:textColor="@color/black"
                 android:textSize="16dp"
@@ -77,6 +79,7 @@
                 android:inputType="number"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_phone_title"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -103,6 +106,7 @@
                 android:gravity="center"
                 android:inputType="number"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_error_1"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -228,6 +232,7 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_name_title"
@@ -281,6 +286,7 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_nick_title"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -421,6 +427,7 @@
                 android:inputType="textPassword"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_pw_title"
@@ -463,6 +470,7 @@
                 android:inputType="textPassword"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup2_pw_check_title"

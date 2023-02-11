@@ -1,6 +1,8 @@
 package com.example.linkybproject
 
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +17,12 @@ class RefuseDialog(private val context: AppCompatActivity) {
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dlg.setContentView(binding.root)
         dlg.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
+        dlg.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dlg.setCancelable(false)
+
+        binding.btnClose.setOnClickListener {
+            dlg.dismiss()
+        }
 
         dlg.show()
     }
