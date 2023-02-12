@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -17,14 +18,15 @@ import com.example.linkybproject.MainActivity
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup4Binding
 
-class SignupActivity4 : AppCompatActivity() {
+// 1단계: View Interface를 상속받는다.
+class SignupActivity4 : AppCompatActivity(), SignupView {
 
     private lateinit var binding: ActivitySignup4Binding
 
     // api 통신
-    private lateinit var userProfileInfo : String
-    private lateinit var userSex : String
+    private lateinit var profileImg : String
     private lateinit var userMBTI : String
+    private lateinit var userSex : String
     private lateinit var userPersonalities : String
     private lateinit var userInterests : String
     private lateinit var userSelfIntroduction : String
@@ -214,6 +216,7 @@ class SignupActivity4 : AppCompatActivity() {
                 binding.textViewBtnMaleGrey.visibility = View.INVISIBLE
             }
             checkOptions()
+
         }
         binding.textViewBtnFemaleGrey.setOnClickListener {
             if (binding.textViewBtnMaleGreen.visibility == View.VISIBLE) {
@@ -724,8 +727,53 @@ class SignupActivity4 : AppCompatActivity() {
 
         // 7. 시작하기 버튼
         binding.textViewBtnNext5Green.setOnClickListener {
+            userMBTI = binding.spinnerMbti.selectedItem.toString()
+            if (binding.textViewBtnMaleGreen.visibility == View.VISIBLE) {
+                userSex = binding.textViewBtnMaleGreen.text.toString()
+            } else if (binding.textViewBtnFemaleGreen.visibility == View.VISIBLE) {
+                userSex = binding.textViewBtnFemaleGreen.text.toString()
+            }
+            userSelfIntroduction = binding.editTextSignupIntro.text.toString()
+
+            val extras = intent.extras
+            val userName = extras?.get("userName") as String
+            val userNickName = extras?.get("userNickName") as String
+            val userPhone = extras?.get("userPhone") as String
+            val userPassword = extras?.get("userPassword") as String
+            val userBirth = extras?.get("userBirth") as String
+            val userSchoolName = extras?.get("userSchoolName") as String
+            val userMajorName = extras?.get("userMajorName") as String
+            val userStudentNum = extras?.get("userStudentNum") as String
+            val gradeStatus = extras?.get("gradeStatus") as Boolean
+            Log.d("userName", userName)
+            Log.d("userNickName", userNickName)
+            Log.d("userPhone", userPhone)
+            Log.d("userPassword", userPassword)
+            Log.d("userBirth", userBirth)
+            Log.d("userSchoolName", userSchoolName)
+            Log.d("userMajorName", userMajorName)
+            Log.d("userStudentNum", userStudentNum)
+            Log.d("gradeStatus", gradeStatus.toString())
+            Log.d("userMBTI", userMBTI)
+            Log.d("userSex", userSex)
+            Log.d("userSelfIntroduction", userSelfIntroduction)
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("userName", userName)
+            intent.putExtra("userNickName", userNickName)
+            intent.putExtra("userPhone", userPhone)
+            intent.putExtra("userPassword", userPassword)
+            intent.putExtra("userBirth", userBirth)
+            intent.putExtra("userSchoolName", userSchoolName)
+            intent.putExtra("userMajorName", userMajorName)
+            intent.putExtra("userStudentNum", userStudentNum)
+            intent.putExtra("gradeStatus", gradeStatus)
+            intent.putExtra("userMBTI", userMBTI)
+            intent.putExtra("userSex", userSex)
+            intent.putExtra("userSelfIntroduction", userSelfIntroduction)
             startActivity(intent)
+
+
+            signup()
         }
     }
 
@@ -768,5 +816,27 @@ class SignupActivity4 : AppCompatActivity() {
             binding.textViewBtnNext5Green.visibility = View.INVISIBLE
             binding.textViewBtnNext5Grey.visibility = View.VISIBLE
         }
+    }
+
+    private fun getSignupRequest(): SignupRequest {
+        val userName: String = binding.editTextSignupIntro.text.toString() // 임시로 해놓음
+
+        return SignupRequest(userName)
+    }
+
+    private fun signup() {
+        // 2단계
+        val signupService = SignupService()
+        signupService.setSignUpView(this)
+        signupService.signup(getSignupRequest())
+    }
+
+    // 1단계: 상속받은거 정의
+    override fun onSignupSuccess() {
+        Toast.makeText(this, "회원가입에 성공했습니다", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onSignupFailure() {
+        TODO("Not yet implemented")
     }
 }

@@ -1,6 +1,6 @@
 package com.example.linkybproject.auth
 
 interface SignupView {
-    fun onSignUpSuccess()
-    fun onSignUpFailure()
+    fun onSignupSuccess()
+    fun onSignupFailure()
 }
