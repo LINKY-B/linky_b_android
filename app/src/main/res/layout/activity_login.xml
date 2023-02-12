@@ -65,6 +65,7 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/edittext_background"
         android:hint="비밀번호"
+        android:inputType="textPassword"
         android:paddingStart="10dp"
         android:textColor="@color/grey"
         android:textSize="12dp"
