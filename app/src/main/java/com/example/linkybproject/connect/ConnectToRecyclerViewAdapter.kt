@@ -1,17 +1,21 @@
 package com.example.linkybproject.connect
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.databinding.ItemConnectToBinding
-import com.example.linkybproject.homes.UserData
+import com.example.linkybproject.AcceptDialog
+import com.example.linkybproject.RefuseDialog
+import com.example.linkybproject.databinding.ItemConnectToMeBinding
 
-class ConnectToRecyclerViewAdapter: RecyclerView.Adapter<ConnectToRecyclerViewAdapter.MyViewHolder>() {
+class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<ConnectToRecyclerViewAdapter.MyViewHolder>() {
 
     var datalist = mutableListOf<ConnectUserData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConnectToRecyclerViewAdapter.MyViewHolder {
-        val binding = ItemConnectToBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ItemConnectToMeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return MyViewHolder(binding)
     }
 
@@ -21,13 +25,62 @@ class ConnectToRecyclerViewAdapter: RecyclerView.Adapter<ConnectToRecyclerViewAd
         holder.bind(datalist[position])
     }
 
-    inner class MyViewHolder(private val binding: ItemConnectToBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class MyViewHolder(private val binding: ItemConnectToMeBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(userData: ConnectUserData){
             binding.profileName.text = userData.username
             binding.profileLike.text = userData.likecount.toString()
-            binding.profileMajor.text = userData.department
+            binding.profileMajor.text = userData.major + "/"
+            binding.profileClassOf.text = userData.classOf.toString() + "학번"
+
+            binding.btnYes.setOnClickListener {
+                val dlg = AcceptDialog(appCompatActivity)
+                dlg.Mydlg()
+/*
+                dlg.setOnClickedListener(object : AcceptDialog.ButtonClickListener {
+                    override fun onClicked(myName: String) {
+                        if (myName == "all delete") {
+                            Toast.makeText(this@ConnectToRecyclerViewAdapter, "모든 내역을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                })
+*/
+            }
+
+            binding.btnNo.setOnClickListener {
+                val dlg = RefuseDialog(appCompatActivity)
+                dlg.Mydlg()
+            }
+
+            binding.profileImg.setOnClickListener {
+                val intent = Intent(binding.root.context, ConnectionProfileActivity::class.java)
+                intent.putExtra("name", userData.username)
+                intent.putExtra("like", userData.likecount)
+/*
+                intent.putExtra("numOfLink", )
+*/
+                intent.putExtra("major", userData.major)
+                intent.putExtra("classOf", userData.classOf)
+                intent.putExtra("age", userData.age)
+                intent.putExtra("gender", userData.gender)
+                intent.putExtra("mbti", userData.mbti)
+                intent.run { binding.root.context.startActivity(this) }
+            }
+
+            binding.profileName.setOnClickListener {
+                val intent = Intent(binding.root.context, ConnectionProfileActivity::class.java)
+                intent.putExtra("name", binding.profileName.text)
+                intent.putExtra("like", binding.profileLike.text)
+                /*
+                intent.putExtra("numOfLink", )
+*/
+                intent.putExtra("major", binding.profileMajor.text)
+                intent.putExtra("classOf", binding.profileClassOf.text)
+                intent.putExtra("age", userData.age)
+                intent.putExtra("gender", userData.gender)
+                intent.putExtra("mbti", userData.mbti)
+                intent.run { binding.root.context.startActivity(this) }
+            }
         }
     }
-
 }

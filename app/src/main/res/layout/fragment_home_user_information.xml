@@ -132,15 +132,16 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="20dp"
             android:backgroundTint="@color/green"
             android:text="연결 신청하기"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-        </Button>
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:fontFamily="@font/roboto_bold"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

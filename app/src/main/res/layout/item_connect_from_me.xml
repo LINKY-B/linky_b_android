@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:paddingTop="8dp"
     android:paddingBottom="8dp">
 
@@ -21,9 +21,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="83dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/profile_name"
@@ -32,6 +32,7 @@
             android:text="배고픈청설모"
             android:textColor="@color/black"
             android:textSize="16dp"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -41,12 +42,12 @@
             android:layout_height="19dp"
             android:layout_marginStart="5dp"
             android:src="@drawable/ic_good_1"
-            app:layout_constraintStart_toEndOf="@+id/profile_name"
+            app:layout_constraintStart_toEndOf="@id/profile_name"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
-            android:id="@+id/tv_home_likenumber"
+            android:id="@+id/profile_like"
             android:layout_width="14dp"
             android:layout_height="16dp"
             android:layout_marginStart="18dp"
@@ -54,50 +55,50 @@
             android:text="12"
             android:textColor="@color/green"
             android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@+id/profile_name"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toEndOf="@id/profile_name"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
-            android:id="@+id/tv_home_department"
+            android:id="@+id/profile_major"
             android:layout_width="wrap_content"
-            android:layout_height="16dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:gravity="center"
-            android:text="시각디자인학과/20학번"
+            android:text="시각디자인학과/"
             android:textColor="@color/grey"
-            android:textSize="9dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_home_likenumber"
+            android:textSize="8dp"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toEndOf="@id/profile_like"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/profile_classOf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="20학번"
+            android:textSize="8dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toEndOf="@id/profile_major"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/item_connect_interest" />
-
     <ImageButton
-        android:id="@+id/ib_item_connect"
-        android:layout_width="53dp"
-        android:layout_height="53dp"
-        android:layout_gravity="center"
-        android:layout_margin="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="4dp"
+        android:id="@+id/btn_connect_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
         android:background="@null"
-        android:src="@drawable/homeplus"
+        android:padding="6dp"
+        android:src="@drawable/ic_union"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ImageButton>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
