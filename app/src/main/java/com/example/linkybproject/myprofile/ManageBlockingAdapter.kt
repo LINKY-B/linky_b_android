@@ -25,8 +25,8 @@ class ManageBlockingAdapter: RecyclerView.Adapter<ManageBlockingAdapter.ViewHold
         fun bind(userData: ConnectUserData){
             binding.profileName.text = userData.username
             binding.profileLike.text = userData.likecount.toString()
-            binding.profileMajor.text = userData.major
-            binding.profileClassOf.text = userData.classOf.toString()
+            binding.profileMajor.text = userData.major + "/"
+            binding.profileClassOf.text = userData.classOf.toString() + "학번"
         }
     }
 
