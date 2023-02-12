@@ -1,6 +1,7 @@
 package com.example.linkybproject.auth
 
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.linkybproject.MainActivity
@@ -17,7 +18,8 @@ class LoginActivity : AppCompatActivity() {
 
         viewBinding.buttonLoginSubmit.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NEW_TASK))
+            finish()
         }
     }
 }
