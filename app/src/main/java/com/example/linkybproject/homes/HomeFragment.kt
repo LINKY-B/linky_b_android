@@ -43,23 +43,25 @@ class HomeFragment:Fragment() {
 
         val adapter = HomeConnectRecyclerAdapter()
 
-        adapter.datalist = mutableListOf(  UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
+        val adapter2 = HomeInterestRecyclerAdapter()
+
+        adapter.datalist = mutableListOf(  UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
         )
         binding.rvHomeNewConnect.adapter = adapter
         binding.rvHomeNewConnect.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -72,8 +74,10 @@ class HomeFragment:Fragment() {
             startActivity(intent)
         }
 
+
+
         binding.scrollviewHome.run {
-            header = binding.tabLayout
+            header = binding.clHomeTab
             stickListener = { _ ->
                 Log.d("LOGGER_TAG", "stickListener")
             }

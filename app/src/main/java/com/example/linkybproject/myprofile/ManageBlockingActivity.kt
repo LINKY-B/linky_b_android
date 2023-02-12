@@ -25,25 +25,7 @@ class ManageBlockingActivity : AppCompatActivity() {
         }
 
         adapter = ManageBlockingAdapter()
-        adapter.datas = mutableListOf(
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과/20학번", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            )
+
         viewBinding.listBlocking.adapter = adapter
         adapter.notifyDataSetChanged()
 

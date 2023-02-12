@@ -45,11 +45,6 @@
         <activity
             android:name=".onBoarding.OnBoardingActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".auth.SignupActivity4"
@@ -74,7 +69,7 @@
         </activity>
         <activity
             android:name=".auth.SignupActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -88,7 +83,7 @@
         </activity>
         <activity
             android:name=".auth.LoginActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

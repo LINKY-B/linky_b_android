@@ -30,26 +30,24 @@ class HomeStudentFragment : Fragment() {
 
         val adapter = HomeRecyclerViewAdapter()
 
-        adapter.datalist = mutableListOf(
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과/20학번", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
-
-            )
+        adapter.datalist = mutableListOf(  UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
+        )
 
         binding.recyclerviewHomeStudents.adapter = adapter
         binding.recyclerviewHomeStudents.layoutManager = LinearLayoutManager(context)
