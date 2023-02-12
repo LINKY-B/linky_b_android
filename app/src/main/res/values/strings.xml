@@ -94,7 +94,7 @@
     <!--  소속 학교 드롭다운  -->
     <string-array name="signup_univ">
         <item>소속 학교를 선택해 주세요.</item>
-        <item>카톨릭대</item>
+        <item>가톨릭대</item>
         <item>동덕여대</item>
         <item>상명대</item>
         <item>서울여대</item>
@@ -108,5 +108,28 @@
         <item>미졸업</item>
         <item>졸업</item>
     </string-array>
+
+
+    <!--  mbti 드롭다운  -->
+    <string-array name="signup_mbti">
+        <item>본인의 MBTI를 선택해 주세요.</item>
+        <item>ISTJ</item>
+        <item>ISTP</item>
+        <item>ISFJ</item>
+        <item>ISFP</item>
+        <item>INFJ</item>
+        <item>INFP</item>
+        <item>INTJ</item>
+        <item>INTP</item>
+        <item>ESTP</item>
+        <item>ESTJ</item>
+        <item>ESFP</item>
+        <item>ESFJ</item>
+        <item>ENFP</item>
+        <item>ENFJ</item>
+        <item>ENTP</item>
+        <item>ENTJ</item>
+    </string-array>
+
 
 </resources>

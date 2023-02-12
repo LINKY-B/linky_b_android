@@ -21,6 +21,22 @@ class ReportDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
+        binding.btnReport.setOnClickListener {
+            onClickedListener.onClicked("reported")
+            dlg.dismiss()
+        }
+
         dlg.show()
     }
+
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
+    }
+
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
+    }
+
 }

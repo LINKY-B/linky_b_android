@@ -18,64 +18,76 @@
 
     <ImageView
         android:id="@+id/imageview_home_item_profileimg"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="14dp"
         android:src="@drawable/profileimage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
 
-    <TextView
-        android:id="@+id/textview_home_item_nickname"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="배고픈 청설모"
-        android:textColor="@color/black"
-        android:textSize="16dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="50dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imageview_home_item_profileimg"
-        android:layout_marginTop="17dp"
-        android:layout_marginLeft="7dp">
+        app:layout_constraintStart_toStartOf="parent">
 
-    </TextView>
+        <TextView
+            android:id="@+id/textview_home_item_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="배고픈 청설모"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </TextView>
 
 
-    <ImageView
-        android:id="@+id/imageview_home_item_bean"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginLeft="150dp"
-        android:src="@drawable/bean"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"       />
+        <ImageView
+            android:id="@+id/imageview_home_item_bean"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_good_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textview_home_item_nickname"       />
 
-    <TextView
-        android:id="@+id/textview_home_item_count"
-        android:layout_width="14dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="19dp"
-        android:gravity="center"
-        android:text="12"
-        android:textColor="#9FC743"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textview_home_item_count"
+            android:layout_width="14dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="18dp"
+            android:gravity="center"
+            android:text="12"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toEndOf="@+id/textview_home_item_nickname"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textview_home_item_department"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="47dp"
         android:gravity="center"
         android:text="시각디자인학과"
         android:textColor="@color/black"
         android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
       />
@@ -84,45 +96,43 @@
         android:id="@+id/textview_home_item_center"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="47dp"
         android:gravity="center"
         android:text="/"
         android:textColor="@color/black"
         android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintStart_toEndOf="@+id/textview_home_item_department"
         app:layout_constraintTop_toTopOf="parent"
         />
-
-
 
     <TextView
         android:id="@+id/textview_home_item_class_number"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="47dp"
         android:gravity="center"
         android:text="20학번"
         android:textColor="@color/black"
         android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintStart_toEndOf="@+id/textview_home_item_center"
         app:layout_constraintTop_toTopOf="parent"
         />
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerview_home_item"
-    android:layout_width="120dp"
-    android:layout_height="18dp"
-    tools:listitem="@layout/item_connect_interest"
-    android:orientation="horizontal"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginTop="68dp"
-    android:layout_marginStart="56dp">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_home_item"
+        android:layout_width="120dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="68dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_connect_interest">
 
-</androidx.recyclerview.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -149,7 +159,7 @@
         android:layout_height="wrap_content"
         android:textSize="12dp"
         android:text="수락하기"
-        android:textStyle="bold"
+        android:fontFamily="@font/roboto_bold"
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

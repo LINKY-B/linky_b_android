@@ -21,7 +21,22 @@ class AllAcceptDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
+        binding.btnAllAcceptance.setOnClickListener {
+            onClickedListener.onClicked("all accept")
+            dlg.dismiss()
+        }
+
         dlg.show()
+    }
+
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
+    }
+
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
     }
 
 }

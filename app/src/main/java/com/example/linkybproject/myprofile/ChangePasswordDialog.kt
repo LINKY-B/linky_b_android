@@ -1,10 +1,12 @@
 package com.example.linkybproject.myprofile
 
 import android.app.Dialog
+import android.content.Intent
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogPasswordChangeBinding
+import com.example.linkybproject.homes.HomeFragment
 
 class ChangePasswordDialog(private val context: AppCompatActivity) {
     private lateinit var binding: DialogPasswordChangeBinding
@@ -18,10 +20,21 @@ class ChangePasswordDialog(private val context: AppCompatActivity) {
         dlg.setCancelable(false)
 
         binding.btnClose.setOnClickListener {
+            onClickedListener.onClicked("changePassword")
             dlg.dismiss()
         }
 
         dlg.show()
+    }
+
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
+    }
+
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
     }
 
 }

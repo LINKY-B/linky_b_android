@@ -3,38 +3,66 @@ package com.example.linkybproject.connect
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.databinding.ItemConnectFromBinding
-import com.example.linkybproject.homes.UserData
+import com.example.linkybproject.databinding.ItemConnectFromMeBinding
 
-class ConnectFromRecyclerViewAdapter:RecyclerView.Adapter<ConnectFromRecyclerViewAdapter.ViewHolder>() {
+class ConnectFromRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity):RecyclerView.Adapter<ConnectFromRecyclerViewAdapter.ViewHolder>() {
 
-    var datas = mutableListOf<ConnectUserData>()
+    var datalist = mutableListOf<ConnectUserData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConnectFromRecyclerViewAdapter.ViewHolder {
-        val binding = ItemConnectFromBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ItemConnectFromMeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = datas.size
+    override fun getItemCount(): Int = datalist.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(datas[position])
+        holder.bind(datalist[position])
     }
 
-    inner class ViewHolder(private val binding: ItemConnectFromBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemConnectFromMeBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(userData: ConnectUserData){
             binding.profileName.text = userData.username
             binding.profileLike.text = userData.likecount.toString()
-            binding.profileMajor.text = userData.information
+            binding.profileMajor.text = userData.major + "/"
+            binding.profileClassOf.text = userData.classOf.toString() + "학번"
 
-/*
-            binding.profileImg.setOnClickListener {
-                val intent = Intent(context, ConnectionProfileActivity::class.java)
-                start
+            binding.btnConnectDelete.setOnClickListener {
+                val dlg = DeleteDialog(appCompatActivity)
+                dlg.Mydlg()
             }
+
+            binding.profileImg.setOnClickListener {
+                val intent = Intent(binding.root.context, ConnectionProfileActivity::class.java)
+                intent.putExtra("name", userData.username)
+                intent.putExtra("like", userData.likecount)
+/*
+                intent.putExtra("numOfLink", userData.)
 */
+                intent.putExtra("major", userData.major)
+                intent.putExtra("classOf", userData.classOf)
+                intent.putExtra("age", userData.age)
+                intent.putExtra("gender", userData.gender)
+                intent.putExtra("mbti", userData.mbti)
+                intent.run { binding.root.context.startActivity(this) }
+            }
+
+            binding.profileName.setOnClickListener {
+                val intent = Intent(binding.root.context, ConnectionProfileActivity::class.java)
+                intent.putExtra("name", binding.profileName.text)
+                intent.putExtra("like", binding.profileLike.text)
+                /*
+                intent.putExtra("numOfLink", )
+*/
+                intent.putExtra("major", binding.profileMajor.text)
+                intent.putExtra("classOf", binding.profileClassOf.text)
+                intent.putExtra("age", userData.age)
+                intent.putExtra("gender", userData.gender)
+                intent.putExtra("mbti", userData.mbti)
+                intent.run { binding.root.context.startActivity(this) }
+            }
         }
     }
-
 }

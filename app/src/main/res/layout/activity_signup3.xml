@@ -8,7 +8,7 @@
     tools:context=".auth.SignupActivity3">
 
     <ImageView
-        android:id="@+id/imageView_back_2"
+        android:id="@+id/imageView_signup3_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -32,24 +32,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_signup3_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="92dp"
-        android:text="학교 정보"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="137dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="74dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -63,12 +51,25 @@
             tools:layout_editor_absoluteX="-1dp"
             tools:layout_editor_absoluteY="0dp">
 
+            <TextView
+                android:id="@+id/textView_signup3_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="23dp"
+                android:text="학교 정보"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView_signup3_uni_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
+                android:layout_marginTop="68dp"
                 android:text="소속 학교"
                 android:textColor="@color/black"
                 android:textSize="16dp"
@@ -119,6 +120,7 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup3_major_title"
@@ -146,10 +148,11 @@
                 android:layout_marginEnd="25dp"
                 android:background="@drawable/tv_border"
                 android:gravity="center_vertical"
-                android:hint="학번을 입력해 주세요."
+                android:hint="학번을 입력해 주세요. ex) 19, 20, 21"
                 android:inputType="number"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup3_num_title"
@@ -315,6 +318,7 @@
                 android:gravity="center"
                 android:inputType="number"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />

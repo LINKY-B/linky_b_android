@@ -43,8 +43,18 @@
             android:name=".connect.ConnectionProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".onBoarding.PrevLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".onBoarding.OnBoardingActivity"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".auth.PersonalDialog"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
             android:name=".auth.SignupActivity4"

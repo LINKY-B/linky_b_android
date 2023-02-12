@@ -21,6 +21,10 @@ class AllRefuseDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
+        binding.btnAllRefuse.setOnClickListener {
+            dlg.dismiss()
+        }
+
         dlg.show()
     }
 

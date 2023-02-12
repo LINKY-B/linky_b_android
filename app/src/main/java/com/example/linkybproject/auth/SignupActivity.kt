@@ -17,6 +17,12 @@ class SignupActivity : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // back 버튼
+        binding.imageViewSignupBack.setOnClickListener {
+            finish()
+        }
+
+        // 뷰 안 보이게 설정
         binding.imageButtonCheckAll.visibility = View.INVISIBLE
         binding.textViewBtnNext1Grey.isEnabled = false
         binding.textViewBtnNext1Green.visibility = View.INVISIBLE
