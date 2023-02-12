@@ -7,7 +7,15 @@
     android:id="@+id/cl_filter"
     android:background="@color/white">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_filter_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <ImageButton
+        android:id="@+id/ibtn_filter_arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -118,7 +126,12 @@
         <com.google.android.material.slider.RangeSlider
             android:id="@+id/filter_rangeSlider"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:scrollbarThumbHorizontal="@color/black"
+            app:thumbColor="@color/white"
+            app:thumbRadius="7dp"
+            app:thumbStrokeColor="@color/green"
+            app:thumbStrokeWidth="3dp">
 
         </com.google.android.material.slider.RangeSlider>
 

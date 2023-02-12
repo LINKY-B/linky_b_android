@@ -21,14 +21,10 @@ class FilterActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityFilterBinding.inflate(layoutInflater)
+        binding.ibtnFilterArrow.setOnClickListener {
+            finish()
+        }
 
-
-//        //필터 넘어가는 버튼
-//        val btn: Button = binding.btnFliterApplication
-//        btn.setOnClickListener {
-//            val intent = Intent(this,HomeFragment::class.java)
-//            startActivity(intent)
-//        }
 
 
         setContentView(binding.root)

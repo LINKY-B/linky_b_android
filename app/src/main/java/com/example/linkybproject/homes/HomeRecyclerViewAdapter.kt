@@ -10,9 +10,6 @@ import com.example.linkybproject.databinding.ItemHomeRecyclerBinding
 
 class HomeRecyclerViewAdapter: RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {
 
-
-
-
     var datalist = mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
 
     inner class MyViewHolder(private val binding: ItemHomeRecyclerBinding): RecyclerView.ViewHolder(binding.root) {

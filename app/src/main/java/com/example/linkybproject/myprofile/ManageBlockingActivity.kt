@@ -24,6 +24,7 @@ class ManageBlockingActivity : AppCompatActivity() {
             dlg.Mydlg()
         }
 
+
         val adapter = ManageBlockingAdapter()
         adapter.datalist = mutableListOf(
             ConnectUserData("", "퍼플", 0, "휴먼지능정보공학", 18, 26, "남자", "MBTI"),
