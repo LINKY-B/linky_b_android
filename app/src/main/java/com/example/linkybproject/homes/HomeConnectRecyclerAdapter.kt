@@ -1,24 +1,21 @@
 package com.example.linkybproject.homes
 
-
-import android.content.Context
-import android.util.Log
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.databinding.ItemConnectInterestBinding
+import com.example.linkybproject.AcceptDialog
+import com.example.linkybproject.RefuseDialog
 import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
-import com.example.linkybproject.databinding.ItemMyprofileInterestBinding
 
-class HomeConnectRecyclerAdapter: RecyclerView.Adapter<HomeConnectRecyclerAdapter.ViewHolder>() {
-
+class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<HomeConnectRecyclerAdapter.ViewHolder>() {
 
     var datalist =
         mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
 
-    inner class ViewHolder(private val binding: ItemHomeConnectRequestBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemHomeConnectRequestBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(userData: UserData) {
             //binding.dogPhotoImg.=dogData.dog_img
             binding.textviewHomeItemNickname.text = userData.username
@@ -30,11 +27,20 @@ class HomeConnectRecyclerAdapter: RecyclerView.Adapter<HomeConnectRecyclerAdapte
                 layoutManager = LinearLayoutManager(binding.recyclerviewHomeItem.context, LinearLayoutManager.HORIZONTAL, false)
                 setHasFixedSize(true)
             }
+
+            binding.ibHomeItemDelete.setOnClickListener {
+                val dlg = RefuseDialog(appCompatActivity)
+                dlg.Mydlg()
+            }
+
+            binding.btnHomeItemAccept.setOnClickListener {
+                val dlg = AcceptDialog(appCompatActivity)
+                dlg.Mydlg()
+            }
+
         }
 
     }
-
-
 
     //만들어진 뷰홀더 없을때 뷰홀더(레이아웃) 생성하는 함수
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

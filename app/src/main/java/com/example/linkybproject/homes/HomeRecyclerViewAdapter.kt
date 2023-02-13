@@ -1,14 +1,17 @@
 package com.example.linkybproject.homes
 
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.linkybproject.connect.ConnectionProfileActivity
 import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 import com.example.linkybproject.databinding.ItemHomeRecyclerBinding
 
-class HomeRecyclerViewAdapter: RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {
+class HomeRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {
 
     var datalist = mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
 
@@ -19,6 +22,11 @@ class HomeRecyclerViewAdapter: RecyclerView.Adapter<HomeRecyclerViewAdapter.MyVi
             binding.profileName.text=userData.username
             binding.tvHomeLikenumber.text= userData.likecount.toString()
             binding.tvHomeDepartment.text=userData.department
+
+            binding.ibItemConnect.setOnClickListener {
+                val dlg = ConnectDialog(appCompatActivity)
+                dlg.Mydlg()
+            }
         }
     }
 
@@ -37,14 +45,17 @@ class HomeRecyclerViewAdapter: RecyclerView.Adapter<HomeRecyclerViewAdapter.MyVi
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(datalist[position])
 
+/*
         // ViewHolder를 클릭했을 때 이벤트 정의
         holder.itemView.setOnClickListener {
             // 위에서 만든 Interface의 onItemClick을 실행
             // 실제 이 함수 내용 정의는 Activity나 Fragment에서 이뤄짐
             mItemClickListener.onItemClick(datalist[position])
         }
+*/
     }
 
+/*
     // 인터페이스 정의
     interface MyItemClickListener {
         // 이 함수를 만들어야한다고 알려줌
@@ -64,6 +75,7 @@ class HomeRecyclerViewAdapter: RecyclerView.Adapter<HomeRecyclerViewAdapter.MyVi
         // 변수에 가져온 값 할당
         mItemClickListener = itemClickListener
     }
+*/
 
 }
 

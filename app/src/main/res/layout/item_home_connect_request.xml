@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="5dp"
+    android:layout_width="286dp"
+    android:layout_height="102dp"
+    android:background="@drawable/home_request"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/home_request"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </ImageView>
 
     <ImageView
         android:id="@+id/imageview_home_item_profileimg"
@@ -24,9 +14,7 @@
         android:layout_marginTop="14dp"
         android:src="@drawable/profileimage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ImageView>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -46,10 +34,7 @@
             android:fontFamily="@font/roboto_regular"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-        </TextView>
-
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <ImageView
             android:id="@+id/imageview_home_item_bean"
@@ -89,8 +74,7 @@
         android:textSize="12dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-      />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/textview_home_item_center"
@@ -133,49 +117,58 @@
         tools:listitem="@layout/item_connect_interest">
 
     </androidx.recyclerview.widget.RecyclerView>
+
     <ImageButton
+        android:id="@+id/ib_home_item_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/black_delete"
         android:background="@null"
+        android:padding="7dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="265dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="2dp"/>
 
-    </ImageButton>
-
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
         android:src="@drawable/gcircle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </ImageButton>
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_home_item_accept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12dp"
-        android:text="수락하기"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="@color/white"
+        android:layout_marginStart="223dp"
+        android:layout_marginTop="57dp"
+        android:paddingVertical="10dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="70dp">
+        app:layout_constraintStart_toStartOf="parent">
 
-    </TextView>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/check"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="74dp"
-        android:layout_marginStart="267dp">
+        <TextView
+            android:id="@+id/btn_home_item_accept_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:text="수락하기"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
-    </ImageView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/check"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_home_item_accept_text"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
