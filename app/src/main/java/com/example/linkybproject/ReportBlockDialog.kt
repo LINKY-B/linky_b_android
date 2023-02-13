@@ -1,4 +1,4 @@
-package com.example.linkybproject.connect
+package com.example.linkybproject
 
 import android.app.Dialog
 import android.graphics.Color
