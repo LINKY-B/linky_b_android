@@ -36,15 +36,6 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
             binding.btnYes.setOnClickListener {
                 val dlg = AcceptDialog(appCompatActivity)
                 dlg.Mydlg()
-/*
-                dlg.setOnClickedListener(object : AcceptDialog.ButtonClickListener {
-                    override fun onClicked(myName: String) {
-                        if (myName == "all delete") {
-                            Toast.makeText(this@ConnectToRecyclerViewAdapter, "모든 내역을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                })
-*/
             }
 
             binding.btnNo.setOnClickListener {

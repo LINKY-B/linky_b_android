@@ -3,6 +3,7 @@ package com.example.linkybproject
 import android.app.Dialog
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogBlockBinding
 
@@ -22,7 +23,7 @@ class BlockDialog(private val context: AppCompatActivity) {
         }
 
         binding.btnBlock.setOnClickListener {
-            onClickedListener.onClicked("blocked")
+            Toast.makeText(context, "차단되었습니다.", Toast.LENGTH_SHORT).show()
             dlg.dismiss()
         }
 

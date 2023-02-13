@@ -38,6 +38,18 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
                 dlg.Mydlg()
             }
 
+/*
+            binding.imageviewHomeItemProfileimg.setOnClickListener {
+                val intent = Intent(binding.root.context, HomeUserInformationActivity::class.java)
+                intent.run { binding.root.context.startActivity(this) }
+            }
+
+            binding.textviewHomeItemNickname.setOnClickListener {
+                val intent = Intent(binding.root.context, HomeUserInformationActivity::class.java)
+                intent.run { binding.root.context.startActivity(this) }
+            }
+*/
+
         }
 
     }

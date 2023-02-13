@@ -27,6 +27,18 @@ class HomeRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity):
                 val dlg = ConnectDialog(appCompatActivity)
                 dlg.Mydlg()
             }
+
+/*
+            binding.profileImg.setOnClickListener {
+                val intent = Intent(binding.root.context, HomeUserInformationActivity::class.java)
+                binding.root.context.startActivity(intent)
+            }
+
+            binding.profileName.setOnClickListener {
+                val intent = Intent(binding.root.context, HomeUserInformationActivity::class.java)
+                intent.run { binding.root.context.startActivity(this) }
+            }
+*/
         }
     }
 

@@ -21,14 +21,6 @@ class ConnectToMeActivity : AppCompatActivity() {
         viewBinding.btnConnectionAllAcceptance.setOnClickListener {
             val dlg = AllAcceptDialog(this)
             dlg.Mydlg()
-
-            dlg.setOnClickedListener(object : AllAcceptDialog.ButtonClickListener {
-                override fun onClicked(myName: String) {
-                    if (myName == "all accept") {
-                        Toast.makeText(this@ConnectToMeActivity, "모든 연결을 수락하였습니다.", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            })
         }
 
         val adapter = ConnectToRecyclerViewAdapter(this)
