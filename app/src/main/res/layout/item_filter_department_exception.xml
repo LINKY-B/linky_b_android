@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_fitler_department"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -30,7 +30,7 @@
         android:layout_marginEnd="4dp"
         android:background="@color/white"
         android:src="@drawable/delete"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView"></ImageButton>
+        app:layout_constraintEnd_toEndOf="@+id/tv_fitler_department"
+        app:layout_constraintTop_toTopOf="@+id/tv_fitler_department"></ImageButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
