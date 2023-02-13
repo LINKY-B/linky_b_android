@@ -120,38 +120,56 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginStart="17dp"
+            android:layout_marginTop="68dp"
             android:layout_marginEnd="17dp"
-            android:layout_marginBottom="506dp"
             android:background="@color/grey_line"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_myProfile2_intro" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <ScrollView
+        android:id="@+id/scrollView_myProfile_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
+            android:id="@+id/textView_myProfile2_info_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
-            android:layout_marginBottom="469dp"
+            android:layout_marginTop="14dp"
             android:text="회원정보"
             android:textColor="@color/grey"
             android:textSize="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
+            android:id="@+id/linearLayout_myProfile2_info"
             android:layout_width="38dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
-            android:layout_marginBottom="312dp"
+            android:layout_marginTop="50dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="match_parent"
@@ -198,10 +216,10 @@
             android:layout_width="78dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
-            android:layout_marginBottom="312dp"
+            android:layout_marginTop="50dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textView_myProfile2_majorDetail"
@@ -251,25 +269,27 @@
         </LinearLayout>
 
         <View
+            android:id="@+id/view_myprofile2_2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginStart="17dp"
             android:layout_marginEnd="17dp"
-            android:layout_marginBottom="312dp"
+            android:layout_marginTop="187dp"
             android:background="@color/grey_line"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
+            android:id="@+id/textView_myProfile2_personal_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginBottom="282dp"
+            android:layout_marginTop="14dp"
             android:text="성격"
             android:textColor="@color/grey"
             android:textSize="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_myprofile2_2"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
@@ -277,9 +297,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginBottom="243dp"
+            android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/plus2" />
 
@@ -289,34 +309,36 @@
             android:layout_height="29dp"
             android:layout_marginStart="55dp"
             android:layout_marginEnd="18dp"
-            android:layout_marginBottom="243dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:listitem="@layout/item_myprofile_personal_2" />
 
         <View
+            android:id="@+id/view_myprofile2_3"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginStart="17dp"
             android:layout_marginEnd="17dp"
-            android:layout_marginBottom="229dp"
+            android:layout_marginTop="14dp"
             android:background="@color/grey_line"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton_plus_personal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/textView_myProfile2_interest_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginBottom="199dp"
+            android:layout_marginTop="13dp"
             android:text="관심사"
             android:textColor="@color/grey"
             android:textSize="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_myprofile2_3"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
@@ -324,9 +346,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginBottom="160dp"
+            android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/plus2" />
 
@@ -336,14 +358,15 @@
             android:layout_height="29dp"
             android:layout_marginStart="55dp"
             android:layout_marginEnd="18dp"
-            android:layout_marginBottom="160dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:listitem="@layout/item_myprofile_interest_2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </FrameLayout>
