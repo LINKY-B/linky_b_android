@@ -3,6 +3,7 @@ package com.example.linkybproject.myprofile
 import android.app.Dialog
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogUnblockBinding
 
@@ -18,6 +19,11 @@ class UnblockDialog(private val context: AppCompatActivity) {
         dlg.setCancelable(false)
 
         binding.btnClose.setOnClickListener {
+            dlg.dismiss()
+        }
+
+        binding.btnUnblock.setOnClickListener {
+            Toast.makeText(context, "차단 해제되었습니다.", Toast.LENGTH_SHORT).show()
             dlg.dismiss()
         }
 
