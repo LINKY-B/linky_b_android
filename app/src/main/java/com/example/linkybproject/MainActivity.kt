@@ -7,6 +7,7 @@ import com.example.linkybproject.connect.ConnectionFragment
 import com.example.linkybproject.databinding.ActivityMainBinding
 import com.example.linkybproject.homes.HomeFragment
 import com.example.linkybproject.myprofile.MyProfile1Fragment
+import com.example.linkybproject.myprofile.MyProfile2Fragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,5 +54,13 @@ class MainActivity : AppCompatActivity() {
                 true
             }
         }
+    }
+    
+    // 프로필 화면 1 -> 수정 버튼 -> 프로필 화면 2
+    fun changeFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(binding.fragmentContainerViewMain.id, MyProfile2Fragment())
+            .commitAllowingStateLoss()
     }
 }
