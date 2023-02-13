@@ -38,10 +38,11 @@
 
         <TextView
             android:id="@+id/btn_reporting"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginHorizontal="150dp"
+            android:layout_marginHorizontal="16dp"
+            android:gravity="center"
             android:text="신고하기"
             android:textSize="16dp"
             android:textColor="@color/black"
@@ -62,10 +63,11 @@
 
         <TextView
             android:id="@+id/btn_blocking"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="88dp"
-            android:layout_marginHorizontal="150dp"
+            android:layout_marginHorizontal="16dp"
+            android:gravity="center"
             android:text="차단하기"
             android:textSize="16dp"
             android:textColor="@color/black"
