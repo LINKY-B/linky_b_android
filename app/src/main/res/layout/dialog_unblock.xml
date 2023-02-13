@@ -34,7 +34,7 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_accept"
+        android:id="@+id/btn_unblock"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:layout_marginHorizontal="25dp"

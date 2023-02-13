@@ -70,91 +70,91 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/report1"
         android:layout_width="91dp"
         android:layout_height="21dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="102dp"
-        android:background="@drawable/ic_rectangle_1466"
+        android:background="@drawable/report_button"
         android:gravity="center"
         android:text="상업적 광고/판매"
-        android:textColor="@color/grey"
+        android:textColor="@drawable/report_btn_text"
         android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/report2"
         android:layout_width="91dp"
         android:layout_height="21dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="102dp"
-        android:background="@drawable/ic_rectangle_1466"
+        android:background="@drawable/report_button"
         android:gravity="center"
         android:text="낚시/놀람/도배"
-        android:textColor="@color/grey"
+        android:textColor="@drawable/report_btn_text"
         android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@+id/report1"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/report3"
         android:layout_width="61dp"
         android:layout_height="21dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/ic_rectangle_1467"
+        android:background="@drawable/report_button"
         android:gravity="center"
         android:text="욕설/비하"
-        android:textColor="@color/grey"
+        android:textColor="@drawable/report_btn_text"
         android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/report1" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/report4"
         android:layout_width="152dp"
         android:layout_height="21dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/ic_rectangle_1472"
+        android:background="@drawable/report_button"
         android:gravity="center"
         android:text="정당 또는 정치인 비하/선거운동"
-        android:textColor="@color/grey"
+        android:textColor="@drawable/report_btn_text"
         android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@id/report3"
         app:layout_constraintTop_toBottomOf="@+id/report2" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/report5"
         android:layout_width="91dp"
         android:layout_height="21dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/ic_rectangle_1466"
+        android:background="@drawable/report_button"
         android:gravity="center"
         android:text="유출/사칭/사기"
-        android:textColor="@color/grey"
+        android:textColor="@drawable/report_btn_text"
         android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/report3" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/report6"
         android:layout_width="105dp"
         android:layout_height="21dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/ic_rectangle_1466"
+        android:background="@drawable/report_button"
         android:gravity="center"
         android:text="음란물/불건전 대화"
-        android:textColor="@color/grey"
+        android:textColor="@drawable/report_btn_text"
         android:textSize="10dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@id/report5"
