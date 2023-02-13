@@ -11,7 +11,11 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.linkybproject.InterestData
 import com.example.linkybproject.R
+import com.example.linkybproject.connect.ConnectInterestAdapter
+import com.example.linkybproject.connect.ConnectUserData
 import com.example.linkybproject.databinding.ActivityFilterBinding
 import com.google.android.material.slider.RangeSlider
 
@@ -25,7 +29,36 @@ class FilterActivity :AppCompatActivity() {
             finish()
         }
 
+        val adapter = FilterDepartmentRecyclerViewAdapter()
 
+        val adapter2 = FilterMbtiRecyclerViewAdapter()
+
+        binding.rvFilterDepartment.adapter = adapter
+        binding.rvFilterDepartment.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        adapter.datalist = mutableListOf(
+            Department("정보시스템공학과"),
+            Department("컴퓨터공학과"),
+            Department("경영학과") ,Department("체육학과"),)
+
+        binding.rvFilterMbti.adapter = adapter2
+        binding.rvFilterMbti.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
+
+        adapter2.datalist = mutableListOf(
+            Mbti("ESFP"),
+            Mbti("ENTP"), Mbti("ISTP"), Mbti("INFP"), Mbti("ESTJ"),
+        )
+
+        binding.btnFilterAll?.setOnClickListener {
+            binding.btnFilterAll?.isSelected = binding.btnFilterAll?.isSelected != true
+        }
+
+        binding.btnFilterMan?.setOnClickListener {
+            binding.btnFilterMan?.isSelected = binding.btnFilterMan?.isSelected != true
+        }
+        binding.btnFilterWoman?.setOnClickListener {
+            binding.btnFilterWoman?.isSelected = binding.btnFilterWoman?.isSelected != true
+        }
 
         setContentView(binding.root)
         setupSpinnerDepartment()

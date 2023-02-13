@@ -14,5 +14,13 @@ data class Interest(
     val interest:String
 )
 
+data class Department(
+    val department: String
+)
+
+data class Mbti(
+    val mbti: String
+)
+
 
 

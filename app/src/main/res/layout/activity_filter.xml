@@ -88,6 +88,7 @@
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_filter_department"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/item_filter_department_exception"
@@ -167,6 +168,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_filter_all"
                 android:layout_width="78dp"
                 android:layout_height="35dp"
                 android:layout_margin="5dp"
@@ -176,6 +178,7 @@
                 android:textSize="10dp"></androidx.appcompat.widget.AppCompatButton>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_filter_man"
                 android:layout_width="45dp"
                 android:layout_height="35dp"
                 android:layout_margin="5dp"
@@ -185,6 +188,7 @@
                 android:textSize="10dp"></androidx.appcompat.widget.AppCompatButton>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_filter_woman"
                 android:layout_width="45dp"
                 android:layout_height="35dp"
                 android:layout_margin="5dp"
@@ -226,6 +230,7 @@
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_filter_mbti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
