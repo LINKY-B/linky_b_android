@@ -24,11 +24,21 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
     private lateinit var binding: ActivitySignup4Binding
 
     // api 통신
+    private lateinit var userName : String
+    private lateinit var userNickName : String
+    private lateinit var userPhone : String
+    private lateinit var userPassword : String
+    private lateinit var userBirth : String
+    private lateinit var userSchoolName : String
+    private lateinit var userMajorName : String
+    private lateinit var userStudentNum : String
+    private var gradeStatus : Boolean = false
+
     private lateinit var profileImg : String
     private lateinit var userMBTI : String
     private lateinit var userSex : String
-    private lateinit var userPersonalities : String
-    private lateinit var userInterests : String
+    private var userPersonalities : ArrayList<String> = arrayListOf()
+    private  var userInterests : ArrayList<String> = arrayListOf()
     private lateinit var userSelfIntroduction : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -727,24 +737,144 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
 
         // 7. 시작하기 버튼
         binding.textViewBtnNext5Green.setOnClickListener {
-            userMBTI = binding.spinnerMbti.selectedItem.toString()
             if (binding.textViewBtnMaleGreen.visibility == View.VISIBLE) {
                 userSex = binding.textViewBtnMaleGreen.text.toString()
             } else if (binding.textViewBtnFemaleGreen.visibility == View.VISIBLE) {
                 userSex = binding.textViewBtnFemaleGreen.text.toString()
             }
+            userMBTI = binding.spinnerMbti.selectedItem.toString()
+            if (binding.personal1Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal1Green.text.toString())
+            }
+            if (binding.personal2Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal2Green.text.toString())
+            }
+            if (binding.personal3Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal3Green.text.toString())
+            }
+            if (binding.personal4Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal4Green.text.toString())
+            }
+            if (binding.personal5Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal5Green.text.toString())
+            }
+            if (binding.personal6Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal6Green.text.toString())
+            }
+            if (binding.personal7Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal7Green.text.toString())
+            }
+            if (binding.personal8Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal8Green.text.toString())
+            }
+            if (binding.personal9Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal9Green.text.toString())
+            }
+            if (binding.personal10Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal10Green.text.toString())
+            }
+            if (binding.personal11Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal11Green.text.toString())
+            }
+            if (binding.personal12Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal12Green.text.toString())
+            }
+            if (binding.personal13Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal13Green.text.toString())
+            }
+            if (binding.personal14Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal14Green.text.toString())
+            }
+            if (binding.personal15Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal15Green.text.toString())
+            }
+            if (binding.personal16Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal16Green.text.toString())
+            }
+            if (binding.personal17Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal17Green.text.toString())
+            }
+            if (binding.personal18Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal18Green.text.toString())
+            }
+            if (binding.personal19Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal19Green.text.toString())
+            }
+            if (binding.personal20Green.visibility == View.VISIBLE) {
+                userPersonalities.add(binding.personal20Green.text.toString())
+            }
+            if (binding.interest1Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest1Green.text.toString())
+            }
+            if (binding.interest2Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest2Green.text.toString())
+            }
+            if (binding.interest3Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest3Green.text.toString())
+            }
+            if (binding.interest4Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest4Green.text.toString())
+            }
+            if (binding.interest5Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest5Green.text.toString())
+            }
+            if (binding.interest6Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest6Green.text.toString())
+            }
+            if (binding.interest7Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest7Green.text.toString())
+            }
+            if (binding.interest8Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest8Green.text.toString())
+            }
+            if (binding.interest9Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest9Green.text.toString())
+            }
+            if (binding.interest10Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest10Green.text.toString())
+            }
+            if (binding.interest11Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest11Green.text.toString())
+            }
+            if (binding.interest12Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest12Green.text.toString())
+            }
+            if (binding.interest13Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest13Green.text.toString())
+            }
+            if (binding.interest14Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest14Green.text.toString())
+            }
+            if (binding.interest15Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest15Green.text.toString())
+            }
+            if (binding.interest16Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest16Green.text.toString())
+            }
+            if (binding.interest17Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest17Green.text.toString())
+            }
+            if (binding.interest18Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest18Green.text.toString())
+            }
+            if (binding.interest19Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest19Green.text.toString())
+            }
+            if (binding.interest20Green.visibility == View.VISIBLE) {
+                userInterests.add(binding.interest20Green.text.toString())
+            }
             userSelfIntroduction = binding.editTextSignupIntro.text.toString()
 
             val extras = intent.extras
-            val userName = extras?.get("userName") as String
-            val userNickName = extras?.get("userNickName") as String
-            val userPhone = extras?.get("userPhone") as String
-            val userPassword = extras?.get("userPassword") as String
-            val userBirth = extras?.get("userBirth") as String
-            val userSchoolName = extras?.get("userSchoolName") as String
-            val userMajorName = extras?.get("userMajorName") as String
-            val userStudentNum = extras?.get("userStudentNum") as String
-            val gradeStatus = extras?.get("gradeStatus") as Boolean
+            userName = extras?.get("userName") as String
+            userNickName = extras?.get("userNickName") as String
+            userPhone = extras?.get("userPhone") as String
+            userPassword = extras?.get("userPassword") as String
+            userBirth = extras?.get("userBirth") as String
+            userSchoolName = extras?.get("userSchoolName") as String
+            userMajorName = extras?.get("userMajorName") as String
+            userStudentNum = extras?.get("userStudentNum") as String
+            gradeStatus = extras?.get("gradeStatus") as Boolean
             Log.d("userName", userName)
             Log.d("userNickName", userNickName)
             Log.d("userPhone", userPhone)
@@ -754,8 +884,10 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
             Log.d("userMajorName", userMajorName)
             Log.d("userStudentNum", userStudentNum)
             Log.d("gradeStatus", gradeStatus.toString())
-            Log.d("userMBTI", userMBTI)
             Log.d("userSex", userSex)
+            Log.d("userMBTI", userMBTI)
+            Log.d("userPersonalities", userPersonalities.toString())
+            Log.d("userInterests", userInterests.toString())
             Log.d("userSelfIntroduction", userSelfIntroduction)
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("userName", userName)
@@ -767,8 +899,10 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
             intent.putExtra("userMajorName", userMajorName)
             intent.putExtra("userStudentNum", userStudentNum)
             intent.putExtra("gradeStatus", gradeStatus)
-            intent.putExtra("userMBTI", userMBTI)
             intent.putExtra("userSex", userSex)
+            intent.putExtra("userMBTI", userMBTI)
+            intent.putExtra("userPersonalities", userPersonalities)
+            intent.putExtra("userInterests", userInterests)
             intent.putExtra("userSelfIntroduction", userSelfIntroduction)
             startActivity(intent)
 
@@ -819,9 +953,10 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
     }
 
     private fun getSignupRequest(): SignupRequest {
-        val userName: String = binding.editTextSignupIntro.text.toString() // 임시로 해놓음
 
-        return SignupRequest(userName)
+        return SignupRequest(userName, userNickName, userPhone, userPassword, userBirth,
+            userSchoolName, userMajorName, userMBTI, userStudentNum, gradeStatus,
+            userPersonalities, userInterests, userSelfIntroduction)
     }
 
     private fun signup() {
