@@ -1,8 +1,9 @@
-package com.example.linkybproject.connect
+package com.example.linkybproject.homes
 
 import android.app.Dialog
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogAllRefuseBinding
 
@@ -22,6 +23,7 @@ class AllRefuseDialog(private val context: AppCompatActivity) {
         }
 
         binding.btnAllRefuse.setOnClickListener {
+            Toast.makeText(context, "모든 요청을 거절하였습니다.", Toast.LENGTH_SHORT).show()
             dlg.dismiss()
         }
 

@@ -192,12 +192,12 @@
             </TextView>
 
             <TextView
-                android:id="@+id/tv_home_delete"
+                android:id="@+id/tv_home_refuse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="93dp"
-                android:text="모두삭제"
+                android:layout_marginEnd="16dp"
+                android:text="모두 거절"
                 android:textColor="@color/black"
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
