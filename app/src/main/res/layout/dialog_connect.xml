@@ -6,6 +6,7 @@
     android:background="@drawable/dialog_round">
 
     <ImageView
+        android:id="@+id/btn_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"

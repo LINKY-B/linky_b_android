@@ -350,28 +350,6 @@ android:layout_height="match_parent">
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView_myProfile_greenclock1"
-            android:layout_width="wrap_content"
-            android:layout_height="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="33dp"
-            android:src="@drawable/greenclock"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
-
-        <TextView
-            android:id="@+id/textView_myProfile_green1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="30dp"
-            android:text="6명과 링크 중입니다."
-            android:textColor="@color/green"
-            android:textSize="10dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView_myProfile_greenclock1"
-            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
-
-        <ImageView
             android:id="@+id/imageView_myProfile_greenclock2"
             android:layout_width="wrap_content"
             android:layout_height="10dp"
@@ -387,7 +365,7 @@ android:layout_height="match_parent">
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="48dp"
-            android:text="총 28명과 링크했습니다."
+            android:text="6명과 링크 중입니다."
             android:textColor="@color/green"
             android:textSize="10dp"
             app:layout_constraintStart_toEndOf="@+id/imageView_myProfile_greenclock2"
