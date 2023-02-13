@@ -15,7 +15,7 @@
         android:theme="@style/Theme.LinkyBProject"
         tools:targetApi="31">
         <activity
-            android:name=".HomeUserInformation"
+            android:name=".homes.HomeUserInformationActivity"
             android:exported="false" />
         <activity
             android:name=".connect.ConnectFromMeActivity"

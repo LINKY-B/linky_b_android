@@ -88,8 +88,7 @@
         android:textSize="12dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@+id/textview_home_item_department"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textview_home_item_class_number"
@@ -102,8 +101,7 @@
         android:textSize="12dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@+id/textview_home_item_center"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_home_item"
