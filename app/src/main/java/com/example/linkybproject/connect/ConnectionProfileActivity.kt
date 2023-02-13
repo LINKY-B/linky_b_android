@@ -54,24 +54,10 @@ class ConnectionProfileActivity : AppCompatActivity() {
                     if (myName == "report") {
                         val dlgReport = ReportDialog(this@ConnectionProfileActivity)
                         dlgReport.Mydlg()
-                        dlgReport.setOnClickedListener(object : ReportDialog.ButtonClickListener {
-                            override fun onClicked(myName: String) {
-                                if (myName == "reported") {
-                                    Toast.makeText(this@ConnectionProfileActivity, "신고되었습니다.", Toast.LENGTH_SHORT).show()
-                                }
-                            }
-                        })
                     }
                     else if (myName == "block") {
                         val dlgBlock = BlockDialog(this@ConnectionProfileActivity)
                         dlgBlock.Mydlg()
-                        dlgBlock.setOnClickedListener(object : BlockDialog.ButtonClickListener {
-                            override fun onClicked(myName: String) {
-                                if (myName == "blocked") {
-                                    Toast.makeText(this@ConnectionProfileActivity, "차단되었습니다.", Toast.LENGTH_SHORT).show()
-                                }
-                            }
-                        })
                     }
                 }
             })

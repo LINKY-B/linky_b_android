@@ -3,6 +3,7 @@ package com.example.linkybproject.connect
 import android.app.Dialog
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogAllAcceptBinding
 
@@ -22,7 +23,7 @@ class AllAcceptDialog(private val context: AppCompatActivity) {
         }
 
         binding.btnAllAcceptance.setOnClickListener {
-            onClickedListener.onClicked("all accept")
+            Toast.makeText(context, "모든 연결을 수락하였습니다.", Toast.LENGTH_SHORT).show()
             dlg.dismiss()
         }
 
