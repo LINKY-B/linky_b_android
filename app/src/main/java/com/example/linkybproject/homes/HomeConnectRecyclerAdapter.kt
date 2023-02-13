@@ -12,8 +12,7 @@ import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 
 class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<HomeConnectRecyclerAdapter.ViewHolder>() {
 
-    var datalist =
-        mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
+    var datalist = mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
 
     inner class ViewHolder(private val binding: ItemHomeConnectRequestBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(userData: UserData) {
@@ -38,29 +37,23 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
                 dlg.Mydlg()
             }
 
-/*
             binding.imageviewHomeItemProfileimg.setOnClickListener {
                 val intent = Intent(binding.root.context, HomeUserInformationActivity::class.java)
-                intent.run { binding.root.context.startActivity(this) }
+                binding.root.context.startActivity(intent)
             }
 
             binding.textviewHomeItemNickname.setOnClickListener {
                 val intent = Intent(binding.root.context, HomeUserInformationActivity::class.java)
                 intent.run { binding.root.context.startActivity(this) }
             }
-*/
 
         }
 
     }
 
     //만들어진 뷰홀더 없을때 뷰홀더(레이아웃) 생성하는 함수
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemHomeConnectRequestBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeConnectRecyclerAdapter.ViewHolder {
+        val binding = ItemHomeConnectRequestBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 

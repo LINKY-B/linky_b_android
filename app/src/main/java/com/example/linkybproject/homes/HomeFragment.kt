@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,12 +38,13 @@ class HomeFragment:Fragment() {
 
     private val tabTextList = listOf<String>("재학생", "졸업생")
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        binding.tvHomeRefuse.setOnClickListener {
+            val dlg = AllRefuseDialog(binding.root.context as AppCompatActivity)
+            dlg.Mydlg()
+        }
 
         binding.viewpager2Home.adapter = FragmentAdapter(this)
 
