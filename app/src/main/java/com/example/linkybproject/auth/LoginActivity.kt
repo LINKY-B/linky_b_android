@@ -19,7 +19,11 @@ class LoginActivity : AppCompatActivity() {
         viewBinding.buttonLoginSubmit.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NEW_TASK))
-            finish()
+        }
+
+        viewBinding.textViewLoginGoSignUp.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
         }
     }
 }
