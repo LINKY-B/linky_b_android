@@ -6,7 +6,7 @@ import com.example.linkybproject.AcceptDialog
 import com.example.linkybproject.databinding.ActivityConnectFromProfileBinding
 
 class ConnectFromProfileActivity : AppCompatActivity() {
-    private lateinit var viewBinding: ActivityConnectFromProfileBinding
+    private lateinit var viewBinding: com.example.linkybproject.databinding.ActivityConnectFromProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         viewBinding = ActivityConnectFromProfileBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
