@@ -4,13 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.linkybproject.*
-import com.example.linkybproject.databinding.ActivityConnectionProfileBinding
+import com.example.linkybproject.databinding.ActivityConnectToProfileBinding
 
-class ConnectionProfileActivity : AppCompatActivity() {
-    private lateinit var viewBinding: ActivityConnectionProfileBinding
+class ConnectToProfileActivity : AppCompatActivity() {
+    private lateinit var viewBinding: ActivityConnectToProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        viewBinding = ActivityConnectionProfileBinding.inflate(layoutInflater)
+        viewBinding = ActivityConnectToProfileBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
 
@@ -49,11 +49,11 @@ class ConnectionProfileActivity : AppCompatActivity() {
             dlg.setOnClickedListener(object : ReportBlockDialog.ButtonClickListener {
                 override fun onClicked(myName: String) {
                     if (myName == "report") {
-                        val dlgReport = ReportDialog(this@ConnectionProfileActivity)
+                        val dlgReport = ReportDialog(this@ConnectToProfileActivity)
                         dlgReport.Mydlg()
                     }
                     else if (myName == "block") {
-                        val dlgBlock = BlockDialog(this@ConnectionProfileActivity)
+                        val dlgBlock = BlockDialog(this@ConnectToProfileActivity)
                         dlgBlock.Mydlg()
                     }
                 }
@@ -64,26 +64,31 @@ class ConnectionProfileActivity : AppCompatActivity() {
             val dlg = RefuseDialog(this)
             dlg.Mydlg()
 
+/*
             dlg.setOnClickedListener(object : RefuseDialog.ButtonClickListener {
                 override fun onClicked(myName: String) {
-                    if (myName == "refuse") {
-                        Toast.makeText(this@ConnectionProfileActivity, "거절되었습니다.", Toast.LENGTH_SHORT).show()
+                    if (myName == "done") {
+                        finish()
                     }
                 }
             })
+*/
         }
 
         viewBinding.btnConnectionAccept.setOnClickListener {
             val dlg = AcceptDialog(this)
             dlg.Mydlg()
 
+/*
             dlg.setOnClickedListener(object : AcceptDialog.ButtonClickListener {
                 override fun onClicked(myName: String) {
-                    if (myName == "accept") {
-                        Toast.makeText(this@ConnectionProfileActivity, "연결되었습니다.", Toast.LENGTH_SHORT).show()
+                    if (myName == "done") {
+                        finish()
                     }
                 }
             })
+*/
+
         }
     }
 }

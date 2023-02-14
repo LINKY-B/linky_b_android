@@ -904,7 +904,7 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
             intent.putExtra("userPersonalities", userPersonalities)
             intent.putExtra("userInterests", userInterests)
             intent.putExtra("userSelfIntroduction", userSelfIntroduction)
-            startActivity(intent)
+            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
 
 
             signup()

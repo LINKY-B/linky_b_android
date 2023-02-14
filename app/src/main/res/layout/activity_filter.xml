@@ -175,7 +175,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_filter_all"
                 android:layout_width="78dp"
-                android:layout_height="35dp"
+                android:layout_height="28dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/filter_button"
                 android:text="모든 성별"
@@ -185,8 +185,8 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_filter_man"
-                android:layout_width="45dp"
-                android:layout_height="35dp"
+                android:layout_width="37dp"
+                android:layout_height="28dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/filter_button"
                 android:text="남"
@@ -196,8 +196,8 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_filter_woman"
-                android:layout_width="45dp"
-                android:layout_height="35dp"
+                android:layout_width="37dp"
+                android:layout_height="28dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/filter_button"
                 android:text="여"
