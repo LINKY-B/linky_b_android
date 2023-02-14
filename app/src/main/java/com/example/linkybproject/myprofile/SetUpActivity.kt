@@ -47,7 +47,7 @@ class SetUpActivity : AppCompatActivity() {
                     if (myName == "logout") {
                         Toast.makeText(this@SetUpActivity, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@SetUpActivity, PrevLoginActivity::class.java)
-                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
                     }
                 }
             })

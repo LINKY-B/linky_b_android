@@ -53,8 +53,7 @@ class MemberLeaveActivity : AppCompatActivity() {
                 override fun onClicked(myName: String) {
                     if (myName == "leave") {
                         val intent = Intent(this@MemberLeaveActivity, PrevLoginActivity::class.java)
-                        startActivity(intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP))
-                        finish()
+                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
                     }
                 }
             })
