@@ -20,15 +20,6 @@ android:layout_height="match_parent">
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <!--            <ImageView-->
-            <!--                android:id="@+id/imageView_myProfile_profilebackground"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="236dp"-->
-            <!--                android:src="@drawable/profilebackground"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toTopOf="parent" />-->
-
             <ImageView
                 android:id="@+id/imageView_myProfile_edit"
                 android:layout_width="wrap_content"
@@ -74,7 +65,7 @@ android:layout_height="match_parent">
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView_myProfile_bean"
+                android:id="@+id/imageView_myProfile_good"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -87,22 +78,49 @@ android:layout_height="match_parent">
                 android:id="@+id/textView_myProfile_beanCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="2dp"
                 android:layout_marginTop="158dp"
                 android:text="12"
                 android:textColor="@color/green"
                 android:textSize="12dp"
-                app:layout_constraintStart_toEndOf="@+id/textView_myProfile_nickname"
+                app:layout_constraintStart_toEndOf="@+id/imageView_myProfile_good"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout_myProfile_intro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView_myProfile_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="201dp"
+            android:background="@drawable/tv_border"
+            android:paddingLeft="19dp"
+            android:paddingTop="26dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="25dp"
+            android:text="안녕하세요, 서로 정보 공유해요!\n3학년 재학 중이고 UXUI 디자인 분야 취준 중입니다."
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ScrollView
             android:id="@+id/scrollView_myProfile_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="282dp"
+            android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -117,13 +135,46 @@ android:layout_height="match_parent">
                 tools:layout_editor_absoluteX="-1dp"
                 tools:layout_editor_absoluteY="0dp">
 
+                <ImageView
+                    android:id="@+id/imageView_myProfile_greenclock2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="51dp"
+                    android:src="@drawable/greenclock"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_myProfile_green2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="48dp"
+                    android:text="6명과 링크 중입니다."
+                    android:textColor="@color/green"
+                    android:textSize="10dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView_myProfile_greenclock2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/grey_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="68dp"
+                    android:layout_marginEnd="17dp"
+                    android:background="@color/grey_line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView_myProfile_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="19dp"
-                    android:layout_marginTop="14dp"
+                    android:layout_marginTop="82dp"
                     android:text="회원정보"
                     android:textColor="@color/grey"
                     android:textSize="12dp"
@@ -135,7 +186,7 @@ android:layout_height="match_parent">
                     android:layout_width="38dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="19dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="121dp"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -192,7 +243,7 @@ android:layout_height="match_parent">
                     android:layout_width="78dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="64dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="124dp"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -201,7 +252,7 @@ android:layout_height="match_parent">
                         android:id="@+id/textView_myProfile_majorDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="11dp"
+                        android:layout_marginBottom="10dp"
                         android:text="시각디자인학과"
                         android:textColor="@color/black"
                         android:textSize="12dp" />
@@ -210,7 +261,7 @@ android:layout_height="match_parent">
                         android:id="@+id/textView_myProfile_noDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="11dp"
+                        android:layout_marginBottom="10dp"
                         android:text="19"
                         android:textColor="@color/black"
                         android:textSize="12dp" />
@@ -237,7 +288,6 @@ android:layout_height="match_parent">
                         android:id="@+id/textView_myProfile_mbtiDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="9dp"
                         android:text="ENFP"
                         android:textColor="@color/black"
                         android:textSize="12dp" />
@@ -248,7 +298,7 @@ android:layout_height="match_parent">
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="17dp"
-                    android:layout_marginTop="187dp"
+                    android:layout_marginTop="255dp"
                     android:layout_marginEnd="17dp"
                     android:background="@color/grey_line"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -322,67 +372,5 @@ android:layout_height="match_parent">
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout_myProfile_intro"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/textView_myProfile_intro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="201dp"
-            android:background="@drawable/tv_border"
-            android:paddingLeft="19dp"
-            android:paddingTop="26dp"
-            android:paddingRight="22dp"
-            android:paddingBottom="25dp"
-            android:text="안녕하세요, 서로 정보 공유해요!\n3학년 재학 중이고 UXUI 디자인 분야 취준 중입니다."
-            android:textColor="@color/black"
-            android:textSize="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView_myProfile_greenclock2"
-            android:layout_width="wrap_content"
-            android:layout_height="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="51dp"
-            android:src="@drawable/greenclock"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
-
-        <TextView
-            android:id="@+id/textView_myProfile_green2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="48dp"
-            android:text="6명과 링크 중입니다."
-            android:textColor="@color/green"
-            android:textSize="10dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView_myProfile_greenclock2"
-            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
-
-        <View
-            android:id="@+id/grey_line1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="68dp"
-            android:layout_marginEnd="17dp"
-            android:background="@color/grey_line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
