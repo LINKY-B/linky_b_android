@@ -3,7 +3,6 @@ package com.example.linkybproject.connect
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.AcceptDialog
@@ -44,7 +43,7 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
             }
 
             binding.profileImg.setOnClickListener {
-                val intent = Intent(binding.root.context, ConnectionProfileActivity::class.java)
+                val intent = Intent(binding.root.context, ConnectToProfileActivity::class.java)
                 intent.putExtra("name", userData.username)
                 intent.putExtra("like", userData.likecount)
 /*
@@ -59,7 +58,7 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
             }
 
             binding.profileName.setOnClickListener {
-                val intent = Intent(binding.root.context, ConnectionProfileActivity::class.java)
+                val intent = Intent(binding.root.context, ConnectToProfileActivity::class.java)
                 intent.putExtra("name", binding.profileName.text)
                 intent.putExtra("like", binding.profileLike.text)
                 /*

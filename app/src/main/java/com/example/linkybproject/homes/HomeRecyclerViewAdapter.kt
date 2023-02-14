@@ -2,13 +2,10 @@ package com.example.linkybproject.homes
 
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.connect.ConnectionProfileActivity
-import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 import com.example.linkybproject.databinding.ItemHomeRecyclerBinding
 
 class HomeRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {

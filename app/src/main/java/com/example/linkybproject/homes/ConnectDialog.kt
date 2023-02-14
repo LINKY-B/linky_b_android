@@ -23,6 +23,9 @@ class ConnectDialog(private val context: AppCompatActivity) {
         }
 
         binding.btnConnectTry.setOnClickListener {
+/*
+            onClickedListener.onClicked("done")
+*/
             Toast.makeText(context, "연결을 시도하였습니다.", Toast.LENGTH_SHORT).show()
             dlg.dismiss()
         }

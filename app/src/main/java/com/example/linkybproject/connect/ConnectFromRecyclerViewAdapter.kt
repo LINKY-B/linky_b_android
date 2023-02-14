@@ -35,7 +35,7 @@ class ConnectFromRecyclerViewAdapter(private val appCompatActivity: AppCompatAct
             }
 
             binding.profileImg.setOnClickListener {
-                val intent = Intent(binding.root.context, ConnectionProfileActivity::class.java)
+                val intent = Intent(binding.root.context, ConnectFromProfileActivity::class.java)
                 intent.putExtra("name", userData.username)
                 intent.putExtra("like", userData.likecount)
 /*
@@ -50,7 +50,7 @@ class ConnectFromRecyclerViewAdapter(private val appCompatActivity: AppCompatAct
             }
 
             binding.profileName.setOnClickListener {
-                val intent = Intent(binding.root.context, ConnectionProfileActivity::class.java)
+                val intent = Intent(binding.root.context, ConnectFromProfileActivity::class.java)
                 intent.putExtra("name", binding.profileName.text)
                 intent.putExtra("like", binding.profileLike.text)
                 /*

@@ -23,11 +23,24 @@ class DeleteDialog(private val context: AppCompatActivity) {
         }
 
         binding.btnDelete.setOnClickListener {
-            Toast.makeText(context, "모든 내역을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
+/*
+            onClickedListener.onClicked("done")
+*/
+            Toast.makeText(context, "연결 시도 내역을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
             dlg.dismiss()
         }
 
         dlg.show()
+    }
+
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
+    }
+
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
     }
 
 }

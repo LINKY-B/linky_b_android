@@ -373,4 +373,69 @@ android:layout_height="match_parent">
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
+<<<<<<< HEAD
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout_myProfile_intro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView_myProfile_intro"
+            android:layout_width="297dp"
+            android:layout_height="91dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="201dp"
+            android:background="@drawable/tv_border"
+            android:gravity="center|start"
+            android:paddingHorizontal="19dp"
+            android:paddingVertical="25dp"
+            android:text="안녕하세요, 서로 정보 공유해요!\n3학년 재학 중이고 UXUI 디자인 분야 취준 중입니다."
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_myProfile_greenclock2"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="51dp"
+            android:src="@drawable/greenclock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
+
+        <TextView
+            android:id="@+id/textView_myProfile_green2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="48dp"
+            android:text="6명과 링크 중입니다."
+            android:textColor="@color/green"
+            android:textSize="10dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView_myProfile_greenclock2"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
+
+        <View
+            android:id="@+id/grey_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="17dp"
+            android:background="@color/grey_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile_intro" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+=======
+>>>>>>> 7b219853421230c2f89f89d6d280a9f9fcbaf3e8
 </FrameLayout>
