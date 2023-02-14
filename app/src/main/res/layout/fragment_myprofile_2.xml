@@ -68,7 +68,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView_myProfile2_bean"
+                android:id="@+id/imageView_myProfile2_good"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -86,7 +86,7 @@
                 android:text="12"
                 android:textColor="@color/green"
                 android:textSize="12dp"
-                app:layout_constraintStart_toEndOf="@+id/imageView_myProfile2_bean"
+                app:layout_constraintStart_toEndOf="@+id/imageView_myProfile2_good"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -116,25 +116,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="68dp"
-            android:layout_marginEnd="17dp"
-            android:background="@color/grey_line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText_myProfile2_intro" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:id="@+id/scrollView_myProfile_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="282dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -149,12 +138,23 @@
         tools:layout_editor_absoluteX="-1dp"
         tools:layout_editor_absoluteY="0dp">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="17dp"
+            android:background="@color/grey_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/textView_myProfile2_info_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="82dp"
             android:text="회원정보"
             android:textColor="@color/grey"
             android:textSize="12dp"
@@ -166,7 +166,7 @@
             android:layout_width="38dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="121dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -213,10 +213,11 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout_myProfile2_info_detail"
             android:layout_width="78dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="124dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -225,7 +226,7 @@
                 android:id="@+id/textView_myProfile2_majorDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="11dp"
+                android:layout_marginBottom="10dp"
                 android:text="시각디자인학과"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
@@ -234,7 +235,7 @@
                 android:id="@+id/textView_myProfile2_noDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="11dp"
+                android:layout_marginBottom="10dp"
                 android:text="19"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
@@ -252,21 +253,42 @@
                 android:id="@+id/textView_myProfile2_genderDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="10dp"
                 android:text="여"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
 
-            <TextView
-                android:id="@+id/editText_myProfile2_mbtiDetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="9dp"
-                android:text="ENFP"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
+<!--            <TextView-->
+<!--                android:id="@+id/editText_myProfile2_mbtiDetail"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="9dp"-->
+<!--                android:text="ENFP"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12dp" />-->
 
         </LinearLayout>
+
+        <Spinner
+            android:id="@+id/spinner_mbti_update"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/spinner_signup"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout_myProfile2_info_detail"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/spinner_dropdown"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_mbti_update"
+            app:layout_constraintEnd_toEndOf="@id/spinner_mbti_update"
+            app:layout_constraintTop_toTopOf="@+id/spinner_mbti_update" />
 
         <View
             android:id="@+id/view_myprofile2_2"
@@ -274,7 +296,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="17dp"
             android:layout_marginEnd="17dp"
-            android:layout_marginTop="187dp"
+            android:layout_marginTop="285dp"
             android:background="@color/grey_line"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -292,30 +314,611 @@
             app:layout_constraintTop_toBottomOf="@+id/view_myprofile2_2"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageButton
-            android:id="@+id/imageButton_plus_personal"
+<!--        <ImageButton-->
+<!--            android:id="@+id/imageButton_plus_personal"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="18dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:srcCompat="@drawable/plus2" />-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerView_myProfile2_personal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="29dp"-->
+<!--            android:layout_marginStart="55dp"-->
+<!--            android:layout_marginEnd="18dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            tools:listitem="@layout/item_myprofile_personal_2" />-->
+
+        <!-- 선택지 -->
+        <TextView
+            android:id="@+id/personal_1_green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="다정한"
+            android:textColor="@color/green"
+            android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/plus2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title" />
+        <TextView
+            android:id="@+id/personal_1_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="다정한"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_myProfile2_personal"
-            android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title"
-            app:layout_constraintEnd_toEndOf="parent"
+        <TextView
+            android:id="@+id/personal_2_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="대범한"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_1_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title" />
+        <TextView
+            android:id="@+id/personal_2_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="대범한"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_1_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title" />
+
+        <TextView
+            android:id="@+id/personal_3_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="침착한"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_2_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title" />
+        <TextView
+            android:id="@+id/personal_3_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="침착한"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_2_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title" />
+
+        <TextView
+            android:id="@+id/personal_4_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="조심성 많은"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_3_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title" />
+        <TextView
+            android:id="@+id/personal_4_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="조심성 많은"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_3_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_personal_title" />
+
+        <TextView
+            android:id="@+id/personal_5_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="자신감 있는"
+            android:textColor="@color/green"
+            android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/item_myprofile_personal_2" />
+            app:layout_constraintTop_toBottomOf="@+id/personal_1_green" />
+        <TextView
+            android:id="@+id/personal_5_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="자신감 있는"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_1_green" />
+
+        <TextView
+            android:id="@+id/personal_6_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="책임감 있는"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_5_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_1_green" />
+        <TextView
+            android:id="@+id/personal_6_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="책임감 있는"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_5_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_1_green" />
+
+        <TextView
+            android:id="@+id/personal_7_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="자유분방한"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_6_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_1_green" />
+        <TextView
+            android:id="@+id/personal_7_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="자유분방한"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_6_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_1_green" />
+
+        <TextView
+            android:id="@+id/personal_8_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="지적인"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_7_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_1_green" />
+        <TextView
+            android:id="@+id/personal_8_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="지적인"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_7_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_1_green" />
+
+        <TextView
+            android:id="@+id/personal_9_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="지적인"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_8_grey" />
+        <TextView
+            android:id="@+id/personal_9_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="지적인"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_8_grey" />
+
+        <TextView
+            android:id="@+id/personal_10_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="용기 있는"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_9_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_8_grey" />
+        <TextView
+            android:id="@+id/personal_10_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="용기 있는"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_9_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_8_grey" />
+
+        <TextView
+            android:id="@+id/personal_11_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="신중한"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_10_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_8_grey" />
+        <TextView
+            android:id="@+id/personal_11_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="신중한"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_10_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_8_grey" />
+
+        <TextView
+            android:id="@+id/personal_12_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="예의 바른"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_11_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_8_grey" />
+        <TextView
+            android:id="@+id/personal_12_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="예의 바른"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_11_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_8_grey" />
+
+        <TextView
+            android:id="@+id/personal_13_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="호기심 많은"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_12_grey" />
+        <TextView
+            android:id="@+id/personal_13_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="호기심 많은"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_12_grey" />
+
+        <TextView
+            android:id="@+id/personal_14_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="정직한"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_13_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_12_grey" />
+        <TextView
+            android:id="@+id/personal_14_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="정직한"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_13_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_12_grey" />
+
+        <TextView
+            android:id="@+id/personal_15_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="열정적인"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_14_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_12_grey" />
+        <TextView
+            android:id="@+id/personal_15_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="열정적인"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_14_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_12_grey" />
+
+        <TextView
+            android:id="@+id/personal_16_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="결단력 있는"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_15_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_12_grey" />
+        <TextView
+            android:id="@+id/personal_16_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="결단력 있는"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_15_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_12_grey" />
+
+        <TextView
+            android:id="@+id/personal_17_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="효율적인"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_16_grey" />
+        <TextView
+            android:id="@+id/personal_17_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="효율적인"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_16_grey" />
+
+        <TextView
+            android:id="@+id/personal_18_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="낙천적인"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_17_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_16_grey" />
+        <TextView
+            android:id="@+id/personal_18_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="낙천적인"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_17_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_16_grey" />
+
+        <TextView
+            android:id="@+id/personal_19_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="부지런한"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_18_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_16_grey" />
+        <TextView
+            android:id="@+id/personal_19_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="부지런한"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_18_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_16_grey" />
+
+        <TextView
+            android:id="@+id/personal_20_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="재미있는"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_19_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_16_grey" />
+        <TextView
+            android:id="@+id/personal_20_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="재미있는"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/personal_19_grey"
+            app:layout_constraintTop_toBottomOf="@+id/personal_16_grey" />
 
         <View
             android:id="@+id/view_myprofile2_3"
@@ -323,9 +926,9 @@
             android:layout_height="1dp"
             android:layout_marginStart="17dp"
             android:layout_marginEnd="17dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="20dp"
             android:background="@color/grey_line"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton_plus_personal"
+            app:layout_constraintTop_toBottomOf="@+id/personal_17_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -341,30 +944,610 @@
             app:layout_constraintTop_toBottomOf="@+id/view_myprofile2_3"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageButton
-            android:id="@+id/imageButton_plus_interest"
+<!--        <ImageButton-->
+<!--            android:id="@+id/imageButton_plus_interest"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="18dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:srcCompat="@drawable/plus2" />-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerView_myProfile2_interest"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="29dp"-->
+<!--            android:layout_marginStart="55dp"-->
+<!--            android:layout_marginEnd="18dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            tools:listitem="@layout/item_myprofile_interest_2" />-->
+
+        <TextView
+            android:id="@+id/interest_1_green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="정보공유"
+            android:textColor="@color/green"
+            android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/plus2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
+        <TextView
+            android:id="@+id/interest_1_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="정보공유"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_myProfile2_interest"
-            android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title"
-            app:layout_constraintEnd_toEndOf="parent"
+        <TextView
+            android:id="@+id/interest_2_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="친목"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_1_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
+        <TextView
+            android:id="@+id/interest_2_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="친목"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_1_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
+
+        <TextView
+            android:id="@+id/interest_3_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="맛집"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_2_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
+        <TextView
+            android:id="@+id/interest_3_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="맛집"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_2_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
+
+        <TextView
+            android:id="@+id/interest_4_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="스터디"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_3_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
+        <TextView
+            android:id="@+id/interest_4_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="스터디"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_3_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
+
+        <TextView
+            android:id="@+id/interest_5_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="일상"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_4_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
+        <TextView
+            android:id="@+id/interest_5_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="일상"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_4_grey"
+            app:layout_constraintTop_toBottomOf="@+id/textView_myProfile2_interest_title" />
+
+        <TextView
+            android:id="@+id/interest_6_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="공모전"
+            android:textColor="@color/green"
+            android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/item_myprofile_interest_2" />
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+        <TextView
+            android:id="@+id/interest_6_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="공모전"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+
+        <TextView
+            android:id="@+id/interest_7_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="영화"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_6_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+        <TextView
+            android:id="@+id/interest_7_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="영화"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_6_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+
+        <TextView
+            android:id="@+id/interest_8_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="드라마"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_7_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+        <TextView
+            android:id="@+id/interest_8_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="드라마"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_7_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+
+        <TextView
+            android:id="@+id/interest_9_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="K-POP"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_8_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+        <TextView
+            android:id="@+id/interest_9_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="K-POP"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_8_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+
+        <TextView
+            android:id="@+id/interest_10_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="헬스"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_9_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+        <TextView
+            android:id="@+id/interest_10_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="헬스"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_9_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_5_grey" />
+
+        <TextView
+            android:id="@+id/interest_11_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="취업"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+        <TextView
+            android:id="@+id/interest_11_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="취업"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+
+        <TextView
+            android:id="@+id/interest_12_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="재테크"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_11_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+        <TextView
+            android:id="@+id/interest_12_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="재테크"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_11_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+
+        <TextView
+            android:id="@+id/interest_13_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="코딩"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_12_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+        <TextView
+            android:id="@+id/interest_13_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="코딩"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_12_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+
+        <TextView
+            android:id="@+id/interest_14_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="여행"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_13_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+        <TextView
+            android:id="@+id/interest_14_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="여행"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_13_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+
+        <TextView
+            android:id="@+id/interest_15_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="연애"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_14_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+        <TextView
+            android:id="@+id/interest_15_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="연애"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_14_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_10_grey" />
+
+        <TextView
+            android:id="@+id/interest_16_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="독서"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
+        <TextView
+            android:id="@+id/interest_16_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="독서"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
+
+        <TextView
+            android:id="@+id/interest_17_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="요리"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_16_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
+        <TextView
+            android:id="@+id/interest_17_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="요리"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_16_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
+
+        <TextView
+            android:id="@+id/interest_18_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="스포츠"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_17_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
+        <TextView
+            android:id="@+id/interest_18_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="스포츠"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_17_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
+
+        <TextView
+            android:id="@+id/interest_19_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="음악"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_18_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
+        <TextView
+            android:id="@+id/interest_19_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="음악"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_18_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
+
+        <TextView
+            android:id="@+id/interest_20_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border_update"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="유머"
+            android:textColor="@color/green"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_19_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
+        <TextView
+            android:id="@+id/interest_20_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/tv_item_list_border"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="7dp"
+            android:text="유머"
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/interest_19_grey"
+            app:layout_constraintTop_toBottomOf="@+id/interest_15_grey" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
