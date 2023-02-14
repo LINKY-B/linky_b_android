@@ -34,15 +34,18 @@ class FilterActivity :AppCompatActivity() {
         val adapter2 = FilterMbtiRecyclerViewAdapter()
 
         binding.rvFilterDepartment.adapter = adapter
-        binding.rvFilterDepartment.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvFilterDepartment.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         adapter.datalist = mutableListOf(
             Department("정보시스템공학과"),
             Department("컴퓨터공학과"),
-            Department("경영학과") ,Department("체육학과"),)
+            Department("경영학과"), Department("체육학과"),
+        )
 
         binding.rvFilterMbti.adapter = adapter2
-        binding.rvFilterMbti.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
+        binding.rvFilterMbti.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         adapter2.datalist = mutableListOf(
             Mbti("ESFP"),
@@ -66,12 +69,13 @@ class FilterActivity :AppCompatActivity() {
         rangeSliderInit()
 
     }
+
     //filteRagneSlider
     private lateinit var rangeSlider: RangeSlider
 
     //초기값 설정
     private fun rangeSliderInit() {
-        rangeSlider =  binding.filterRangeSlider
+        rangeSlider = binding.filterRangeSlider
         //최솟값
         rangeSlider.valueFrom = 10f
         //최댓값
@@ -102,23 +106,33 @@ class FilterActivity :AppCompatActivity() {
     }
 
 
-
     @SuppressLint("ResourceType")
     private fun setupSpinnerDepartment() {
-        val department = resources.getStringArray(R.array.department_list_item)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item,department)
-        binding.departmentSpinner.adapter = adapter
+        // 1. 제외할 학과
+        val department: Spinner = binding.departmentSpinner
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.department_list_item,
+            R.layout.spinner_signup_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(R.layout.spinner_signup_dropdown)
+            department.adapter = adapter
+        }
     }
-
 
     @SuppressLint("ResourceType")
     private fun setupSpinnerMbti() {
-        val mbti = resources.getStringArray(R.array.mbti_list_item)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, mbti)
-        binding.mbtiSpinner.adapter = adapter
+        // 1. 제외할 Mbti
+        val Mbti: Spinner = binding.mbtiSpinner
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.mbti_list_item,
+            R.layout.spinner_signup_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(R.layout.spinner_signup_dropdown)
+            Mbti.adapter = adapter
+        }
+
+
     }
-
-
-
-
 }

@@ -19,6 +19,7 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
         return MyViewHolder(binding)
     }
 
+
     override fun getItemCount(): Int = datalist.size
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
