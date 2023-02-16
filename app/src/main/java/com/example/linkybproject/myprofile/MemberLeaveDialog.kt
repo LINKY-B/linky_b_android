@@ -1,10 +1,12 @@
 package com.example.linkybproject.myprofile
 
 import android.app.Dialog
+import android.content.Intent
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogMemberLeaveBinding
+import com.example.linkybproject.onBoarding.PrevLoginActivity
 
 class MemberLeaveDialog(private val context: AppCompatActivity) {
     private lateinit var binding: DialogMemberLeaveBinding
@@ -21,7 +23,22 @@ class MemberLeaveDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
+        binding.btnLeave.setOnClickListener {
+            onClickedListener.onClicked("leave")
+            dlg.dismiss()
+        }
+
         dlg.show()
+    }
+
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
+    }
+
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
     }
 
 }

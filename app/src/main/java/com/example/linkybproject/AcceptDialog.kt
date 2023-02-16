@@ -3,6 +3,7 @@ package com.example.linkybproject
 import android.app.Dialog
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogAcceptBinding
 
@@ -21,7 +22,25 @@ class AcceptDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
+        binding.btnAccept.setOnClickListener {
+/*
+            onClickedListener.onClicked("done")
+*/
+            Toast.makeText(context, "연결 요청을 수락하였습니다.", Toast.LENGTH_SHORT).show()
+            dlg.dismiss()
+        }
+
         dlg.show()
+    }
+
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
+    }
+
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
     }
 
 }

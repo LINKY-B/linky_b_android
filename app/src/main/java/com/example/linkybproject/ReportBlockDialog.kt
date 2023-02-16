@@ -1,4 +1,4 @@
-package com.example.linkybproject.connect
+package com.example.linkybproject
 
 import android.app.Dialog
 import android.graphics.Color
@@ -22,11 +22,31 @@ class ReportBlockDialog(private val context: AppCompatActivity) {
         dlg.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dlg.setCancelable(false)
 
+        binding.btnReporting.setOnClickListener {
+            onClickedListener.onClicked("report")
+            dlg.dismiss()
+        }
+
+        binding.btnBlocking.setOnClickListener {
+            onClickedListener.onClicked("block")
+            dlg.dismiss()
+        }
+
         binding.btnCancle.setOnClickListener {
             dlg.dismiss()
         }
 
         dlg.show()
+    }
+
+    interface ButtonClickListener {
+        fun onClicked(myName: String)
+    }
+
+    private lateinit var onClickedListener: ButtonClickListener
+
+    fun setOnClickedListener(listener: ButtonClickListener) {
+        onClickedListener = listener
     }
 
 }

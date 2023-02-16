@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -20,11 +21,11 @@ class SignupActivity2 : AppCompatActivity() {
     private lateinit var binding : ActivitySignup2Binding
 
     // SignupActivity3 로 가지고 넘어갈 값. 회원가입 끝에 서버에 넘길 데이터
-    private lateinit var userNum: String
     private lateinit var userName: String
-    private lateinit var userNickname: String
-    private lateinit var userBirth: String
+    private lateinit var userNickName: String
+    private lateinit var userPhone: String
     private lateinit var userPassword: String
+    private lateinit var userBirth: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -215,21 +216,28 @@ class SignupActivity2 : AppCompatActivity() {
         binding.textViewBtnNext3Green.setOnClickListener{
             // 생년월일 사용자 선택에 응답 -> 년,월,일 각각 작성해야함
             val year: String = binding.spinnerBirthYear.selectedItem.toString()
-            val month: String = binding.spinnerBirthMonth.selectedItem.toString()
+            var month: String = binding.spinnerBirthMonth.selectedItem.toString()
             var day: String = binding.spinnerBirthDay.selectedItem.toString()
+            if (month.length == 1) {
+                month = "0$month"
+            }
             if (day.length == 1) {
                 day = "0$day" // 2 선택하면 02로 추가되게
             }
             userBirth = year + month + day
             Toast.makeText(this@SignupActivity2, userBirth, Toast.LENGTH_SHORT).show()
 
+            Log.d("userName", userName)
+            Log.d("userNickName", userNickName)
+            Log.d("userPhone", userPhone)
+            Log.d("userPassword", userPassword)
+            Log.d("userBirth", userBirth)
             val intent = Intent(this, SignupActivity3::class.java)
-            // userBasicInfo 객체 만드는 건 의논 후 작성
-            intent.putExtra("userNum", userNum)
             intent.putExtra("userName", userName)
-            intent.putExtra("userNickname", userNickname)
-            intent.putExtra("userBirth", userBirth)
+            intent.putExtra("userNickName", userNickName)
+            intent.putExtra("userPhone", userPhone)
             intent.putExtra("userPassword", userPassword)
+            intent.putExtra("userBirth", userBirth)
             startActivity(intent)
         }
 
@@ -267,7 +275,7 @@ class SignupActivity2 : AppCompatActivity() {
         binding.textViewBtnGetAuthGreen.visibility = View.VISIBLE
 //        Toast.makeText(this@SignupActivity2, "Valid phone number", Toast.LENGTH_SHORT).show()
 
-        userNum = phoneNumber
+        userPhone = phoneNumber
     }
 
     // 2. 이름 유효성 검사 함수
@@ -330,7 +338,7 @@ class SignupActivity2 : AppCompatActivity() {
         binding.textViewBtnNickGreen.visibility = View.VISIBLE
 //        Toast.makeText(this@SignupActivity2, "Valid Nickname", Toast.LENGTH_SHORT).show()
 
-        userNickname = nick
+        userNickName = nick
     }
 
     // 5. 비밀번호 유효성 검사 함수

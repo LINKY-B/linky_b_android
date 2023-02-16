@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="269dp"
-    android:layout_height="167dp"
+    android:layout_height="142dp"
     android:background="@drawable/dialog_round">
 
     <ImageButton
@@ -20,28 +20,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
-        android:layout_marginBottom="110dp"
-        android:gravity="center"
-        android:text="배고픈청설모 님을"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:fontFamily="@font/roboto_regular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="43dp"
         android:layout_marginBottom="83dp"
         android:layout_marginHorizontal="65dp"
         android:gravity="center"
         android:text="차단 해제하시겠습니까?"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="14dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,11 +34,11 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_accept"
+        android:id="@+id/btn_unblock"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="111dp"
+        android:layout_marginTop="84dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_background"
         android:paddingHorizontal="63dp"

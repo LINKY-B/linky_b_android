@@ -39,33 +39,18 @@ class SetUpActivity : AppCompatActivity() {
         }
 
         viewBinding.btnSetUpLogout.setOnClickListener {
-            var dialog = AlertDialog.Builder(this)
-            dialog.setTitle("로그아웃을 하시겠습니까?")
-            dialog.setMessage("서비스를 이용해주셔서 감사합니다.")
-
-            fun toast() {
-                Toast.makeText(this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
-/*
-                MyApplication.prefs.edit.remove("email") // 여기서 Shared Preference 를 remove 한다!
-                MyApplication.prefs.edit.remove("password")
-                MyApplication.prefs.edit.commit() // SP 삭제되는 것을 확인
-*/
-                val intent = Intent(this, PrevLoginActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                startActivity(intent)
-            }
-            var dialogLister = DialogInterface.OnClickListener { p0, p1 ->
-                when (p1) {
-                    DialogInterface.BUTTON_POSITIVE -> toast()
-                }
-            }
-            dialog.setPositiveButton("YES", dialogLister)
-            dialog.setNegativeButton("NO", null)
-            dialog.show()
-/*
             val dlg = LogoutDialog(this)
             dlg.Mydlg()
-*/
+
+            dlg.setOnClickedListener(object : LogoutDialog.ButtonClickListener {
+                override fun onClicked(myName: String) {
+                    if (myName == "logout") {
+                        Toast.makeText(this@SetUpActivity, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this@SetUpActivity, PrevLoginActivity::class.java)
+                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
+                    }
+                }
+            })
         }
 
         viewBinding.btnSetUpMemberLeave.setOnClickListener {

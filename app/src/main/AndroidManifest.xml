@@ -15,6 +15,12 @@
         android:theme="@style/Theme.LinkyBProject"
         tools:targetApi="31">
         <activity
+            android:name=".connect.ConnectFromProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".homes.HomeUserInformationActivity"
+            android:exported="false" />
+        <activity
             android:name=".connect.ConnectFromMeActivity"
             android:exported="false" />
         <activity
@@ -40,7 +46,7 @@
             android:name=".myprofile.SetUpActivity"
             android:exported="false" />
         <activity
-            android:name=".connect.ConnectionProfileActivity"
+            android:name=".connect.ConnectToProfileActivity"
             android:exported="false" />
         <activity
             android:name=".onBoarding.PrevLoginActivity"
@@ -84,7 +90,7 @@
         </activity>
         <activity
             android:name=".auth.SignupActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -98,7 +104,7 @@
         </activity>
         <activity
             android:name=".auth.LoginActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -106,12 +112,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -123,6 +123,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
     </application>
 
 </manifest>
