@@ -10,6 +10,7 @@ import com.example.linkybproject.AcceptDialog
 import com.example.linkybproject.RefuseDialog
 import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 
+
 class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<HomeConnectRecyclerAdapter.ViewHolder>() {
 
     var datalist = mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
