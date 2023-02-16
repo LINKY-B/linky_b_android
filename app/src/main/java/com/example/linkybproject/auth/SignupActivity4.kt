@@ -34,7 +34,7 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
     private lateinit var userStudentNum : String
     private var gradeStatus : Boolean = false
 
-    private lateinit var profileImg : String
+    private var profileImg : Int = 1
     private lateinit var userMBTI : String
     private lateinit var userSex : String
     private var userPersonalities : ArrayList<String> = arrayListOf()
@@ -737,6 +737,15 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
 
         // 7. 시작하기 버튼
         binding.textViewBtnNext5Green.setOnClickListener {
+            if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
+                profileImg = 1
+            } else if (binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE) {
+                profileImg = 2
+            } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE) {
+                profileImg = 3
+            } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) {
+                profileImg = 4
+            }
             if (binding.textViewBtnMaleGreen.visibility == View.VISIBLE) {
                 userSex = binding.textViewBtnMaleGreen.text.toString()
             } else if (binding.textViewBtnFemaleGreen.visibility == View.VISIBLE) {
@@ -875,6 +884,7 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
             userMajorName = extras?.get("userMajorName") as String
             userStudentNum = extras?.get("userStudentNum") as String
             gradeStatus = extras?.get("gradeStatus") as Boolean
+            Log.d("profileImg", profileImg.toString())
             Log.d("userName", userName)
             Log.d("userNickName", userNickName)
             Log.d("userPhone", userPhone)
@@ -890,6 +900,7 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
             Log.d("userInterests", userInterests.toString())
             Log.d("userSelfIntroduction", userSelfIntroduction)
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("profileImg", profileImg)
             intent.putExtra("userName", userName)
             intent.putExtra("userNickName", userNickName)
             intent.putExtra("userPhone", userPhone)
@@ -954,7 +965,7 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
 
     private fun getSignupRequest(): SignupRequest {
 
-        return SignupRequest(userName, userNickName, userPhone, userPassword, userBirth,
+        return SignupRequest(profileImg, userName, userNickName, userPhone, userPassword, userBirth,
             userSchoolName, userMajorName, userMBTI, userStudentNum, gradeStatus,
             userPersonalities, userInterests, userSelfIntroduction)
     }

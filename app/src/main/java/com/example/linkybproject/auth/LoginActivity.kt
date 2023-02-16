@@ -4,11 +4,12 @@ import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.linkybproject.MainActivity
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivityLoginBinding
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), LoginView {
     private lateinit var viewBinding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,13 +18,35 @@ class LoginActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
 
         viewBinding.buttonLoginSubmit.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NEW_TASK))
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NEW_TASK))
+            login()
         }
 
         viewBinding.textViewLoginGoSignUp.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun getUserInfo(): LoginRequest {
+        val id: String = viewBinding.editTextLoginId.text.toString()
+        val password: String = viewBinding.editTextLoginPassword.text.toString()
+
+        return LoginRequest(id, password)
+    }
+
+    private fun login() {
+        val loginService = LoginService()
+        loginService.setLoginView(this)
+        loginService.login(getUserInfo())
+    }
+
+    override fun onLoginSuccess() {
+        Toast.makeText(this, "로그인에 성공했습니다", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onLoginFailure() {
+        Toast.makeText(this, "로그인에 실패했습니다", Toast.LENGTH_SHORT).show()
     }
 }
