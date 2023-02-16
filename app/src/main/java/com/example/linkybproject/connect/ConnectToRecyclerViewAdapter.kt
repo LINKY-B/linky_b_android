@@ -4,14 +4,24 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.AcceptDialog
+import com.example.linkybproject.InterestData
 import com.example.linkybproject.RefuseDialog
 import com.example.linkybproject.databinding.ItemConnectToMeBinding
 
 class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<ConnectToRecyclerViewAdapter.MyViewHolder>() {
 
-    var datalist = mutableListOf<ConnectUserData>()
+    var datalist = mutableListOf<ConnectToUserData>()
+/*
+    lateinit var items: ArrayList<InterestData>
+
+    fun build(i: ArrayList<InterestData>): ConnectToRecyclerViewAdapter {
+        items = i
+        return this
+    }
+*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConnectToRecyclerViewAdapter.MyViewHolder {
         val binding = ItemConnectToMeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -22,11 +32,14 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(datalist[position])
+/*
+        holder.bind2(items[position])
+*/
     }
 
     inner class MyViewHolder(private val binding: ItemConnectToMeBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(userData: ConnectUserData){
+        fun bind(userData: ConnectToUserData){
             binding.profileName.text = userData.username
             binding.profileLike.text = userData.likecount.toString()
             binding.profileMajor.text = userData.major + "/"
@@ -70,7 +83,28 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
                 intent.putExtra("gender", userData.gender)
                 intent.putExtra("mbti", userData.mbti)
                 intent.run { binding.root.context.startActivity(this) }
+
+/*
+                with(binding) {
+                    binding.interestRecyclerview.apply {
+                        adapter = ConnectInterestAdapter().build(userData.interest)
+                        layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                    }
+                }
+*/
+
             }
         }
+
+/*
+        fun bind2(item: InterestData) {
+            with(binding) {
+                binding.interestRecyclerview.apply {
+                    adapter = ConnectInterestAdapter().build(item.interest)
+                    layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                }
+            }
+        }
+*/
     }
 }

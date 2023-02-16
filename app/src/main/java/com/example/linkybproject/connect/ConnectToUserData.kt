@@ -1,6 +1,6 @@
 package com.example.linkybproject.connect
 
-data class ConnectUserData(
+data class ConnectToUserData(
     val userimg : String,
     val username : String,
     val likecount: Int,
@@ -8,5 +8,6 @@ data class ConnectUserData(
     val classOf :Int,
     val age: Int,
     val gender: String,
-    val mbti: String
+    val mbti: String,
+    var interest: ArrayList<String>
 )
