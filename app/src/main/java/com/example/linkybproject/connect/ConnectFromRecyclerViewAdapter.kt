@@ -9,9 +9,9 @@ import com.example.linkybproject.databinding.ItemConnectFromMeBinding
 
 class ConnectFromRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity):RecyclerView.Adapter<ConnectFromRecyclerViewAdapter.ViewHolder>() {
 
-    var datalist = mutableListOf<ConnectUserData>()
+    var datalist = mutableListOf<ConnectFromUserData>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConnectFromRecyclerViewAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemConnectFromMeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
@@ -23,7 +23,7 @@ class ConnectFromRecyclerViewAdapter(private val appCompatActivity: AppCompatAct
     }
 
     inner class ViewHolder(private val binding: ItemConnectFromMeBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(userData: ConnectUserData){
+        fun bind(userData: ConnectFromUserData){
             binding.profileName.text = userData.username
             binding.profileLike.text = userData.likecount.toString()
             binding.profileMajor.text = userData.major + "/"
