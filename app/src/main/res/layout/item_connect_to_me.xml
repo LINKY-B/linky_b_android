@@ -93,6 +93,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/interest_recyclerview"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="79dp"

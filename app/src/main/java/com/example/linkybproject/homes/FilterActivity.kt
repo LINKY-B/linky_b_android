@@ -1,21 +1,13 @@
 package com.example.linkybproject.homes
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ImageButton
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.linkybproject.InterestData
 import com.example.linkybproject.R
-import com.example.linkybproject.connect.ConnectInterestAdapter
-import com.example.linkybproject.connect.ConnectUserData
 import com.example.linkybproject.databinding.ActivityFilterBinding
 import com.google.android.material.slider.RangeSlider
 
