@@ -5,5 +5,4 @@ import retrofit2.http.POST
 
 interface AuthRetrofitInterface {
     @POST("/users/auth/login")
-
 }
