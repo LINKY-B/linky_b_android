@@ -1,5 +1,6 @@
 package com.example.linkybproject.auth
 
+import android.annotation.SuppressLint
 import android.util.Log
 import com.example.linkybproject.getRetrofit
 import retrofit2.Call
@@ -20,10 +21,12 @@ class SignupService {
         val signupService = getRetrofit().create(SignupRetrofitInterface::class.java)
 
         signupService.signup(signupRequest).enqueue(object: Callback<SignupResponse> {
+            @SuppressLint("SuspiciousIndentation")
             override fun onResponse(call: Call<SignupResponse>, response: Response<SignupResponse>) {
                 Log.d("SIGNUP/SUCCESS", response.toString())
                 val resp: SignupResponse = response.body()!!
 
+//                Log.d("SIGNUP/SUCCESS/PHONE", resp.phone.toString())
 //                if(resp.phone) {
                     signupView.onSignupSuccess()
 //                    1000 ->  signupView.onSignupSuccess()
