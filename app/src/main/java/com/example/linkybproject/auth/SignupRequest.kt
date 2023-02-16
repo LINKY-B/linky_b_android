@@ -3,6 +3,7 @@ package com.example.linkybproject.auth
 import com.google.gson.annotations.SerializedName
 
 data class SignupRequest(
+    @SerializedName(value = "profileImg") var profileImg: Int,
     @SerializedName(value = "userName") var userName: String,
     @SerializedName(value = "userNickName") var userNickName: String,
     @SerializedName(value = "userPhone") var userPhone: String,
