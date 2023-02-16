@@ -179,7 +179,7 @@
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/filter_button"
                 android:text="모든 성별"
-                android:textColor="@color/grey"
+                android:textColor="@drawble/re"
                 android:textSize="12dp"
                 android:fontFamily="@font/roboto_regular"/>
 
