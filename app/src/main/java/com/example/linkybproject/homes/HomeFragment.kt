@@ -15,34 +15,23 @@ import com.example.linkybproject.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class HomeFragment:Fragment() {
+class HomeFragment:Fragment(){
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var adapter: HomeRecyclerViewAdapter
-
-    //val mDatas = mutableListOf<UserData>()
 
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
 
-
     private val tabTextList = listOf<String>("재학생", "졸업생")
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
         binding.viewpager2Home.adapter = FragmentAdapter(this)
-
         TabLayoutMediator(binding.tabLayout, binding.viewpager2Home) { tab, position ->
             tab.text = tabTextList[position]
         }.attach()
 
-
         val adapter = HomeConnectRecyclerAdapter()
-
         adapter.datalist = mutableListOf(  UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", ""),
             UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", ""),
             UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", ""),
@@ -85,6 +74,7 @@ class HomeFragment:Fragment() {
 
         }
     }
+
 }
 
 

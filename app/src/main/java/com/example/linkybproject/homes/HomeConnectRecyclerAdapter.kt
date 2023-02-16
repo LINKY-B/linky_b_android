@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 
-class HomeConnectRecyclerAdapter: RecyclerView.Adapter<HomeConnectRecyclerAdapter.ViewHolder>() {
+class HomeConnectRecyclerAdapter(): RecyclerView.Adapter<HomeConnectRecyclerAdapter.ViewHolder>() {
 
     var datalist = mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
 
