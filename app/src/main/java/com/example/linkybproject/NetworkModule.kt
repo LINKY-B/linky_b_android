@@ -12,8 +12,6 @@ import javax.net.ssl.HttpsURLConnection
 const val BASE_URL = "http://192.168.0.3:8001"
 
 fun getRetrofit(): Retrofit {
-//    return Retrofit.Builder().baseUrl(BASE_URL)
-//        .addConverterFactory(GsonConverterFactory.create()).build()
 
     val interceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
