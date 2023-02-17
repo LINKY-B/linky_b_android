@@ -22,6 +22,7 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
             binding.textviewHomeItemCount.text = userData.likecount.toString()
             binding.textviewHomeItemDepartment.text = userData.department
 
+
             binding.recyclerviewHomeItem.apply {
                 var innerRecyclerAdapter = HomeInterestRecyclerAdapter();
                 innerRecyclerAdapter.datalist = userData.interests.toMutableList();
