@@ -22,10 +22,14 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
             binding.textviewHomeItemCount.text = userData.likecount.toString()
             binding.textviewHomeItemDepartment.text = userData.department
 
+
             binding.recyclerviewHomeItem.apply {
-                adapter = HomeInterestRecyclerAdapter()
+                var innerRecyclerAdapter = HomeInterestRecyclerAdapter();
+                innerRecyclerAdapter.datalist = userData.interests.toMutableList();
+                adapter = innerRecyclerAdapter;
                 layoutManager = LinearLayoutManager(binding.recyclerviewHomeItem.context, LinearLayoutManager.HORIZONTAL, false)
                 setHasFixedSize(true)
+
             }
 
             binding.ibHomeItemDelete.setOnClickListener {

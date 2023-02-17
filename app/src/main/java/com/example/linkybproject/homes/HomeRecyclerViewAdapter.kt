@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.databinding.ItemHomeRecyclerBinding
 
@@ -23,6 +24,14 @@ class HomeRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity):
             binding.ibItemConnect.setOnClickListener {
                 val dlg = ConnectDialog(appCompatActivity)
                 dlg.Mydlg()
+            }
+            binding.recyclerviewHomeMainItem.apply {
+                var innerRecyclerAdapter = HomeInterestRecyclerAdapter();
+                innerRecyclerAdapter.datalist = userData.interests.toMutableList();
+                adapter = innerRecyclerAdapter;
+                layoutManager = LinearLayoutManager(binding.recyclerviewHomeMainItem.context, LinearLayoutManager.HORIZONTAL, false)
+                setHasFixedSize(true)
+
             }
 
             binding.profileImg.setOnClickListener {

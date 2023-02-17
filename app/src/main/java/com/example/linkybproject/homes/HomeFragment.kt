@@ -57,24 +57,24 @@ class HomeFragment:Fragment() {
 
         val adapter2 = HomeInterestRecyclerAdapter()
 
-        adapter?.datalist = mutableListOf(  UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))), UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모2", 20, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
-            UserData("", "배고픈 청설모1", 29, "정보시스템공학과", "", "", listOf<Interest>(Interest("jj"))),
-        )
+        adapter?.datalist = mutableListOf(
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            )
         binding.rvHomeNewConnect.adapter = adapter
         binding.rvHomeNewConnect.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
