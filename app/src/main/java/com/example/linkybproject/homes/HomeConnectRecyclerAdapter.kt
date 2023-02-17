@@ -23,9 +23,12 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
             binding.textviewHomeItemDepartment.text = userData.department
 
             binding.recyclerviewHomeItem.apply {
-                adapter = HomeInterestRecyclerAdapter()
+                var ad = HomeInterestRecyclerAdapter();
+                ad.datalist = userData.interests.toMutableList();
+                adapter = ad;
                 layoutManager = LinearLayoutManager(binding.recyclerviewHomeItem.context, LinearLayoutManager.HORIZONTAL, false)
                 setHasFixedSize(true)
+
             }
 
             binding.ibHomeItemDelete.setOnClickListener {
