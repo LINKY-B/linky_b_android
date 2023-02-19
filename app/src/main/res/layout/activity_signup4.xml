@@ -11,11 +11,14 @@
         android:id="@+id/imageView_signup4_back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/transparent"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="10dp"
+        android:src="@drawable/back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"

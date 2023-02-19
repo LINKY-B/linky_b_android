@@ -32,6 +32,10 @@ class SignupActivity2 : AppCompatActivity() {
         binding = ActivitySignup2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.imageViewSignup2Back.setOnClickListener {
+            finish()
+        }
+
         // 버튼 비활성화 및 뷰 안 보이게 설정
         binding.textViewBtnGetAuthGrey.isEnabled = false
         binding.textViewBtnCheckAuthGrey.isEnabled = false

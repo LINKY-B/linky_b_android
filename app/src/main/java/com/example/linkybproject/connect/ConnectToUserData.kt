@@ -1,5 +1,7 @@
 package com.example.linkybproject.connect
 
+import com.example.linkybproject.homes.Interest
+
 data class ConnectToUserData(
     val userimg : String,
     val username : String,
@@ -9,5 +11,17 @@ data class ConnectToUserData(
     val age: Int,
     val gender: String,
     val mbti: String,
-    var interest: ArrayList<String>
+    val interests :List<Interest>
+)
+
+data class Interest(
+    val interest:String
+)
+
+data class Department(
+    val department: String
+)
+
+data class Mbti(
+    val mbti: String
 )

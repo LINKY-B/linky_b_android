@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.linkybproject.databinding.FragmentConnectionBinding
+import com.example.linkybproject.homes.Interest
 
 class ConnectionFragment : Fragment() {
     private lateinit var binding: FragmentConnectionBinding
@@ -34,10 +35,10 @@ class ConnectionFragment : Fragment() {
 
 
         adapter1?.datalist = mutableListOf(
-            ConnectToUserData("", "퍼플", 0, "휴먼지능정보공학", 18, 26, "남자", "MBTI", arrayListOf("정보공유")),
-            ConnectToUserData("", "쿼티", 1, "컴퓨터학과", 20, 25, "여자", "MBTI", arrayListOf("정보공유", "스터디메이트")),
-            ConnectToUserData("", "주이", 2, "컴퓨터소프트웨어", 20, 23, "여자", "MBTI", arrayListOf("정보공유", "스터디메이트", "취업준비")),
-            ConnectToUserData("", "에이치", 3, "컴퓨터학과", 20, 24, "여자", "MBTI", arrayListOf("정보공유", "스터디메이트", "취업준비")),
+            ConnectToUserData("", "퍼플", 0, "휴먼지능정보공학", 18, 26, "남자", "MBTI", listOf<Interest>(Interest("정보공유"))),
+            ConnectToUserData("", "쿼티", 1, "컴퓨터학과", 20, 25, "여자", "MBTI", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"))),
+            ConnectToUserData("", "주이", 2, "컴퓨터소프트웨어", 20, 23, "여자", "MBTI", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+            ConnectToUserData("", "에이치", 3, "컴퓨터학과", 20, 24, "여자", "MBTI", listOf<Interest>(Interest("정보공유"))),
             )
 
         binding.connectionList1.adapter = adapter1
