@@ -8,10 +8,13 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogRefuseBinding
+import com.example.linkybproject.homes.HomeConnectRecyclerAdapter
 
 class RefuseDialog(private val context: AppCompatActivity) {
     private lateinit var binding: DialogRefuseBinding
     private val dlg = Dialog(context)
+
+
 
     fun Mydlg() {
         binding = DialogRefuseBinding.inflate(context.layoutInflater)
@@ -27,6 +30,7 @@ class RefuseDialog(private val context: AppCompatActivity) {
         binding.btnRefuse.setOnClickListener {
 /*
             onClickedListener.onClicked("done")
+
 */
             Toast.makeText(context, "연결 요청을 거절하였습니다.", Toast.LENGTH_SHORT).show()
             dlg.dismiss()
@@ -44,5 +48,6 @@ class RefuseDialog(private val context: AppCompatActivity) {
     fun setOnClickedListener(listener: ButtonClickListener) {
         onClickedListener = listener
     }
+
 
 }

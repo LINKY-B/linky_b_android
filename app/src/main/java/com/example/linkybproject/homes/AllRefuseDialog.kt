@@ -17,7 +17,6 @@ class AllRefuseDialog(private val context: AppCompatActivity) {
         dlg.setContentView(binding.root)
         dlg.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
         dlg.setCancelable(false)
-
         binding.btnClose.setOnClickListener {
             dlg.dismiss()
         }

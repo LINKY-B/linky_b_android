@@ -30,16 +30,12 @@ class HomeFragment:Fragment() {
         }
     }
 
-    //val mDatas = mutableListOf<UserData>()
-
-    private lateinit var tabLayout: TabLayout
-    private lateinit var viewPager: ViewPager2
-
 
     private val tabTextList = listOf<String>("재학생", "졸업생")
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
 
         binding.tvHomeRefuse.setOnClickListener {
             val dlg = AllRefuseDialog(binding.root.context as AppCompatActivity)
@@ -53,10 +49,8 @@ class HomeFragment:Fragment() {
         }.attach()
 
 
-        val adapter = mainAppActivity?.let { HomeConnectRecyclerAdapter(it) }
-
-        val adapter2 = HomeInterestRecyclerAdapter()
-
+        //val adapter = mainAppActivity?.let { HomeConnectRecyclerAdapter(it) }
+        val adapter = HomeConnectRecyclerAdapter(appCompatActivity = AppCompatActivity())
         adapter?.datalist = mutableListOf(
             UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
             UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
@@ -75,11 +69,13 @@ class HomeFragment:Fragment() {
             UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
             UserData("", "배고픈 청설모1", 29, "시각디자인학과", "", "", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
             )
+
         binding.rvHomeNewConnect.adapter = adapter
         binding.rvHomeNewConnect.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
 
-        //필터 넘어가는 버튼
+
+            //필터 넘어가는 버튼
         val btn: ImageButton = binding.ibtnHomeFilter
         btn.setOnClickListener {
             val intent = Intent(activity,FilterActivity::class.java)
@@ -100,6 +96,7 @@ class HomeFragment:Fragment() {
 
 
         }
+
     }
 }
 
