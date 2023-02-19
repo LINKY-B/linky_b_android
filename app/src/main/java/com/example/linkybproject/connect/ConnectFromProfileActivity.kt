@@ -7,9 +7,10 @@ import com.example.linkybproject.BlockDialog
 import com.example.linkybproject.ReportBlockDialog
 import com.example.linkybproject.ReportDialog
 import com.example.linkybproject.databinding.ActivityConnectFromProfileBinding
+import com.example.linkybproject.homes.Interest
 
 class ConnectFromProfileActivity : AppCompatActivity() {
-    private lateinit var viewBinding: com.example.linkybproject.databinding.ActivityConnectFromProfileBinding
+    private lateinit var viewBinding: ActivityConnectFromProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         viewBinding = ActivityConnectFromProfileBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -42,6 +43,8 @@ class ConnectFromProfileActivity : AppCompatActivity() {
 
         val mbti = intent.getStringExtra("mbti")
         viewBinding.profileMbti.text = mbti
+
+        val interest = intent
 
         viewBinding.btnReportBlock.setOnClickListener {
             val dlg = ReportBlockDialog(this)
@@ -76,5 +79,15 @@ class ConnectFromProfileActivity : AppCompatActivity() {
 */
 
         }
+
+        val characterAdapter = ProfileCharacterAdapter()
+        characterAdapter.datalist = mutableListOf(
+            Character("외향적"), Character("사교적")
+        )
+
+        val interestAdapter = ProfileInterestAdapter()
+        interestAdapter.datalist = mutableListOf(
+            Interest("정보공유"), Interest("스터디메이트"), Interest("친목"), Interest("취업준비"),
+        )
     }
 }

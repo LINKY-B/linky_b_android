@@ -10,7 +10,7 @@ import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity(), LoginView {
-    private lateinit var viewBinding: ActivityLoginBinding
+    private lateinit var viewBinding: com.example.linkybproject.databinding.ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         viewBinding = ActivityLoginBinding.inflate(layoutInflater)
@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
             login()
 */
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
         }
 
         viewBinding.textViewLoginGoSignUp.setOnClickListener {
