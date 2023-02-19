@@ -22,7 +22,6 @@ class ReportDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
-/*
         var btn_select = false
         binding.report1.setOnClickListener {
             binding.report1.isSelected = binding.report1.isSelected != true
@@ -47,7 +46,6 @@ class ReportDialog(private val context: AppCompatActivity) {
         binding.report6.setOnClickListener {
             binding.report6.isSelected = binding.report6.isSelected != true
         }
-*/
 
         binding.btnReport.setOnClickListener {
             Toast.makeText(context, "신고되었습니다.", Toast.LENGTH_SHORT).show()

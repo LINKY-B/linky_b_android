@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.linkybproject.*
 import com.example.linkybproject.databinding.ActivityConnectToProfileBinding
+import com.example.linkybproject.homes.Interest
 
 class ConnectToProfileActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityConnectToProfileBinding
@@ -41,6 +42,16 @@ class ConnectToProfileActivity : AppCompatActivity() {
 
         val mbti = intent.getStringExtra("mbti")
         viewBinding.profileMbti.text = mbti
+
+        val characterAdapter = ProfileCharacterAdapter()
+        characterAdapter.datalist = mutableListOf(
+            Character("외향적"), Character("사교적")
+        )
+
+        val interestAdapter = ProfileInterestAdapter()
+        interestAdapter.datalist = mutableListOf(
+            Interest("정보공유"), Interest("스터디메이트"), Interest("친목"), Interest("취업준비"),
+        )
 
         viewBinding.btnReportBlock.setOnClickListener {
             val dlg = ReportBlockDialog(this)

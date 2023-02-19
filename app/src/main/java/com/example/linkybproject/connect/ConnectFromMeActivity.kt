@@ -3,7 +3,6 @@ package com.example.linkybproject.connect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.linkybproject.InterestData
 import com.example.linkybproject.databinding.ActivityConnectFromMeBinding
 
 class ConnectFromMeActivity : AppCompatActivity() {
