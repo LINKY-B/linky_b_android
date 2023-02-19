@@ -16,10 +16,10 @@ class ChatRoomActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.imageViewChatRoomPlus.setOnClickListener {
-            val dlg = ReportBlockDialog(this)
+            val dlg = ChatDialog(this)
             dlg.Mydlg()
 
-            dlg.setOnClickedListener(object : ReportBlockDialog.ButtonClickListener {
+            dlg.setOnClickedListener(object : ChatDialog.ButtonClickListener {
                 override fun onClicked(myName: String) {
                     if (myName == "report") {
                         val dlgReport = ReportDialog(this@ChatRoomActivity)
