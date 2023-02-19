@@ -10,6 +10,7 @@ import com.example.linkybproject.AcceptDialog
 import com.example.linkybproject.InterestData
 import com.example.linkybproject.RefuseDialog
 import com.example.linkybproject.databinding.ItemConnectToMeBinding
+import com.example.linkybproject.homes.HomeInterestRecyclerAdapter
 
 class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<ConnectToRecyclerViewAdapter.MyViewHolder>() {
 
@@ -44,6 +45,14 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
             binding.profileLike.text = userData.likecount.toString()
             binding.profileMajor.text = userData.major + "/"
             binding.profileClassOf.text = userData.classOf.toString() + "학번"
+
+            binding.interestRecyclerview.apply {
+                var innerRecyclerAdapter = HomeInterestRecyclerAdapter();
+                innerRecyclerAdapter.datalist = userData.interests.toMutableList();
+                adapter = innerRecyclerAdapter;
+                layoutManager = LinearLayoutManager(binding.interestRecyclerview.context, LinearLayoutManager.HORIZONTAL, false)
+                setHasFixedSize(true)
+            }
 
             binding.btnYes.setOnClickListener {
                 val dlg = AcceptDialog(appCompatActivity)
@@ -83,28 +92,8 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
                 intent.putExtra("gender", userData.gender)
                 intent.putExtra("mbti", userData.mbti)
                 intent.run { binding.root.context.startActivity(this) }
-
-/*
-                with(binding) {
-                    binding.interestRecyclerview.apply {
-                        adapter = ConnectInterestAdapter().build(userData.interest)
-                        layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                    }
-                }
-*/
-
             }
         }
 
-/*
-        fun bind2(item: InterestData) {
-            with(binding) {
-                binding.interestRecyclerview.apply {
-                    adapter = ConnectInterestAdapter().build(item.interest)
-                    layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                }
-            }
-        }
-*/
     }
 }

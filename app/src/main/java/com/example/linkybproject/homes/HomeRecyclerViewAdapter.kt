@@ -25,13 +25,13 @@ class HomeRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity):
                 val dlg = ConnectDialog(appCompatActivity)
                 dlg.Mydlg()
             }
+
             binding.recyclerviewHomeMainItem.apply {
                 var innerRecyclerAdapter = HomeInterestRecyclerAdapter();
                 innerRecyclerAdapter.datalist = userData.interests.toMutableList();
                 adapter = innerRecyclerAdapter;
                 layoutManager = LinearLayoutManager(binding.recyclerviewHomeMainItem.context, LinearLayoutManager.HORIZONTAL, false)
                 setHasFixedSize(true)
-
             }
 
             binding.profileImg.setOnClickListener {

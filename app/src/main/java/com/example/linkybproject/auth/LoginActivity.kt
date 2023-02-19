@@ -18,11 +18,20 @@ class LoginActivity : AppCompatActivity(), LoginView {
         setContentView(viewBinding.root)
 
         viewBinding.buttonLoginSubmit.setOnClickListener {
+/*
             login()
+*/
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
         viewBinding.textViewLoginGoSignUp.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+        }
+
+        viewBinding.textViewLoginFindPassword.setOnClickListener {
+            val intent = Intent(this, FindPasswordActivity::class.java)
             startActivity(intent)
         }
     }

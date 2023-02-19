@@ -15,8 +15,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="11dp"
+            android:layout_width="50dp"
+            android:layout_height="14dp"
             android:layout_marginStart="17dp"
             android:src="@drawable/logo"
             app:layout_constraintBottom_toBottomOf="parent"

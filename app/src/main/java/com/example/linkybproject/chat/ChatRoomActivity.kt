@@ -3,8 +3,7 @@ package com.example.linkybproject.chat
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.linkybproject.MainActivity
-import com.example.linkybproject.R
+import com.example.linkybproject.*
 import com.example.linkybproject.databinding.ActivityChatRoomBinding
 
 class ChatRoomActivity : AppCompatActivity() {
@@ -15,6 +14,28 @@ class ChatRoomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChatRoomBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.imageViewChatRoomPlus.setOnClickListener {
+            val dlg = ReportBlockDialog(this)
+            dlg.Mydlg()
+
+            dlg.setOnClickedListener(object : ReportBlockDialog.ButtonClickListener {
+                override fun onClicked(myName: String) {
+                    if (myName == "report") {
+                        val dlgReport = ReportDialog(this@ChatRoomActivity)
+                        dlgReport.Mydlg()
+                    }
+                    else if (myName == "block") {
+                        val dlgBlock = BlockDialog(this@ChatRoomActivity)
+                        dlgBlock.Mydlg()
+                    }
+                    else if (myName == "leave") {
+                        val dlgLeave = ChatLeaveDialog(this@ChatRoomActivity)
+                        dlgLeave.Mydlg()
+                    }
+                }
+            })
+        }
 
         // 인텐트 정보 받기
         val bundle = intent.extras
