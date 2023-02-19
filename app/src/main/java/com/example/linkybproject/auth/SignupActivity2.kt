@@ -1,7 +1,12 @@
 package com.example.linkybproject.auth
 
+import android.Manifest
+import android.app.PendingIntent
 import android.content.Intent
+import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.telephony.SmsManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -11,14 +16,25 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup2Binding
+import java.util.*
 import java.util.regex.Pattern
 
 
 class SignupActivity2 : AppCompatActivity() {
 
     private lateinit var binding : ActivitySignup2Binding
+
+    companion object {
+        const val SMS_SEND_PERMISSION: Int = 1
+    }
+    private lateinit var checkNum: String // 생성한 인증번호를 담을 변수
+    private var pref: SharedPreferences = getPreferences(MODE_PRIVATE)
+    private var editor = pref.edit()
+
 
     // SignupActivity3 로 가지고 넘어갈 값. 회원가입 끝에 서버에 넘길 데이터
     private lateinit var userName: String
@@ -68,6 +84,39 @@ class SignupActivity2 : AppCompatActivity() {
                 }
             }
         )
+
+        // 1-2. SMS 발송 권한 체크
+        val permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
+
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            // 문자 보내기 권한 거부
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) {
+                // Handle rationale for requesting SMS_SEND_PERMISSION
+                Toast.makeText(this@SignupActivity2, "SMS 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
+            }
+
+            // 문자 보내기 권한 허용
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.SEND_SMS),
+                Companion.SMS_SEND_PERMISSION
+            )
+        }
+
+        // 1-3. 인증번호 받기 버튼
+        binding.textViewBtnGetAuthGreen.setOnClickListener {
+            checkNum = numberGen(4, 1)
+            editor.putString("checkNum", checkNum)
+            sendSMS(binding.editTextSignupPhone.text.toString(), "인증번호 : $checkNum")
+        }
+
+        // 1-4. 인증번호 확인 버튼
+        binding.textViewBtnCheckAuthGreen.setOnClickListener {
+            if (pref.getString("checkNum", "").equals(binding.editTextSignupAuth.text.toString())) {
+                Toast.makeText(this@SignupActivity2, "인증 완료 되었습니다.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this@SignupActivity2, "인증번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
 
         // 2. 이름 유효성 검사
         binding.editTextSignupName.addTextChangedListener(
@@ -407,5 +456,37 @@ class SignupActivity2 : AppCompatActivity() {
             binding.textViewBtnNext3Grey.visibility = View.VISIBLE
         }
     }
+
+    // 7. SMS 발송 기능
+    private fun sendSMS(phoneNumber: String, message: String) {
+        val pendingIntent = PendingIntent.getActivity(this, 0, Intent(this, SignupActivity2::class.java), 0)
+        val sms = SmsManager.getDefault()
+        sms.sendTextMessage(phoneNumber, null, message, pendingIntent, null)
+        Toast.makeText(this@SignupActivity2, "메시지가 전송되었습니다.", Toast.LENGTH_SHORT).show()
+    }
+
+    // 8. 인증번호 생성 기능
+    fun numberGen(len: Int, dupCd: Int): String {
+        val rand = Random()
+        var numStr = "" // 난수 저장 변수
+
+        for (i in 0 until len) {
+            // 0~9까지 난수 생성
+            val ran = rand.nextInt(10).toString()
+
+            if (dupCd == 1) {
+                numStr += ran // 중복 허용 시 numStr에 append
+            } else if (dupCd == 2) {
+                if (!numStr.contains(ran)) { // 중복을 허용하지 않을 시 중복된 값이 있는지 검사
+                    numStr += ran
+                } else {
+                    continue // equivalent to i -= 1 in the original code, 생성된 난수가 중복되면 루틴을 다시 실행
+                }
+            }
+        }
+        return numStr
+    }
+
+
 
 }
