@@ -34,6 +34,7 @@ class ChatDialog(private val context: AppCompatActivity) {
 
         binding.btnLeave.setOnClickListener {
             onClickedListener.onClicked("leave")
+            dlg.dismiss()
         }
 
         binding.btnCancle.setOnClickListener {
