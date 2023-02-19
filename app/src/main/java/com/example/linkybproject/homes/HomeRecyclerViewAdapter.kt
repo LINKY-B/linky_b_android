@@ -61,14 +61,6 @@ class HomeRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity):
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(datalist[position])
 
-/*
-        // ViewHolder를 클릭했을 때 이벤트 정의
-        holder.itemView.setOnClickListener {
-            // 위에서 만든 Interface의 onItemClick을 실행
-            // 실제 이 함수 내용 정의는 Activity나 Fragment에서 이뤄짐
-            mItemClickListener.onItemClick(datalist[position])
-        }
-*/
     }
 
 /*

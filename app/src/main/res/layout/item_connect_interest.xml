@@ -15,7 +15,7 @@
         android:paddingVertical="3dp"
         android:text="정보공유"
         android:textColor="@color/black"
-        android:textSize="7dp"
+        android:textSize="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
