@@ -109,7 +109,13 @@ class SignupActivity2 : AppCompatActivity() {
         }
 
         // 1-4. 인증번호 확인 버튼
-        
+        binding.textViewBtnCheckAuthGreen.setOnClickListener {
+            if (pref.getString("checkNum", "").equals(binding.editTextSignupAuth.text.toString())) {
+                Toast.makeText(this@SignupActivity2, "인증 완료 되었습니다.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this@SignupActivity2, "인증번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
+            }
+        }
 
 
         // 2. 이름 유효성 검사
