@@ -2,6 +2,8 @@ package com.example.linkybproject.auth
 
 import android.Manifest
 import android.app.PendingIntent
+import android.app.PendingIntent.FLAG_CANCEL_CURRENT
+import android.app.PendingIntent.FLAG_MUTABLE
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -104,7 +106,7 @@ class SignupActivity2 : AppCompatActivity() {
 
         // 1-3. 인증번호 받기 버튼
         binding.textViewBtnGetAuthGreen.setOnClickListener {
-            checkNum = numberGen(4, 1)
+            checkNum = numberGen(6, 1)
             editor.putString("checkNum", checkNum)
             editor.apply()
             sendSMS(binding.editTextSignupPhone.text.toString(), "인증번호 : $checkNum")
@@ -464,7 +466,7 @@ class SignupActivity2 : AppCompatActivity() {
 
     // 7. SMS 발송 기능
     private fun sendSMS(phoneNumber: String, message: String) {
-        val pendingIntent = PendingIntent.getActivity(this, 0, Intent(this, SignupActivity2::class.java), 0)
+        val pendingIntent = PendingIntent.getActivity(this, 0, Intent(this, SignupActivity2::class.java), FLAG_MUTABLE)
         val sms = SmsManager.getDefault()
         sms.sendTextMessage(phoneNumber, null, message, pendingIntent, null)
         Toast.makeText(this@SignupActivity2, "메시지가 전송되었습니다.", Toast.LENGTH_SHORT).show()

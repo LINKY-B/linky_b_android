@@ -14,14 +14,6 @@ import com.example.linkybproject.homes.HomeInterestRecyclerAdapter
 class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<ConnectToRecyclerViewAdapter.MyViewHolder>() {
 
     var datalist = mutableListOf<ConnectToUserData>()
-/*
-    lateinit var items: ArrayList<InterestData>
-
-    fun build(i: ArrayList<InterestData>): ConnectToRecyclerViewAdapter {
-        items = i
-        return this
-    }
-*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConnectToRecyclerViewAdapter.MyViewHolder {
         val binding = ItemConnectToMeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -32,9 +24,6 @@ class ConnectToRecyclerViewAdapter(private val appCompatActivity: AppCompatActiv
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(datalist[position])
-/*
-        holder.bind2(items[position])
-*/
     }
 
     inner class MyViewHolder(private val binding: ItemConnectToMeBinding): RecyclerView.ViewHolder(binding.root) {
