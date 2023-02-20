@@ -32,8 +32,6 @@ class SignupActivity2 : AppCompatActivity() {
         const val SMS_SEND_PERMISSION: Int = 1
     }
     private lateinit var checkNum: String // 생성한 인증번호를 담을 변수
-    private var pref: SharedPreferences = getPreferences(MODE_PRIVATE)
-    private var editor = pref.edit()
 
 
     // SignupActivity3 로 가지고 넘어갈 값. 회원가입 끝에 서버에 넘길 데이터
@@ -47,6 +45,9 @@ class SignupActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignup2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val pref: SharedPreferences = getSharedPreferences("shared", 0)
+        val editor = pref.edit()
 
         binding.imageViewSignup2Back.setOnClickListener {
             finish()
@@ -105,7 +106,10 @@ class SignupActivity2 : AppCompatActivity() {
         binding.textViewBtnGetAuthGreen.setOnClickListener {
             checkNum = numberGen(4, 1)
             editor.putString("checkNum", checkNum)
+            editor.apply()
             sendSMS(binding.editTextSignupPhone.text.toString(), "인증번호 : $checkNum")
+
+            Log.d("shared checkNum", pref.getString("checkNum", "").toString())
         }
 
         // 1-4. 인증번호 확인 버튼
@@ -116,6 +120,7 @@ class SignupActivity2 : AppCompatActivity() {
                 Toast.makeText(this@SignupActivity2, "인증번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
             }
         }
+        // 여기 확인 완료되면, 이거 포함한 넘어가기 버튼 체크, 타이머 기능 추가해야함.
 
 
         // 2. 이름 유효성 검사
