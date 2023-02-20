@@ -13,30 +13,19 @@ import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 
 class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivity): RecyclerView.Adapter<HomeConnectRecyclerAdapter.ViewHolder>() {
 
-    interface OnItemClickListener {
-        fun onItemDeleteClick(userData: UserData, pos: Int)
-    }
-
-    private var clickListener: OnItemClickListener? = null
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.clickListener = listener
-    }
-
     var datalist = mutableListOf<UserData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
 
-
-    inner class ViewHolder(val binding: ItemHomeConnectRequestBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemHomeConnectRequestBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(userData: UserData) {
             //binding.dogPhotoImg.=dogData.dog_img
             binding.textviewHomeItemNickname.text = userData.username
             binding.textviewHomeItemCount.text = userData.likecount.toString()
             binding.textviewHomeItemDepartment.text = userData.department
 
-
             binding.recyclerviewHomeItem.apply {
-                var innerRecyclerAdapter = HomeInterestRecyclerAdapter();
-                innerRecyclerAdapter.datalist = userData.interests.toMutableList();
-                adapter = innerRecyclerAdapter
+                var ad = HomeInterestRecyclerAdapter();
+                ad.datalist = userData.interests.toMutableList();
+                adapter = ad;
                 layoutManager = LinearLayoutManager(binding.recyclerviewHomeItem.context, LinearLayoutManager.HORIZONTAL, false)
                 setHasFixedSize(true)
 
@@ -46,8 +35,6 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
                 val dlg = RefuseDialog(appCompatActivity)
                 dlg.Mydlg()
             }
-
-
 
             binding.btnHomeItemAccept.setOnClickListener {
                 val dlg = AcceptDialog(appCompatActivity)
@@ -66,9 +53,7 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
 
         }
 
-
     }
-
 
     //만들어진 뷰홀더 없을때 뷰홀더(레이아웃) 생성하는 함수
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeConnectRecyclerAdapter.ViewHolder {
@@ -84,9 +69,9 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(datalist[position])
-
+//        holder.bind(            UserData("", "배고픈 청설모", 20, "정보시스템공학과", "", ""))
     }
-}
 
+}
 
 
