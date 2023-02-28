@@ -59,6 +59,7 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeConnectRecyclerAdapter.ViewHolder {
         val binding = ItemHomeConnectRequestBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
+
     }
 
     override fun getItemCount(): Int = datalist.size

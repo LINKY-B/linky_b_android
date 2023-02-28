@@ -55,7 +55,7 @@ class ConnectFromRecyclerViewAdapter(private val appCompatActivity: AppCompatAct
                 intent.putExtra("like", binding.profileLike.text)
                 /*
                 intent.putExtra("numOfLink", )
-*/
+                */
                 intent.putExtra("major", binding.profileMajor.text)
                 intent.putExtra("classOf", binding.profileClassOf.text)
                 intent.putExtra("age", userData.age)
