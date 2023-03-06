@@ -14,9 +14,11 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup2Binding
 import java.util.*
+import java.util.jar.Manifest
 import java.util.regex.Pattern
 
 

@@ -256,127 +256,127 @@
                 app:layout_constraintTop_toBottomOf="@id/view_signup3" />
 
             <!-- 재학생 -->
-            <EditText
-                android:id="@+id/editText_signup3_email"
-                android:layout_width="202dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/tv_border"
-                android:gravity="center_vertical"
-                android:hint="학교 이메일을 입력해 주세요."
-                android:inputType="number"
-                android:paddingLeft="11dp"
-                android:textSize="12dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth"
-                tools:ignore="TouchTargetSizeCheck" />
-            <TextView
-                android:id="@+id/textView_signup3_btn_get_auth_green"
-                android:layout_width="97dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/tv_btn_signup_green"
-                android:gravity="center"
-                android:text="인증번호 받기"
-                android:textColor="@color/white"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth" />
-            <TextView
-                android:id="@+id/textView_signup3_btn_get_auth_grey"
-                android:layout_width="97dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/tv_btn_signup_grey"
-                android:gravity="center"
-                android:text="인증번호 받기"
-                android:textColor="@color/grey"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth" />
-            <TextView
-                android:id="@+id/textView_signup3_auth_email_error"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="4dp"
-                android:text="올바르지 않은 이메일 형식입니다."
-                android:textColor="@color/black"
-                android:textSize="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editText_signup3_email" />
+<!--            <EditText-->
+<!--                android:id="@+id/editText_signup3_email"-->
+<!--                android:layout_width="202dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginStart="25dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@drawable/tv_border"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:hint="학교 이메일을 입력해 주세요."-->
+<!--                android:inputType="number"-->
+<!--                android:paddingLeft="11dp"-->
+<!--                android:textSize="12dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth"-->
+<!--                tools:ignore="TouchTargetSizeCheck" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/textView_signup3_btn_get_auth_green"-->
+<!--                android:layout_width="97dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/tv_btn_signup_green"-->
+<!--                android:gravity="center"-->
+<!--                android:text="인증번호 받기"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/textView_signup3_btn_get_auth_grey"-->
+<!--                android:layout_width="97dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/tv_btn_signup_grey"-->
+<!--                android:gravity="center"-->
+<!--                android:text="인증번호 받기"-->
+<!--                android:textColor="@color/grey"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/textView_signup3_auth_email_error"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="27dp"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:text="올바르지 않은 이메일 형식입니다."-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="8dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/editText_signup3_email" />-->
 
-            <EditText
-                android:id="@+id/editText_signup3_email_auth"
-                android:layout_width="202dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/tv_border"
-                android:gravity="center"
-                android:inputType="number"
-                android:textSize="12dp"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-            <TextView
-                android:id="@+id/textView_signup_timer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:text="1:00"
-                android:textColor="@color/grey"
-                android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@+id/editText_signup3_email_auth"
-                app:layout_constraintEnd_toEndOf="@+id/editText_signup3_email_auth"
-                app:layout_constraintTop_toTopOf="@+id/editText_signup3_email_auth" />
-            <TextView
-                android:id="@+id/textView_signup3_btn_check_auth_green"
-                android:layout_width="97dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/tv_btn_signup_green"
-                android:gravity="center"
-                android:text="인증번호 확인"
-                android:textColor="@color/white"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error" />
-            <TextView
-                android:id="@+id/textView_signup3_btn_check_auth_grey"
-                android:layout_width="97dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/tv_btn_signup_grey"
-                android:gravity="center"
-                android:text="인증번호 확인"
-                android:textColor="@color/grey"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error" />
-            <TextView
-                android:id="@+id/textView_signup3_auth_check_error"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="4dp"
-                android:text="오류 메시지"
-                android:textColor="@color/black"
-                android:textSize="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editText_signup3_email_auth" />
+<!--            <EditText-->
+<!--                android:id="@+id/editText_signup3_email_auth"-->
+<!--                android:layout_width="202dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginStart="25dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="@drawable/tv_border"-->
+<!--                android:gravity="center"-->
+<!--                android:inputType="number"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error"-->
+<!--                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/textView_signup_timer"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:text="1:00"-->
+<!--                android:textColor="@color/grey"-->
+<!--                android:textSize="12dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/editText_signup3_email_auth"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/editText_signup3_email_auth"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/editText_signup3_email_auth" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/textView_signup3_btn_check_auth_green"-->
+<!--                android:layout_width="97dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/tv_btn_signup_green"-->
+<!--                android:gravity="center"-->
+<!--                android:text="인증번호 확인"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/textView_signup3_btn_check_auth_grey"-->
+<!--                android:layout_width="97dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/tv_btn_signup_grey"-->
+<!--                android:gravity="center"-->
+<!--                android:text="인증번호 확인"-->
+<!--                android:textColor="@color/grey"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth_email_error" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/textView_signup3_auth_check_error"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="27dp"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:text="오류 메시지"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="8dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/editText_signup3_email_auth" />-->
 
-            <!-- 졸업생 -->
+            <!-- 졸업생 (재학생도 통일) -->
             <TextView
                 android:id="@+id/textView_signup3_auth_grad_explain"
                 android:layout_width="wrap_content"
@@ -389,13 +389,25 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup3_auth" />
 
-<!--            <ImageButton-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/univplus"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
+            <ImageView
+                android:id="@+id/imageView_upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/imageupload"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup3_auth_grad_explain" />
 
-
+            <ImageView
+                android:id="@+id/imageView_uploaded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/authimage"
+                app:layout_constraintStart_toEndOf="@+id/imageView_upload_image"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup3_auth_grad_explain" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
