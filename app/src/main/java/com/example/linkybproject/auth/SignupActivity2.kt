@@ -1,12 +1,8 @@
 package com.example.linkybproject.auth
 
-import android.Manifest
 import android.app.PendingIntent
-import android.app.PendingIntent.FLAG_CANCEL_CURRENT
 import android.app.PendingIntent.FLAG_MUTABLE
 import android.content.Intent
-import android.content.SharedPreferences
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.telephony.SmsManager
 import android.text.Editable
@@ -18,8 +14,6 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup2Binding
 import java.util.*
@@ -39,7 +33,7 @@ class SignupActivity2 : AppCompatActivity() {
     // SignupActivity3 로 가지고 넘어갈 값. 회원가입 끝에 서버에 넘길 데이터
     private lateinit var userName: String
     private lateinit var userNickName: String
-    private lateinit var userPhone: String
+    private lateinit var userPhone: String // api 수정되면 휴대폰 -> 이메일 전체 수정
     private lateinit var userPassword: String
     private lateinit var userBirth: String
 
@@ -48,8 +42,8 @@ class SignupActivity2 : AppCompatActivity() {
         binding = ActivitySignup2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val pref: SharedPreferences = getSharedPreferences("shared", 0)
-        val editor = pref.edit()
+//        val pref: SharedPreferences = getSharedPreferences("shared", 0)
+//        val editor = pref.edit()
 
         binding.imageViewSignup2Back.setOnClickListener {
             finish()
@@ -68,60 +62,60 @@ class SignupActivity2 : AppCompatActivity() {
         binding.textViewSignup2PwError.visibility = View.INVISIBLE
         binding.textViewSignup2PwCheckError.visibility = View.INVISIBLE
 
-        // 1. 휴대폰 번호 유효성 검사 (editText 입력하는 순간마다 이벤트 처리)
-        binding.editTextSignupPhone.addTextChangedListener(
+        // 1. 이메일 유효성 검사 (editText 입력하는 순간마다 이벤트 처리)
+        binding.editTextSignupEmail.addTextChangedListener(
             object : TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                    checkPhoneValid()
+                    checkEmailValid()
                     checkOptions()
                 }
 
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                    checkPhoneValid()
+                    checkEmailValid()
                     checkOptions()
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkPhoneValid()
+                    checkEmailValid()
                     checkOptions()
                 }
             }
         )
 
         // 1-2. SMS 발송 권한 체크
-        val permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
-
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            // 문자 보내기 권한 거부
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) {
-                // Handle rationale for requesting SMS_SEND_PERMISSION
-                Toast.makeText(this@SignupActivity2, "SMS 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
-            }
-
-            // 문자 보내기 권한 허용
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.SEND_SMS),
-                Companion.SMS_SEND_PERMISSION
-            )
-        }
+//        val permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
+//
+//        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+//            // 문자 보내기 권한 거부
+//            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) {
+//                // Handle rationale for requesting SMS_SEND_PERMISSION
+//                Toast.makeText(this@SignupActivity2, "SMS 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
+//            }
+//
+//            // 문자 보내기 권한 허용
+//            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.SEND_SMS),
+//                Companion.SMS_SEND_PERMISSION
+//            )
+//        }
 
         // 1-3. 인증번호 받기 버튼
-        binding.textViewBtnGetAuthGreen.setOnClickListener {
-            checkNum = numberGen(6, 1)
-            editor.putString("checkNum", checkNum)
-            editor.apply()
-            sendSMS(binding.editTextSignupPhone.text.toString(), "인증번호 : $checkNum")
-
-            Log.d("shared checkNum", pref.getString("checkNum", "").toString())
-        }
-
-        // 1-4. 인증번호 확인 버튼
-        binding.textViewBtnCheckAuthGreen.setOnClickListener {
-            if (pref.getString("checkNum", "").equals(binding.editTextSignupAuth.text.toString())) {
-                Toast.makeText(this@SignupActivity2, "인증 완료 되었습니다.", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this@SignupActivity2, "인증번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
-            }
-        }
+//        binding.textViewBtnGetAuthGreen.setOnClickListener {
+//            checkNum = numberGen(6, 1)
+//            editor.putString("checkNum", checkNum)
+//            editor.apply()
+//            sendSMS(binding.editTextSignupPhone.text.toString(), "인증번호 : $checkNum")
+//
+//            Log.d("shared checkNum", pref.getString("checkNum", "").toString())
+//        }
+//
+//        // 1-4. 인증번호 확인 버튼
+//        binding.textViewBtnCheckAuthGreen.setOnClickListener {
+//            if (pref.getString("checkNum", "").equals(binding.editTextSignupAuth.text.toString())) {
+//                Toast.makeText(this@SignupActivity2, "인증 완료 되었습니다.", Toast.LENGTH_SHORT).show()
+//            } else {
+//                Toast.makeText(this@SignupActivity2, "인증번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
+//            }
+//        }
         // 여기 확인 완료되면, 이거 포함한 넘어가기 버튼 체크, 타이머 기능 추가해야함.
 
 
@@ -303,39 +297,37 @@ class SignupActivity2 : AppCompatActivity() {
 
     }
 
-    // 1. 휴대폰 번호 유효성 검사 함수
-    private fun checkPhoneValid() {
-        val phoneNumber = binding.editTextSignupPhone.text.toString()
+    // 1. 이메일 유효성 검사 함수
+    private fun checkEmailValid() {
+        val email = binding.editTextSignupEmail.text.toString()
 
         // 길이 검증
-        if (phoneNumber.length != 11) {
-            // phone number is not valid - it should be 10 digits long
+//        if (email.length != 11) {
+//            // phone number is not valid - it should be 10 digits long
+//            binding.textViewBtnGetAuthGreen.visibility = View.INVISIBLE
+//            binding.textViewError1.visibility = View.VISIBLE
+//            binding.textViewBtnGetAuthGrey.visibility = View.VISIBLE
+////            Toast.makeText(this@SignupActivity2, "Invalid phone number", Toast.LENGTH_SHORT).show()
+//            return
+//        }
+
+        // 이메일 유효성 검증
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            // email is not valid - it should contain only digits
             binding.textViewBtnGetAuthGreen.visibility = View.INVISIBLE
             binding.textViewError1.visibility = View.VISIBLE
             binding.textViewBtnGetAuthGrey.visibility = View.VISIBLE
-//            Toast.makeText(this@SignupActivity2, "Invalid phone number", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this@SignupActivity2, "Invalid email", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // 숫자 검증 (확인 못해봄. 애초에 inputType을 phoneNumber로 해서 키보드 바꾸기가 안 뜸. 근데 갤럭시 안 써서 다른 데서 어케 뜨는지 확인해봐야 함)
-        for (i in 0 until phoneNumber.length) {
-            if (!phoneNumber[i].isDigit()) {
-                // phone number is not valid - it should contain only digits
-                binding.textViewBtnGetAuthGreen.visibility = View.INVISIBLE
-                binding.textViewError1.visibility = View.VISIBLE
-                binding.textViewBtnGetAuthGrey.visibility = View.VISIBLE
-//                Toast.makeText(this@SignupActivity2, "Invalid phone number", Toast.LENGTH_SHORT).show()
-                return
-            }
-        }
-
-        // phone number is valid
+        // email is valid
         binding.textViewBtnGetAuthGrey.visibility = View.INVISIBLE
         binding.textViewError1.visibility = View.INVISIBLE
         binding.textViewBtnGetAuthGreen.visibility = View.VISIBLE
-//        Toast.makeText(this@SignupActivity2, "Valid phone number", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this@SignupActivity2, "Valid email", Toast.LENGTH_SHORT).show()
 
-        userPhone = phoneNumber
+        userPhone = email
     }
 
     // 2. 이름 유효성 검사 함수
