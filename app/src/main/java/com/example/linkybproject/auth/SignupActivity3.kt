@@ -1,8 +1,12 @@
 package com.example.linkybproject.auth
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -11,8 +15,19 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup3Binding
+import java.io.File
+import java.util.jar.Manifest
+import android.app.PendingIntent
+import android.app.PendingIntent.FLAG_MUTABLE
+import java.util.*
+import java.util.regex.Pattern
 
 class SignupActivity3 : AppCompatActivity() {
 
@@ -23,6 +38,69 @@ class SignupActivity3 : AppCompatActivity() {
     private lateinit var userMajorName : String
     private lateinit var userStudentNum : String
     private var gradeStatus : Boolean = false
+
+    // 갤러리 이미지 업로드
+    companion object {
+        const val REVIEW_MIN_LENGTH = 10
+        const val REQ_GALLERY = 1 // 갤러리 권한 요청
+
+        // api 호출 시 parameter key 값
+        const val PARAM_KEY_IMAGE = "image"
+        const val PARAM_KEY_PRODUCT_ID = "product_id"
+        const val PARAM_KEY_REVIEW = "review_content"
+        const val PARAM_KEY_RATING = "rating"
+    }
+
+    private lateinit var imageFile: File // 자료형 틀릴 수도 있음
+    // 이미지를 결과 값으로 받는 변수
+    private val imageResult = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) {
+        result -> if(result.resultCode == RESULT_OK) {
+            val imageUri = result.data?.data
+            imageUri?.let {
+                imageFile = File(getRealPathFromURI(it)) // 서버 업로드 위해 파일 형태로 변환
+                Glide.with(this)
+                    .load(imageUri)
+                    .fitCenter()
+                    .apply(RequestOptions().override(500,500))
+                    .into(binding.imageViewUploaded) // 이미지 불러옴
+            }
+        }
+    }
+
+    // 이미지 실제 경로 반환
+    fun getRealPathFromURI(uri: Uri): String {
+        val buildName = Build.MANUFACTURER
+        if(buildName.equals("Xiaomi")) {
+            return uri.path!!
+        }
+
+        var columnIndex = 0
+        val proj = arrayOf(MediaStore.Images.Media.DATA)
+        val cursor = contentResolver.query(uri, proj, null, null, null)
+        if (cursor!!.moveToFirst()) {
+            columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+        }
+        val result = cursor.getString(columnIndex)
+        cursor.close()
+        return result
+    }
+
+    // 갤러리 부르는 메소드
+    private fun selectGallery() {
+        val writePermission = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        val readPermission = ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)
+
+        if (writePermission == PackageManager.PERMISSION_DENIED || readPermission == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, android.Manifest.permission.READ_EXTERNAL_STORAGE), REQ_GALLERY)
+        } else {
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*")
+
+            imageResult.launch(intent)
+        }
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,18 +117,21 @@ class SignupActivity3 : AppCompatActivity() {
         binding.textViewBtnNext4Grey.isEnabled = false
         // 재학생
         binding.textViewSignup3AuthStu.visibility = View.INVISIBLE
-        binding.editTextSignup3Email.visibility = View.INVISIBLE
-        binding.textViewSignup3BtnGetAuthGreen.visibility = View.INVISIBLE
-        binding.textViewSignup3BtnGetAuthGrey.visibility = View.INVISIBLE
-        binding.textViewSignup3AuthEmailError.visibility = View.INVISIBLE
-        binding.editTextSignup3EmailAuth.visibility = View.INVISIBLE
-        binding.textViewSignupTimer.visibility = View.INVISIBLE
-        binding.textViewSignup3BtnCheckAuthGreen.visibility = View.INVISIBLE
-        binding.textViewSignup3BtnCheckAuthGrey.visibility = View.INVISIBLE
-        binding.textViewSignup3AuthCheckError.visibility = View.INVISIBLE
+//        binding.editTextSignup3Email.visibility = View.INVISIBLE
+//        binding.textViewSignup3BtnGetAuthGreen.visibility = View.INVISIBLE
+//        binding.textViewSignup3BtnGetAuthGrey.visibility = View.INVISIBLE
+//        binding.textViewSignup3AuthEmailError.visibility = View.INVISIBLE
+//        binding.editTextSignup3EmailAuth.visibility = View.INVISIBLE
+//        binding.textViewSignupTimer.visibility = View.INVISIBLE
+//        binding.textViewSignup3BtnCheckAuthGreen.visibility = View.INVISIBLE
+//        binding.textViewSignup3BtnCheckAuthGrey.visibility = View.INVISIBLE
+//        binding.textViewSignup3AuthCheckError.visibility = View.INVISIBLE
         // 졸업생
         binding.textViewSignup3AuthGrad.visibility = View.INVISIBLE
         binding.textViewSignup3AuthGradExplain.visibility = View.INVISIBLE
+        // 공통
+        binding.imageViewUploadImage.visibility = View.INVISIBLE
+        binding.imageViewUploaded.visibility = View.INVISIBLE
 
 
         // 1. 소속 학교 드롭다운
@@ -129,54 +210,63 @@ class SignupActivity3 : AppCompatActivity() {
                     binding.textViewSignup3AuthExplain.visibility = View.INVISIBLE
                     // 재학생
                     binding.textViewSignup3AuthStu.visibility = View.VISIBLE
-                    binding.editTextSignup3Email.visibility = View.VISIBLE
-                    binding.textViewSignup3BtnGetAuthGreen.visibility = View.VISIBLE
-                    binding.textViewSignup3BtnGetAuthGrey.visibility = View.VISIBLE
-//                    binding.textViewSignup3AuthEmailError.visibility = View.VISIBLE
-                    binding.editTextSignup3EmailAuth.visibility = View.VISIBLE
-                    binding.textViewSignupTimer.visibility = View.VISIBLE
-                    binding.textViewSignup3BtnCheckAuthGreen.visibility = View.VISIBLE
-                    binding.textViewSignup3BtnCheckAuthGrey.visibility = View.VISIBLE
-//                    binding.textViewSignup3AuthCheckError.visibility = View.VISIBLE
+//                    binding.editTextSignup3Email.visibility = View.VISIBLE
+//                    binding.textViewSignup3BtnGetAuthGreen.visibility = View.VISIBLE
+//                    binding.textViewSignup3BtnGetAuthGrey.visibility = View.VISIBLE
+////                    binding.textViewSignup3AuthEmailError.visibility = View.VISIBLE
+//                    binding.editTextSignup3EmailAuth.visibility = View.VISIBLE
+//                    binding.textViewSignupTimer.visibility = View.VISIBLE
+//                    binding.textViewSignup3BtnCheckAuthGreen.visibility = View.VISIBLE
+//                    binding.textViewSignup3BtnCheckAuthGrey.visibility = View.VISIBLE
+////                    binding.textViewSignup3AuthCheckError.visibility = View.VISIBLE
 
                     binding.textViewSignup3AuthGrad.visibility = View.INVISIBLE
-                    binding.textViewSignup3AuthGradExplain.visibility = View.INVISIBLE
+                    binding.textViewSignup3AuthGradExplain.visibility = View.VISIBLE
+
+                    binding.imageViewUploadImage.visibility = View.VISIBLE
+                    binding.imageViewUploaded.visibility = View.VISIBLE
 
                     gradeStatus = false
                 } else if (flag == "졸업") {
                     binding.textViewSignup3AuthExplain.visibility = View.INVISIBLE
                     // 졸업생
                     binding.textViewSignup3AuthStu.visibility = View.INVISIBLE
-                    binding.editTextSignup3Email.visibility = View.INVISIBLE
-                    binding.textViewSignup3BtnGetAuthGreen.visibility = View.INVISIBLE
-                    binding.textViewSignup3BtnGetAuthGrey.visibility = View.INVISIBLE
-                    binding.textViewSignup3AuthEmailError.visibility = View.INVISIBLE
-                    binding.editTextSignup3EmailAuth.visibility = View.INVISIBLE
-                    binding.textViewSignupTimer.visibility = View.INVISIBLE
-                    binding.textViewSignup3BtnCheckAuthGreen.visibility = View.INVISIBLE
-                    binding.textViewSignup3BtnCheckAuthGrey.visibility = View.INVISIBLE
-                    binding.textViewSignup3AuthCheckError.visibility = View.INVISIBLE
+//                    binding.editTextSignup3Email.visibility = View.INVISIBLE
+//                    binding.textViewSignup3BtnGetAuthGreen.visibility = View.INVISIBLE
+//                    binding.textViewSignup3BtnGetAuthGrey.visibility = View.INVISIBLE
+//                    binding.textViewSignup3AuthEmailError.visibility = View.INVISIBLE
+//                    binding.editTextSignup3EmailAuth.visibility = View.INVISIBLE
+//                    binding.textViewSignupTimer.visibility = View.INVISIBLE
+//                    binding.textViewSignup3BtnCheckAuthGreen.visibility = View.INVISIBLE
+//                    binding.textViewSignup3BtnCheckAuthGrey.visibility = View.INVISIBLE
+//                    binding.textViewSignup3AuthCheckError.visibility = View.INVISIBLE
 
                     binding.textViewSignup3AuthGrad.visibility = View.VISIBLE
                     binding.textViewSignup3AuthGradExplain.visibility = View.VISIBLE
+
+                    binding.imageViewUploadImage.visibility = View.VISIBLE
+                    binding.imageViewUploaded.visibility = View.VISIBLE
 
                     gradeStatus = true
                 } else {
                     binding.textViewSignup3AuthExplain.visibility = View.VISIBLE
                     // 재학생
                     binding.textViewSignup3AuthStu.visibility = View.INVISIBLE
-                    binding.editTextSignup3Email.visibility = View.INVISIBLE
-                    binding.textViewSignup3BtnGetAuthGreen.visibility = View.INVISIBLE
-                    binding.textViewSignup3BtnGetAuthGrey.visibility = View.INVISIBLE
-                    binding.textViewSignup3AuthEmailError.visibility = View.INVISIBLE
-                    binding.editTextSignup3EmailAuth.visibility = View.INVISIBLE
-                    binding.textViewSignupTimer.visibility = View.INVISIBLE
-                    binding.textViewSignup3BtnCheckAuthGreen.visibility = View.INVISIBLE
-                    binding.textViewSignup3BtnCheckAuthGrey.visibility = View.INVISIBLE
-                    binding.textViewSignup3AuthCheckError.visibility = View.INVISIBLE
+//                    binding.editTextSignup3Email.visibility = View.INVISIBLE
+//                    binding.textViewSignup3BtnGetAuthGreen.visibility = View.INVISIBLE
+//                    binding.textViewSignup3BtnGetAuthGrey.visibility = View.INVISIBLE
+//                    binding.textViewSignup3AuthEmailError.visibility = View.INVISIBLE
+//                    binding.editTextSignup3EmailAuth.visibility = View.INVISIBLE
+//                    binding.textViewSignupTimer.visibility = View.INVISIBLE
+//                    binding.textViewSignup3BtnCheckAuthGreen.visibility = View.INVISIBLE
+//                    binding.textViewSignup3BtnCheckAuthGrey.visibility = View.INVISIBLE
+//                    binding.textViewSignup3AuthCheckError.visibility = View.INVISIBLE
                     // 졸업생
                     binding.textViewSignup3AuthGrad.visibility = View.INVISIBLE
                     binding.textViewSignup3AuthGradExplain.visibility = View.INVISIBLE
+
+                    binding.imageViewUploadImage.visibility = View.INVISIBLE
+                    binding.imageViewUploaded.visibility = View.INVISIBLE
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {

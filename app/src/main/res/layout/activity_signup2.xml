@@ -68,12 +68,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView_signup2_phone_title"
+                android:id="@+id/textView_signup2_email_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="68dp"
-                android:text="휴대폰 번호"
+                android:text="이메일"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,20 +81,20 @@
 
 
             <EditText
-                android:id="@+id/editText_signup_phone"
+                android:id="@+id/editText_signup_email"
                 android:layout_width="202dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/tv_border"
                 android:gravity="center_vertical"
-                android:hint="특수기호 없이 숫자만 입력해 주세요."
-                android:inputType="number"
+                android:hint="이메일 형식으로 입력해주세요."
+                android:inputType="textEmailAddress"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup2_phone_title"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_email_title"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
@@ -103,11 +103,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="4dp"
-                android:text="올바르지 않은 휴대폰 번호 형식입니다."
+                android:text="올바르지 않은 이메일 형식입니다."
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editText_signup_phone" />
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_email" />
 
             <EditText
                 android:id="@+id/editText_signup_auth"
@@ -137,7 +137,7 @@
                 android:textSize="12dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup2_phone_title" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_email_title" />
 
             <TextView
                 android:id="@+id/textView_btn_get_auth_grey"
@@ -152,7 +152,7 @@
                 android:textSize="12dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_signup2_phone_title" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup2_email_title" />
 
             <TextView
                 android:id="@+id/textView_btn_check_auth_green"
