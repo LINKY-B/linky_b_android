@@ -21,6 +21,8 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
             binding.textviewHomeItemNickname.text = userData.username
             binding.textviewHomeItemCount.text = userData.likecount.toString()
             binding.textviewHomeItemDepartment.text = userData.department
+            binding.textviewHomeItemClassNumber.text = userData.studentnum.toString()
+
 
             binding.recyclerviewHomeItem.apply {
                 var ad = HomeInterestRecyclerAdapter();

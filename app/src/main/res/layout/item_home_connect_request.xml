@@ -96,12 +96,24 @@
         android:layout_height="16dp"
         android:layout_marginTop="47dp"
         android:gravity="center"
-        android:text="20학번"
+        android:text="20"
         android:textColor="@color/black"
         android:textSize="12dp"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toEndOf="@+id/textview_home_item_center"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginTop="47dp"
+        android:gravity="center"
+        android:text="학번"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintStart_toEndOf="@+id/textview_home_item_class_number"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_home_item"
