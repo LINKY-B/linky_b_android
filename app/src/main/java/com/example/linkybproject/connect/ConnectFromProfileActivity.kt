@@ -2,10 +2,9 @@ package com.example.linkybproject.connect
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.linkybproject.AcceptDialog
-import com.example.linkybproject.BlockDialog
-import com.example.linkybproject.ReportBlockDialog
-import com.example.linkybproject.ReportDialog
+import com.example.linkybproject.common.BlockDialog
+import com.example.linkybproject.common.ReportBlockDialog
+import com.example.linkybproject.common.ReportDialog
 import com.example.linkybproject.databinding.ActivityConnectFromProfileBinding
 import com.example.linkybproject.homes.Interest
 

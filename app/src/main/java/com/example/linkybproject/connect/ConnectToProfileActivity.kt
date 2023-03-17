@@ -2,8 +2,7 @@ package com.example.linkybproject.connect
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.example.linkybproject.*
+import com.example.linkybproject.common.*
 import com.example.linkybproject.databinding.ActivityConnectToProfileBinding
 import com.example.linkybproject.homes.Interest
 

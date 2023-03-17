@@ -1,4 +1,4 @@
-package com.example.linkybproject
+package com.example.linkybproject.common
 
 import android.app.Dialog
 import android.view.Window

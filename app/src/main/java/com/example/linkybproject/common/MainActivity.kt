@@ -1,7 +1,8 @@
-package com.example.linkybproject
+package com.example.linkybproject.common
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.linkybproject.R
 import com.example.linkybproject.chat.ChatFragment
 import com.example.linkybproject.connect.ConnectionFragment
 import com.example.linkybproject.databinding.ActivityMainBinding

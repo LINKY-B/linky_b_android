@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.AcceptDialog
-import com.example.linkybproject.RefuseDialog
+import com.example.linkybproject.common.AcceptDialog
+import com.example.linkybproject.common.RefuseDialog
 import com.example.linkybproject.databinding.ItemConnectToMeBinding
 import com.example.linkybproject.homes.HomeInterestRecyclerAdapter
 

@@ -12,9 +12,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
-import com.example.linkybproject.MainActivity
+import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.R
-import com.example.linkybproject.databinding.FragmentMyprofile1Binding
 import com.example.linkybproject.databinding.FragmentMyprofile2Binding
 
 class MyProfile2Fragment : Fragment() {

@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.linkybproject.MainActivity
+import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.databinding.FragmentMyprofile1Binding
 
 class MyProfile1Fragment : Fragment() {
