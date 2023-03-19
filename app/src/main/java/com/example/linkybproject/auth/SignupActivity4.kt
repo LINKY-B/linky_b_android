@@ -11,10 +11,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.MainActivity
+import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup4Binding
 

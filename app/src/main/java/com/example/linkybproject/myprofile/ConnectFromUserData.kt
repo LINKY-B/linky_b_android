@@ -1,4 +1,4 @@
-package com.example.linkybproject.connect
+package com.example.linkybproject.myprofile
 
 data class ConnectFromUserData(
     val userimg : String,
@@ -9,4 +9,4 @@ data class ConnectFromUserData(
     val age: Int,
     val gender: String,
     val mbti: String,
-    )
+)

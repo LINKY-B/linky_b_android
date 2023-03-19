@@ -1,18 +1,18 @@
-package com.example.linkybproject
+package com.example.linkybproject.common
 
 import android.app.Dialog
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.linkybproject.databinding.DialogBlockBinding
+import com.example.linkybproject.databinding.DialogAcceptBinding
 
-class BlockDialog(private val context: AppCompatActivity) {
-    private lateinit var binding: DialogBlockBinding
+class AcceptDialog(private val context: AppCompatActivity) {
+    private lateinit var binding: DialogAcceptBinding
     private val dlg = Dialog(context)
 
     fun Mydlg() {
-        binding = DialogBlockBinding.inflate(context.layoutInflater)
+        binding = DialogAcceptBinding.inflate(context.layoutInflater)
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dlg.setContentView(binding.root)
         dlg.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
@@ -22,8 +22,11 @@ class BlockDialog(private val context: AppCompatActivity) {
             dlg.dismiss()
         }
 
-        binding.btnBlock.setOnClickListener {
-            Toast.makeText(context, "차단되었습니다.", Toast.LENGTH_SHORT).show()
+        binding.btnAccept.setOnClickListener {
+/*
+            onClickedListener.onClicked("done")
+*/
+            Toast.makeText(context, "연결 요청을 수락하였습니다.", Toast.LENGTH_SHORT).show()
             dlg.dismiss()
         }
 

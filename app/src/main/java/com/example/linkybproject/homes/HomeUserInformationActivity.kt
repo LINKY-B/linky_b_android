@@ -2,11 +2,9 @@ package com.example.linkybproject.homes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.example.linkybproject.BlockDialog
-import com.example.linkybproject.RefuseDialog
-import com.example.linkybproject.ReportDialog
-import com.example.linkybproject.ReportBlockDialog
+import com.example.linkybproject.common.BlockDialog
+import com.example.linkybproject.common.ReportDialog
+import com.example.linkybproject.common.ReportBlockDialog
 import com.example.linkybproject.databinding.ActivityHomeUserInformationBinding
 
 class HomeUserInformationActivity : AppCompatActivity() {

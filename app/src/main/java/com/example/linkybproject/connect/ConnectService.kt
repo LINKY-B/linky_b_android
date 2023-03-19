@@ -2,22 +2,33 @@ package com.example.linkybproject.connect
 
 import android.util.Log
 import com.example.linkybproject.getRetrofit
-import javax.security.auth.callback.Callback
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ConnectService {
-    private lateinit var matchingListView: MatchingListView
+    private lateinit var connectToMeView: ConnectToMeView
 
-    fun setMatchingListView(matchingListView: MatchingListView) {
-        this.matchingListView = matchingListView
+    fun setConnectToMeView(connectToMeView: ConnectToMeView) {
+        this.connectToMeView = connectToMeView
     }
 
-    fun matchingList(authorization: String) {
-        val matchingListService = getRetrofit().create(MatchingListInterface::class.java)
+    fun connectToMeList(token: String) {
+        val connectService = getRetrofit().create(ConnectInterface::class.java)
+        connectService.connectToMeList(token).enqueue(object: Callback<MatchingResponse> {
+            override fun onResponse(call: Call<MatchingResponse>, response: Response<MatchingResponse>) {
+                Log.d("connectToMeList", response.toString())
 
-/*
-        matchingListService.showMatchingList(authorization).enqueue(object : Callback<MatchingListResponse>) {
+                val resp: MatchingResponse = response.body()!!
+                when(resp.code) {
+                    1000 -> connectToMeView.onConnectToMeSuccess(resp)
+                    else -> connectToMeView.onConnectToMeFailure()
+                }
+            }
 
-        }
-*/
+            override fun onFailure(call: Call<MatchingResponse>, t: Throwable) {
+                Log.d("connectToMeList", t.message.toString())
+            }
+        })
     }
 }
