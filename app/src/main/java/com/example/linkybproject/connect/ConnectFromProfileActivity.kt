@@ -54,8 +54,7 @@ class ConnectFromProfileActivity : AppCompatActivity() {
                     if (myName == "report") {
                         val dlgReport = ReportDialog(this@ConnectFromProfileActivity)
                         dlgReport.Mydlg()
-                    }
-                    else if (myName == "block") {
+                    } else if (myName == "block") {
                         val dlgBlock = BlockDialog(this@ConnectFromProfileActivity)
                         dlgBlock.Mydlg()
                     }
@@ -66,27 +65,6 @@ class ConnectFromProfileActivity : AppCompatActivity() {
         viewBinding.btnConnectionDelete.setOnClickListener {
             val dlg = DeleteDialog(this)
             dlg.Mydlg()
-
-/*
-            dlg.setOnClickedListener(object : DeleteDialog.ButtonClickListener {
-                override fun onClicked(myName: String) {
-                    if (myName == "done") {
-                        finish()
-                    }
-                }
-            })
-*/
-
         }
-
-        val characterAdapter = ProfileCharacterAdapter()
-        characterAdapter.datalist = mutableListOf(
-            Character("외향적"), Character("사교적")
-        )
-
-        val interestAdapter = ProfileInterestAdapter()
-        interestAdapter.datalist = mutableListOf(
-            Interest("정보공유"), Interest("스터디메이트"), Interest("친목"), Interest("취업준비"),
-        )
     }
 }
