@@ -19,10 +19,15 @@ class ConnectService {
             override fun onResponse(call: Call<MatchingResponse>, response: Response<MatchingResponse>) {
                 Log.d("connectToMeList", response.toString())
 
-                val resp: MatchingResponse = response.body()!!
-                when(resp.code) {
-                    1000 -> connectToMeView.onConnectToMeSuccess(resp)
-                    else -> connectToMeView.onConnectToMeFailure()
+                val resp: MatchingResponse? = response.body()
+
+                if (resp != null) {
+                    when(resp.code) {
+                        1000 -> connectToMeView.onConnectToMeSuccess(resp)
+                        else -> connectToMeView.onConnectToMeFailure()
+                    }
+                } else {
+                    connectToMeView.onConnectToMeFailure()
                 }
             }
 
