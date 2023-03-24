@@ -1,8 +1,6 @@
-package com.example.linkybproject
+package com.example.linkybproject.common
 
 import android.app.Dialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
