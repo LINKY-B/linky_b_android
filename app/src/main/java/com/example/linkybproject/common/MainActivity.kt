@@ -2,15 +2,19 @@ package com.example.linkybproject.common
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.linkybproject.R
 import com.example.linkybproject.chat.ChatFragment
 import com.example.linkybproject.connect.ConnectionFragment
 import com.example.linkybproject.databinding.ActivityMainBinding
+import com.example.linkybproject.homes.GetHomeStudentView
 import com.example.linkybproject.homes.HomeFragment
+import com.example.linkybproject.homes.HomeStudentRequest
+import com.example.linkybproject.homes.HomeStudentService
 import com.example.linkybproject.myprofile.MyProfile1Fragment
 import com.example.linkybproject.myprofile.MyProfile2Fragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     private lateinit var binding : ActivityMainBinding
 
@@ -56,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    
+
     // 프로필 화면 1 -> 연필 버튼 -> 프로필 화면 2
     fun myprofile1Tomyprofile2() {
         supportFragmentManager
@@ -72,4 +76,5 @@ class MainActivity : AppCompatActivity() {
             .replace(binding.fragmentContainerViewMain.id, MyProfile1Fragment())
             .commitAllowingStateLoss()
     }
+
 }
