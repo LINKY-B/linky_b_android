@@ -27,7 +27,7 @@ class ConnectionFragment : Fragment(), ConnectToMeView {
         /* 나에게 매칭 시도한 유저 전체 조회 api 호출 */
         val connectService = ConnectService()
         connectService.setConnectToMeView(this)
-        connectService.connectToMeList("a")
+        connectService.connectToMeList(".")
 
         /* 이벤트 리스너 */
         binding.btnFullConnectFrom.setOnClickListener {
