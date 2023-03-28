@@ -1,4 +1,4 @@
-package com.example.linkybproject.auth
+package com.example.linkybproject.auth.signup
 
 import android.app.PendingIntent
 import android.app.PendingIntent.FLAG_MUTABLE
@@ -14,15 +14,13 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup2Binding
 import java.util.*
-import java.util.jar.Manifest
 import java.util.regex.Pattern
 
 
-class SignupActivity2 : AppCompatActivity() {
+class SignupActivity2 : AppCompatActivity(), EmailAuthView {
 
     private lateinit var binding : ActivitySignup2Binding
 
@@ -35,7 +33,7 @@ class SignupActivity2 : AppCompatActivity() {
     // SignupActivity3 로 가지고 넘어갈 값. 회원가입 끝에 서버에 넘길 데이터
     private lateinit var userName: String
     private lateinit var userNickName: String
-    private lateinit var userPhone: String // api 수정되면 휴대폰 -> 이메일 전체 수정
+    private lateinit var userEmail: String // api 수정되면 휴대폰 -> 이메일 전체 수정
     private lateinit var userPassword: String
     private lateinit var userBirth: String
 
@@ -83,6 +81,12 @@ class SignupActivity2 : AppCompatActivity() {
                 }
             }
         )
+        binding.textViewBtnGetAuthGreen.setOnClickListener {
+            userEmail = binding.editTextSignupEmail.text.toString()
+            userName = "한호정"
+            emailAuth()
+            Toast.makeText(this@SignupActivity2, "인증번호가 전송되었습니다.", Toast.LENGTH_SHORT).show()
+        }
 
         // 1-2. SMS 발송 권한 체크
 //        val permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
@@ -285,13 +289,13 @@ class SignupActivity2 : AppCompatActivity() {
 
             Log.d("userName", userName)
             Log.d("userNickName", userNickName)
-            Log.d("userPhone", userPhone)
+            Log.d("userPhone", userEmail) // 수정
             Log.d("userPassword", userPassword)
             Log.d("userBirth", userBirth)
             val intent = Intent(this, SignupActivity3::class.java)
             intent.putExtra("userName", userName)
             intent.putExtra("userNickName", userNickName)
-            intent.putExtra("userPhone", userPhone)
+            intent.putExtra("userPhone", userEmail)
             intent.putExtra("userPassword", userPassword)
             intent.putExtra("userBirth", userBirth)
             startActivity(intent)
@@ -329,7 +333,8 @@ class SignupActivity2 : AppCompatActivity() {
         binding.textViewBtnGetAuthGreen.visibility = View.VISIBLE
 //        Toast.makeText(this@SignupActivity2, "Valid email", Toast.LENGTH_SHORT).show()
 
-        userPhone = email
+        userEmail = email
+
     }
 
     // 2. 이름 유효성 검사 함수
@@ -487,7 +492,24 @@ class SignupActivity2 : AppCompatActivity() {
         }
         return numStr
     }
+    
+    private fun getEmailAuthRequest(): EmailAuthRequest {
+        
+        return EmailAuthRequest(userEmail, userName)
+    }
 
+    private fun emailAuth() {
+        val emailAuthService = EmailAuthService()
+        emailAuthService.setEmailAuthView(this)
+        emailAuthService.emailAuth(getEmailAuthRequest())
+    }
 
+    override fun onSignupSuccess() {
+        Toast.makeText(this, "이메일 인증 번호 받기에 성공했습니다", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onSignupFailure() {
+        TODO("Not yet implemented")
+    }
 
 }

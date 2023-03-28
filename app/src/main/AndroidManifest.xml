@@ -75,28 +75,28 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".auth.SignupActivity4"
+            android:name=".auth.signup.SignupActivity4"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".auth.SignupActivity3"
+            android:name=".auth.signup.SignupActivity3"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".auth.SignupActivity2"
+            android:name=".auth.signup.SignupActivity2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".auth.SignupActivity"
+            android:name=".auth.signup.SignupActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

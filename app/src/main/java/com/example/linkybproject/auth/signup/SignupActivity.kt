@@ -1,11 +1,9 @@
-package com.example.linkybproject.auth
+package com.example.linkybproject.auth.signup
 
 import android.content.Intent
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {

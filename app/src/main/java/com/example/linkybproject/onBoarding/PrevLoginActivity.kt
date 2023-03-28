@@ -3,9 +3,8 @@ package com.example.linkybproject.onBoarding
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.linkybproject.R
 import com.example.linkybproject.auth.LoginActivity
-import com.example.linkybproject.auth.SignupActivity
+import com.example.linkybproject.auth.signup.SignupActivity
 import com.example.linkybproject.databinding.ActivityPrevLoginBinding
 
 class PrevLoginActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.linkybproject.auth
+package com.example.linkybproject.auth.signup
 
 import com.google.gson.annotations.SerializedName
 
