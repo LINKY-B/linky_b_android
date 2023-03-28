@@ -88,7 +88,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/tv_border"
                 android:gravity="center_vertical"
-                android:hint="이메일 형식으로 입력해주세요."
+                android:hint="이메일을 입력해주세요."
                 android:inputType="textEmailAddress"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
