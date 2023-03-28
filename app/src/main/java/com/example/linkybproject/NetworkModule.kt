@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.net.ssl.HostnameVerifier
 import javax.net.ssl.HttpsURLConnection
 
-const val BASE_URL = "http://192.168.0.3:8001"
+const val BASE_URL = "http://54.180.121.247:8001"
 
 fun getRetrofit(): Retrofit {
 

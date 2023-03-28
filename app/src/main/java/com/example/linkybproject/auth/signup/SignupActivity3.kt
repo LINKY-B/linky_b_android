@@ -1,4 +1,4 @@
-package com.example.linkybproject.auth
+package com.example.linkybproject.auth.signup
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -23,11 +23,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup3Binding
 import java.io.File
-import java.util.jar.Manifest
-import android.app.PendingIntent
-import android.app.PendingIntent.FLAG_MUTABLE
-import java.util.*
-import java.util.regex.Pattern
 
 class SignupActivity3 : AppCompatActivity() {
 

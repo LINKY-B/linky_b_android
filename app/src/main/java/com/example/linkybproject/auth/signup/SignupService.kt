@@ -1,4 +1,4 @@
-package com.example.linkybproject.auth
+package com.example.linkybproject.auth.signup
 
 import android.annotation.SuppressLint
 import android.util.Log

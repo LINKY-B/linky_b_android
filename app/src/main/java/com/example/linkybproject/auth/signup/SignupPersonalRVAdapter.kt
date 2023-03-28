@@ -1,10 +1,10 @@
-package com.example.linkybproject.auth
+package com.example.linkybproject.auth.signup
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.linkybproject.auth.Personal
 import com.example.linkybproject.databinding.ItemMyprofilePersonal2Binding
-import com.example.linkybproject.databinding.ItemPersonalGreyBinding
 
 class SignupPersonalRVAdapter(private val personalList: ArrayList<Personal>) : RecyclerView.Adapter<SignupPersonalRVAdapter.ViewHolder>() {
     inner class ViewHolder(val binding: ItemMyprofilePersonal2Binding): RecyclerView.ViewHolder(binding.root) {

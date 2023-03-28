@@ -10,6 +10,7 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import com.example.linkybproject.R
+import com.example.linkybproject.auth.signup.SignupActivity4
 
 class PersonalDialog (context: Context) {
     private lateinit var onClickListener: OnDialogClickListener
