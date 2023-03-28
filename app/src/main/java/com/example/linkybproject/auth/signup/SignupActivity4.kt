@@ -1,4 +1,4 @@
-package com.example.linkybproject.auth
+package com.example.linkybproject.auth.signup
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,8 +11,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.R
+import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.databinding.ActivitySignup4Binding
 
 // 1단계: View Interface를 상속받는다.
