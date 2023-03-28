@@ -84,6 +84,7 @@ class SignupActivity3 : AppCompatActivity() {
         }
         val result = cursor.getString(columnIndex)
         cursor.close()
+        binding.imageViewUploaded.visibility = View.VISIBLE
         return result
     }
 
@@ -224,7 +225,7 @@ class SignupActivity3 : AppCompatActivity() {
                     binding.textViewSignup3AuthGradExplain.visibility = View.VISIBLE
 
                     binding.imageViewUploadImage.visibility = View.VISIBLE
-                    binding.imageViewUploaded.visibility = View.VISIBLE
+//                    binding.imageViewUploaded.visibility = View.VISIBLE
 
                     gradeStatus = false
                 } else if (flag == "졸업") {
@@ -245,7 +246,7 @@ class SignupActivity3 : AppCompatActivity() {
                     binding.textViewSignup3AuthGradExplain.visibility = View.VISIBLE
 
                     binding.imageViewUploadImage.visibility = View.VISIBLE
-                    binding.imageViewUploaded.visibility = View.VISIBLE
+//                    binding.imageViewUploaded.visibility = View.VISIBLE
 
                     gradeStatus = true
                 } else {
@@ -277,6 +278,9 @@ class SignupActivity3 : AppCompatActivity() {
         // 4-1. 미졸업
         // 4-2. 졸업
         // 졸업 부분 인증하고 밑에 버튼 뷰 처리까지 해야 함.
+        binding.imageViewUploadImage.setOnClickListener {
+            selectGallery()
+        }
 
         // 5. 학교 정보 입력 완료 -> signupActivity4
         binding.textViewBtnNext4Green.setOnClickListener{
