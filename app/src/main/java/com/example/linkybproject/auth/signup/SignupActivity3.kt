@@ -29,10 +29,11 @@ class SignupActivity3 : AppCompatActivity() {
     private lateinit var binding : ActivitySignup3Binding
 
     // SignupActivity4 로 가지고 넘어갈 값. 회원가입 끝에 서버에 넘길 데이터
-    private lateinit var userSchoolName : String
-    private lateinit var userMajorName : String
-    private lateinit var userStudentNum : String
     private var gradeStatus : Boolean = false
+    private lateinit var userMajorName : String
+    private lateinit var userSchoolName : String
+    private lateinit var userStudentNum : String
+    private lateinit var schoolImg: File
 
     // 갤러리 이미지 업로드
     companion object {
@@ -288,30 +289,35 @@ class SignupActivity3 : AppCompatActivity() {
 //            Toast.makeText(this@SignupActivity3, gradeStatus, Toast.LENGTH_SHORT).show()
 
             val extras = intent.extras
+            val authCode = extras?.get("authCode") as String
+            val userBirth = extras?.get("userBirth") as String
+            val userEmail = extras?.get("userEmail") as String
             val userName = extras?.get("userName") as String
             val userNickName = extras?.get("userNickName") as String
-            val userPhone = extras?.get("userPhone") as String
             val userPassword = extras?.get("userPassword") as String
-            val userBirth = extras?.get("userBirth") as String
+            Log.d("authCode", authCode)
+            Log.d("userBirth", userBirth)
+            Log.d("userEmail", userEmail)
             Log.d("userName", userName)
             Log.d("userNickName", userNickName)
-            Log.d("userPhone", userPhone)
             Log.d("userPassword", userPassword)
-            Log.d("userBirth", userBirth)
-            Log.d("userSchoolName", userSchoolName)
-            Log.d("userMajorName", userMajorName)
-            Log.d("userStudentNum", userStudentNum)
             Log.d("gradeStatus", gradeStatus.toString())
+            Log.d("userMajorName", userMajorName)
+            Log.d("userSchoolName", userSchoolName)
+            Log.d("userStudentNum", userStudentNum)
+            Log.d("schoolImg", schoolImg.toString())
             val intent = Intent(this, SignupActivity4::class.java)
+            intent.putExtra("authCode", authCode)
+            intent.putExtra("userBirth", userBirth)
+            intent.putExtra("userEmail", userEmail)
             intent.putExtra("userName", userName)
             intent.putExtra("userNickName", userNickName)
-            intent.putExtra("userPhone", userPhone)
             intent.putExtra("userPassword", userPassword)
-            intent.putExtra("userBirth", userBirth)
-            intent.putExtra("userSchoolName", userSchoolName)
-            intent.putExtra("userMajorName", userMajorName)
-            intent.putExtra("userStudentNum", userStudentNum)
             intent.putExtra("gradeStatus", gradeStatus)
+            intent.putExtra("userMajorName", userMajorName)
+            intent.putExtra("userSchoolName", userSchoolName)
+            intent.putExtra("userStudentNum", userStudentNum)
+            intent.putExtra("schoolImg", schoolImg)
             startActivity(intent)
         }
 
