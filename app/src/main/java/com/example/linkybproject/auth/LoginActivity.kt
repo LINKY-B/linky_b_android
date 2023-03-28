@@ -5,6 +5,7 @@ import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.linkybproject.auth.signup.SignupActivity
 import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.databinding.ActivityLoginBinding
 
