@@ -3,8 +3,6 @@ package com.example.linkybproject.myprofile
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.linkybproject.connect.ConnectFromUserData
-import com.example.linkybproject.connect.ConnectToUserData
 import com.example.linkybproject.databinding.ActivityManageBlockingBinding
 
 class ManageBlockingActivity : AppCompatActivity() {

@@ -20,6 +20,7 @@ class HomeRecyclerViewAdapter(private val appCompatActivity: AppCompatActivity):
             binding.profileName.text=userData.username
             binding.tvHomeLikenumber.text= userData.likecount.toString()
             binding.tvHomeDepartment.text=userData.department
+            binding.tvHomeStudentnum.text = userData.studentnum.toString()
 
             binding.ibItemConnect.setOnClickListener {
                 val dlg = ConnectDialog(appCompatActivity)

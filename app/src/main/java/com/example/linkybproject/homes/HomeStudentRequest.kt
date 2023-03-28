@@ -1,7 +1,7 @@
-package com.example.linkybproject.connect
+package com.example.linkybproject.homes
 
 import com.google.gson.annotations.SerializedName
 
-data class ConnectRequest(
+data class HomeStudentRequest(
     @SerializedName(value = "Authorization") val Authorization: String
 )

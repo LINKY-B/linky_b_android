@@ -3,7 +3,6 @@ package com.example.linkybproject.myprofile
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.connect.ConnectFromUserData
 import com.example.linkybproject.databinding.ItemBlockingBinding
 
 class ManageBlockingAdapter: RecyclerView.Adapter<ManageBlockingAdapter.ViewHolder>() {

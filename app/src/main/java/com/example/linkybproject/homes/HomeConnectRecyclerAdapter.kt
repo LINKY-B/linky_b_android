@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.AcceptDialog
-import com.example.linkybproject.RefuseDialog
+import com.example.linkybproject.common.AcceptDialog
+import com.example.linkybproject.common.RefuseDialog
 import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 
 
@@ -21,6 +21,8 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
             binding.textviewHomeItemNickname.text = userData.username
             binding.textviewHomeItemCount.text = userData.likecount.toString()
             binding.textviewHomeItemDepartment.text = userData.department
+            binding.textviewHomeItemClassNumber.text = userData.studentnum.toString()
+
 
             binding.recyclerviewHomeItem.apply {
                 var ad = HomeInterestRecyclerAdapter();

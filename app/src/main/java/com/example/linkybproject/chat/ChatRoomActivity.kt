@@ -3,7 +3,8 @@ package com.example.linkybproject.chat
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.linkybproject.*
+import com.example.linkybproject.common.BlockDialog
+import com.example.linkybproject.common.ReportDialog
 import com.example.linkybproject.databinding.ActivityChatRoomBinding
 
 class ChatRoomActivity : AppCompatActivity() {

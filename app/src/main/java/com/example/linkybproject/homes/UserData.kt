@@ -5,6 +5,7 @@ data class UserData(
     val username : String,
     val likecount: Int,
     val department :String,
+    val studentnum : Int,
     val information :String,
     val contactimg :String,
     val interests :List<Interest>
