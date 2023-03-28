@@ -1,4 +1,4 @@
-package com.example.linkybproject.auth.signup
+package com.example.linkybproject.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,8 +11,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.MainActivity
+import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup4Binding
 
@@ -965,33 +964,33 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
     private fun checkOptions() {
         // textViewBtnCheckAuthGrey 추가 (여기 다시 검토 - 임시)
         if((binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE ||
-            binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE ||
-            binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE ||
-            binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) &&
+                    binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE ||
+                    binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE ||
+                    binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) &&
             (binding.textViewBtnFemaleGreen.visibility == View.VISIBLE ||
-            binding.textViewBtnMaleGreen.visibility == View.VISIBLE) &&
+                    binding.textViewBtnMaleGreen.visibility == View.VISIBLE) &&
             binding.spinnerMbti.selectedItem.toString().length < 10 &&
             (binding.personal1Green.visibility == View.VISIBLE || binding.personal2Green.visibility == View.VISIBLE ||
-            binding.personal3Green.visibility == View.VISIBLE || binding.personal4Green.visibility == View.VISIBLE ||
-            binding.personal5Green.visibility == View.VISIBLE || binding.personal6Green.visibility == View.VISIBLE ||
-            binding.personal7Green.visibility == View.VISIBLE || binding.personal8Green.visibility == View.VISIBLE ||
-            binding.personal9Green.visibility == View.VISIBLE || binding.personal10Green.visibility == View.VISIBLE ||
-            binding.personal11Green.visibility == View.VISIBLE || binding.personal12Green.visibility == View.VISIBLE ||
-            binding.personal13Green.visibility == View.VISIBLE || binding.personal14Green.visibility == View.VISIBLE ||
-            binding.personal15Green.visibility == View.VISIBLE || binding.personal16Green.visibility == View.VISIBLE ||
-            binding.personal17Green.visibility == View.VISIBLE || binding.personal18Green.visibility == View.VISIBLE ||
-            binding.personal19Green.visibility == View.VISIBLE || binding.personal20Green.visibility == View.VISIBLE) &&
+                    binding.personal3Green.visibility == View.VISIBLE || binding.personal4Green.visibility == View.VISIBLE ||
+                    binding.personal5Green.visibility == View.VISIBLE || binding.personal6Green.visibility == View.VISIBLE ||
+                    binding.personal7Green.visibility == View.VISIBLE || binding.personal8Green.visibility == View.VISIBLE ||
+                    binding.personal9Green.visibility == View.VISIBLE || binding.personal10Green.visibility == View.VISIBLE ||
+                    binding.personal11Green.visibility == View.VISIBLE || binding.personal12Green.visibility == View.VISIBLE ||
+                    binding.personal13Green.visibility == View.VISIBLE || binding.personal14Green.visibility == View.VISIBLE ||
+                    binding.personal15Green.visibility == View.VISIBLE || binding.personal16Green.visibility == View.VISIBLE ||
+                    binding.personal17Green.visibility == View.VISIBLE || binding.personal18Green.visibility == View.VISIBLE ||
+                    binding.personal19Green.visibility == View.VISIBLE || binding.personal20Green.visibility == View.VISIBLE) &&
             (binding.interest1Green.visibility == View.VISIBLE || binding.interest2Green.visibility == View.VISIBLE ||
-            binding.interest3Green.visibility == View.VISIBLE || binding.interest1Green.visibility == View.VISIBLE ||
-            binding.interest1Green.visibility == View.VISIBLE || binding.interest4Green.visibility == View.VISIBLE ||
-            binding.interest5Green.visibility == View.VISIBLE || binding.interest6Green.visibility == View.VISIBLE ||
-            binding.interest7Green.visibility == View.VISIBLE || binding.interest8Green.visibility == View.VISIBLE ||
-            binding.interest9Green.visibility == View.VISIBLE || binding.interest10Green.visibility == View.VISIBLE ||
-            binding.interest11Green.visibility == View.VISIBLE || binding.interest12Green.visibility == View.VISIBLE ||
-            binding.interest13Green.visibility == View.VISIBLE || binding.interest14Green.visibility == View.VISIBLE ||
-            binding.interest15Green.visibility == View.VISIBLE || binding.interest16Green.visibility == View.VISIBLE ||
-            binding.interest17Green.visibility == View.VISIBLE || binding.interest18Green.visibility == View.VISIBLE ||
-            binding.interest19Green.visibility == View.VISIBLE || binding.interest20Green.visibility == View.VISIBLE) &&
+                    binding.interest3Green.visibility == View.VISIBLE || binding.interest1Green.visibility == View.VISIBLE ||
+                    binding.interest1Green.visibility == View.VISIBLE || binding.interest4Green.visibility == View.VISIBLE ||
+                    binding.interest5Green.visibility == View.VISIBLE || binding.interest6Green.visibility == View.VISIBLE ||
+                    binding.interest7Green.visibility == View.VISIBLE || binding.interest8Green.visibility == View.VISIBLE ||
+                    binding.interest9Green.visibility == View.VISIBLE || binding.interest10Green.visibility == View.VISIBLE ||
+                    binding.interest11Green.visibility == View.VISIBLE || binding.interest12Green.visibility == View.VISIBLE ||
+                    binding.interest13Green.visibility == View.VISIBLE || binding.interest14Green.visibility == View.VISIBLE ||
+                    binding.interest15Green.visibility == View.VISIBLE || binding.interest16Green.visibility == View.VISIBLE ||
+                    binding.interest17Green.visibility == View.VISIBLE || binding.interest18Green.visibility == View.VISIBLE ||
+                    binding.interest19Green.visibility == View.VISIBLE || binding.interest20Green.visibility == View.VISIBLE) &&
             binding.editTextSignupIntro.text.toString() != "") {
 
             binding.textViewBtnNext5Grey.visibility = View.INVISIBLE

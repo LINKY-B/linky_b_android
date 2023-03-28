@@ -20,19 +20,16 @@ fun getRetrofit(): Retrofit {
     val client: OkHttpClient = OkHttpClient.Builder()
         .addInterceptor(interceptor)
         .hostnameVerifier(
-            HostnameVerifier { hostname, session ->
+            HostnameVerifier { _, session ->
                 val hv = HttpsURLConnection.getDefaultHostnameVerifier()
-                hv.verify("seolmunzip.shop", session)
+                hv.verify("linkyB.shop", session)
             })
         .build()
 
     val gson: Gson = GsonBuilder().setLenient().create()
 
-    val retrofit = Retrofit.Builder().baseUrl(BASE_URL)
+    return Retrofit.Builder().baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create(gson))
-//        .client(unsafeOkHttpClient().build())
         .client(client)
         .build()
-
-    return retrofit
 }
