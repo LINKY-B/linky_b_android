@@ -175,14 +175,17 @@ class SignupActivity3 : AppCompatActivity() {
             object : TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                     checkOptions()
+                    checkNumValid()
                 }
 
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                     checkOptions()
+                    checkNumValid()
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
                     checkOptions()
+                    checkNumValid()
                 }
             }
         )
@@ -321,6 +324,15 @@ class SignupActivity3 : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+
+    private fun checkNumValid() {
+        val num = binding.editTextSignupUniNum.text.toString()
+
+        if (num.length != 2) {
+            Toast.makeText(this@SignupActivity3, "Invalid Num", Toast.LENGTH_SHORT).show()
+            // 우선 토스트로 검증.
+        }
     }
 
     // 6. 기본 정보 입력 완료 확인 함수
