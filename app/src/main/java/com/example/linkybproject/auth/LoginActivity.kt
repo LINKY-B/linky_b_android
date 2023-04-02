@@ -19,8 +19,8 @@ class LoginActivity : AppCompatActivity(), LoginView {
         viewBinding.buttonLoginSubmit.setOnClickListener {
             login()
 
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
         }
 
         viewBinding.textViewLoginGoSignUp.setOnClickListener {
@@ -49,8 +49,8 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
     override fun onLoginSuccess() {
         Toast.makeText(this, "로그인에 성공했습니다", Toast.LENGTH_SHORT).show()
-//        val intent = Intent(this, MainActivity::class.java)
-//        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NEW_TASK))
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NEW_TASK))
     }
 
     override fun onLoginFailure() {
