@@ -19,9 +19,6 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
         viewBinding.buttonLoginSubmit.setOnClickListener {
             login()
-
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
         }
 
         viewBinding.textViewLoginGoSignUp.setOnClickListener {
@@ -48,13 +45,26 @@ class LoginActivity : AppCompatActivity(), LoginView {
         loginService.login(getUserInfo())
     }
 
-    override fun onLoginSuccess() {
+    override fun onLoginSuccess(result: LoginResponse) {
         Toast.makeText(this, "로그인에 성공했습니다", Toast.LENGTH_SHORT).show()
+
+        // 액세스 토큰 저장
+        val sharedPreferences = getSharedPreferences("auth", MODE_PRIVATE)
+        val accessToken = result.data.accessToken
+        val editor = sharedPreferences.edit()
+        editor.putString("accessToken", accessToken)
+        editor.apply()
+
+        // 메인 페이지로 이동
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NEW_TASK))
     }
 
     override fun onLoginFailure() {
         Toast.makeText(this, "로그인에 실패했습니다", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun saveAccessToken() {
+
     }
 }
