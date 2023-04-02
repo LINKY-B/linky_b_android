@@ -22,7 +22,7 @@ class LoginService {
                 val resp: LoginResponse = response.body()!!
 
                 when(resp.status) {
-                    200 -> loginView.onLoginSuccess()
+                    200 -> loginView.onLoginSuccess(resp)
                     else -> loginView.onLoginFailure()
                 }
             }
