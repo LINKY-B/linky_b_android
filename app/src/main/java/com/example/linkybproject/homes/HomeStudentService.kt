@@ -7,34 +7,32 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class HomeStudentService {
-        // 1단계
-        private lateinit var getHomeStudentView: GetHomeStudentView
+        // 1단계 : View를 연결해준다
+        private lateinit var homeStudentView: HomeStudentView
 
-        fun setHomeStudentView(getHomeStudentView: GetHomeStudentView) {
-            this.getHomeStudentView = getHomeStudentView
+        fun setHomeStudentView(homeStudentView: HomeStudentView) {
+            this.homeStudentView = homeStudentView
         }
 
-        // 2단계
-        fun getHomeStudent(homeStudentRequest: HomeStudentRequest) {
-            val authService = getRetrofit().create(HomeStudentRetrofitInterface::class.java)
+        // 2단계 : Retrofit 관련 작업을 해 줄 함수를 만든다.
+        fun homeStudent(token: String) {
+            val homeStudentService = getRetrofit().create(HomeStudentInterface::class.java)
+            homeStudentService.homeStudent("Bearer " + token).enqueue(object : Callback<HomeStudentResponse> {
+                override fun onResponse(call: Call<HomeStudentResponse>, response: Response<HomeStudentResponse>) {
+                    Log.d("homeStudentList", response.toString())
 
-            authService.getHomeStudent(homeStudentRequest).enqueue(object :
-                Callback<HomeStudentResponse> {
-                override fun onResponse(
-                    call: Call<HomeStudentResponse>,
-                    response: Response<HomeStudentResponse>
-                ) {
-                    Log.d("SIGNUP/SUCCESS", response.toString())
-                    val resp: HomeStudentResponse = response.body()!!
+                    val resp: HomeStudentResponse? = response.body()
 
-//                    when (resp.code) {
-//                        1000 -> getHomeStudentView.onGetHomeStudentSuccess()
-//                        else -> getHomeStudentView.onGetHomeStudentFailure()
-//                    }
+                    if (resp != null) {
+                        when (resp.code) {
+                            1000 -> homeStudentView.onHomeStudentListSuccess(resp)
+                            else -> homeStudentView.onGetHomeStudentListFailure()
+                        }
+                    }
                 }
 
                 override fun onFailure(call: Call<HomeStudentResponse>, t: Throwable) {
-                    Log.d("SIGNUP/FAILURE", t.message.toString())
+                    Log.d("homeStudentList", t.message.toString())
                 }
             })
         }

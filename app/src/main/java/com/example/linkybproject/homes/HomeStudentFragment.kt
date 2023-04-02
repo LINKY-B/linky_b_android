@@ -1,23 +1,24 @@
 package com.example.linkybproject.homes
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.linkybproject.R
+import com.example.linkybproject.connect.ConnectRAdapter
+import com.example.linkybproject.connect.LBUser
 import com.example.linkybproject.databinding.FragmentHomeStudentsBinding
+//1단계: View Interface를 상속받는다.
+//2단계: 해당 Service를 호출해서 정의하고, setView 함수 호출로 연결해준다.
+//3단계: overrideing 한 interface 함수를 통해 들어오는 Response를 가공해 화면해 보여준다. → Adapter 연결도 필요하다면 이 때 해주면 된다.
 
-class HomeStudentFragment : Fragment() {
+//1단계: View Interface를 상속받는다.
+class HomeStudentFragment : Fragment() , HomeStudentView{
     private lateinit var binding: FragmentHomeStudentsBinding
     var mainAppActivity: AppCompatActivity? = null
 
@@ -36,23 +37,46 @@ class HomeStudentFragment : Fragment() {
     ): View? {
         binding = FragmentHomeStudentsBinding.inflate(inflater, container, false)
 
-        val adapter = mainAppActivity?.let { HomeRecyclerViewAdapter(it) }
+        /* 리사이클러뷰 */
+        //val adapter = mainAppActivity?.let { HomeRecyclerViewAdapter(it) }
+        val homeStudentList: ArrayList<HomeStudentResult> = arrayListOf()
 
-        adapter?.datalist = mutableListOf(
-            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 20, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 23, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 22, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 20, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//        adapter?.datalist = mutableListOf(
+//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 20, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 23, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 22, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 20, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
+//
+//            )
 
-            )
-
-        binding.recyclerviewHomeStudents.adapter = adapter
+        binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeStudentList)
         binding.recyclerviewHomeStudents.layoutManager = LinearLayoutManager(context)
+
+//2단계: 해당 Service를 호출해서 정의하고, setView 함수 호출로 연결해준다.
+
+        /* 재학생 리스트 조회 api 호출 */
+        val homeStudentService = HomeStudentService()
+        homeStudentService.setHomeStudentView(this)
+        homeStudentService.homeStudent("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsIm1lbWJlcklkIjoiMiIsImF1dGhvcml0aWVzIjoiVVNFUiIsInR5cGUiOiJCZWFyZXIiLCJleHAiOjE2ODA0MjQwNzd9.jhNb5DmfhCl5goQpfKcVGvXHWiEXaiYchrlMQk-vOTL4GoH2Mcztbk8iMKmhT2ldwqxZnSScx8iAxYW_bmYR8A")
+        return binding.root
+    }
+
+    /* 재학생 리스트 조회 api 호출 결과 */
+    override fun onHomeStudentListSuccess(homeStudentList: HomeStudentResponse) {
+        Log.d("ConnectToMe", "Success")
+        binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeStudentList.result)
+
+    }
+
+    override fun onGetHomeStudentListFailure() {
+        Log.d("ConnectToMe", "Failure")
+    }
+}
 
 
 /*
@@ -80,9 +104,4 @@ class HomeStudentFragment : Fragment() {
             }
         })
 */
-        return binding.root
-    }
-}
-
-
 

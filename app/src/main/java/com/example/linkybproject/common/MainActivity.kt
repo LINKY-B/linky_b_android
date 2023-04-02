@@ -8,7 +8,7 @@ import com.example.linkybproject.R
 import com.example.linkybproject.chat.ChatFragment
 import com.example.linkybproject.connect.ConnectionFragment
 import com.example.linkybproject.databinding.ActivityMainBinding
-import com.example.linkybproject.homes.GetHomeStudentView
+import com.example.linkybproject.homes.HomeStudentView
 import com.example.linkybproject.homes.HomeFragment
 import com.example.linkybproject.homes.HomeStudentRequest
 import com.example.linkybproject.homes.HomeStudentService
