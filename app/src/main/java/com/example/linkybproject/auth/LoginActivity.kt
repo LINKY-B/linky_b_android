@@ -45,12 +45,6 @@ class LoginActivity : AppCompatActivity(), LoginView {
         Toast.makeText(this, "로그인에 성공했습니다", Toast.LENGTH_SHORT).show()
 
         // 액세스 토큰 저장
-//        val sharedPreferences = getSharedPreferences("auth", MODE_PRIVATE)
-//        val accessToken = result.data.accessToken
-//        val editor = sharedPreferences.edit()
-//        editor.putString("accessToken", accessToken)
-//        editor.apply()
-
         val accessToken = result.data.accessToken
         getSharedPreferences("auth", MODE_PRIVATE)
             .edit()
