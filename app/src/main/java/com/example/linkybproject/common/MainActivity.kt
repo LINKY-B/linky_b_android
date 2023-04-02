@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(){
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val accessToken = getSharedPreferences("auth", MODE_PRIVATE).getString("accessToken", "")
+//        val accessToken = getSharedPreferences("auth", MODE_PRIVATE).getString("accessToken", "")
 
         // 내비게이션
         supportFragmentManager

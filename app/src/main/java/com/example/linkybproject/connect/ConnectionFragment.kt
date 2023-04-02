@@ -1,5 +1,7 @@
 package com.example.linkybproject.connect
 
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -18,7 +20,6 @@ class ConnectionFragment : Fragment(), ConnectToMeView {
 
         /* 리사이클러뷰 */
         val connectList: ArrayList<LBUser> = arrayListOf()
-//        connectList.add(LBUser(2, "호호", "컴퓨터학과", "20", 3))
 
         binding.rvConnectToMeList.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         binding.rvConnectToMeList.setHasFixedSize(true)
@@ -27,7 +28,8 @@ class ConnectionFragment : Fragment(), ConnectToMeView {
         /* 나에게 매칭 시도한 유저 전체 조회 api 호출 */
         val connectService = ConnectService()
         connectService.setConnectToMeView(this)
-        connectService.connectToMeList(".")
+        connectService.connectToMeList()
+        // requireContext().getSharedPreferences("auth", Context.MODE_PRIVATE).getString("accessToken", "")!!
 
         /* 이벤트 리스너 */
         binding.btnFullConnectFrom.setOnClickListener {
