@@ -395,7 +395,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="7dp"
-                android:src="@drawable/imageupload"
+                android:src="@drawable/box_gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_signup3_auth_grad_explain" />
 

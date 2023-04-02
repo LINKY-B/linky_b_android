@@ -24,26 +24,18 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView {
 
     private lateinit var binding : ActivitySignup2Binding
 
-    companion object {
-        const val SMS_SEND_PERMISSION: Int = 1
-    }
-    private lateinit var checkNum: String // 생성한 인증번호를 담을 변수
-
-
     // SignupActivity3 로 가지고 넘어갈 값. 회원가입 끝에 서버에 넘길 데이터
+    private lateinit var authCode: String
+    private lateinit var userBirth: String
+    private lateinit var userEmail: String
     private lateinit var userName: String
     private lateinit var userNickName: String
-    private lateinit var userEmail: String // api 수정되면 휴대폰 -> 이메일 전체 수정
     private lateinit var userPassword: String
-    private lateinit var userBirth: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignup2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
-//        val pref: SharedPreferences = getSharedPreferences("shared", 0)
-//        val editor = pref.edit()
 
         binding.imageViewSignup2Back.setOnClickListener {
             finish()
@@ -87,43 +79,6 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView {
             emailAuth()
             Toast.makeText(this@SignupActivity2, "인증번호가 전송되었습니다.", Toast.LENGTH_SHORT).show()
         }
-
-        // 1-2. SMS 발송 권한 체크
-//        val permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
-//
-//        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-//            // 문자 보내기 권한 거부
-//            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) {
-//                // Handle rationale for requesting SMS_SEND_PERMISSION
-//                Toast.makeText(this@SignupActivity2, "SMS 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
-//            }
-//
-//            // 문자 보내기 권한 허용
-//            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.SEND_SMS),
-//                Companion.SMS_SEND_PERMISSION
-//            )
-//        }
-
-        // 1-3. 인증번호 받기 버튼
-//        binding.textViewBtnGetAuthGreen.setOnClickListener {
-//            checkNum = numberGen(6, 1)
-//            editor.putString("checkNum", checkNum)
-//            editor.apply()
-//            sendSMS(binding.editTextSignupPhone.text.toString(), "인증번호 : $checkNum")
-//
-//            Log.d("shared checkNum", pref.getString("checkNum", "").toString())
-//        }
-//
-//        // 1-4. 인증번호 확인 버튼
-//        binding.textViewBtnCheckAuthGreen.setOnClickListener {
-//            if (pref.getString("checkNum", "").equals(binding.editTextSignupAuth.text.toString())) {
-//                Toast.makeText(this@SignupActivity2, "인증 완료 되었습니다.", Toast.LENGTH_SHORT).show()
-//            } else {
-//                Toast.makeText(this@SignupActivity2, "인증번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-        // 여기 확인 완료되면, 이거 포함한 넘어가기 버튼 체크, 타이머 기능 추가해야함.
-
 
         // 2. 이름 유효성 검사
         binding.editTextSignupName.addTextChangedListener(
@@ -178,9 +133,7 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView {
             this,
             R.array.signup_birth_year,
             R.layout.spinner_signup_item
-            //android.R.layout.simple_spinner_item
         ).also { adapter ->
-            //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             adapter.setDropDownViewResource(R.layout.spinner_signup_dropdown)
             spinnerYear.adapter = adapter
         }
@@ -287,17 +240,20 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView {
             userBirth = year + month + day
             Toast.makeText(this@SignupActivity2, userBirth, Toast.LENGTH_SHORT).show()
 
+            authCode = binding.editTextSignupAuth.text.toString()
+            Log.d("authCode", authCode)
+            Log.d("userBirth", userBirth)
+            Log.d("userEmail", userEmail)
             Log.d("userName", userName)
             Log.d("userNickName", userNickName)
-            Log.d("userPhone", userEmail) // 수정
             Log.d("userPassword", userPassword)
-            Log.d("userBirth", userBirth)
             val intent = Intent(this, SignupActivity3::class.java)
+            intent.putExtra("authCode", authCode)
+            intent.putExtra("userBirth", userBirth)
+            intent.putExtra("userEmail", userEmail)
             intent.putExtra("userName", userName)
             intent.putExtra("userNickName", userNickName)
-            intent.putExtra("userPhone", userEmail)
             intent.putExtra("userPassword", userPassword)
-            intent.putExtra("userBirth", userBirth)
             startActivity(intent)
         }
 
@@ -306,16 +262,6 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView {
     // 1. 이메일 유효성 검사 함수
     private fun checkEmailValid() {
         val email = binding.editTextSignupEmail.text.toString()
-
-        // 길이 검증
-//        if (email.length != 11) {
-//            // phone number is not valid - it should be 10 digits long
-//            binding.textViewBtnGetAuthGreen.visibility = View.INVISIBLE
-//            binding.textViewError1.visibility = View.VISIBLE
-//            binding.textViewBtnGetAuthGrey.visibility = View.VISIBLE
-////            Toast.makeText(this@SignupActivity2, "Invalid phone number", Toast.LENGTH_SHORT).show()
-//            return
-//        }
 
         // 이메일 유효성 검증
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -461,36 +407,6 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView {
             binding.textViewBtnNext3Green.visibility = View.INVISIBLE
             binding.textViewBtnNext3Grey.visibility = View.VISIBLE
         }
-    }
-
-    // 7. SMS 발송 기능
-    private fun sendSMS(phoneNumber: String, message: String) {
-        val pendingIntent = PendingIntent.getActivity(this, 0, Intent(this, SignupActivity2::class.java), FLAG_MUTABLE)
-        val sms = SmsManager.getDefault()
-        sms.sendTextMessage(phoneNumber, null, message, pendingIntent, null)
-        Toast.makeText(this@SignupActivity2, "메시지가 전송되었습니다.", Toast.LENGTH_SHORT).show()
-    }
-
-    // 8. 인증번호 생성 기능
-    fun numberGen(len: Int, dupCd: Int): String {
-        val rand = Random()
-        var numStr = "" // 난수 저장 변수
-
-        for (i in 0 until len) {
-            // 0~9까지 난수 생성
-            val ran = rand.nextInt(10).toString()
-
-            if (dupCd == 1) {
-                numStr += ran // 중복 허용 시 numStr에 append
-            } else if (dupCd == 2) {
-                if (!numStr.contains(ran)) { // 중복을 허용하지 않을 시 중복된 값이 있는지 검사
-                    numStr += ran
-                } else {
-                    continue // equivalent to i -= 1 in the original code, 생성된 난수가 중복되면 루틴을 다시 실행
-                }
-            }
-        }
-        return numStr
     }
     
     private fun getEmailAuthRequest(): EmailAuthRequest {

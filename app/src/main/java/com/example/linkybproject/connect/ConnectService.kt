@@ -15,7 +15,7 @@ class ConnectService {
 
     fun connectToMeList(token: String) {
         val connectService = getRetrofit().create(ConnectInterface::class.java)
-        connectService.connectToMeList(token).enqueue(object: Callback<MatchingResponse> {
+        connectService.connectToMeList("Bearer $token").enqueue(object: Callback<MatchingResponse> {
             override fun onResponse(call: Call<MatchingResponse>, response: Response<MatchingResponse>) {
                 Log.d("connectToMeList", response.toString())
 
