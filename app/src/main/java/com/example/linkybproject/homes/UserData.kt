@@ -1,5 +1,7 @@
 package com.example.linkybproject.homes
 
+import com.google.gson.annotations.SerializedName
+
 data class UserData(
     val userimg : String,
     val username : String,
@@ -12,7 +14,7 @@ data class UserData(
 )
 
 data class Interest(
-    val interest:String
+    @SerializedName("userInterest")val interest:String
 )
 
 data class Department(
@@ -22,6 +24,4 @@ data class Department(
 data class Mbti(
     val mbti: String
 )
-
-
 

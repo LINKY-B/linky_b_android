@@ -18,8 +18,7 @@ class ConnectionFragment : Fragment(), ConnectToMeView {
 
         /* 리사이클러뷰 */
         val connectList: ArrayList<LBUser> = arrayListOf()
-//        connectList.add(LBUser(2, "호호", "컴퓨터학과", "20", 3))
-
+//
         binding.rvConnectToMeList.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         binding.rvConnectToMeList.setHasFixedSize(true)
         binding.rvConnectToMeList.adapter = ConnectRAdapter(connectList)
@@ -27,7 +26,7 @@ class ConnectionFragment : Fragment(), ConnectToMeView {
         /* 나에게 매칭 시도한 유저 전체 조회 api 호출 */
         val connectService = ConnectService()
         connectService.setConnectToMeView(this)
-        connectService.connectToMeList(".")
+        connectService.connectToMeList("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsIm1lbWJlcklkIjoiMiIsImF1dGhvcml0aWVzIjoiVVNFUiIsInR5cGUiOiJCZWFyZXIiLCJleHAiOjE2ODAwNzIwOTZ9.ADVKftjHzAEPpvDyCzRSWuhhtRnjbdHYXoD6z67Nre_xEkK5pYkEZ0dPFlwuaZ1wK1Iuh_mTB5vsTcwHSWDIeg")
 
         /* 이벤트 리스너 */
         binding.btnFullConnectFrom.setOnClickListener {
