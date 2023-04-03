@@ -9,20 +9,26 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.style.RelativeSizeSpan
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.linkybproject.R
+import com.example.linkybproject.connect.ConnectService
+import com.example.linkybproject.connect.ConnectToMeView
 import com.example.linkybproject.databinding.ActivitySetUpBinding
 import com.example.linkybproject.onBoarding.PrevLoginActivity
 
-class SetUpActivity : AppCompatActivity() {
+class SetUpActivity : AppCompatActivity(), NoticeOnView {
     private lateinit var viewBinding: ActivitySetUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = ActivitySetUpBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
+
+        val noticeService = NoticeService()
+        noticeService.setNoticeView(this)
 
         viewBinding.btnBack.setOnClickListener {
             finish()
@@ -58,6 +64,23 @@ class SetUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        viewBinding.setUpSwitch2.setOnCheckedChangeListener { compoundButton, b ->
+            if(b){
+                Log.d("Test","check")
+                noticeService.turnOnTheNotice( "Bearer " + "")
+            }else{
+                Log.d("Test","uncheck")
+                noticeService.turnOffTheNotice( "Bearer " + "")
+            }
+        }
+    }
+
+    override fun onNoticeSuccess(turnOnTheNotice: NoticeResponse) {
+        Log.d("Test", "Success")
+    }
+
+    override fun onNoticeFailure() {
+        Log.d("Test", "Fail")
     }
 
 }

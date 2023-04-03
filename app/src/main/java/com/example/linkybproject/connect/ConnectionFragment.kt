@@ -29,7 +29,7 @@ class ConnectionFragment : Fragment(), ConnectToMeView {
         val connectService = ConnectService()
         connectService.setConnectToMeView(this)
 
-        connectService.connectToMeList()
+        connectService.connectToMeList("")
         // requireContext().getSharedPreferences("auth", Context.MODE_PRIVATE).getString("accessToken", "")!!
 
         /* 이벤트 리스너 */
