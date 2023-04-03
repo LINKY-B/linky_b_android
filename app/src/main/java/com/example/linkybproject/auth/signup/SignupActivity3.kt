@@ -1,4 +1,4 @@
-package com.example.linkybproject.auth
+package com.example.linkybproject.auth.signup
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -23,21 +23,17 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup3Binding
 import java.io.File
-import java.util.jar.Manifest
-import android.app.PendingIntent
-import android.app.PendingIntent.FLAG_MUTABLE
-import java.util.*
-import java.util.regex.Pattern
 
 class SignupActivity3 : AppCompatActivity() {
 
     private lateinit var binding : ActivitySignup3Binding
 
     // SignupActivity4 로 가지고 넘어갈 값. 회원가입 끝에 서버에 넘길 데이터
-    private lateinit var userSchoolName : String
-    private lateinit var userMajorName : String
-    private lateinit var userStudentNum : String
     private var gradeStatus : Boolean = false
+    private lateinit var userMajorName : String
+    private lateinit var userSchoolName : String
+    private lateinit var userStudentNum : String
+    private lateinit var schoolImg: File
 
     // 갤러리 이미지 업로드
     companion object {
@@ -84,6 +80,7 @@ class SignupActivity3 : AppCompatActivity() {
         }
         val result = cursor.getString(columnIndex)
         cursor.close()
+        binding.imageViewUploaded.visibility = View.VISIBLE
         return result
     }
 
@@ -178,14 +175,17 @@ class SignupActivity3 : AppCompatActivity() {
             object : TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                     checkOptions()
+                    checkNumValid()
                 }
 
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                     checkOptions()
+                    checkNumValid()
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
                     checkOptions()
+                    checkNumValid()
                 }
             }
         )
@@ -224,7 +224,7 @@ class SignupActivity3 : AppCompatActivity() {
                     binding.textViewSignup3AuthGradExplain.visibility = View.VISIBLE
 
                     binding.imageViewUploadImage.visibility = View.VISIBLE
-                    binding.imageViewUploaded.visibility = View.VISIBLE
+//                    binding.imageViewUploaded.visibility = View.VISIBLE
 
                     gradeStatus = false
                 } else if (flag == "졸업") {
@@ -245,7 +245,7 @@ class SignupActivity3 : AppCompatActivity() {
                     binding.textViewSignup3AuthGradExplain.visibility = View.VISIBLE
 
                     binding.imageViewUploadImage.visibility = View.VISIBLE
-                    binding.imageViewUploaded.visibility = View.VISIBLE
+//                    binding.imageViewUploaded.visibility = View.VISIBLE
 
                     gradeStatus = true
                 } else {
@@ -277,6 +277,9 @@ class SignupActivity3 : AppCompatActivity() {
         // 4-1. 미졸업
         // 4-2. 졸업
         // 졸업 부분 인증하고 밑에 버튼 뷰 처리까지 해야 함.
+        binding.imageViewUploadImage.setOnClickListener {
+            selectGallery()
+        }
 
         // 5. 학교 정보 입력 완료 -> signupActivity4
         binding.textViewBtnNext4Green.setOnClickListener{
@@ -289,33 +292,47 @@ class SignupActivity3 : AppCompatActivity() {
 //            Toast.makeText(this@SignupActivity3, gradeStatus, Toast.LENGTH_SHORT).show()
 
             val extras = intent.extras
+            val authCode = extras?.get("authCode") as String
+            val userBirth = extras?.get("userBirth") as String
+            val userEmail = extras?.get("userEmail") as String
             val userName = extras?.get("userName") as String
             val userNickName = extras?.get("userNickName") as String
-            val userPhone = extras?.get("userPhone") as String
             val userPassword = extras?.get("userPassword") as String
-            val userBirth = extras?.get("userBirth") as String
+            Log.d("authCode", authCode)
+            Log.d("userBirth", userBirth)
+            Log.d("userEmail", userEmail)
             Log.d("userName", userName)
             Log.d("userNickName", userNickName)
-            Log.d("userPhone", userPhone)
             Log.d("userPassword", userPassword)
-            Log.d("userBirth", userBirth)
-            Log.d("userSchoolName", userSchoolName)
-            Log.d("userMajorName", userMajorName)
-            Log.d("userStudentNum", userStudentNum)
             Log.d("gradeStatus", gradeStatus.toString())
+            Log.d("userMajorName", userMajorName)
+            Log.d("userSchoolName", userSchoolName)
+            Log.d("userStudentNum", userStudentNum)
+            Log.d("schoolImg", schoolImg.toString())
             val intent = Intent(this, SignupActivity4::class.java)
+            intent.putExtra("authCode", authCode)
+            intent.putExtra("userBirth", userBirth)
+            intent.putExtra("userEmail", userEmail)
             intent.putExtra("userName", userName)
             intent.putExtra("userNickName", userNickName)
-            intent.putExtra("userPhone", userPhone)
             intent.putExtra("userPassword", userPassword)
-            intent.putExtra("userBirth", userBirth)
-            intent.putExtra("userSchoolName", userSchoolName)
-            intent.putExtra("userMajorName", userMajorName)
-            intent.putExtra("userStudentNum", userStudentNum)
             intent.putExtra("gradeStatus", gradeStatus)
+            intent.putExtra("userMajorName", userMajorName)
+            intent.putExtra("userSchoolName", userSchoolName)
+            intent.putExtra("userStudentNum", userStudentNum)
+            intent.putExtra("schoolImg", schoolImg)
             startActivity(intent)
         }
 
+    }
+
+    private fun checkNumValid() {
+        val num = binding.editTextSignupUniNum.text.toString()
+
+        if (num.length != 2) {
+            Toast.makeText(this@SignupActivity3, "Invalid Num", Toast.LENGTH_SHORT).show()
+            // 우선 토스트로 검증.
+        }
     }
 
     // 6. 기본 정보 입력 완료 확인 함수

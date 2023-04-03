@@ -2,12 +2,13 @@ package com.example.linkybproject.common
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.linkybproject.R
 import com.example.linkybproject.chat.ChatFragment
 import com.example.linkybproject.connect.ConnectionFragment
 import com.example.linkybproject.databinding.ActivityMainBinding
-import com.example.linkybproject.homes.GetHomeStudentView
+import com.example.linkybproject.homes.HomeStudentView
 import com.example.linkybproject.homes.HomeFragment
 import com.example.linkybproject.homes.HomeStudentRequest
 import com.example.linkybproject.homes.HomeStudentService
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity(){
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        val accessToken = getSharedPreferences("auth", MODE_PRIVATE).getString("accessToken", "")
+
+        // 내비게이션
         supportFragmentManager
             .beginTransaction()
             .replace(binding.fragmentContainerViewMain.id, HomeFragment())

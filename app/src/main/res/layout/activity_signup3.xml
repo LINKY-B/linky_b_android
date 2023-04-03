@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".auth.SignupActivity3">
+    tools:context=".auth.signup.SignupActivity3">
 
     <ImageView
         android:id="@+id/imageView_signup3_back"
@@ -395,14 +395,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="7dp"
-                android:src="@drawable/imageupload"
+                android:src="@drawable/box_gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_signup3_auth_grad_explain" />
 
             <ImageView
                 android:id="@+id/imageView_uploaded"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="105dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/authimage"

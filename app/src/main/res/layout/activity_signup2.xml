@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".auth.SignupActivity2">
+    tools:context=".auth.signup.SignupActivity2">
 
     <ImageView
         android:id="@+id/imageView_signup2_back"
@@ -88,7 +88,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/tv_border"
                 android:gravity="center_vertical"
-                android:hint="이메일 형식으로 입력해주세요."
+                android:hint="이메일을 입력해주세요."
                 android:inputType="textEmailAddress"
                 android:paddingLeft="11dp"
                 android:textSize="12dp"
@@ -117,7 +117,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/tv_border"
                 android:gravity="center"
-                android:inputType="number"
+                android:inputType="text"
                 android:textSize="12dp"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
