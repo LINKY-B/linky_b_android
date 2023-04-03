@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.databinding.ActivityOnBoardingBinding
 
 class OnBoardingActivity : AppCompatActivity() {
@@ -14,7 +15,7 @@ class OnBoardingActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
 
         Handler().postDelayed({
-            val intent = Intent(this, PrevLoginActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         },3000)

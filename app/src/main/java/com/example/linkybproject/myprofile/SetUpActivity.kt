@@ -1,25 +1,14 @@
 package com.example.linkybproject.myprofile
 
-import android.app.Dialog
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.SpannableStringBuilder
-import android.text.style.RelativeSizeSpan
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import com.example.linkybproject.R
-import com.example.linkybproject.connect.ConnectService
-import com.example.linkybproject.connect.ConnectToMeView
 import com.example.linkybproject.databinding.ActivitySetUpBinding
 import com.example.linkybproject.onBoarding.PrevLoginActivity
 
-class SetUpActivity : AppCompatActivity(), NoticeOnView {
+class SetUpActivity : AppCompatActivity(), AlarmView, ActiveView {
     private lateinit var viewBinding: ActivitySetUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,8 +16,11 @@ class SetUpActivity : AppCompatActivity(), NoticeOnView {
         viewBinding = ActivitySetUpBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-        val noticeService = NoticeService()
-        noticeService.setNoticeView(this)
+        val alarmService = AlarmService()
+        alarmService.setAlarmView(this)
+
+        val activeService = ActiveService()
+        activeService.setActiveView(this)
 
         viewBinding.btnBack.setOnClickListener {
             finish()
@@ -64,22 +56,40 @@ class SetUpActivity : AppCompatActivity(), NoticeOnView {
             startActivity(intent)
         }
 
-        viewBinding.setUpSwitch2.setOnCheckedChangeListener { compoundButton, b ->
-            if(b){
+        viewBinding.setUpSwitch1.setOnCheckedChangeListener { compoundButton, b ->
+            if (b) {
                 Log.d("Test","check")
-                noticeService.turnOnTheNotice( "Bearer " + "")
-            }else{
+                activeService.turnOnTheInfo( "Bearer " + "")
+            } else {
                 Log.d("Test","uncheck")
-                noticeService.turnOffTheNotice( "Bearer " + "")
+                activeService.turnOffTheInfo( "Bearer " + "")
+            }
+        }
+
+        viewBinding.setUpSwitch2.setOnCheckedChangeListener { compoundButton, b ->
+            if (b) {
+                Log.d("Test","check")
+                alarmService.turnOnTheNotice( "Bearer " + "")
+            } else{
+                Log.d("Test","uncheck")
+                alarmService.turnOffTheNotice( "Bearer " + "")
             }
         }
     }
 
-    override fun onNoticeSuccess(turnOnTheNotice: NoticeResponse) {
+    override fun onAlarmSuccess(turnOnTheNotice: AlarmResponse) {
         Log.d("Test", "Success")
     }
 
-    override fun onNoticeFailure() {
+    override fun onAlarmFailure() {
+        Log.d("Test", "Fail")
+    }
+
+    override fun onActiveSuccess(turnOnTheInfo: ActiveResponse) {
+        Log.d("Test", "Success")
+    }
+
+    override fun onActiveFailure() {
         Log.d("Test", "Fail")
     }
 

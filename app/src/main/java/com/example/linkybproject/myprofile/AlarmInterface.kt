@@ -4,14 +4,14 @@ import retrofit2.Call
 import retrofit2.http.Header
 import retrofit2.http.PATCH
 
-interface NoticeOnInterface {
+interface AlarmInterface {
     @PATCH("/users/alarm")
     fun turnOnTheNotice(
         @Header("Authorization") token: String
-    ): Call<NoticeResponse>
+    ): Call<AlarmResponse>
 
     @PATCH("/users/alarm/inactive")
     fun turnOffTheNotice(
         @Header("Authorization") token: String
-    ): Call<NoticeResponse>
+    ): Call<AlarmResponse>
 }
