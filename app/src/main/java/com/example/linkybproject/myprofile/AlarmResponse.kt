@@ -2,7 +2,7 @@ package com.example.linkybproject.myprofile
 
 import com.google.gson.annotations.SerializedName
 
-data class NoticeResponse(
+data class AlarmResponse(
     @SerializedName(value = "status") val status: Int,
     @SerializedName(value = "code") val code: String,
     @SerializedName(value = "message") val message: String,
