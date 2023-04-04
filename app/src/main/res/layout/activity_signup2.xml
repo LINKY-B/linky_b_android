@@ -116,8 +116,9 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/tv_border"
-                android:gravity="center"
-                android:inputType="text"
+                android:gravity="center_vertical"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="11dp"
                 android:textSize="12dp"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -185,12 +186,23 @@
                 app:layout_constraintTop_toBottomOf="@id/textView_error_1" />
 
             <TextView
-                android:id="@+id/textView_error_2"
+                android:id="@+id/textView_signup2_auth_success"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="4dp"
-                android:text="오류 메세지"
+                android:text="이메일 인증을 완료했습니다."
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editText_signup_auth" />
+            <TextView
+                android:id="@+id/textView_signup2_auth_fail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="4dp"
+                android:text="이메일 인증에 실패했습니다."
                 android:textColor="@color/black"
                 android:textSize="8dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -218,7 +230,7 @@
                 android:background="@color/grey_line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_error_2" />
+                app:layout_constraintTop_toBottomOf="@+id/textView_signup2_auth_success" />
 
             <TextView
                 android:id="@+id/textView_signup2_name_title"
