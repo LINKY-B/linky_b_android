@@ -8,7 +8,7 @@ interface SignupRetrofitInterface {
     @POST("/users/auth/signup") // @Method(api address)
     fun signup(@Body signupRequest: SignupRequest): Call<SignupResponse>
 
-    @POST("/auth/email/confirm")
+    @POST("/auth/signup/send-email")
     fun emailAuth(@Body emailAuthRequest: EmailAuthRequest): Call<EmailAuthResponse>
 
     @POST("/auth/check-nickname")

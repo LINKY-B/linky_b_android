@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class EmailAuthRequest(
     @SerializedName(value = "email") var email: String,
-    @SerializedName(value = "userName") var userName: String
+    @SerializedName(value = "userNickName") var userNickName: String
 )

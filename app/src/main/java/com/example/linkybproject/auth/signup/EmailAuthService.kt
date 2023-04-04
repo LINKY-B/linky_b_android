@@ -19,22 +19,17 @@ class EmailAuthService {
         val emailAuthService = getRetrofit().create(SignupRetrofitInterface::class.java)
 
         emailAuthService.emailAuth(emailAuthRequest).enqueue(object: Callback<EmailAuthResponse> {
-            @SuppressLint("SuspiciousIndentation")
-            override fun onResponse(
-                call: Call<EmailAuthResponse>,
-                response: Response<EmailAuthResponse>
-            ) {
-                Log.d("EMAIL/SUCCESS", response.message().toString())
+            override fun onResponse(call: Call<EmailAuthResponse>, response: Response<EmailAuthResponse>) {
+                Log.d("EMAIL/SUCCESS", response.toString())
                 val res: EmailAuthResponse = response.body()!!
-                if (res.status == 200) {
-                    emailAuthView.onEmailAuthSuccess()
-                } else {
-                    emailAuthView.onEmailAuthFailure()
+                when(res.status) {
+                    200 -> emailAuthView.onEmailAuthSuccess()
+                    else -> emailAuthView.onEmailAuthFailure()
                 }
             }
 
             override fun onFailure(call: Call<EmailAuthResponse>, t: Throwable) {
-                Log.d("SIGNUP/FAILURE", t.message.toString())
+                Log.d("EMAIL/FAILURE", t.message.toString())
             }
         })
     }

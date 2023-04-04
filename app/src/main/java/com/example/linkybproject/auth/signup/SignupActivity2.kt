@@ -413,7 +413,7 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView, NicknameView {
     
     private fun getEmailAuthRequest(): EmailAuthRequest {
         
-        return EmailAuthRequest(userEmail, userName)
+        return EmailAuthRequest(userEmail, userNickName)
     }
 
     private fun emailAuth() {
