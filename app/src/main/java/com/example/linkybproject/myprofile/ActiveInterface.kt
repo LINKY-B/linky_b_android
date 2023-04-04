@@ -10,7 +10,7 @@ interface ActiveInterface {
         @Header("Authorization") token: String
     ): Call<ActiveResponse>
 
-    @PATCH("/users/active")
+    @PATCH("/users/inactive")
     fun turnOffTheInfo(
         @Header("Authorization") token: String
     ): Call<ActiveResponse>
