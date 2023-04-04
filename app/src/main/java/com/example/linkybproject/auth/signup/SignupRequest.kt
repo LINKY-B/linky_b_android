@@ -5,7 +5,7 @@ import java.io.File
 
 data class SignupRequest(
     @SerializedName(value = "UserSignupReq") var UserSignupReq: UserSignupReq,
-    @SerializedName(value = "schoolImg") var schoolImg: schoolImg
+    @SerializedName(value = "schoolImg") var schoolImg: SchoolImg
 )
 
 data class UserSignupReq(
@@ -27,7 +27,7 @@ data class UserSignupReq(
     @SerializedName(value = "userStudentNum") var userStudentNum: String
 )
 
-data class schoolImg(
+data class SchoolImg(
     @SerializedName(value = "schoolImg") var schoolImg: File
 )
 

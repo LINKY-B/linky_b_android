@@ -10,4 +10,7 @@ interface SignupRetrofitInterface {
 
     @POST("/auth/email/confirm")
     fun emailAuth(@Body emailAuthRequest: EmailAuthRequest): Call<EmailAuthResponse>
+
+    @POST("/auth/check-nickname")
+    fun nickName(@Body nicknameRequest: NicknameRequest): Call<NicknameResponse>
 }

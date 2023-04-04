@@ -20,7 +20,7 @@ import java.util.*
 import java.util.regex.Pattern
 
 
-class SignupActivity2 : AppCompatActivity(), EmailAuthView {
+class SignupActivity2 : AppCompatActivity(), EmailAuthView, NicknameView {
 
     private lateinit var binding : ActivitySignup2Binding
 
@@ -53,6 +53,8 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView {
         binding.textViewSignup2NickError.visibility = View.INVISIBLE
         binding.textViewSignup2PwError.visibility = View.INVISIBLE
         binding.textViewSignup2PwCheckError.visibility = View.INVISIBLE
+        binding.textViewSignup2NickSuccess.visibility = View.INVISIBLE // 닉네임 인증 성공하면 보이게 설정하기
+        binding.textViewSignup2NickFail.visibility = View.INVISIBLE // 닉네임 인증 실패하면 보이게 설정하기 -> 후순위로 재입력 처리 해보기.
 
         // 1. 이메일 유효성 검사 (editText 입력하는 순간마다 이벤트 처리)
         binding.editTextSignupEmail.addTextChangedListener(
@@ -121,9 +123,9 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView {
         )
         // 3-1. 닉네임 중복확인
         binding.textViewBtnNickGreen.setOnClickListener{
-            Toast.makeText(this@SignupActivity2, "닉네임 중복확인", Toast.LENGTH_SHORT).show()
-            // 서버 
-            // error(false), true 문 textView 추가해야함
+//            Toast.makeText(this@SignupActivity2, "닉네임 중복확인", Toast.LENGTH_SHORT).show()
+            // 닉네임 중복확인 api
+            nickName()
         }
 
         // 4. 생년월일
@@ -420,12 +422,33 @@ class SignupActivity2 : AppCompatActivity(), EmailAuthView {
         emailAuthService.emailAuth(getEmailAuthRequest())
     }
 
-    override fun onSignupSuccess() {
-        Toast.makeText(this, "이메일 인증 번호 받기에 성공했습니다", Toast.LENGTH_SHORT).show()
+    private fun getNicknameRequest(): NicknameRequest {
+
+        return NicknameRequest(userNickName)
     }
 
-    override fun onSignupFailure() {
+    private fun nickName() {
+        val nicknameService = NicknameService()
+        nicknameService.setNicknameView(this)
+        nicknameService.nickName(getNicknameRequest())
+    }
+
+    override fun onEmailAuthSuccess() {
+        Toast.makeText(this, "이메일 인증 번호 받기 api 성공했습니다", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onEmailAuthFailure() {
         TODO("Not yet implemented")
+    }
+
+    override fun onNicknameSuccess() {
+        Toast.makeText(this, "닉네임 중복 확인 api 성공했습니다", Toast.LENGTH_SHORT).show()
+        binding.textViewSignup2NickSuccess.visibility = View.VISIBLE
+    }
+
+    override fun onNicknameFailure() {
+        Toast.makeText(this, "닉네임 중복 확인 api 실패했습니다", Toast.LENGTH_SHORT).show()
+        binding.textViewSignup2NickFail.visibility = View.VISIBLE
     }
 
 }
