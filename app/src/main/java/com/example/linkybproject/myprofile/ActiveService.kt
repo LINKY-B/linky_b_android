@@ -46,7 +46,7 @@ class ActiveService {
             override fun onResponse(call: Call<ActiveResponse>, response: Response<ActiveResponse>) {
                 Log.d("test", response.toString())
 
-                val resp: ActiveResponse = response.body()!!
+                val resp: ActiveResponse? = response.body()!!
                 if (resp != null) {
                     when (resp.status) {
                         200 -> {

@@ -59,10 +59,10 @@ class SetUpActivity : AppCompatActivity(), AlarmView, ActiveView {
         viewBinding.setUpSwitch1.setOnCheckedChangeListener { compoundButton, b ->
             if (b) {
                 Log.d("Test","check")
-                activeService.turnOnTheInfo( "Bearer " + "")
+                activeService.turnOffTheInfo( "Bearer " + "")
             } else {
                 Log.d("Test","uncheck")
-                activeService.turnOffTheInfo( "Bearer " + "")
+                activeService.turnOnTheInfo( "Bearer " + "")
             }
         }
 
