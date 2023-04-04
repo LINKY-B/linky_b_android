@@ -2,6 +2,7 @@ package com.example.linkybproject.auth.signup
 
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface SignupRetrofitInterface {
@@ -17,5 +18,6 @@ interface SignupRetrofitInterface {
     @POST("/auth/check-nickname")
     fun nickName(@Body nicknameRequest: NicknameRequest): Call<NicknameResponse>
 
-    
+    @GET("/auth/profile-images")
+    fun getProfileImages(): Call<ProfileImagesResponse>
 }
