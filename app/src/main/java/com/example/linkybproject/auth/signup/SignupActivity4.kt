@@ -1019,7 +1019,7 @@ class SignupActivity4 : AppCompatActivity(), SignupView {
 
         return SignupRequest(
             UserSignupReq(authCode, gradeStatus, profileImg, userBirth, userEmail, userInterests, userMBTI, userMajorName, userName, userNickName, userPassword, userPersonalities, userSchoolName, userSelfIntroduction, userSex, userStudentNum),
-            schoolImg(schoolImg))
+            SchoolImg(schoolImg))
     }
 
     private fun signup() {

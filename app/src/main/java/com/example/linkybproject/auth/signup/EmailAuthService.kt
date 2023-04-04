@@ -6,7 +6,6 @@ import com.example.linkybproject.getRetrofit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.create
 
 class EmailAuthService {
 
@@ -25,12 +24,12 @@ class EmailAuthService {
                 call: Call<EmailAuthResponse>,
                 response: Response<EmailAuthResponse>
             ) {
-                Log.d("SIGNUP/SUCCESS", response.message().toString())
+                Log.d("EMAIL/SUCCESS", response.message().toString())
                 val res: EmailAuthResponse = response.body()!!
                 if (res.status == 200) {
-                    emailAuthView.onSignupSuccess()
+                    emailAuthView.onEmailAuthSuccess()
                 } else {
-                    emailAuthView.onSignupFailure()
+                    emailAuthView.onEmailAuthFailure()
                 }
             }
 
