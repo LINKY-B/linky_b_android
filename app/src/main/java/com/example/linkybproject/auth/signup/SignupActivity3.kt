@@ -4,7 +4,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Editable
@@ -16,12 +15,16 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySignup3Binding
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import java.io.File
 
 class SignupActivity3 : AppCompatActivity() {
@@ -63,10 +66,11 @@ class SignupActivity3 : AppCompatActivity() {
                     .into(binding.imageViewUploaded) // 이미지 불러옴
             }
         }
+        schoolImg = imageFile
     }
 
     // 이미지 실제 경로 반환
-    fun getRealPathFromURI(uri: Uri): String {
+    private fun getRealPathFromURI(uri: Uri): String {
         val buildName = Build.MANUFACTURER
         if(buildName.equals("Xiaomi")) {
             return uri.path!!
