@@ -70,6 +70,10 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
         binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
         binding.imageViewSignup4Profile3Green.visibility = View.INVISIBLE
         binding.imageViewSignup4Profile4Green.visibility = View.INVISIBLE
+        binding.imageViewSignup4Profile5Green.visibility = View.INVISIBLE
+        binding.imageViewSignup4Profile6Green.visibility = View.INVISIBLE
+        binding.imageViewSignup4Profile7Green.visibility = View.INVISIBLE
+        binding.imageViewSignup4Profile8Green.visibility = View.INVISIBLE
         // 성별
         binding.textViewBtnFemaleGreen.visibility = View.INVISIBLE
         binding.textViewBtnMaleGreen.visibility = View.INVISIBLE
@@ -120,6 +124,7 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
 
         // 1. 프로필
         binding.imageViewSignup4Profile1.setOnClickListener {
+            profileImg = profileImages[7]
             if (binding.imageViewSignup4Profile1Green.visibility == View.INVISIBLE) {
                 if (binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE) {
                     binding.imageViewSignup4Profile2Grey.visibility = android.view.View.VISIBLE
@@ -127,23 +132,39 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
                     binding.imageViewSignup4Profile3Grey.visibility = android.view.View.VISIBLE
                 } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) {
                     binding.imageViewSignup4Profile4Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile5Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile5Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile6Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile6Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile7Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile7Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile8Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile8Grey.visibility = android.view.View.VISIBLE
                 }
                 binding.imageViewSignup4Profile1Green.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile3Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile4Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile5Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile6Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile7Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile8Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile1Grey.visibility = View.INVISIBLE
             } else if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE){
-                profileImg = profileImages[0]
                 binding.imageViewSignup4Profile1Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile2Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile3Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile4Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile5Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile6Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile7Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile8Grey.visibility = View.VISIBLE
             }
             checkOptions()
         }
         binding.imageViewSignup4Profile2.setOnClickListener {
+            profileImg = profileImages[4]
             if (binding.imageViewSignup4Profile2Green.visibility == View.INVISIBLE) {
                 if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
                     binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
@@ -151,11 +172,23 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
                     binding.imageViewSignup4Profile4Grey.visibility = android.view.View.VISIBLE
                 } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE) {
                     binding.imageViewSignup4Profile3Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile5Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile5Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile6Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile6Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile7Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile7Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile8Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile8Grey.visibility = android.view.View.VISIBLE
                 }
                 binding.imageViewSignup4Profile2Green.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile1Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile3Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile4Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile5Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile6Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile7Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile8Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile2Grey.visibility = View.INVISIBLE
             } else if (binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE){
                 binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
@@ -163,10 +196,15 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
                 binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile3Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile4Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile5Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile6Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile7Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile8Grey.visibility = View.VISIBLE
             }
             checkOptions()
         }
         binding.imageViewSignup4Profile3.setOnClickListener {
+            profileImg = profileImages[0]
             if (binding.imageViewSignup4Profile3Green.visibility == View.INVISIBLE) {
                 if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
                     binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
@@ -174,22 +212,40 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
                     binding.imageViewSignup4Profile2Grey.visibility = android.view.View.VISIBLE
                 } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) {
                     binding.imageViewSignup4Profile4Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile5Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile5Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile6Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile6Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile7Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile7Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile8Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile8Grey.visibility = android.view.View.VISIBLE
                 }
                 binding.imageViewSignup4Profile3Green.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile1Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile4Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile5Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile6Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile7Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile8Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile3Grey.visibility = View.INVISIBLE
             } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE){
                 binding.imageViewSignup4Profile3Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile3Grey.visibility = View.VISIBLE
-                binding.imageViewSignup4Profile2Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile2Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile4Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile5Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile6Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile7Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile8Grey.visibility = View.VISIBLE
             }
             checkOptions()
         }
         binding.imageViewSignup4Profile4.setOnClickListener {
+            profileImg = profileImages[3]
             if (binding.imageViewSignup4Profile4Green.visibility == View.INVISIBLE) {
                 if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
                     binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
@@ -197,18 +253,194 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
                     binding.imageViewSignup4Profile2Grey.visibility = android.view.View.VISIBLE
                 } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE) {
                     binding.imageViewSignup4Profile3Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile5Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile5Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile6Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile6Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile7Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile7Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile8Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile8Grey.visibility = android.view.View.VISIBLE
                 }
                 binding.imageViewSignup4Profile4Green.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile1Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile3Green.visibility = View.INVISIBLE
-                binding.imageViewSignup4Profile1Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile5Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile6Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile7Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile8Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile4Grey.visibility = View.INVISIBLE
             } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE){
                 binding.imageViewSignup4Profile4Green.visibility = View.INVISIBLE
                 binding.imageViewSignup4Profile4Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile2Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile3Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile5Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile6Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile7Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile8Grey.visibility = View.VISIBLE
+            }
+            checkOptions()
+        }
+        binding.imageViewSignup4Profile5.setOnClickListener {
+            profileImg = profileImages[1]
+            if (binding.imageViewSignup4Profile5Green.visibility == View.INVISIBLE) {
+                if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile1Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile2Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile3Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile4Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile6Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile6Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile7Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile7Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile8Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile8Grey.visibility = android.view.View.VISIBLE
+                }
+                binding.imageViewSignup4Profile5Green.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile1Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile3Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile4Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile6Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile7Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile8Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile5Grey.visibility = View.INVISIBLE
+            } else if (binding.imageViewSignup4Profile5Green.visibility == View.VISIBLE){
+                binding.imageViewSignup4Profile5Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile5Grey.visibility = View.VISIBLE
                 binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile2Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile3Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile4Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile6Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile7Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile8Grey.visibility = View.VISIBLE
+            }
+            checkOptions()
+        }
+        binding.imageViewSignup4Profile6.setOnClickListener {
+            profileImg = profileImages[2]
+            if (binding.imageViewSignup4Profile6Green.visibility == View.INVISIBLE) {
+                if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile1Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile2Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile3Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile4Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile5Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile5Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile7Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile7Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile8Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile5Grey.visibility = android.view.View.VISIBLE
+                }
+                binding.imageViewSignup4Profile6Green.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile1Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile3Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile4Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile5Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile7Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile8Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile6Grey.visibility = View.INVISIBLE
+            } else if (binding.imageViewSignup4Profile6Green.visibility == View.VISIBLE){
+                binding.imageViewSignup4Profile6Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile6Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile2Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile3Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile4Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile5Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile7Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile8Grey.visibility = View.VISIBLE
+            }
+            checkOptions()
+        }
+        binding.imageViewSignup4Profile7.setOnClickListener {
+            profileImg = profileImages[5]
+            if (binding.imageViewSignup4Profile7Green.visibility == View.INVISIBLE) {
+                if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile1Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile2Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile3Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile4Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile5Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile5Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile6Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile6Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile8Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile8Grey.visibility = android.view.View.VISIBLE
+                }
+                binding.imageViewSignup4Profile7Green.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile1Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile3Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile4Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile5Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile6Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile8Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile7Grey.visibility = View.INVISIBLE
+            } else if (binding.imageViewSignup4Profile7Green.visibility == View.VISIBLE){
+                binding.imageViewSignup4Profile7Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile7Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile2Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile3Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile4Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile5Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile6Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile8Grey.visibility = View.VISIBLE
+            }
+            checkOptions()
+        }
+        binding.imageViewSignup4Profile8.setOnClickListener {
+            profileImg = profileImages[6]
+            if (binding.imageViewSignup4Profile8Green.visibility == View.INVISIBLE) {
+                if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile1Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile2Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile3Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile4Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile5Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile5Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile6Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile6Grey.visibility = android.view.View.VISIBLE
+                } else if (binding.imageViewSignup4Profile7Green.visibility == View.VISIBLE) {
+                    binding.imageViewSignup4Profile7Grey.visibility = android.view.View.VISIBLE
+                }
+                binding.imageViewSignup4Profile8Green.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile1Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile2Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile3Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile4Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile5Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile6Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile7Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile8Grey.visibility = View.INVISIBLE
+            } else if (binding.imageViewSignup4Profile8Green.visibility == View.VISIBLE){
+                binding.imageViewSignup4Profile8Green.visibility = View.INVISIBLE
+                binding.imageViewSignup4Profile8Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile1Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile2Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile3Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile4Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile5Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile6Grey.visibility = View.VISIBLE
+                binding.imageViewSignup4Profile7Grey.visibility = View.VISIBLE
             }
             checkOptions()
         }
@@ -953,7 +1185,7 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
             Log.d("userStudentNum", userStudentNum)
             Log.d("schoolImg", schoolImg.toString())
 
-            Log.d("profileImg", profileImg.toString())
+            Log.d("profileImg", profileImg)
             Log.d("userInterests", userInterests.toString())
             Log.d("userMBTI", userMBTI)
             Log.d("userPersonalities", userPersonalities.toString())
@@ -991,7 +1223,11 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
         if((binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE ||
                     binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE ||
                     binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE ||
-                    binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) &&
+                    binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE ||
+                    binding.imageViewSignup4Profile5Green.visibility == View.VISIBLE ||
+                    binding.imageViewSignup4Profile6Green.visibility == View.VISIBLE ||
+                    binding.imageViewSignup4Profile7Green.visibility == View.VISIBLE ||
+                    binding.imageViewSignup4Profile8Green.visibility == View.VISIBLE) &&
             (binding.textViewBtnFemaleGreen.visibility == View.VISIBLE ||
                     binding.textViewBtnMaleGreen.visibility == View.VISIBLE) &&
             binding.spinnerMbti.selectedItem.toString().length < 10 &&
@@ -1035,7 +1271,7 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
     override fun onProfileImagesSuccess(data: ArrayList<String>) {
         Toast.makeText(this, "프로필 이미지 목록 조회에 성공했습니다.", Toast.LENGTH_SHORT).show()
         profileImages = data
-        Log.d("PROFILE_IMAGES", data.toString())
+        Log.d("PROFILE_IMAGES", profileImages.toString())
     }
     override fun onProfileImagesFailure() {
         Toast.makeText(this, "프로필 이미지 목록 조회에 실패했습니다.", Toast.LENGTH_SHORT).show()

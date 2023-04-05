@@ -9,7 +9,7 @@
         android:id="@+id/imageView_item_chat_profile"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:src="@drawable/profile4"
+        android:src="@drawable/profile6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
