@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.linkybproject.auth.signup.SignupActivity4
+import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.databinding.ActivityOnBoardingBinding
 
 class OnBoardingActivity : AppCompatActivity() {

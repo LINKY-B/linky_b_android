@@ -1,28 +1,26 @@
 package com.example.linkybproject.myprofile
 
-import android.app.Dialog
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.SpannableStringBuilder
-import android.text.style.RelativeSizeSpan
-import android.widget.TextView
+import android.util.Log
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivitySetUpBinding
 import com.example.linkybproject.onBoarding.PrevLoginActivity
 
-class SetUpActivity : AppCompatActivity() {
+class SetUpActivity : AppCompatActivity(), AlarmView, ActiveView {
     private lateinit var viewBinding: ActivitySetUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = ActivitySetUpBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
+
+        val alarmService = AlarmService()
+        alarmService.setAlarmView(this)
+
+        val activeService = ActiveService()
+        activeService.setActiveView(this)
 
         viewBinding.btnBack.setOnClickListener {
             finish()
@@ -58,6 +56,41 @@ class SetUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        viewBinding.setUpSwitch1.setOnCheckedChangeListener { compoundButton, b ->
+            if (b) {
+                Log.d("Test","check")
+                activeService.turnOffTheInfo( "Bearer " + "")
+            } else {
+                Log.d("Test","uncheck")
+                activeService.turnOnTheInfo( "Bearer " + "")
+            }
+        }
+
+        viewBinding.setUpSwitch2.setOnCheckedChangeListener { compoundButton, b ->
+            if (b) {
+                Log.d("Test","check")
+                alarmService.turnOnTheNotice( "Bearer " + "")
+            } else{
+                Log.d("Test","uncheck")
+                alarmService.turnOffTheNotice( "Bearer " + "")
+            }
+        }
+    }
+
+    override fun onAlarmSuccess(turnOnTheNotice: AlarmResponse) {
+        Log.d("Test", "Success")
+    }
+
+    override fun onAlarmFailure() {
+        Log.d("Test", "Fail")
+    }
+
+    override fun onActiveSuccess(turnOnTheInfo: ActiveResponse) {
+        Log.d("Test", "Success")
+    }
+
+    override fun onActiveFailure() {
+        Log.d("Test", "Fail")
     }
 
 }
