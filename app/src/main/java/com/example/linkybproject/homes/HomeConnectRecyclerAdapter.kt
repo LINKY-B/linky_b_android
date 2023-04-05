@@ -26,7 +26,7 @@ class HomeConnectRecyclerAdapter(private val appCompatActivity: AppCompatActivit
 
             binding.recyclerviewHomeItem.apply {
                 var ad = HomeInterestRecyclerAdapter();
-                ad.datalist = userData.interests.toMutableList();
+                ad.datalist = userData.interests.map { it.interest }.toMutableList();
                 adapter = ad;
                 layoutManager = LinearLayoutManager(binding.recyclerviewHomeItem.context, LinearLayoutManager.HORIZONTAL, false)
                 setHasFixedSize(true)
