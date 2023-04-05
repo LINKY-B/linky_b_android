@@ -40,8 +40,8 @@ class HomeStudentFragment : Fragment() , HomeStudentView{
         /* 리사이클러뷰 */
         //val adapter = mainAppActivity?.let { HomeRecyclerViewAdapter(it) }
         val homeStudentList: ArrayList<HomeStudentResult> = arrayListOf()
-
-//        adapter?.datalist = mutableListOf(
+//
+//        adapter?. = mutableListOf(
 //            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 20, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
 //            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
 //            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 23, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
@@ -62,19 +62,23 @@ class HomeStudentFragment : Fragment() , HomeStudentView{
         /* 재학생 리스트 조회 api 호출 */
         val homeStudentService = HomeStudentService()
         homeStudentService.setHomeStudentView(this)
-        homeStudentService.homeStudent("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsIm1lbWJlcklkIjoiMiIsImF1dGhvcml0aWVzIjoiVVNFUiIsInR5cGUiOiJCZWFyZXIiLCJleHAiOjE2ODA0MjQwNzd9.jhNb5DmfhCl5goQpfKcVGvXHWiEXaiYchrlMQk-vOTL4GoH2Mcztbk8iMKmhT2ldwqxZnSScx8iAxYW_bmYR8A")
+        val accessToken = context?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)?.getString("accessToken","");
+        if (accessToken != null && accessToken.isNotEmpty()) {
+            homeStudentService.homeStudent(accessToken);
+        }
+
         return binding.root
     }
 
     /* 재학생 리스트 조회 api 호출 결과 */
     override fun onHomeStudentListSuccess(homeStudentList: HomeStudentResponse) {
-        Log.d("ConnectToMe", "Success")
-        binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeStudentList.result)
+        Log.d("getStudentList", "Success")
+        binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeStudentList.data.students)
 
     }
 
     override fun onGetHomeStudentListFailure() {
-        Log.d("ConnectToMe", "Failure")
+        Log.d("getStudentList", "Failure")
     }
 }
 
