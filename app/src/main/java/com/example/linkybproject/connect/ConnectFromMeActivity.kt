@@ -38,13 +38,13 @@ class ConnectFromMeActivity : AppCompatActivity(), ConnectView {
         }
     }
 
-    /* 나에게 매칭 시도한 유저 전체 조회 api 호출 결과 */
+    /* 내가 매칭 시도한 유저 전체 조회 api 호출 결과 */
     override fun onConnectSuccess(connectFromMeList: MatchingResponse) {
         Log.d("ConnectFromMe", "Success")
         viewBinding.recyclerConnectFrom.adapter = ConnectRAdapter(connectFromMeList.data)
     }
 
-    override fun onConnectFailure() {
+    override fun onConnectFailure(result: MatchingResponse) {
         Log.d("ConnectFromMe", "Failure")
     }
 }
