@@ -32,4 +32,5 @@ fun getRetrofit(): Retrofit {
         .addConverterFactory(GsonConverterFactory.create(gson))
         .client(client)
         .build()
+
 }
