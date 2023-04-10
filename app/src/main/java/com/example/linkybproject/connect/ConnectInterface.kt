@@ -9,5 +9,10 @@ interface ConnectInterface {
     fun connectToMeList(
         @Header("Authorization") token: String
     ): Call<MatchingResponse>
+
+    @GET("match/Matching/all")
+    fun connectFromMeList(
+        @Header("Authorization") token: String
+    ): Call<MatchingResponse>
 }
 

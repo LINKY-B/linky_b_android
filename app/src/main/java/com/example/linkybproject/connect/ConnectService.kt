@@ -7,10 +7,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class ConnectService {
-    private lateinit var connectToMeView: ConnectToMeView
+    private lateinit var connectView: ConnectView
 
-    fun setConnectToMeView(connectToMeView: ConnectToMeView) {
-        this.connectToMeView = connectToMeView
+    fun setConnectToMeView(connectToMeView: ConnectView) {
+        this.connectView = connectToMeView
+    }
+
+    fun setConnectFromMeView(connectFromMeView: ConnectView) {
+        this.connectView = connectFromMeView
     }
 
     fun connectToMeList(token: String) {
@@ -22,17 +26,41 @@ class ConnectService {
                 val resp: MatchingResponse? = response.body()
 
                 if (resp != null) {
-                    when(resp.code) {
-                        1000 -> connectToMeView.onConnectToMeSuccess(resp)
-                        else -> connectToMeView.onConnectToMeFailure()
+                    when(resp.status) {
+                        200 -> connectView.onConnectSuccess(resp)
+                        else -> connectView.onConnectFailure()
                     }
                 } else {
-                    connectToMeView.onConnectToMeFailure()
+                    connectView.onConnectFailure()
                 }
             }
 
             override fun onFailure(call: Call<MatchingResponse>, t: Throwable) {
                 Log.d("connectToMeList", t.message.toString())
+            }
+        })
+    }
+
+    fun connectFromMeList(token: String) {
+        val connectService = getRetrofit().create(ConnectInterface::class.java)
+        connectService.connectFromMeList("Bearer $token").enqueue(object: Callback<MatchingResponse> {
+            override fun onResponse(call: Call<MatchingResponse>, response: Response<MatchingResponse>) {
+                Log.d("connectFromMeList", response.toString())
+
+                val resp: MatchingResponse? = response.body()
+
+                if (resp != null) {
+                    when(resp.status) {
+                        200 -> connectView.onConnectSuccess(resp)
+                        else -> connectView.onConnectFailure()
+                    }
+                } else {
+                    connectView.onConnectFailure()
+                }
+            }
+
+            override fun onFailure(call: Call<MatchingResponse>, t: Throwable) {
+                Log.d("connectFromMeList", t.message.toString())
             }
         })
     }
