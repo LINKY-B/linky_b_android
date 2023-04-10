@@ -49,8 +49,8 @@ class HomeFragment:Fragment() {
         }.attach()
 
 
-        //val adapter = mainAppActivity?.let { HomeConnectRecyclerAdapter(it) }
-        val adapter = HomeConnectRecyclerAdapter(appCompatActivity = AppCompatActivity())
+        val adapter = mainAppActivity?.let { HomeConnectRecyclerAdapter(it) }
+//        val adapter = HomeConnectRecyclerAdapter(appCompatActivity = AppCompatActivity())
         adapter?.datalist = mutableListOf(
             UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19,"" ,"", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
             UserData("", "배고픈 청설모1", 29, "시각디자인학과", 22, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),

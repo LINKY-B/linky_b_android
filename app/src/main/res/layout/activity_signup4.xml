@@ -203,12 +203,125 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
 
+            <ImageView
+                android:id="@+id/imageView_signup4_profile5"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/profile5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView_signup4_profile1" />
+            <ImageView
+                android:id="@+id/imageView_signup4_profile5_green"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="89dp"
+                android:src="@drawable/circlegreen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+            <ImageView
+                android:id="@+id/imageView_signup4_profile5_grey"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="89dp"
+                android:src="@drawable/circlegrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+
+            <ImageView
+                android:id="@+id/imageView_signup4_profile6"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="111dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/profile6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView_signup4_profile2" />
+            <ImageView
+                android:id="@+id/imageView_signup4_profile6_green"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="106dp"
+                android:layout_marginTop="89dp"
+                android:src="@drawable/circlegreen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+            <ImageView
+                android:id="@+id/imageView_signup4_profile6_grey"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="106dp"
+                android:layout_marginTop="89dp"
+                android:src="@drawable/circlegrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+
+            <ImageView
+                android:id="@+id/imageView_signup4_profile7"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="192dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/profile8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView_signup4_profile2" />
+            <ImageView
+                android:id="@+id/imageView_signup4_profile7_green"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="187dp"
+                android:layout_marginTop="89dp"
+                android:src="@drawable/circlegreen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+            <ImageView
+                android:id="@+id/imageView_signup4_profile7_grey"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="187dp"
+                android:layout_marginTop="89dp"
+                android:src="@drawable/circlegrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+
+            <ImageView
+                android:id="@+id/imageView_signup4_profile8"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="273dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/profile7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView_signup4_profile2" />
+            <ImageView
+                android:id="@+id/imageView_signup4_profile8_green"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="268dp"
+                android:layout_marginTop="89dp"
+                android:src="@drawable/circlegreen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+            <ImageView
+                android:id="@+id/imageView_signup4_profile8_grey"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="268dp"
+                android:layout_marginTop="89dp"
+                android:src="@drawable/circlegrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_signup4_profile_explain" />
+
+
             <TextView
                 android:id="@+id/textView_signup4_gender_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="113dp"
+                android:layout_marginTop="189dp"
                 android:text="성별"
                 android:textColor="@color/black"
                 android:textSize="16dp"

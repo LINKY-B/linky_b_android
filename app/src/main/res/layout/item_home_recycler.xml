@@ -74,13 +74,13 @@
             android:id="@+id/tv_home_item_center"
             android:layout_width="wrap_content"
             android:layout_height="16dp"
-            android:layout_marginStart="66dp"
             android:gravity="center"
             android:text="/"
             android:textColor="@color/grey"
             android:textSize="9dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_home_likenumber"
+            app:layout_constraintStart_toEndOf="@+id/tv_home_department"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_home_studentnum"
             app:layout_constraintBottom_toBottomOf="parent"/>
         <TextView
             android:id="@+id/tv_home_studentnum"
@@ -97,12 +97,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="16dp"
-            android:layout_marginStart="80dp"
             android:gravity="center"
             android:text="학번"
             android:textColor="@color/grey"
             android:textSize="9dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_home_likenumber"
+            app:layout_constraintStart_toEndOf="@+id/tv_home_studentnum"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 

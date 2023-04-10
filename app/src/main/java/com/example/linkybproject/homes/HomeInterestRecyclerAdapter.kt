@@ -9,13 +9,13 @@ import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 
 class HomeInterestRecyclerAdapter: RecyclerView.Adapter<HomeInterestRecyclerAdapter.ViewHolder>() {
 
-    var datalist = mutableListOf<Interest>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
+    var datalist = mutableListOf<String>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
 
     inner class ViewHolder(private val binding: ItemConnectInterestBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(interest: Interest){
+        fun bind(interest: String){
             //binding.dogPhotoImg.=dogData.dog_img
-            binding.textViewItemMyProfileInterest.text=interest.interest
+            binding.textViewItemMyProfileInterest.text=interest//.interest
 
         }
     }
