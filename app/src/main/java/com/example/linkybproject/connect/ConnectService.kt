@@ -22,8 +22,8 @@ class ConnectService {
                 val resp: MatchingResponse? = response.body()
 
                 if (resp != null) {
-                    when(resp.code) {
-                        1000 -> connectToMeView.onConnectToMeSuccess(resp)
+                    when(resp.status) {
+                        200 -> connectToMeView.onConnectToMeSuccess(resp)
                         else -> connectToMeView.onConnectToMeFailure()
                     }
                 } else {
