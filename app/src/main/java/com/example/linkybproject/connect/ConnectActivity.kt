@@ -4,12 +4,10 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.linkybproject.databinding.ActivityConnectToMeBinding
-import com.example.linkybproject.homes.Interest
 
-class ConnectToMeActivity : AppCompatActivity(), ConnectToMeView {
+class ConnectActivity : AppCompatActivity(), ConnectView {
     private lateinit var viewBinding: ActivityConnectToMeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,12 +38,12 @@ class ConnectToMeActivity : AppCompatActivity(), ConnectToMeView {
     }
 
     /* 나에게 매칭 시도한 유저 전체 조회 api 호출 결과 */
-    override fun onConnectToMeSuccess(connectToMeList: MatchingResponse) {
+    override fun onConnectSuccess(connectToMeList: MatchingResponse) {
         Log.d("ConnectToMe", "Success")
         viewBinding.recyclerConnectToMe.adapter = ConnectRAdapter(connectToMeList.data)
     }
 
-    override fun onConnectToMeFailure() {
+    override fun onConnectFailure() {
         Log.d("ConnectToMe", "Failure")
     }
 }
