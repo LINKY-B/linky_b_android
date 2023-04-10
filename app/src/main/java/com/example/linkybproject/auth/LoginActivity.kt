@@ -44,7 +44,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     override fun onLoginSuccess(result: LoginResponse) {
         Toast.makeText(this, "로그인에 성공했습니다", Toast.LENGTH_SHORT).show()
 
-        // 액세스 토큰 저장
+        /* 액세스 토큰 저장 */
         val accessToken = result.data.accessToken
         getSharedPreferences("auth", MODE_PRIVATE)
             .edit()

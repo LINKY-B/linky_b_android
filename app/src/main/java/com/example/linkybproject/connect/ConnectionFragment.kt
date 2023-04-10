@@ -29,8 +29,7 @@ class ConnectionFragment : Fragment(), ConnectToMeView {
         val connectService = ConnectService()
         connectService.setConnectToMeView(this)
 
-        connectService.connectToMeList("")
-        // requireContext().getSharedPreferences("auth", Context.MODE_PRIVATE).getString("accessToken", "")!!
+        connectService.connectToMeList(requireContext().getSharedPreferences("auth", Context.MODE_PRIVATE).getString("accessToken", "")!!)
 
         /* 이벤트 리스너 */
         binding.btnFullConnectFrom.setOnClickListener {
