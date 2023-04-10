@@ -33,10 +33,12 @@ class ConnectService {
                 if (resp != null) {
                     when(resp.status) {
                         200 -> connectView.onConnectSuccess(resp)
-                        else -> connectView.onConnectFailure()
+                        else -> connectView.onConnectFailure(resp)
                     }
                 } else {
-                    connectView.onConnectFailure()
+                    if (resp != null) {
+                        connectView.onConnectFailure(resp)
+                    }
                 }
             }
 
@@ -57,10 +59,12 @@ class ConnectService {
                 if (resp != null) {
                     when(resp.status) {
                         200 -> connectView.onConnectSuccess(resp)
-                        else -> connectView.onConnectFailure()
+                        else -> connectView.onConnectFailure(resp)
                     }
                 } else {
-                    connectView.onConnectFailure()
+                    if (resp != null) {
+                        connectView.onConnectFailure(resp)
+                    }
                 }
             }
 

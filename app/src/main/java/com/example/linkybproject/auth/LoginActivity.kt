@@ -36,9 +36,9 @@ class LoginActivity : AppCompatActivity(), LoginView {
         val id: String = viewBinding.editTextLoginId.text.toString()
         val password: String = viewBinding.editTextLoginPassword.text.toString()
 
-        val loginService = LoginService()
-        loginService.setLoginView(this)
-        loginService.login(LoginRequest(id, password))
+        val authService = AuthService()
+        authService.setLoginView(this)
+        authService.login(LoginRequest(id, password))
     }
 
     override fun onLoginSuccess(result: LoginResponse) {

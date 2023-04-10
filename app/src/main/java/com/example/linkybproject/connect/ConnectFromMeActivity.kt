@@ -44,7 +44,7 @@ class ConnectFromMeActivity : AppCompatActivity(), ConnectView {
         viewBinding.recyclerConnectFrom.adapter = ConnectRAdapter(connectFromMeList.data)
     }
 
-    override fun onConnectFailure() {
+    override fun onConnectFailure(result: MatchingResponse) {
         Log.d("ConnectFromMe", "Failure")
     }
 }

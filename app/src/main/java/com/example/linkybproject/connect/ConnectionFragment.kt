@@ -17,19 +17,16 @@ class ConnectionFragment : Fragment(), MatchingMainView {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         viewBinding = FragmentConnectionBinding.inflate(layoutInflater)
 
-
         /* 리사이클러뷰 */
         val connectList: ArrayList<LBUser> = arrayListOf()
         viewBinding.rvConnectToMeList.layoutManager = LinearLayoutManager(activity)
         viewBinding.rvConnectToMeList.setHasFixedSize(true)
         viewBinding.rvConnectToMeList.adapter = ConnectRAdapter(connectList)
 
-
         /* 매칭 홈 전체 조회 api 호출 */
         val connectService = ConnectService()
         connectService.setConnectMainView(this)
         connectService.connectMainList(requireContext().getSharedPreferences("auth", Context.MODE_PRIVATE).getString("accessToken", "")!!)
-
 
         /* 이벤트 리스너 */
         viewBinding.btnFullConnectFrom.setOnClickListener {
@@ -44,6 +41,7 @@ class ConnectionFragment : Fragment(), MatchingMainView {
 
         return viewBinding.root
     }
+
 
     /* 매칭 홈 조회 api 호출 결과 */
     override fun onMatchingMainSuccess(connectList: MatchingMainResponse) {

@@ -43,7 +43,10 @@ class ConnectActivity : AppCompatActivity(), ConnectView {
         viewBinding.recyclerConnectToMe.adapter = ConnectRAdapter(connectToMeList.data)
     }
 
-    override fun onConnectFailure() {
+    override fun onConnectFailure(result: MatchingResponse) {
+        if (result.status == 400) {
+            Log.d("ConnectToMe", "만료된 토큰")
+        }
         Log.d("ConnectToMe", "Failure")
     }
 }
