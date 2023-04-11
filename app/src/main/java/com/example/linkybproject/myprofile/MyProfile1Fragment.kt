@@ -58,10 +58,14 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         binding.textViewMyProfileMbtiDetail.text = result.data.userMBTI
 
         val personalityList: ArrayList<String> = result.data.userPersonality as ArrayList<String>
-        val myProfile1RVAdapter = MyProfile1RVAdapter(personalityList)
+        val myProfile1PersonalityRVAdapter = MyProfile1PersonalityRVAdapter(personalityList)
         binding.recyclerViewMyProfilePersonal.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.recyclerViewMyProfilePersonal.adapter = myProfile1RVAdapter
+        binding.recyclerViewMyProfilePersonal.adapter = myProfile1PersonalityRVAdapter
 
+        val interestList: ArrayList<String> = result.data.userInterest as ArrayList<String>
+        val myProfile1InterestRVAdapter = MyProfile1InterestRVAdapter(interestList)
+        binding.recyclerViewMyProfileInterest.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerViewMyProfileInterest.adapter = myProfile1InterestRVAdapter
 
     }
 
