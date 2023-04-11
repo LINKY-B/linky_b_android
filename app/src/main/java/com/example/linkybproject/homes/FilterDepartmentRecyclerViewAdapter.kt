@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.databinding.ItemFilterDepartmentExceptionBinding
-import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 
 class FilterDepartmentRecyclerViewAdapter:
     RecyclerView.Adapter<FilterDepartmentRecyclerViewAdapter.ViewHolder>() {

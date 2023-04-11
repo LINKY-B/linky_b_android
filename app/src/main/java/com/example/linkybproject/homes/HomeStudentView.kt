@@ -11,3 +11,9 @@ interface HomeGraduateView {
     fun onHomeGraduateListSuccess(homeGraduateList: HomeGraduateResponse)
     fun onGetHomeGraduateListFailure()
 }
+
+//홈 화면 프로필 조회
+interface HomeProfileView {
+    fun onHomeProfileSuccess(homeProfileResponse: HomeProfileResponse)
+    fun onGetHomeProfileFailure()
+}

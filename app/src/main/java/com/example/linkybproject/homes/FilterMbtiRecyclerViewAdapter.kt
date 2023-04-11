@@ -3,7 +3,6 @@ package com.example.linkybproject.homes
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.linkybproject.databinding.ItemFilterDepartmentExceptionBinding
 import com.example.linkybproject.databinding.ItemFilterMbtiBinding
 
 class FilterMbtiRecyclerViewAdapter :

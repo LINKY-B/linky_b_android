@@ -1,8 +1,7 @@
 package com.example.linkybproject.homes
 
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Header
+import retrofit2.http.*
 
 
 interface HomeStudentInterface {
@@ -19,4 +18,20 @@ interface HomeGraudateInterface {
     fun homeGraduate(
         @Header("Authorization") token: String
     ): Call<HomeGraduateResponse>
+}
+
+interface HomeConnectTryInterface {
+    // 3. 홈 연결시도 api
+    @POST("/match/{userGetMatched}")
+    fun homeConnectTry(
+        @Header("Authorization") token: String
+    ): Call<HomeConnectResponse>
+}
+
+interface HomeProfileInterface {
+    // 4. 홈 화면 학생 프로필 조회 api
+    @GET("users/{userId}")
+    fun homeProfile(
+        @Header("Authorization") token: String
+    ): Call<HomeProfileResponse>
 }

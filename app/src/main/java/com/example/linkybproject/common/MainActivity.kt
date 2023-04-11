@@ -2,16 +2,11 @@ package com.example.linkybproject.common
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import com.example.linkybproject.R
 import com.example.linkybproject.chat.ChatFragment
 import com.example.linkybproject.connect.ConnectionFragment
 import com.example.linkybproject.databinding.ActivityMainBinding
-import com.example.linkybproject.homes.HomeStudentView
 import com.example.linkybproject.homes.HomeFragment
-import com.example.linkybproject.homes.HomeStudentRequest
-import com.example.linkybproject.homes.HomeStudentService
 import com.example.linkybproject.myprofile.MyProfile1Fragment
 import com.example.linkybproject.myprofile.MyProfile2Fragment
 

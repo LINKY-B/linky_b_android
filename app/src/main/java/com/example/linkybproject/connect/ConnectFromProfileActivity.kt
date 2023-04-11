@@ -6,7 +6,6 @@ import com.example.linkybproject.common.BlockDialog
 import com.example.linkybproject.common.ReportBlockDialog
 import com.example.linkybproject.common.ReportDialog
 import com.example.linkybproject.databinding.ActivityConnectFromProfileBinding
-import com.example.linkybproject.homes.Interest
 
 class ConnectFromProfileActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityConnectFromProfileBinding
