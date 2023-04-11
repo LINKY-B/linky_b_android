@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.R
@@ -21,6 +22,15 @@ class MyProfile2Fragment : Fragment() {
 
     private lateinit var mainActivity : MainActivity
 
+    // fragment1 에서 가져올 값들.
+    private lateinit var nickName: String
+    private lateinit var introduction: String
+    private lateinit var major: String
+    private lateinit var studentNum: String
+    private lateinit var age: String
+    private lateinit var gender: String
+
+
     // api 통신
     private lateinit var userMBTI : String
     private var userPersonalities : ArrayList<String> = arrayListOf()
@@ -29,6 +39,28 @@ class MyProfile2Fragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMyprofile2Binding.inflate(inflater, container, false)
+
+        arguments?.let {
+            nickName = it.getString("nickName").toString()
+            introduction = it.getString("introduction").toString()
+            major = it.getString("major").toString()
+            studentNum = it.getString("studentNum").toString()
+            age = it.getString("age").toString()
+            gender = it.getString("gender").toString()
+            Log.d("nickName", nickName)
+            Log.d("introduction", introduction)
+            Log.d("major", major)
+            Log.d("studentNum", studentNum)
+            Log.d("age", age)
+            Log.d("gender", gender)
+        }
+
+        binding.textViewMyProfile2Nickname.text = nickName
+        binding.editTextMyProfile2Intro.setText(introduction)
+        binding.textViewMyProfile2MajorDetail.text = major
+        binding.textViewMyProfile2NoDetail.text = studentNum
+        binding.textViewMyProfile2AgeDetail.text = age
+        binding.textViewMyProfile2GenderDetail.text = gender
 
         // 뷰 안 보이게 설정
         // 성격
