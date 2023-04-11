@@ -16,6 +16,14 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
     private lateinit var binding: FragmentMyprofile1Binding
     private lateinit var mainActivity : MainActivity
 
+    // fragment2 로 가져갈 것 우선 이렇게만.
+    private lateinit var nickName: String
+    private lateinit var introduction: String
+    private lateinit var major: String
+    private lateinit var studentNum: String
+    private lateinit var age: String
+    private lateinit var gender: String
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMyprofile1Binding.inflate(inflater, container, false)
 
@@ -32,7 +40,7 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         }
 
         binding.imageViewMyProfileEdit.setOnClickListener {
-            mainActivity.myprofile1Tomyprofile2()
+            mainActivity.myprofile1Tomyprofile2(MyProfile2Fragment(), nickName, introduction, major, studentNum, age, gender)
         }
 
         return binding.root
@@ -66,6 +74,13 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         val myProfile1InterestRVAdapter = MyProfile1InterestRVAdapter(interestList)
         binding.recyclerViewMyProfileInterest.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewMyProfileInterest.adapter = myProfile1InterestRVAdapter
+
+        nickName = result.data.userNickName
+        introduction = result.data.userSelfIntroduction
+        major = result.data.userMajorName
+        studentNum = result.data.userStudentNum
+        age = (2023 - result.data.userBirth.substring(0,4).toInt()).toString()
+        gender = result.data.userSex
 
     }
 
