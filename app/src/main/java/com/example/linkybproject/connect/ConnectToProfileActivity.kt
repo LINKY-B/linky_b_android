@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.linkybproject.common.*
 import com.example.linkybproject.databinding.ActivityConnectToProfileBinding
-import com.example.linkybproject.homes.Interest
 
 class ConnectToProfileActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityConnectToProfileBinding

@@ -1,12 +1,10 @@
 package com.example.linkybproject.myprofile
 
 import android.app.Dialog
-import android.content.Intent
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogPasswordChangeBinding
-import com.example.linkybproject.homes.HomeFragment
 
 class ChangePasswordDialog(private val context: AppCompatActivity) {
     private lateinit var binding: DialogPasswordChangeBinding

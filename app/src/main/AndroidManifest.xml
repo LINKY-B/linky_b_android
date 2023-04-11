@@ -24,7 +24,7 @@
             android:name=".connect.ConnectFromProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".homes.HomeUserInformationActivity"
+            android:name=".Homes.HomeUserInformationActivity"
             android:exported="false" />
         <activity
             android:name=".connect.ConnectFromMeActivity"
@@ -125,7 +125,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".homes.FilterActivity"
+            android:name=".Homes.FilterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

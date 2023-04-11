@@ -88,7 +88,7 @@
 
     <!--    </androidx.appcompat.widget.Toolbar>-->
 
-    <com.example.linkybproject.homes.NewScrollView
+    <com.example.linkybproject.Homes.NewScrollView
         android:id="@+id/scrollview_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -274,7 +274,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </com.example.linkybproject.homes.NewScrollView>
+    </com.example.linkybproject.Homes.NewScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

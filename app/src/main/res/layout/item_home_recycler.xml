@@ -86,12 +86,11 @@
             android:id="@+id/tv_home_studentnum"
             android:layout_width="wrap_content"
             android:layout_height="16dp"
-            android:layout_marginStart="70dp"
             android:gravity="center"
             android:text="20"
             android:textColor="@color/grey"
             android:textSize="9dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_home_likenumber"
+            app:layout_constraintStart_toEndOf="@+id/tv_home_item_center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
         <TextView

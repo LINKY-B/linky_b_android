@@ -1,4 +1,4 @@
-package com.example.linkybproject.homes
+package com.example.linkybproject.Homes
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,16 +10,17 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.linkybproject.connect.ConnectRAdapter
-import com.example.linkybproject.connect.LBUser
 import com.example.linkybproject.databinding.FragmentHomeStudentsBinding
 //1단계: View Interface를 상속받는다.
 //2단계: 해당 Service를 호출해서 정의하고, setView 함수 호출로 연결해준다.
 //3단계: overrideing 한 interface 함수를 통해 들어오는 Response를 가공해 화면해 보여준다. → Adapter 연결도 필요하다면 이 때 해주면 된다.
 
 //1단계: View Interface를 상속받는다.
-class HomeStudentFragment : Fragment() , HomeStudentView{
+class HomeStudentFragment : Fragment() , HomeStudentView, HomeProfileView{
     private lateinit var binding: FragmentHomeStudentsBinding
+
+    private lateinit var userdata : HomeProfileData
+
     var mainAppActivity: AppCompatActivity? = null
 
     override fun onAttach(context: Context) {
@@ -57,7 +58,7 @@ class HomeStudentFragment : Fragment() , HomeStudentView{
         binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeStudentList)
         binding.recyclerviewHomeStudents.layoutManager = LinearLayoutManager(context)
 
-//2단계: 해당 Service를 호출해서 정의하고, setView 함수 호출로 연결해준다.
+        //2단계: 해당 Service를 호출해서 정의하고, setView 함수 호출로 연결해준다.
 
         /* 재학생 리스트 조회 api 호출 */
         val homeStudentService = HomeStudentService()
@@ -67,45 +68,33 @@ class HomeStudentFragment : Fragment() , HomeStudentView{
             homeStudentService.homeStudent(accessToken);
         }
 
+//        /* 홈 화면 프로필 조회 api 호출 */
+//        val homeProfileService = HomeProfileService()
+//        homeStudentService.setHomeStudentView(this)
+
         return binding.root
     }
 
     /* 재학생 리스트 조회 api 호출 결과 */
     override fun onHomeStudentListSuccess(homeStudentList: HomeStudentResponse) {
-        Log.d("getStudentList", "Success")
+        Log.d("재학생 리스트 조회", "Success")
         binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeStudentList.data.students)
 
     }
 
     override fun onGetHomeStudentListFailure() {
-        Log.d("getStudentList", "Failure")
+        Log.d("재학생 리스트 조회", "Failure")
+    }
+
+
+    /* 홈 화면 사용자 프로필 api 호출 결과 */
+    override fun onHomeProfileSuccess(homeProfileResponse: HomeProfileResponse) {
+        Log.d("홈 화면 사용자 프로필 조회", "Success")
+
+    }
+
+    override fun onGetHomeProfileFailure() {
+        Log.d("홈 화면 사용자 프로필 조회", "Failure")
     }
 }
-
-
-/*
-        // 위에서 만든 setMyItemClickListener를 이용해 Interface를 상속받아 객체를 만들고
-        // 이 객체를 Adapter로 보냄
-        adapter.setMyItemClickListener(object :
-            HomeRecyclerViewAdapter.MyItemClickListener {
-            // 아이템 클릭시 이벤트 정의
-            override fun onItemClick(userData: UserData) {
-                // 클릭했을 때 무엇을 할 지 내용 작성
-
-                // Dialog만들기
-                val mDialogView =
-                    LayoutInflater.from(context).inflate(R.layout.dialog_connect, null)
-                val mBuilder = AlertDialog.Builder(context)
-                    .setView(mDialogView)
-
-                val mAlertDialog = mBuilder.show()
-
-                val okButton = mDialogView.findViewById<Button>(R.id.btn_connect_try)
-                okButton.setOnClickListener {
-                    Toast.makeText(context, "연결을 시도하였습니다.", Toast.LENGTH_SHORT).show()
-                    mAlertDialog.dismiss()
-                }
-            }
-        })
-*/
 

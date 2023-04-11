@@ -1,4 +1,4 @@
-package com.example.linkybproject.homes
+package com.example.linkybproject.Homes
 
 import android.content.Context
 import android.os.Bundle
@@ -32,20 +32,6 @@ class HomeGraudateFragment : Fragment(), HomeGraduateView {
         val homeStudentList: ArrayList<HomeStudentResult> = arrayListOf()
         //val adapter = mainAppActivity?.let { HomeRecyclerViewAdapter(it) }
 
-//        adapter?.datalist =mutableListOf(
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 20, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 23, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 22, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 20, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//
-//            )
-
-
 
         binding.recyclerviewHomeGraduate.adapter  = HomeRecyclerViewAdapter(homeStudentList)
         binding.recyclerviewHomeGraduate.layoutManager = LinearLayoutManager(context)
@@ -63,16 +49,15 @@ class HomeGraudateFragment : Fragment(), HomeGraduateView {
     return binding.root
     }
 
+    /* 졸업생 리스트 조회 api 호출 결과 */
     override fun onHomeGraduateListSuccess(homeGraduateList: HomeGraduateResponse) {
-        Log.d("getGraduateList", "Success")
+        Log.d("졸업생 리스트 조회", "Success")
         binding.recyclerviewHomeGraduate.adapter = HomeRecyclerViewAdapter(homeGraduateList.data.graduates)
     }
 
     override fun onGetHomeGraduateListFailure() {
-        TODO("Not yet implemented")
+        Log.d("졸업생 리스트 조회", "Failure")
     }
-
-    /* 졸업생 리스트 조회 api 호출 결과 */
 
 }
 

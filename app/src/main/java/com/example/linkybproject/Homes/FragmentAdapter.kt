@@ -1,4 +1,4 @@
-package com.example.linkybproject.homes
+package com.example.linkybproject.Homes
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

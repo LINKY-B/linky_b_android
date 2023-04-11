@@ -1,10 +1,9 @@
-package com.example.linkybproject.homes
+package com.example.linkybproject.Homes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.databinding.ItemConnectInterestBinding
-import com.example.linkybproject.databinding.ItemHomeConnectRequestBinding
 
 
 class HomeInterestRecyclerAdapter: RecyclerView.Adapter<HomeInterestRecyclerAdapter.ViewHolder>() {

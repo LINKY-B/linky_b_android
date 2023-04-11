@@ -1,30 +1,29 @@
-package com.example.linkybproject.homes
+package com.example.linkybproject.Homes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.databinding.ItemFilterDepartmentExceptionBinding
-import com.example.linkybproject.databinding.ItemFilterMbtiBinding
 
-class FilterMbtiRecyclerViewAdapter :
-    RecyclerView.Adapter<FilterMbtiRecyclerViewAdapter.ViewHolder>(){
+class FilterDepartmentRecyclerViewAdapter:
+    RecyclerView.Adapter<FilterDepartmentRecyclerViewAdapter.ViewHolder>() {
 
     var datalist =
-        mutableListOf<Mbti>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
+        mutableListOf<Department>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
 
-    inner class ViewHolder(private val binding: ItemFilterMbtiBinding) :
+    inner class ViewHolder(private val binding: ItemFilterDepartmentExceptionBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(mbti: Mbti) {
+        fun bind(department: Department) {
             //binding.dogPhotoImg.=dogData.dog_img
-            binding.tvFilterMbti.text = mbti.mbti
+            binding.tvFitlerDepartment.text = department.department
         }
 
     }
 
     //만들어진 뷰홀더 없을때 뷰홀더(레이아웃) 생성하는 함수
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemFilterMbtiBinding.inflate(
+        val binding = ItemFilterDepartmentExceptionBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -41,6 +40,8 @@ class FilterMbtiRecyclerViewAdapter :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(datalist[position])
+//        holder.bind(            UserData("", "배고픈 청설모", 20, "정보시스템공학과", "", ""))
     }
 
 }
+
