@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.databinding.FragmentMyprofile1Binding
 
@@ -56,7 +57,16 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         binding.textViewMyProfileGenderDetail.text = result.data.userSex
         binding.textViewMyProfileMbtiDetail.text = result.data.userMBTI
 
-//        val result.data.userInterest
+        val personalityList: ArrayList<String> = result.data.userPersonality as ArrayList<String>
+        val myProfile1PersonalityRVAdapter = MyProfile1PersonalityRVAdapter(personalityList)
+        binding.recyclerViewMyProfilePersonal.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerViewMyProfilePersonal.adapter = myProfile1PersonalityRVAdapter
+
+        val interestList: ArrayList<String> = result.data.userInterest as ArrayList<String>
+        val myProfile1InterestRVAdapter = MyProfile1InterestRVAdapter(interestList)
+        binding.recyclerViewMyProfileInterest.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerViewMyProfileInterest.adapter = myProfile1InterestRVAdapter
+
     }
 
     override fun onGetUserFailure() {
