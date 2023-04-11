@@ -6,7 +6,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ProfileService {
+class MyProfileService {
     private lateinit var myProfileView: MyProfileView
 
     fun setMyProfileView(myProfileView: MyProfileView) {
@@ -14,7 +14,7 @@ class ProfileService {
     }
 
     fun getUser(token: String) {
-        val profileService = getRetrofit().create(ProfileInterface::class.java)
+        val profileService = getRetrofit().create(MyProfileInterface::class.java)
         profileService.getUser("Bearer $token").enqueue(object: Callback<MyProfileResponse> {
             override fun onResponse(call: Call<MyProfileResponse>, response: Response<MyProfileResponse>) {
                 Log.d("getUser", response.toString())
