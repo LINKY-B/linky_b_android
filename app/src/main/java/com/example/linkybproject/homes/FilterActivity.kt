@@ -1,4 +1,4 @@
-package com.example.linkybproject.Homes
+package com.example.linkybproject.homes
 
 import android.annotation.SuppressLint
 import android.os.Bundle

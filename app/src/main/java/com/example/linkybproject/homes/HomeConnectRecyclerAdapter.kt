@@ -1,4 +1,4 @@
-package com.example.linkybproject.Homes
+package com.example.linkybproject.homes
 
 import android.content.Intent
 import android.view.LayoutInflater

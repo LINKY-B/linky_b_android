@@ -1,7 +1,6 @@
 package com.example.linkybproject.connect
 
 import android.content.Context
-import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,47 +11,45 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.linkybproject.databinding.FragmentConnectionBinding
 
-class ConnectionFragment : Fragment(), ConnectToMeView {
-    private lateinit var binding: FragmentConnectionBinding
+class ConnectionFragment : Fragment(), MatchingMainView {
+    private lateinit var viewBinding: FragmentConnectionBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentConnectionBinding.inflate(layoutInflater)
+        viewBinding = FragmentConnectionBinding.inflate(layoutInflater)
 
         /* 리사이클러뷰 */
         val connectList: ArrayList<LBUser> = arrayListOf()
+        viewBinding.rvConnectToMeList.layoutManager = LinearLayoutManager(activity)
+        viewBinding.rvConnectToMeList.setHasFixedSize(true)
+        viewBinding.rvConnectToMeList.adapter = ConnectRAdapter(connectList)
 
-        binding.rvConnectToMeList.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        binding.rvConnectToMeList.setHasFixedSize(true)
-        binding.rvConnectToMeList.adapter = ConnectRAdapter(connectList)
-
-        /* 나에게 매칭 시도한 유저 전체 조회 api 호출 */
+        /* 매칭 홈 전체 조회 api 호출 */
         val connectService = ConnectService()
-        connectService.setConnectToMeView(this)
-
-        connectService.connectToMeList("")
-
+        connectService.setConnectMainView(this)
+        connectService.connectMainList(requireContext().getSharedPreferences("auth", Context.MODE_PRIVATE).getString("accessToken", "")!!)
 
         /* 이벤트 리스너 */
-        binding.btnFullConnectFrom.setOnClickListener {
+        viewBinding.btnFullConnectFrom.setOnClickListener {
             val intent = Intent(activity, ConnectFromMeActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnFullConnectTo.setOnClickListener {
-            val intent = Intent(context, ConnectToMeActivity::class.java)
+        viewBinding.btnFullConnectToMe.setOnClickListener {
+            val intent = Intent(context, ConnectActivity::class.java)
             startActivity(intent)
         }
 
-        return binding.root
+        return viewBinding.root
     }
 
-    /* 나에게 매칭 시도한 유저 전체 조회 api 호출 결과 */
-    override fun onConnectToMeSuccess(connectToMeList: MatchingResponse) {
-        Log.d("ConnectToMe", "Success")
-        binding.rvConnectToMeList.adapter = ConnectRAdapter(connectToMeList.result)
+
+    /* 매칭 홈 조회 api 호출 결과 */
+    override fun onMatchingMainSuccess(connectList: MatchingMainResponse) {
+        Log.d("ConnectMain", "Success")
+        viewBinding.rvConnectToMeList.adapter = ConnectRAdapter(connectList.data.userToMe)
     }
 
-    override fun onConnectToMeFailure() {
-        Log.d("ConnectToMe", "Failure")
+    override fun onMatchingMainFailure() {
+        Log.d("ConnectMain", "Failure")
     }
 }

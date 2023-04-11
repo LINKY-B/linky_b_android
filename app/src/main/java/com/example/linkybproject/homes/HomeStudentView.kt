@@ -1,4 +1,4 @@
-package com.example.linkybproject.Homes
+package com.example.linkybproject.homes
 
 //재학생
 interface HomeStudentView {

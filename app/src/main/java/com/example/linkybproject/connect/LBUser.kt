@@ -8,12 +8,9 @@ data class LBUser (
     @SerializedName("userMajorName") val userMajorName: String,
     @SerializedName("userStudentNum") val userStudentNum: String,
     @SerializedName("userLikeCount") val userLikeCount: Long,
-    @SerializedName("userInterest") val userInterest: List<LBUserInterest>,
+    @SerializedName("userMatchingCount") val userMatchingCount: Long,
+    @SerializedName("userInterest") val userInterest: List<String>,
+    @SerializedName("userSelfIntroduction") val userSelfIntroduction: String,
+    @SerializedName("userMBTI") val userMBTI: String,
 )
 
-data class LBUserInterest (
-    @SerializedName("createdAt") val createdAt: String,
-    @SerializedName("updatedAt") val updatedAt: String,
-    @SerializedName("id") val id: Long,
-    @SerializedName("userInterest") val userInterest: String
-)

@@ -1,4 +1,4 @@
-package com.example.linkybproject.Homes
+package com.example.linkybproject.homes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

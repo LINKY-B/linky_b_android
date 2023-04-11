@@ -24,13 +24,13 @@
             android:name=".connect.ConnectFromProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Homes.HomeUserInformationActivity"
+            android:name=".homes.HomeUserInformationActivity"
             android:exported="false" />
         <activity
             android:name=".connect.ConnectFromMeActivity"
             android:exported="false" />
         <activity
-            android:name=".connect.ConnectToMeActivity"
+            android:name=".connect.ConnectActivity"
             android:exported="false" />
         <activity
             android:name=".chat.ChatRoomActivity"
@@ -125,7 +125,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Homes.FilterActivity"
+            android:name=".homes.FilterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
