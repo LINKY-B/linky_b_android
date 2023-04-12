@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class LBUser (
     @SerializedName("userId") val userId: Long,
+    @SerializedName("userProfileImg") val userProfileImg: String,
     @SerializedName("userNickName") val userNickName: String,
     @SerializedName("userLikeCount") val userLikeCount: Long,
     @SerializedName("userSelfIntroduction") val userSelfIntroduction: String,

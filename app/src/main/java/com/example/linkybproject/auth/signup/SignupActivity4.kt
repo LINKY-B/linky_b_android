@@ -980,15 +980,15 @@ class SignupActivity4 : AppCompatActivity(), SignupView, ProfileImagesView {
 
         // 7. 시작하기 버튼
         binding.textViewBtnNext5Green.setOnClickListener {
-            if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
-                profileImg = "https://linkyb-bucket.s3.ap-northeast-2.amazonaws.com/images/profileImg/W3.svg"
-            } else if (binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE) {
-                profileImg = "https://linkyb-bucket.s3.ap-northeast-2.amazonaws.com/images/profileImg/M11.svg"
-            } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE) {
-                profileImg = "https://linkyb-bucket.s3.ap-northeast-2.amazonaws.com/images/profileImg/M21.svg"
-            } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) {
-                profileImg = "https://linkyb-bucket.s3.ap-northeast-2.amazonaws.com/images/profileImg/W41.svg"
-            }
+//            if (binding.imageViewSignup4Profile1Green.visibility == View.VISIBLE) {
+//                profileImg = "https://linkyb-bucket.s3.ap-northeast-2.amazonaws.com/images/profileImg/W3.svg"
+//            } else if (binding.imageViewSignup4Profile2Green.visibility == View.VISIBLE) {
+//                profileImg = "https://linkyb-bucket.s3.ap-northeast-2.amazonaws.com/images/profileImg/M11.svg"
+//            } else if (binding.imageViewSignup4Profile3Green.visibility == View.VISIBLE) {
+//                profileImg = "https://linkyb-bucket.s3.ap-northeast-2.amazonaws.com/images/profileImg/M21.svg"
+//            } else if (binding.imageViewSignup4Profile4Green.visibility == View.VISIBLE) {
+//                profileImg = "https://linkyb-bucket.s3.ap-northeast-2.amazonaws.com/images/profileImg/W41.svg"
+//            }
             if (binding.textViewBtnMaleGreen.visibility == View.VISIBLE) {
                 userSex = binding.textViewBtnMaleGreen.text.toString()
             } else if (binding.textViewBtnFemaleGreen.visibility == View.VISIBLE) {
