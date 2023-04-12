@@ -42,10 +42,10 @@
 
             <ImageView
                 android:id="@+id/imageView_myProfile_profileimage"
-                android:layout_width="74dp"
-                android:layout_height="74dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
-                android:src="@drawable/profileimage"
+                android:scaleType="centerInside"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -238,7 +238,7 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout_myProfile_infoDetail"
-                android:layout_width="78dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="118dp"
