@@ -10,5 +10,5 @@ interface ProfileInterface {
     fun getUser(
         @Header("Authorization") token: String
     ): Call<MyProfileResponse>
-}
 
+}
