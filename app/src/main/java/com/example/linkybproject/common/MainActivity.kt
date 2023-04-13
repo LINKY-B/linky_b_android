@@ -9,6 +9,7 @@ import com.example.linkybproject.databinding.ActivityMainBinding
 import com.example.linkybproject.homes.HomeFragment
 import com.example.linkybproject.myprofile.MyProfile1Fragment
 import com.example.linkybproject.myprofile.MyProfile2Fragment
+import com.example.linkybproject.myprofile.update.MyProfileImgFragment
 
 class MainActivity : AppCompatActivity(){
 
@@ -61,18 +62,10 @@ class MainActivity : AppCompatActivity(){
     }
 
     // 프로필 화면 1 -> 연필 버튼 -> 프로필 화면 2
-    fun myprofile1Tomyprofile2(
-        fragment: MyProfile2Fragment,
-        profileImg: String,
-        nickName: String,
-        introduction: String,
-        major: String,
-        studentNum: String,
-        age: String,
-        gender: String
+    fun myprofile1Tomyprofile2(fragment: MyProfile2Fragment, birth: String, profileImg: String, nickName: String, introduction: String, major: String, studentNum: String, age: String, gender: String
     ) {
-
         val bundle = Bundle()
+        bundle.putString("birth", birth)
         bundle.putString("profileImg", profileImg)
         bundle.putString("nickName", nickName)
         bundle.putString("introduction", introduction)
@@ -97,6 +90,50 @@ class MainActivity : AppCompatActivity(){
         supportFragmentManager
             .beginTransaction()
             .replace(binding.fragmentContainerViewMain.id, MyProfile1Fragment())
+            .commitAllowingStateLoss()
+    }
+
+    // 프로필 화면 2 -> 연필 버튼 -> 프로필 화면 3 (프로필 이미지 수정)
+    fun myprofile2Tomyprofil3(myProfileImgFragment: MyProfileImgFragment, birth: String, nickName: String, introduction: String, major: String, studentNum: String, age: String, gender: String) {
+        val bundle = Bundle()
+        bundle.putString("birth", birth)
+        bundle.putString("nickName", nickName)
+        bundle.putString("introduction", introduction)
+        bundle.putString("major", major)
+        bundle.putString("studentNum", studentNum)
+        bundle.putString("age", age)
+        bundle.putString("gender", gender)
+
+        myProfileImgFragment.arguments = bundle
+        setFragment(myProfileImgFragment)
+    }
+    fun setFragment(fragment: MyProfileImgFragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(binding.fragmentContainerViewMain.id, fragment)
+            .commitAllowingStateLoss()
+    }
+
+    // 프로필 화면 1 -> 연필 버튼 -> 프로필 화면 2
+    fun myprofile3Tomyprofile2(fragment: MyProfile2Fragment, birth: String, profileImg: String, nickName: String, introduction: String, major: String, studentNum: String, age: String, gender: String) {
+        val bundle = Bundle()
+        bundle.putString("birth", birth)
+        bundle.putString("profileImg", profileImg)
+        bundle.putString("nickName", nickName)
+        bundle.putString("introduction", introduction)
+        bundle.putString("major", major)
+        bundle.putString("studentNum", studentNum)
+        bundle.putString("age", age)
+        bundle.putString("gender", gender)
+
+        fragment.arguments = bundle
+        setFragment3to2(fragment)
+
+    }
+    fun setFragment3to2(fragment: MyProfile2Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(binding.fragmentContainerViewMain.id, fragment)
             .commitAllowingStateLoss()
     }
 
