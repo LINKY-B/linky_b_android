@@ -54,7 +54,7 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         }
 
         binding.imageViewMyProfileEdit.setOnClickListener {
-            mainActivity.myprofile1Tomyprofile2(MyProfile2Fragment(), nickName, introduction, major, studentNum, age, gender)
+            mainActivity.myprofile1Tomyprofile2(MyProfile2Fragment(), profileImg, nickName, introduction, major, studentNum, age, gender)
         }
 
         return binding.root
@@ -65,6 +65,8 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         mainActivity = context as MainActivity
     }
 
+
+    // profileImg 렌더링
     fun urlToSvgBitmap(url: String, context: MyProfile1Fragment): Bitmap? {
         val client = OkHttpClient()
 
@@ -122,11 +124,8 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         Log.d("onGetUserSuccess", "Success")
         Log.d("RESULT.DATA", result.data.toString())
 
-//        val defaultImg = R.drawable.profileimage
         val iv = binding.imageViewMyProfileProfileimage
         profileImg = result.data.userProfileImg
-        Log.d("RESULT.IMG", result.data.userProfileImg)
-        // 일단 1에서 잘 나오면, 2로 가져가기 추가.
 
         GlobalScope.launch(Dispatchers.IO) {
             val bitmap = urlToSvgBitmap(profileImg, this@MyProfile1Fragment)
@@ -156,7 +155,6 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         val myProfile1InterestRVAdapter = MyProfile1InterestRVAdapter(interestList)
         binding.recyclerViewMyProfileInterest.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewMyProfileInterest.adapter = myProfile1InterestRVAdapter
-
 
         nickName = result.data.userNickName
         introduction = result.data.userSelfIntroduction

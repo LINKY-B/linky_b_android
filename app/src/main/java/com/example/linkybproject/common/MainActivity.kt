@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity(){
     // 프로필 화면 1 -> 연필 버튼 -> 프로필 화면 2
     fun myprofile1Tomyprofile2(
         fragment: MyProfile2Fragment,
+        profileImg: String,
         nickName: String,
         introduction: String,
         major: String,
@@ -72,6 +73,7 @@ class MainActivity : AppCompatActivity(){
     ) {
 
         val bundle = Bundle()
+        bundle.putString("profileImg", profileImg)
         bundle.putString("nickName", nickName)
         bundle.putString("introduction", introduction)
         bundle.putString("major", major)
@@ -82,10 +84,6 @@ class MainActivity : AppCompatActivity(){
         fragment.arguments = bundle
         setFragment(fragment)
 
-//        supportFragmentManager
-//            .beginTransaction()
-//            .replace(binding.fragmentContainerViewMain.id, MyProfile2Fragment())
-//            .commitAllowingStateLoss()
     }
     fun setFragment(fragment: MyProfile2Fragment) {
         supportFragmentManager
