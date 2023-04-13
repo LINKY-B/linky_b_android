@@ -30,6 +30,7 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
     private lateinit var mainActivity : MainActivity
 
     // fragment2 로 가져갈 것 우선 이렇게만.
+    private lateinit var birth: String
     private lateinit var profileImg: String
     private lateinit var nickName: String
     private lateinit var introduction: String
@@ -54,7 +55,7 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         }
 
         binding.imageViewMyProfileEdit.setOnClickListener {
-            mainActivity.myprofile1Tomyprofile2(MyProfile2Fragment(), profileImg, nickName, introduction, major, studentNum, age, gender)
+            mainActivity.myprofile1Tomyprofile2(MyProfile2Fragment(), birth, profileImg, nickName, introduction, major, studentNum, age, gender)
         }
 
         return binding.root
@@ -156,6 +157,7 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         binding.recyclerViewMyProfileInterest.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewMyProfileInterest.adapter = myProfile1InterestRVAdapter
 
+        birth = result.data.userBirth
         nickName = result.data.userNickName
         introduction = result.data.userSelfIntroduction
         major = result.data.userMajorName

@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.caverock.androidsvg.PreserveAspectRatio
 import com.caverock.androidsvg.SVG
@@ -20,6 +21,10 @@ import com.caverock.androidsvg.SVGParseException
 import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.FragmentMyprofile2Binding
+import com.example.linkybproject.homes.Mbti
+import com.example.linkybproject.myprofile.update.MyProfileUpdateRequest
+import com.example.linkybproject.myprofile.update.MyProfileUpdateService
+import com.example.linkybproject.myprofile.update.MyProfileUpdateView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -30,12 +35,13 @@ import java.io.InputStream
 import kotlin.math.min
 import kotlin.math.roundToInt
 
-class MyProfile2Fragment : Fragment() {
+class MyProfile2Fragment : Fragment(), MyProfileUpdateView {
     private lateinit var binding: FragmentMyprofile2Binding
 
     private lateinit var mainActivity : MainActivity
 
     // fragment1 에서 가져올 값들.
+    private lateinit var birth: String
     private lateinit var profileImg: String
     private lateinit var nickName: String
     private lateinit var introduction: String
@@ -109,6 +115,7 @@ class MyProfile2Fragment : Fragment() {
         binding = FragmentMyprofile2Binding.inflate(inflater, container, false)
 
         arguments?.let {
+            birth = it.getString("birth").toString()
             profileImg = it.getString("profileImg").toString()
             nickName = it.getString("nickName").toString()
             introduction = it.getString("introduction").toString()
@@ -116,6 +123,7 @@ class MyProfile2Fragment : Fragment() {
             studentNum = it.getString("studentNum").toString()
             age = it.getString("age").toString()
             gender = it.getString("gender").toString()
+            Log.d("birth", birth)
             Log.d("profileImg", profileImg)
             Log.d("nickName", nickName)
             Log.d("introduction", introduction)
@@ -311,10 +319,14 @@ class MyProfile2Fragment : Fragment() {
             }
             userSelfIntroduction = binding.editTextMyProfile2Intro.text.toString()
 
+            Log.d("major", major)
             Log.d("userMBTI", userMBTI)
             Log.d("userPersonalities", userPersonalities.toString())
             Log.d("userInterests", userInterests.toString())
             Log.d("userSelfIntroduction", userSelfIntroduction)
+            Log.d("profileImg", profileImg)
+            
+            updateMyProfile()
 
             mainActivity.myprofile2Tomyprofil1() // 수정 반영돼서 나와야 함.
         }
@@ -810,5 +822,24 @@ class MyProfile2Fragment : Fragment() {
     private fun checkOptions() {
 
     }
-    
+
+    private fun getUpdateMyProfileReq(): MyProfileUpdateRequest {
+        // 여기서 이름 말고 MyProfileUpdateRequest 여기서 이름 신경 쓰기
+        return MyProfileUpdateRequest(major, userMBTI, userInterests, userPersonalities, userSelfIntroduction, profileImg)
+    }
+
+    private fun updateMyProfile() {
+        val myProfileUpdateService = MyProfileUpdateService()
+        myProfileUpdateService.setView(this)
+        myProfileUpdateService.updateMyProfile(getUpdateMyProfileReq())
+    }
+
+    override fun onSignupSuccess() {
+        Toast.makeText(mainActivity, "나의 프로필 수정에 성공했습니다.", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onSignupFailure() {
+        Toast.makeText(mainActivity, "나의 프로필 수정에 실패했습니다.", Toast.LENGTH_SHORT).show()
+    }
+
 }

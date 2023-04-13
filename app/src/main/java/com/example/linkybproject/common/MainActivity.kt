@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity(){
     // 프로필 화면 1 -> 연필 버튼 -> 프로필 화면 2
     fun myprofile1Tomyprofile2(
         fragment: MyProfile2Fragment,
+        birth: String,
         profileImg: String,
         nickName: String,
         introduction: String,
@@ -73,6 +74,7 @@ class MainActivity : AppCompatActivity(){
     ) {
 
         val bundle = Bundle()
+        bundle.putString("birth", birth)
         bundle.putString("profileImg", profileImg)
         bundle.putString("nickName", nickName)
         bundle.putString("introduction", introduction)
