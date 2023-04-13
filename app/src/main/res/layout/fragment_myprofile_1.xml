@@ -42,9 +42,10 @@
 
             <ImageView
                 android:id="@+id/imageView_myProfile_profileimage"
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
+                android:src="@drawable/profileimage"
                 android:scaleType="centerInside"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -2,22 +2,19 @@ package com.example.linkybproject.myprofile
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.AssetManager
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Canvas
+import android.graphics.RectF
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.core.motion.utils.Utils
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
+import com.caverock.androidsvg.PreserveAspectRatio
 import com.caverock.androidsvg.SVG
 import com.caverock.androidsvg.SVGParseException
-import com.example.linkybproject.R
 import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.databinding.FragmentMyprofile1Binding
 import kotlinx.coroutines.*
@@ -25,8 +22,8 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
 import java.io.InputStream
-import java.net.HttpURLConnection
-import java.net.URL
+import kotlin.math.min
+import kotlin.math.roundToInt
 
 class MyProfile1Fragment : Fragment(), MyProfileView {
     private lateinit var binding: FragmentMyprofile1Binding
@@ -68,7 +65,7 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         mainActivity = context as MainActivity
     }
 
-    fun urlToSvgBitmap(url: String): Bitmap? {
+    fun urlToSvgBitmap(url: String, context: MyProfile1Fragment): Bitmap? {
         val client = OkHttpClient()
 
         val request = Request.Builder()
@@ -80,7 +77,7 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
                 if (!response.isSuccessful) throw IOException("Unexpected code $response")
 
                 response.body?.byteStream()?.use { inputStream ->
-                    convertSvgToBitmap(inputStream)
+                    convertSvgToBitmap(inputStream, context)
                 }
 
             }
@@ -89,20 +86,36 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
             null
         }
     }
-    fun convertSvgToBitmap(inputStream: InputStream): Bitmap? {
+    fun convertSvgToBitmap(inputStream: InputStream, context: MyProfile1Fragment): Bitmap? {
         return try {
             val svg = SVG.getFromInputStream(inputStream)
-            val aspectRatio = svg.documentWidth / svg.documentHeight
-            val height = 50 // Change this to your desired height
-            val width = (height * aspectRatio).toInt()
-            val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+            val heightDp = 74f // Change this to your desired height in dp
+            val widthDp = 74f // Change this to your desired width in dp
+            val heightPx = dpToPx(context, heightDp)
+            val widthPx = dpToPx(context, widthDp)
+
+            svg.documentPreserveAspectRatio = PreserveAspectRatio.LETTERBOX
+
+            val bitmap = Bitmap.createBitmap(widthPx, heightPx, Bitmap.Config.ARGB_8888)
             val canvas = Canvas(bitmap)
+
+            // Calculate the scale factor and translation to center the SVG image inside the bitmap
+            val scaleFactor = min(widthPx / svg.documentWidth, heightPx / svg.documentHeight)
+            val dx = (widthPx - svg.documentWidth * scaleFactor) / 2f
+            val dy = (heightPx - svg.documentHeight * scaleFactor) / 2f
+
+            canvas.translate(dx, dy)
+            canvas.scale(scaleFactor, scaleFactor)
             svg.renderToCanvas(canvas)
             bitmap
         } catch (e: SVGParseException) {
             e.printStackTrace()
             null
         }
+    }
+    fun dpToPx(context: MyProfile1Fragment, dp: Float): Int {
+        val density = context.resources.displayMetrics.density
+        return (dp * density).roundToInt()
     }
 
     override fun onGetUserSuccess(result: MyProfileResponse) {
@@ -116,7 +129,7 @@ class MyProfile1Fragment : Fragment(), MyProfileView {
         // 일단 1에서 잘 나오면, 2로 가져가기 추가.
 
         GlobalScope.launch(Dispatchers.IO) {
-            val bitmap = urlToSvgBitmap(profileImg)
+            val bitmap = urlToSvgBitmap(profileImg, this@MyProfile1Fragment)
             // Use the Bitmap on the UI thread, for example, setting it to an ImageView
             launch(Dispatchers.Main) {
                 iv.setImageBitmap(bitmap)
