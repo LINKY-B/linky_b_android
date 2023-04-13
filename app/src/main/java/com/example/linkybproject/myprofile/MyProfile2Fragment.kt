@@ -21,7 +21,7 @@ import com.caverock.androidsvg.SVGParseException
 import com.example.linkybproject.common.MainActivity
 import com.example.linkybproject.R
 import com.example.linkybproject.databinding.FragmentMyprofile2Binding
-import com.example.linkybproject.homes.Mbti
+import com.example.linkybproject.myprofile.update.MyProfileImgFragment
 import com.example.linkybproject.myprofile.update.MyProfileUpdateRequest
 import com.example.linkybproject.myprofile.update.MyProfileUpdateService
 import com.example.linkybproject.myprofile.update.MyProfileUpdateView
@@ -49,7 +49,6 @@ class MyProfile2Fragment : Fragment(), MyProfileUpdateView {
     private lateinit var studentNum: String
     private lateinit var age: String
     private lateinit var gender: String
-
 
     // api 통신
     private lateinit var userMBTI : String
@@ -113,6 +112,11 @@ class MyProfile2Fragment : Fragment(), MyProfileUpdateView {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMyprofile2Binding.inflate(inflater, container, false)
+
+        binding.imageViewMyProfileUpdate.setOnClickListener {
+            mainActivity.myprofile2Tomyprofil3(MyProfileImgFragment(), birth, nickName, introduction, major, studentNum, age, gender)
+        }
+
 
         arguments?.let {
             birth = it.getString("birth").toString()
@@ -195,7 +199,6 @@ class MyProfile2Fragment : Fragment(), MyProfileUpdateView {
 
         // 수정 버튼
         binding.textViewBtnUpdate.setOnClickListener {
-
             userMBTI = binding.spinnerMbtiUpdate.selectedItem.toString()
             if (binding.personal1Green.visibility == View.VISIBLE) {
                 userPersonalities.add(binding.personal1Green.text.toString())
@@ -825,20 +828,21 @@ class MyProfile2Fragment : Fragment(), MyProfileUpdateView {
 
     private fun getUpdateMyProfileReq(): MyProfileUpdateRequest {
         // 여기서 이름 말고 MyProfileUpdateRequest 여기서 이름 신경 쓰기
-        return MyProfileUpdateRequest(major, userMBTI, userInterests, userPersonalities, userSelfIntroduction, profileImg)
+        return MyProfileUpdateRequest(profileImg, userInterests, userMBTI, userPersonalities, userSelfIntroduction)
     }
 
     private fun updateMyProfile() {
-        val myProfileUpdateService = MyProfileUpdateService()
-        myProfileUpdateService.setView(this)
-        myProfileUpdateService.updateMyProfile(getUpdateMyProfileReq())
+        val profileUpdateService = MyProfileUpdateService()
+        profileUpdateService.setView(this)
+        profileUpdateService.updateMyProfile(requireContext().getSharedPreferences("auth", Context.MODE_PRIVATE).getString("accessToken", "")!!, getUpdateMyProfileReq())
+
     }
 
-    override fun onSignupSuccess() {
+    override fun onUpdateSuccess() {
         Toast.makeText(mainActivity, "나의 프로필 수정에 성공했습니다.", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onSignupFailure() {
+    override fun onUpdateFailure() {
         Toast.makeText(mainActivity, "나의 프로필 수정에 실패했습니다.", Toast.LENGTH_SHORT).show()
     }
 

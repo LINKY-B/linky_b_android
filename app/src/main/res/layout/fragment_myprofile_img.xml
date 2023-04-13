@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/light_green"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView_profileImg_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="21dp"
+            android:background="@color/transparent"
+            android:padding="0dp"
+            android:text="적용하기"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_img_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="68dp"
+            android:text="프로필"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_img_explain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="8dp"
+            android:text="프로필로 사용할 이미지를 선택해 주세요."
+            android:textColor="@color/grey"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_title" />
+
+        <ImageView
+            android:id="@+id/imageView_img1"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/profile1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img1_green"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/circlegreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img1_grey"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/circlegrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+
+        <ImageView
+            android:id="@+id/imageView_img2"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="111dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/profile2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img2_green"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="106dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/circlegreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img2_grey"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="106dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/circlegrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+
+        <ImageView
+            android:id="@+id/imageView_img3"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="192dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/profile3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img3_green"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="187dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/circlegreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img3_grey"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="187dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/circlegrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+
+        <ImageView
+            android:id="@+id/imageView_img4"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="273dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/profile4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img4_green"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="268dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/circlegreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img4_grey"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="268dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/circlegrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+
+        <ImageView
+            android:id="@+id/imageView_img5"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/profile5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView_img1" />
+        <ImageView
+            android:id="@+id/imageView_img5_green"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="89dp"
+            android:src="@drawable/circlegreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img5_grey"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="89dp"
+            android:src="@drawable/circlegrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+
+        <ImageView
+            android:id="@+id/imageView_img6"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="111dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/profile6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView_img2" />
+        <ImageView
+            android:id="@+id/imageView_img6_green"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="106dp"
+            android:layout_marginTop="89dp"
+            android:src="@drawable/circlegreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img6_grey"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="106dp"
+            android:layout_marginTop="89dp"
+            android:src="@drawable/circlegrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+
+        <ImageView
+            android:id="@+id/imageView_img7"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="192dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/profile8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView_img2" />
+        <ImageView
+            android:id="@+id/imageView_img7_green"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="187dp"
+            android:layout_marginTop="89dp"
+            android:src="@drawable/circlegreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img7_grey"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="187dp"
+            android:layout_marginTop="89dp"
+            android:src="@drawable/circlegrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+
+        <ImageView
+            android:id="@+id/imageView_img8"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="273dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/profile7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView_img2" />
+        <ImageView
+            android:id="@+id/imageView_img8_green"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="268dp"
+            android:layout_marginTop="89dp"
+            android:src="@drawable/circlegreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+        <ImageView
+            android:id="@+id/imageView_img8_grey"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="268dp"
+            android:layout_marginTop="89dp"
+            android:src="@drawable/circlegrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_img_explain" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

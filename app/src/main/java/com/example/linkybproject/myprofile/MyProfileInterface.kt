@@ -15,6 +15,9 @@ interface MyProfileInterface {
     ): Call<MyProfileResponse>
 
     @PATCH("/users/modifyProfile")
-    fun updateMyProfile(@Body myProfileUpdateRequest: MyProfileUpdateRequest): Call<MyProfileUpdateResponse>
+    fun updateMyProfile(
+        @Header("Authorization") token: String,
+        @Body myProfileUpdateRequest: MyProfileUpdateRequest
+    ): Call<MyProfileUpdateResponse>
 
 }

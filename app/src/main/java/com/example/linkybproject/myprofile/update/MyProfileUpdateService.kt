@@ -14,19 +14,26 @@ class MyProfileUpdateService {
         this.myProfileUpdateView = myProfileUpdateView
     }
 
-    fun updateMyProfile(myProfileUpdateRequest: MyProfileUpdateRequest) {
+    fun updateMyProfile(token: String, myProfileUpdateRequest: MyProfileUpdateRequest) {
         val myProfileUpdateService = getRetrofit().create(MyProfileInterface::class.java)
 
-        myProfileUpdateService.updateMyProfile(myProfileUpdateRequest).enqueue(object : Callback<MyProfileUpdateResponse> {
+        myProfileUpdateService.updateMyProfile("Bearer $token", myProfileUpdateRequest).enqueue(object : Callback<MyProfileUpdateResponse> {
             override fun onResponse(call: Call<MyProfileUpdateResponse>, response: Response<MyProfileUpdateResponse>
             ) {
                 Log.d("SIGNUP/SUCCESS", response.toString())
                 val res: MyProfileUpdateResponse = response.body()!!
 
-                when(res.status){
-                  200 -> myProfileUpdateView.onSignupSuccess()
-                  else -> myProfileUpdateView.onSignupFailure()
+                if (res != null) {
+                    when(res.status){
+                        200 -> myProfileUpdateView.onUpdateSuccess()
+                        else -> myProfileUpdateView.onUpdateFailure()
+                    }
+                } else {
+                    if (res != null) {
+                        myProfileUpdateView.onUpdateFailure()
+                    }
                 }
+
             }
 
             override fun onFailure(call: Call<MyProfileUpdateResponse>, t: Throwable) {
