@@ -14,10 +14,10 @@ interface MyProfileInterface {
         @Header("Authorization") token: String
     ): Call<MyProfileResponse>
 
+
     @PATCH("/users/modifyProfile")
     fun updateMyProfile(
         @Header("Authorization") token: String,
         @Body myProfileUpdateRequest: MyProfileUpdateRequest
     ): Call<MyProfileUpdateResponse>
-
 }
