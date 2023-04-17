@@ -27,30 +27,28 @@
                 android:layout_marginTop="21dp"
                 android:background="@color/transparent"
                 android:padding="0dp"
-                android:text="수정"
+                android:text="수정하기"
                 android:textColor="@color/black"
                 android:textSize="14dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/imageButton_myProfile_update"
-                android:layout_width="74dp"
-                android:layout_height="74dp"
+            <ImageView
+                android:id="@+id/imageView_myProfile_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/profileimage"
+                android:scaleType="centerInside"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="SpeakableTextPresentCheck" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView_myprofile2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton_myProfile_update"
-                app:layout_constraintTop_toTopOf="@+id/imageButton_myProfile_update"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_myProfile_update"
+                app:layout_constraintTop_toTopOf="@+id/imageView_myProfile_update"
                 app:srcCompat="@drawable/imageupdate" />
 
             <TextView
@@ -214,7 +212,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout_myProfile2_info_detail"
-            android:layout_width="78dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginTop="118dp"

@@ -2,11 +2,6 @@ package com.example.linkybproject.auth.signup
 
 import com.google.gson.annotations.SerializedName
 
-//data class SignupRequest(
-//    @SerializedName(value = "UserSignupReq") var UserSignupReq: UserSignupReq,
-//    @SerializedName(value = "schoolImg") var schoolImg: String // 타입 다시 보기
-//)
-
 data class UserSignupReq(
     @SerializedName(value = "authCode") var authCode: String,
     @SerializedName(value = "gradeStatus") var gradeStatus: Boolean,
@@ -25,15 +20,3 @@ data class UserSignupReq(
     @SerializedName(value = "userSex") var userSex: String,
     @SerializedName(value = "userStudentNum") var userStudentNum: String
 )
-
-//data class SchoolImg(
-//    @SerializedName(value = "schoolImg") var schoolImg: File
-//)
-
-//data class UserInterest(
-//    @SerializedName(value = "userInterest") var userInterest: String
-//):java.io.Serializable
-//
-//data class UserPersonality(
-//    @SerializedName(value = "userPersonality") var userPersonality: String
-//):java.io.Serializable
