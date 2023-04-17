@@ -17,3 +17,9 @@ interface HomeProfileView {
     fun onHomeProfileSuccess(homeProfileResponse: HomeProfileResponse)
     fun onGetHomeProfileFailure()
 }
+
+//홈 유저 매칭시도
+interface HomeConnectTryView{
+    fun onHomeConnectTrySuccess(homeConnectResponse: HomeConnectResponse)
+    fun onGetHomeConnectTryFailure()
+}

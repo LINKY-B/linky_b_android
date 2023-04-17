@@ -16,10 +16,10 @@ import com.example.linkybproject.databinding.FragmentHomeStudentsBinding
 //3단계: overrideing 한 interface 함수를 통해 들어오는 Response를 가공해 화면해 보여준다. → Adapter 연결도 필요하다면 이 때 해주면 된다.
 
 //1단계: View Interface를 상속받는다.
-class HomeStudentFragment : Fragment() , HomeStudentView, HomeProfileView{
+class HomeStudentFragment : Fragment() , HomeStudentView, HomeProfileView {
     private lateinit var binding: FragmentHomeStudentsBinding
 
-    private lateinit var userdata : HomeProfileData
+    private lateinit var userdata: HomeProfileData
 
     var mainAppActivity: AppCompatActivity? = null
 
@@ -63,38 +63,44 @@ class HomeStudentFragment : Fragment() , HomeStudentView, HomeProfileView{
         /* 재학생 리스트 조회 api 호출 */
         val homeStudentService = HomeStudentService()
         homeStudentService.setHomeStudentView(this)
-        val accessToken = context?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)?.getString("accessToken","");
+        val accessToken = context?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)
+            ?.getString("accessToken", "");
         if (accessToken != null && accessToken.isNotEmpty()) {
             homeStudentService.homeStudent(accessToken);
         }
-
-//        /* 홈 화면 프로필 조회 api 호출 */
-//        val homeProfileService = HomeProfileService()
-//        homeStudentService.setHomeStudentView(this)
 
         return binding.root
     }
 
     /* 재학생 리스트 조회 api 호출 결과 */
     override fun onHomeStudentListSuccess(homeStudentList: HomeStudentResponse) {
+        binding.recyclerviewHomeStudents.adapter =
+            HomeRecyclerViewAdapter(homeStudentList.data.students)
         Log.d("재학생 리스트 조회", "Success")
-        binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeStudentList.data.students)
-
     }
 
     override fun onGetHomeStudentListFailure() {
         Log.d("재학생 리스트 조회", "Failure")
     }
 
-
     /* 홈 화면 사용자 프로필 api 호출 결과 */
     override fun onHomeProfileSuccess(homeProfileResponse: HomeProfileResponse) {
         Log.d("홈 화면 사용자 프로필 조회", "Success")
-
     }
 
     override fun onGetHomeProfileFailure() {
         Log.d("홈 화면 사용자 프로필 조회", "Failure")
     }
 }
+
+
+//    /* 홈 유저 매칭 시도 api 호출 결과 */
+//    override fun onHomeConnectTrySuccess(homeConnectResponse: HomeConnectResponse) {
+//        //binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeConnectResponse.data.matchId)
+//        Log.d("홈 유저 매칭 시도", "Success")
+//    }
+//    override fun onGetHomeConnectTryFailure() {
+//        Log.d("홈 유저 매칭 시도", "Failure")
+//    }
+
 

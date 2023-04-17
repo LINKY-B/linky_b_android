@@ -24,7 +24,7 @@ interface HomeConnectTryInterface {
     // 3. 홈 연결시도 api
     @POST("/match/{userGetMatched}")
     fun homeConnectTry(
-        @Header("Authorization") token: String
+        @Header("Authorization") token: String,
     ): Call<HomeConnectResponse>
 }
 

@@ -4,13 +4,12 @@ package com.example.linkybproject.homes
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.databinding.ItemHomeRecyclerBinding
-class HomeRecyclerViewAdapter(var homeStudentList: List<HomeStudentResult>): RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {
 
-    //var datalist = mutableListOf<UserData>() //리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity 등에서 datalist에 실제 데이터 추가
+class HomeRecyclerViewAdapter(private var homeStudentList: List<HomeStudentResult>) : RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {
+
 
     //만들어진 뷰홀더 없을때 뷰홀더(레이아웃) 생성하는 함수
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -36,8 +35,10 @@ class HomeRecyclerViewAdapter(var homeStudentList: List<HomeStudentResult>): Rec
             binding.tvHomeStudentnum.text = homeStudentResult.studentnum.toString()
 
             binding.ibItemConnect.setOnClickListener {
-                val dlg = ConnectDialog(context = AppCompatActivity())
-                dlg.Mydlg()
+                val dlg = ConnectDialog(binding.root.context)
+                var intent = Intent()
+                intent.putExtra("username",homeStudentResult.username)
+                dlg.Mydlg(intent)
             }
 
             // interest 리사이클러뷰 어댑터 가져오기
@@ -54,12 +55,13 @@ class HomeRecyclerViewAdapter(var homeStudentList: List<HomeStudentResult>): Rec
                 itemView.context.startActivity(intent)
             }
 
+
             binding.profileName.setOnClickListener {
                 val intent = Intent(binding.root.context, HomeUserInformationActivity::class.java)
                 itemView.context.startActivity(intent)
             }
         }
-    }
 
+    }
 }
 

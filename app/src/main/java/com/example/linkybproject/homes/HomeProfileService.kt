@@ -1,5 +1,6 @@
 package com.example.linkybproject.homes
 
+import android.annotation.SuppressLint
 import android.util.Log
 import com.example.linkybproject.getRetrofit
 import retrofit2.Call
@@ -14,6 +15,7 @@ class HomeProfileService {
     }
 
     // 2단계 : Retrofit 관련 작업을 해 줄 함수를 만든다.
+    @SuppressLint("SuspiciousIndentation")
     fun homeProfile(token: String) {
         val homeProfileService = getRetrofit().create(HomeProfileInterface::class.java)
             homeProfileService.homeProfile("Bearer ${token}")

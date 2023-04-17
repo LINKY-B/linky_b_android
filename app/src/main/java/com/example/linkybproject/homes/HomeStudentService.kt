@@ -18,7 +18,6 @@ class HomeStudentService {
         // 2단계 : Retrofit 관련 작업을 해 줄 함수를 만든다.
         fun homeStudent(token: String) {
             val homeStudentService = getRetrofit().create(HomeStudentInterface::class.java)
-            try {
                 homeStudentService.homeStudent("Bearer ${token}")
                     .enqueue(object : Callback<HomeStudentResponse> {
                         override fun onResponse(
@@ -40,8 +39,5 @@ class HomeStudentService {
                             Log.d("homeStudentList", t.message.toString())
                         }
                     })
-            } catch (e: java.lang.IllegalStateException) {
-                Log.e("test",e.toString());
-            }
         }
     }

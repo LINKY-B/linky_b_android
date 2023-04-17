@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/user_name"
+            android:id="@+id/dialog_connect_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -47,7 +47,7 @@
             android:textColor="@color/black"
             android:textSize="14dp"
             android:fontFamily="@font/roboto_regular"
-            app:layout_constraintStart_toEndOf="@id/user_name"
+            app:layout_constraintStart_toEndOf="@id/dialog_connect_user_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>

@@ -39,7 +39,7 @@ class HomeUserInformationActivity : AppCompatActivity() {
 
         binding.ibHomeConnect.setOnClickListener {
             val dlg = ConnectDialog(this)
-            dlg.Mydlg()
+            dlg.Mydlg(intent)
 
 /*
             dlg.setOnClickedListener(object : ConnectDialog.ButtonClickListener {

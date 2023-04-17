@@ -9,5 +9,4 @@ interface MyProfileInterface {
     fun getUser(
         @Header("Authorization") token: String
     ): Call<MyProfileResponse>
-
 }
