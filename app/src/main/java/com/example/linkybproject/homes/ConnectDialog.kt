@@ -17,9 +17,12 @@ class ConnectDialog(private val context: Context):HomeConnectTryView {
     private lateinit var binding: DialogConnectBinding
     private val dlg = Dialog(context)
 
+    private var targetUserId = "";
+
     fun Mydlg(intent: Intent) {
         binding = DialogConnectBinding.inflate(LayoutInflater.from(context))
         val extras = intent.extras
+        this.targetUserId  = (extras!!["userid"] as Int).toString();
         val data = extras!!["username"]
         binding.dialogConnectUserName.text = data as CharSequence?
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -39,11 +42,16 @@ class ConnectDialog(private val context: Context):HomeConnectTryView {
             val homeConnectTryService = HomeConnectTryService()
             homeConnectTryService.setHomeConnectTryView(this)
 
+            if (this.targetUserId.isEmpty()) {
+                return@setOnClickListener;
+            }
+
             val accessToken = context?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)?.getString("accessToken","");
             if (accessToken != null && accessToken.isNotEmpty()) {
-                homeConnectTryService.homeConnectTry(accessToken,2)
+                homeConnectTryService.homeConnectTry(accessToken, userGetMatched = this.targetUserId)
             }
             Toast.makeText(context, "연결을 시도하였습니다.", Toast.LENGTH_SHORT).show()
+
             dlg.dismiss()
         }
 

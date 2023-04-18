@@ -25,7 +25,8 @@ interface HomeConnectTryInterface {
     @POST("/match/{userGetMatched}")
     fun homeConnectTry(
         @Header("Authorization") token: String,
-    ): Call<HomeConnectResponse>
+        @Path("userGetMatched") userGetMatched: String,
+        ): Call<HomeConnectResponse>
 }
 
 interface HomeProfileInterface {
