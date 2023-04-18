@@ -30,6 +30,7 @@ data class HomeGraduateData(
 
 // 1-2, 2-2
 data class HomeStudentResult(
+    @SerializedName(value = "userId") var userId: Int,
     @SerializedName(value = "userNickName") var username: String,
     @SerializedName(value = "userMajorName") var department: String,
     @SerializedName(value = "userStudentNum") var studentnum: Long,

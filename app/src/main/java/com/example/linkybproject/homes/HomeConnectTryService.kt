@@ -18,17 +18,18 @@ class HomeConnectTryService {
 
     // 2단계 : Retrofit 관련 작업을 해 줄 함수를 만든다.
     @SuppressLint("SuspiciousIndentation")
-    fun homeConnectTry(token: String) {
+    fun homeConnectTry(token: String, userGetMatched: String) {
         val homeConnectTryService = getRetrofit().create(HomeConnectTryInterface::class.java)
-        homeConnectTryService.homeConnectTry("Bearer ${token}")
+        homeConnectTryService.homeConnectTry("Bearer ${token}", userGetMatched)
             .enqueue(object : Callback<HomeConnectResponse> {
                 override fun onResponse(
                     call: Call<HomeConnectResponse>,
                     response: Response<HomeConnectResponse>
                 ) {
 
+                    Log.d("homeConnectTry", call.toString())
+
                     val resp: HomeConnectResponse? = response.body()
-                    Log.d("홈 유저 매칭 시도2", "Success")
 
                     if (resp != null) {
                         when (resp.status) {

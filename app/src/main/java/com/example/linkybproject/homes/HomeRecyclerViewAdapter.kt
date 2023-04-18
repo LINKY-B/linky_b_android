@@ -37,6 +37,7 @@ class HomeRecyclerViewAdapter(private var homeStudentList: List<HomeStudentResul
             binding.ibItemConnect.setOnClickListener {
                 val dlg = ConnectDialog(binding.root.context)
                 var intent = Intent()
+                intent.putExtra("userid",homeStudentResult.userId)
                 intent.putExtra("username",homeStudentResult.username)
                 dlg.Mydlg(intent)
             }
