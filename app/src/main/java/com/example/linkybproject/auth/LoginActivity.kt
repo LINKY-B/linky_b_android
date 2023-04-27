@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.linkybproject.auth.signup.SignupActivity
 import com.example.linkybproject.common.MainActivity
@@ -16,6 +17,11 @@ class LoginActivity : AppCompatActivity(), LoginView {
         viewBinding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
+
+        // 뷰 처리 (로그인 에러 메세지 안 보이게)
+        viewBinding.textViewLoginPassWordErrorMessage.visibility = View.INVISIBLE
+        viewBinding.textViewLoginIdErrorMessage.visibility = View.INVISIBLE
+
 
         viewBinding.buttonLoginSubmit.setOnClickListener {
             login()
