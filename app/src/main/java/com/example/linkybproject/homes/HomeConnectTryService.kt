@@ -26,11 +26,9 @@ class HomeConnectTryService {
                     call: Call<HomeConnectResponse>,
                     response: Response<HomeConnectResponse>
                 ) {
-
-                    Log.d("homeConnectTry", call.toString())
-
                     val resp: HomeConnectResponse? = response.body()
 
+                    Log.d("resp", resp.toString())
                     if (resp != null) {
                         when (resp.status) {
                             200 -> homeConnectTryView.onHomeConnectTrySuccess(resp)

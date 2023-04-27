@@ -10,21 +10,29 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.linkybproject.databinding.DialogConnectBinding
+import com.example.linkybproject.databinding.FragmentHomeStudentsBinding
 import com.example.linkybproject.databinding.ItemHomeRecyclerBinding
+import okhttp3.internal.notify
 
 class ConnectDialog(private val context: Context):HomeConnectTryView {
     private lateinit var binding: DialogConnectBinding
-    private val dlg = Dialog(context)
+    private lateinit var homeRecyclerViewAdapter: HomeRecyclerViewAdapter
+    private lateinit var binding2: FragmentHomeStudentsBinding
 
-    private var targetUserId = "";
+
+    private val dlg = Dialog(context)
+    private var targetUserId = ""
 
     fun Mydlg(intent: Intent) {
         binding = DialogConnectBinding.inflate(LayoutInflater.from(context))
         val extras = intent.extras
-        this.targetUserId  = (extras!!["userid"] as Int).toString();
-        val data = extras!!["username"]
-        binding.dialogConnectUserName.text = data as CharSequence?
+        this.targetUserId  = (extras!!["userid"] as Int).toString()
+        val username = extras!!["username"]
+        val itemposition = extras!!["itemposition"] as Int
+
+        binding.dialogConnectUserName.text = username as CharSequence?
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dlg.setContentView(binding.root)
         dlg.window!!.setLayout(
@@ -43,15 +51,16 @@ class ConnectDialog(private val context: Context):HomeConnectTryView {
             homeConnectTryService.setHomeConnectTryView(this)
 
             if (this.targetUserId.isEmpty()) {
-                return@setOnClickListener;
+                return@setOnClickListener
             }
 
-            val accessToken = context?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)?.getString("accessToken","");
+            val accessToken = context?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)?.getString("accessToken","")
             if (accessToken != null && accessToken.isNotEmpty()) {
                 homeConnectTryService.homeConnectTry(accessToken, userGetMatched = this.targetUserId)
             }
-            Toast.makeText(context, "연결을 시도하였습니다.", Toast.LENGTH_SHORT).show()
 
+            homeRecyclerViewAdapter.notifyItemRemoved(itemposition)
+            Toast.makeText(context, "연결을 시도하였습니다.", Toast.LENGTH_SHORT).show()
             dlg.dismiss()
         }
 
