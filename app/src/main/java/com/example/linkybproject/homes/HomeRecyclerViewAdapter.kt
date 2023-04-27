@@ -2,13 +2,14 @@ package com.example.linkybproject.homes
 
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.linkybproject.databinding.ItemHomeRecyclerBinding
 
-class HomeRecyclerViewAdapter(private var homeStudentList: List<HomeStudentResult>) : RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {
+class HomeRecyclerViewAdapter(private var homeStudentList: List<HomeStudentResult>): RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder>() {
 
 
     //만들어진 뷰홀더 없을때 뷰홀더(레이아웃) 생성하는 함수
@@ -19,15 +20,17 @@ class HomeRecyclerViewAdapter(private var homeStudentList: List<HomeStudentResul
 
     // 실제 각 뷰 홀더에 데이터를 연결해주는 함수
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(homeStudentList[position]) }
+        holder.bind(homeStudentList[position],position)
+
+    }
 
     override fun getItemCount(): Int = homeStudentList.size
 
 
     // 리사이클러뷰에 들어갈 뷰 홀더, 그리고 그 뷰 홀더에 들어갈 아이템들을 지정
-    class MyViewHolder(private val binding: ItemHomeRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(val binding: ItemHomeRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(homeStudentResult: HomeStudentResult){
+        fun bind(homeStudentResult: HomeStudentResult, position: Int){
             //binding.dogPhotoImg.=dogData.dog_img
             binding.profileName.text=homeStudentResult.username
             binding.tvHomeLikenumber.text= homeStudentResult.likecount.toString()
@@ -39,6 +42,9 @@ class HomeRecyclerViewAdapter(private var homeStudentList: List<HomeStudentResul
                 var intent = Intent()
                 intent.putExtra("userid",homeStudentResult.userId)
                 intent.putExtra("username",homeStudentResult.username)
+                intent.putExtra("itemposition",position)
+                Log.d("position", position.toString())
+
                 dlg.Mydlg(intent)
             }
 
@@ -61,7 +67,10 @@ class HomeRecyclerViewAdapter(private var homeStudentList: List<HomeStudentResul
                 val intent = Intent(binding.root.context, HomeUserInformationActivity::class.java)
                 itemView.context.startActivity(intent)
             }
+
         }
+
+
 
     }
 }

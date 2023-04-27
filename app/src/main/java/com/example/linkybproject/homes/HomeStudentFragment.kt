@@ -19,8 +19,6 @@ import com.example.linkybproject.databinding.FragmentHomeStudentsBinding
 class HomeStudentFragment : Fragment() , HomeStudentView, HomeProfileView {
     private lateinit var binding: FragmentHomeStudentsBinding
 
-    private lateinit var userdata: HomeProfileData
-
     var mainAppActivity: AppCompatActivity? = null
 
     override fun onAttach(context: Context) {
@@ -41,22 +39,10 @@ class HomeStudentFragment : Fragment() , HomeStudentView, HomeProfileView {
         /* 리사이클러뷰 */
         //val adapter = mainAppActivity?.let { HomeRecyclerViewAdapter(it) }
         val homeStudentList: ArrayList<HomeStudentResult> = arrayListOf()
-//
-//        adapter?. = mutableListOf(
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 20, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 23, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 22, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 20, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//            UserData("", "배고픈 청설모1", 29, "시각디자인학과", 19, "","", listOf<Interest>(Interest("정보공유"),Interest("스터디메이트"),Interest("취업준비"))),
-//
-//            )
 
         binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeStudentList)
         binding.recyclerviewHomeStudents.layoutManager = LinearLayoutManager(context)
+
 
         //2단계: 해당 Service를 호출해서 정의하고, setView 함수 호출로 연결해준다.
 
@@ -83,6 +69,7 @@ class HomeStudentFragment : Fragment() , HomeStudentView, HomeProfileView {
         Log.d("재학생 리스트 조회", "Failure")
     }
 
+
     /* 홈 화면 사용자 프로필 api 호출 결과 */
     override fun onHomeProfileSuccess(homeProfileResponse: HomeProfileResponse) {
         Log.d("홈 화면 사용자 프로필 조회", "Success")
@@ -92,15 +79,5 @@ class HomeStudentFragment : Fragment() , HomeStudentView, HomeProfileView {
         Log.d("홈 화면 사용자 프로필 조회", "Failure")
     }
 }
-
-
-//    /* 홈 유저 매칭 시도 api 호출 결과 */
-//    override fun onHomeConnectTrySuccess(homeConnectResponse: HomeConnectResponse) {
-//        //binding.recyclerviewHomeStudents.adapter = HomeRecyclerViewAdapter(homeConnectResponse.data.matchId)
-//        Log.d("홈 유저 매칭 시도", "Success")
-//    }
-//    override fun onGetHomeConnectTryFailure() {
-//        Log.d("홈 유저 매칭 시도", "Failure")
-//    }
 
 
