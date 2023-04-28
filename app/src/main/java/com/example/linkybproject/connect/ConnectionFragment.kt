@@ -35,7 +35,7 @@ class ConnectionFragment : Fragment(), MatchingMainView {
         }
 
         viewBinding.btnFullConnectToMe.setOnClickListener {
-            val intent = Intent(context, ConnectActivity::class.java)
+            val intent = Intent(context, ConnectToMeActivity::class.java)
             startActivity(intent)
         }
 

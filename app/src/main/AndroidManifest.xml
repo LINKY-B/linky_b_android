@@ -31,7 +31,7 @@
             android:name=".connect.ConnectFromMeActivity"
             android:exported="false" />
         <activity
-            android:name=".connect.ConnectActivity"
+            android:name=".connect.ConnectToMeActivity"
             android:exported="false" />
         <activity
             android:name=".chat.ChatRoomActivity"
