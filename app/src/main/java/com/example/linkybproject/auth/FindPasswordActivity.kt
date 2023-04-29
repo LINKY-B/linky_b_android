@@ -6,12 +6,14 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
-import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivityFindPasswordBinding
-import com.example.linkybproject.databinding.ActivityMemberLeaveBinding
+import java.util.regex.Pattern
 
-class FindPasswordActivity : AppCompatActivity() {
+class FindPasswordActivity : AppCompatActivity(), FindPasswordEmailView, FindPasswordView {
     private lateinit var viewBinding: ActivityFindPasswordBinding
+    private lateinit var authCode: String
+    private lateinit var email: String
+    private lateinit var password: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         viewBinding = ActivityFindPasswordBinding.inflate(layoutInflater)
@@ -25,9 +27,19 @@ class FindPasswordActivity : AppCompatActivity() {
 
         // 초기 뷰 설정
         viewBinding.textViewFindPasswordErrorMessage.visibility = View.INVISIBLE
-        viewBinding.textViewFindPWGetAuthGreen.isEnabled = false
-        viewBinding.textViewFindPWCheckAuthGreen.isEnabled = false
-        viewBinding.textViewFindPWGreen.isEnabled = false
+        viewBinding.textViewFindPWGetAuthGreen.visibility = View.INVISIBLE
+        viewBinding.textViewFindPWCheckAuthGreen.visibility = View.INVISIBLE
+        viewBinding.textViewFindPWGreen.visibility = View.INVISIBLE
+
+        viewBinding.textViewFindPWGetAuthGrey.isEnabled = false
+        viewBinding.textViewFindPWCheckAuthGrey.isEnabled = false
+        viewBinding.textViewFindPWGrey.isEnabled = false
+
+        viewBinding.textViewFindPWNewPWError.visibility = View.INVISIBLE
+        viewBinding.textViewFindPWNewPWCheckError.visibility = View.INVISIBLE
+        viewBinding.textViewFindPWAuthFail.visibility = View.INVISIBLE
+        viewBinding.textViewFindPWAuthSuccess.visibility = View.INVISIBLE
+
 
 
         // 1-1. 이메일 유효성 검사 (editText 입력하는 순간마다 이벤트 처리)
@@ -50,29 +62,26 @@ class FindPasswordActivity : AppCompatActivity() {
             }
         )
         viewBinding.textViewFindPWGetAuthGreen.setOnClickListener {
-//            userEmail = binding.editTextSignupEmail.text.toString()
-//            emailAuth()
+            email = viewBinding.editTextFindPWEmail.text.toString()
+            getEmail()
             Toast.makeText(this@FindPasswordActivity, "인증번호가 전송되었습니다.", Toast.LENGTH_SHORT).show()
         }
-//        // 1-2. 이메일 인증번호 입력
-//        viewBinding.editTextSignupAuth.addTextChangedListener(
-//            object : TextWatcher {
-//                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//                    checkEmailValid()
-//                    checkOptions()
-//                }
-//
-//                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//                    checkEmailValid()
-//                    checkOptions()
-//                }
-//
-//                override fun afterTextChanged(p0: Editable?) {
-//                    checkEmailValid()
-//                    checkEmailValid()
-//                }
-//            }
-//        )
+        // 1-2. 이메일 인증번호 입력
+        viewBinding.editTextFindPWEmailAuth.addTextChangedListener(
+            object : TextWatcher {
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    checkOptions()
+                }
+
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    checkOptions()
+                }
+
+                override fun afterTextChanged(p0: Editable?) {
+                    checkEmailValid()
+                }
+            }
+        )
 //        viewBinding.textViewBtnCheckAuthGreen.setOnClickListener {
 //            authCode = binding.editTextSignupAuth.text.toString()
 //            userEmail = binding.editTextSignupEmail.text.toString()
@@ -81,6 +90,55 @@ class FindPasswordActivity : AppCompatActivity() {
 //            Toast.makeText(this@SignupActivity2, "인증번호가 확인되었습니다.", Toast.LENGTH_SHORT).show()
 //        }
 
+        // 2-1. 새 비밀번호 유효성 검사
+        viewBinding.editTextFindPWNewPW.addTextChangedListener(
+            object : TextWatcher {
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    checkPwValid()
+                    checkOptions()
+                }
+
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    checkPwValid()
+                    checkOptions()
+                }
+
+                override fun afterTextChanged(p0: Editable?) {
+                    checkPwValid()
+                    checkOptions()
+                }
+            }
+        )
+        // 2-2. 새 비밀번호 확인
+        viewBinding.editTextFindPWNewPWCheck.addTextChangedListener(
+            object : TextWatcher {
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    checkPwCheckValid()
+                    checkOptions()
+                }
+
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    checkPwCheckValid()
+                    checkOptions()
+                }
+
+                override fun afterTextChanged(p0: Editable?) {
+                    checkPwCheckValid()
+                    checkOptions()
+                }
+            }
+        )
+
+        // 마지막 버튼 처리
+        viewBinding.textViewFindPWGreen.setOnClickListener {
+            authCode = viewBinding.editTextFindPWEmailAuth.text.toString()
+            email = viewBinding.editTextFindPWEmail.text.toString()
+            password = viewBinding.editTextFindPWNewPW.text.toString()
+            changePW()
+//            Toast.makeText(this@FindPasswordActivity, "// !!", Toast.LENGTH_SHORT).show()
+        }
+
+        // 비번 변경 성공하면, 처리 후 로그인 페이지로 가도록 설정하기
 
     }
 
@@ -101,10 +159,92 @@ class FindPasswordActivity : AppCompatActivity() {
         viewBinding.textViewFindPWGetAuthGrey.visibility = View.INVISIBLE
         viewBinding.textViewFindPasswordErrorMessage.visibility = View.INVISIBLE
         viewBinding.textViewFindPWGetAuthGreen.visibility = View.VISIBLE
+
+    }
+
+    // 비밀번호 유효성 검사 함수
+    private fun checkPwValid() {
+        val pw = viewBinding.editTextFindPWNewPW.text.toString()
+
+        // 길이 검증
+        if (pw.length < 7) {
+            viewBinding.textViewFindPWNewPWError.visibility = View.VISIBLE
+            return
+        }
+        // 영문, 숫자, 특수문자 검증
+        for (i in 0 until pw.length) {
+            if(!Pattern.matches("^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-])(?=.*[a-zA-Z]).{7,20}$", pw)) {
+                viewBinding.textViewFindPWNewPWError.visibility = View.VISIBLE
+                return
+            }
+        }
+        // PW is valid
+        viewBinding.textViewFindPWNewPWError.visibility = View.INVISIBLE
+    }
+
+    // 비밀번호 확인 함수
+    private fun checkPwCheckValid() {
+        val pw = viewBinding.editTextFindPWNewPW.text.toString()
+        val pwCheck = viewBinding.editTextFindPWNewPWCheck.text.toString()
+
+        // 입력한 비밀번호와 같은지 확인 (kotlin 에서는 문자열 비교 == 연산자로 가능)
+        if (pw == pwCheck) {
+            viewBinding.textViewFindPWNewPWCheckError.visibility = View.INVISIBLE
+        } else {
+            viewBinding.textViewFindPWNewPWCheckError.visibility = View.VISIBLE
+        }
     }
 
     // 기본 정보 입력 완료 확인 함수
     private fun checkOptions() {
+        // 일단 인증번호 제외
+        if (viewBinding.textViewFindPWGetAuthGrey.visibility == View.INVISIBLE &&
+            viewBinding.editTextFindPWEmailAuth.text.toString() != "" &&
+            viewBinding.editTextFindPWNewPW.text.toString() != "" &&
+            viewBinding.editTextFindPWNewPWCheck.text.toString() != "" &&
+            viewBinding.textViewFindPWNewPWError.visibility == View.INVISIBLE &&
+            viewBinding.textViewFindPWNewPWCheckError.visibility == View.INVISIBLE) {
 
+            viewBinding.textViewFindPWGreen.visibility = View.VISIBLE
+            viewBinding.textViewFindPWGrey.visibility = View.INVISIBLE
+        } else {
+            viewBinding.textViewFindPWGreen.visibility = View.INVISIBLE
+            viewBinding.textViewFindPWGrey.visibility = View.VISIBLE
+        }
+    }
+
+    // FindPasswordEmail
+    private fun getFindPasswordEmailRequest(): FindPasswordEmailRequest {
+        return FindPasswordEmailRequest(email)
+    }
+    private fun getEmail() {
+        val findPasswordEmailService = FindPasswordEmailService()
+        findPasswordEmailService.setFindPasswordEmailView(this)
+        findPasswordEmailService.getEmail(getFindPasswordEmailRequest())
+    }
+
+    override fun onFindPasswordEmailViewSuccess() {
+        Toast.makeText(this, "비밀번호 변경 이메일 인증 번호 받기 성공했습니다", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onFindPasswordEmailViewFailure() {
+        TODO("Not yet implemented")
+    }
+
+    // FindPassword = ChangePassword
+    private fun getFindPasswordRequest(): FindPasswordRequest {
+        return FindPasswordRequest(authCode, email, password)
+    }
+    private fun changePW() {
+        val findPasswordService = FindPasswordService()
+        findPasswordService.setFindPasswordView(this)
+        findPasswordService.changePW(getFindPasswordRequest())
+    }
+    override fun onFindPasswordSuccess() {
+        Toast.makeText(this, "비밀번호 변경 성공했습니다", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onFindPasswordFailure() {
+        TODO("Not yet implemented")
     }
 }
