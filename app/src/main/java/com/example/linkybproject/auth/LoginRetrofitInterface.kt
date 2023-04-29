@@ -15,4 +15,10 @@ interface LoginRetrofitInterface {
     fun reissue(
         @Header("Authorization") token: String
     ): Call<ReissueResponse>
+
+    // FindPasswordEmail
+    @POST("/auth/reset-password/send-email")
+    fun getEmail(
+        @Body findPasswordEmailRequest: FindPasswordEmailRequest
+    ): Call<FindPasswordEmailResponse>
 }
