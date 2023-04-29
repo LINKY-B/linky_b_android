@@ -6,13 +6,14 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
-import com.example.linkybproject.R
 import com.example.linkybproject.databinding.ActivityFindPasswordBinding
 import java.util.regex.Pattern
 
-class FindPasswordActivity : AppCompatActivity(), FindPasswordEmailView {
+class FindPasswordActivity : AppCompatActivity(), FindPasswordEmailView, FindPasswordView {
     private lateinit var viewBinding: ActivityFindPasswordBinding
+    private lateinit var authCode: String
     private lateinit var email: String
+    private lateinit var password: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         viewBinding = ActivityFindPasswordBinding.inflate(layoutInflater)
@@ -130,9 +131,14 @@ class FindPasswordActivity : AppCompatActivity(), FindPasswordEmailView {
 
         // 마지막 버튼 처리
         viewBinding.textViewFindPWGreen.setOnClickListener {
-            Toast.makeText(this@FindPasswordActivity, "// !!", Toast.LENGTH_SHORT).show()
+            authCode = viewBinding.editTextFindPWEmailAuth.text.toString()
+            email = viewBinding.editTextFindPWEmail.text.toString()
+            password = viewBinding.editTextFindPWNewPW.text.toString()
+            changePW()
+//            Toast.makeText(this@FindPasswordActivity, "// !!", Toast.LENGTH_SHORT).show()
         }
 
+        // 비번 변경 성공하면, 처리 후 로그인 페이지로 가도록 설정하기
 
     }
 
@@ -222,6 +228,23 @@ class FindPasswordActivity : AppCompatActivity(), FindPasswordEmailView {
     }
 
     override fun onFindPasswordEmailViewFailure() {
+        TODO("Not yet implemented")
+    }
+
+    // FindPassword = ChangePassword
+    private fun getFindPasswordRequest(): FindPasswordRequest {
+        return FindPasswordRequest(authCode, email, password)
+    }
+    private fun changePW() {
+        val findPasswordService = FindPasswordService()
+        findPasswordService.setFindPasswordView(this)
+        findPasswordService.changePW(getFindPasswordRequest())
+    }
+    override fun onFindPasswordSuccess() {
+        Toast.makeText(this, "비밀번호 변경 성공했습니다", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onFindPasswordFailure() {
         TODO("Not yet implemented")
     }
 }

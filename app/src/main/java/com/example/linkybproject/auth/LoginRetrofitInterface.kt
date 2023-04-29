@@ -21,4 +21,10 @@ interface LoginRetrofitInterface {
     fun getEmail(
         @Body findPasswordEmailRequest: FindPasswordEmailRequest
     ): Call<FindPasswordEmailResponse>
+
+    // SetNewPassword
+    @POST("/auth/reset-password")
+    fun changePW(
+        @Body findPasswordRequest: FindPasswordRequest
+    ): Call<FindPasswordResponse>
 }
