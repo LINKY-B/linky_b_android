@@ -5,15 +5,15 @@ import com.example.linkybproject.getRetrofit
 import retrofit2.Call
 import retrofit2.Response
 
-class AllMatchingService {
-    private lateinit var allMatchingView: AllMatchingView
+class AllAcceptService {
+    private lateinit var allAcceptView: AllAcceptView
 
     fun setAllMatchingView(allMatchingView: AllAcceptDialog) {
-        this.allMatchingView = allMatchingView
+        this.allAcceptView = allMatchingView
     }
 
     fun matchingAll(token: String, userGetMatched: String) {
-        val allMatchingService = getRetrofit().create(AllMatchingInterface::class.java)
+        val allMatchingService = getRetrofit().create(AllAcceptInterface::class.java)
         allMatchingService.matchingAll(token).enqueue(object : retrofit2.Callback<AllMatchingResponse> {
             override fun onResponse(call: Call<AllMatchingResponse>, response: Response<AllMatchingResponse>) {
                 Log.d("test", response.toString())
@@ -22,13 +22,13 @@ class AllMatchingService {
                 if (resp != null) {
                     when (resp.status) {
                         200 -> {
-                            allMatchingView.onAllMatchingSuccess(resp)
+                            allAcceptView.onAllMatchingSuccess(resp)
                             Log.d("test", resp.toString())
                         }
-                        else -> allMatchingView.onAllMatchingFailure()
+                        else -> allAcceptView.onAllMatchingFailure()
                     }
                 } else {
-                    allMatchingView.onAllMatchingFailure()
+                    allAcceptView.onAllMatchingFailure()
                 }
             }
 

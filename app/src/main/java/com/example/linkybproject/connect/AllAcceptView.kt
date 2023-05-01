@@ -1,6 +1,6 @@
 package com.example.linkybproject.connect
 
-interface AllMatchingView {
+interface AllAcceptView {
     fun onAllMatchingSuccess(matchingAll: AllMatchingResponse)
     fun onAllMatchingFailure()
 }

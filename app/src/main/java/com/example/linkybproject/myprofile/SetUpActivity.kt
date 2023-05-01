@@ -16,12 +16,6 @@ class SetUpActivity : AppCompatActivity(), AlarmView, ActiveView {
         viewBinding = ActivitySetUpBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-        val alarmService = AlarmService()
-        alarmService.setAlarmView(this)
-
-        val activeService = ActiveService()
-        activeService.setActiveView(this)
-
         viewBinding.btnBack.setOnClickListener {
             finish()
         }
@@ -56,6 +50,8 @@ class SetUpActivity : AppCompatActivity(), AlarmView, ActiveView {
             startActivity(intent)
         }
 
+        val activeService = ActiveService()
+        activeService.setActiveView(this)
         viewBinding.setUpSwitch1.setOnCheckedChangeListener { compoundButton, b ->
             if (b) {
                 Log.d("Test","check")
@@ -66,6 +62,8 @@ class SetUpActivity : AppCompatActivity(), AlarmView, ActiveView {
             }
         }
 
+        val alarmService = AlarmService()
+        alarmService.setAlarmView(this)
         viewBinding.setUpSwitch2.setOnCheckedChangeListener { compoundButton, b ->
             if (b) {
                 Log.d("Test","check")

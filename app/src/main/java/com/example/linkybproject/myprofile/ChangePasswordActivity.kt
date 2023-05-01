@@ -29,22 +29,6 @@ class ChangePasswordActivity : AppCompatActivity() {
             finish()
         }
 
-/*
-        viewBinding.etNowPassword.addTextChangedListener {
-            val pw = viewBinding.etNowPassword.text.toString()
-            val pwCheck = userPassword
-
-            // 입력한 비밀번호와 같은지 확인
-            if (pw == pwCheck) {
-                viewBinding.tvErrorNowPassword.visibility = View.INVISIBLE
-            } else {
-                viewBinding.tvErrorNowPassword.visibility = View.VISIBLE
-            }
-        }
-*/
-
-
-
         viewBinding.etNewPassword.addTextChangedListener {
             object : TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {

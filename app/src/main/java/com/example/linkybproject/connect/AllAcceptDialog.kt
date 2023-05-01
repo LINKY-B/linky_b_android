@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.linkybproject.databinding.DialogAllAcceptBinding
 
-class AllAcceptDialog(private val context: AppCompatActivity) : AllMatchingView {
+class AllAcceptDialog(private val context: AppCompatActivity) : AllAcceptView {
     private lateinit var binding: DialogAllAcceptBinding
     private val dlg = Dialog(context)
     private var targetUserId = ""
@@ -29,8 +29,8 @@ class AllAcceptDialog(private val context: AppCompatActivity) : AllMatchingView 
         this.targetUserId = (intent.extras!!["userid"] as Int).toString()
 */
         binding.btnAllAcceptance.setOnClickListener {
-            val allMatchingService = AllMatchingService()
-            allMatchingService.setAllMatchingView(this)
+            val allAcceptService = AllAcceptService()
+            allAcceptService.setAllMatchingView(this)
 
 /*
             if (this.targetUserId.isEmpty()) {
@@ -41,7 +41,7 @@ class AllAcceptDialog(private val context: AppCompatActivity) : AllMatchingView 
             val accessToken = context?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)?.getString("accessToken", "")
             if (accessToken != null && accessToken.isNotEmpty()) {
                 Log.d("Test","allmatching")
-                allMatchingService.matchingAll(accessToken, userGetMatched = this.targetUserId)
+                allAcceptService.matchingAll(accessToken, userGetMatched = this.targetUserId)
             }
 
             Toast.makeText(context, "모든 연결을 수락하였습니다.", Toast.LENGTH_SHORT).show()
