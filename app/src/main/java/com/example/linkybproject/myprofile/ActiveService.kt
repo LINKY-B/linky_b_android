@@ -30,7 +30,9 @@ class ActiveService {
                         else -> activeView.onActiveFailure()
                     }
                 } else {
-                    activeView.onActiveFailure()
+                    if (resp != null){
+                        activeView.onActiveFailure()
+                    }
                 }
             }
 
@@ -56,7 +58,9 @@ class ActiveService {
                         else -> activeView.onActiveFailure()
                     }
                 } else {
-                    activeView.onActiveFailure()
+                    if (resp != null){
+                        activeView.onActiveFailure()
+                    }
                 }
             }
 
